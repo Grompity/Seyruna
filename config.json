@@ -1,0 +1,14 @@
+{
+  "BASE": "https://gx10-b234.tail386c62.ts.net/v1",
+  "KEY": "apexus123",
+  "MODEL": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+  "MAXTOK": 4096,
+  "TEMP": 0.2,
+  "TOPK": 4,
+  "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.4",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1"
+  }
+}

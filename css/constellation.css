@@ -1,0 +1,89 @@
+/* ====== the knowledge constellation ======
+   A star field with positions from data/constellation.js. Labels are buttons;
+   the wires are an svg behind them. */
+
+knowledge-constellation > section { text-align: center; }
+knowledge-constellation .section-lede { margin-inline: auto; }
+
+.kc-stage {
+  position: relative;
+  width: min(62rem, 96vw);
+  aspect-ratio: 1000 / 640;
+  margin: clamp(2rem, 6vw, 4rem) auto 0;
+  transform: translate3d(calc(var(--px, 0) * -6px), calc(var(--py, 0) * -6px), 0);
+  transition: transform 1.2s var(--ease-drift);
+  container-type: inline-size;
+}
+
+.kc-links { position: absolute; inset: 0; }
+.kc-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.kc-wires line {
+  stroke: hsl(40 16% 76% / .10);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  transition: stroke .9s var(--ease-drift);
+}
+.kc-wires line.is-on { stroke: var(--gold-line); }
+.kc-stars circle { opacity: .5; }
+
+/* Everything recedes when something is touched — except the neighbours. */
+.kc-stage.is-active .kc-node {
+  position: relative;
+  appearance: none; background: none; border: 0; padding: .9rem .4rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: clamp(.56rem, 1.15cqw, .7rem);
+  font-weight: 400;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--veil-60);
+  white-space: nowrap;
+  transition:
+    color .6s var(--ease-drift),
+    opacity .6s var(--ease-drift),
+    letter-spacing .6s var(--ease-drift);
+}
+.kc-node::before {
+  content: "";
+  position: absolute; left: 50%; top: 50%;
+  width: 3px; height: 3px;
+  transform: translate(-50%, calc(-50% + 1.55em));
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: .75;
+  transition: opacity .6s, box-shadow .8s;
+}
+.kc-node.is-on {
+  color: var(--gold);
+  letter-spacing: .3em;
+}
+.kc-node.is-on::before { box-shadow: 0 0 12px 2px var(--gold-30); }
+.kc-node.is-near { color: var(--veil); }
+
+.kc-info {
+  min-height: 2.6em;
+  max-width: 30em;
+  margin: clamp(1.6rem, 4vw, 2.6rem) auto 0;
+  font-family: var(--font-display); font-style: italic;
+  color: var(--veil-60);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 1s var(--ease-drift), transform 1s var(--ease-drift);
+}
+.kc-info.is-said { opacity: 1; transform: none; }
+.kc-info-label {
+  display: block;
+  font-style: normal; font-family: var(--font-ui);
+  font-size: .6rem; letter-spacing: .32em; text-transform: uppercase;
+  color: var(--gold-68);
+  margin-block-end: .5rem;
+}
+
+.kc-noscript { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; padding: 0; list-style: none; color: var(--veil-60); }
+
+/* Compose for small rooms: the field remains, the labels come forward. */
+@media (max-width: 860px) {
+  .kc-node { font-size: 0; padding: 1.4rem; }           /* dots only */
+  .kc-node::before { transform: translate(-50%, -50%); }
+  .kc-node.is-on, .kc-node.is-near { font-size: .6rem; } /* the touched one speaks */
+  .kc-stage { aspect-ratio: 1000 / 760; }
+  .kc-nodes li { transform: translate(-50%, -50%) scale(1.15); }
+}

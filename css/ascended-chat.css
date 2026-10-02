@@ -1,0 +1,103 @@
+/* ============================================================
+   ASCENDED AI — the encounter (ascended-chat)
+   Tokens only; the answer is the centre of gravity.
+   ============================================================ */
+
+#ask .chat-panel { max-width: 46rem; margin-inline: auto }
+
+#ask .chat-log {
+  min-height: 15rem;
+  max-height: min(55dvh, 34rem);
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 1.15rem;
+  padding: .4rem .25rem;
+  border-block-end: 1px solid var(--hairline);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-30);
+}
+
+#ask .chat-empty,
+#ask .chat-status {
+  margin: 1.4rem 0 .2rem;
+  color: var(--veil-38);
+  font: 400 .92rem/1.6 var(--font-ui);
+  letter-spacing: .04em;
+  text-align: center;
+}
+
+#ask .msg {
+  display: flex; flex-direction: column; gap: .3rem;
+  animation: chat-rise .5s ease both;
+}
+#ask .msg__who {
+  font: 500 .68rem/1 var(--font-ui);
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold-68);
+}
+#ask .msg--user .msg__who { color: var(--veil-38) }
+#ask .msg__text {
+  margin: 0;
+  white-space: pre-wrap; overflow-wrap: break-word;
+}
+#ask .msg--user .msg__text {
+  color: var(--veil-60);
+  font: italic 400 1.02rem/1.55 var(--font-body);
+}
+#ask .msg--asc .msg__text {          /* the answer is the gravity */
+  color: var(--veil);
+  font: 400 1.16rem/1.7 var(--font-body);
+}
+#ask .msg--err .msg__text {
+  color: var(--parchment);
+  font: italic 400 1rem/1.6 var(--font-body);
+}
+#ask .msg__ms,
+#ask .chat-fold summary {
+  color: var(--veil-38);
+  font: 400 .68rem/1 var(--font-ui);
+  letter-spacing: .06em;
+  cursor: default;
+}
+#ask .chat-fold pre {
+  margin: .4rem 0 0;
+  font: 400 .72rem/1.5 var(--font-ui);
+  color: var(--veil-60);
+  white-space: pre-wrap;
+  max-height: 18rem; overflow-y: auto;
+}
+
+#ask .chat-form {
+  display: flex; gap: .6rem; align-items: flex-end;
+  margin-top: .9rem;
+}
+#ask .chat-in {
+  flex: 1;
+  resize: none;
+  background: var(--ink-1);
+  color: var(--veil);
+  border: 1px solid var(--hairline);
+  border-radius: .4rem;
+  padding: .6rem .75rem;
+  font: 400 1.05rem/1.5 var(--font-body);
+  min-height: 2.7rem;
+  max-height: 9.4rem;
+}
+#ask .chat-in::placeholder { color: var(--veil-38) }
+#ask .chat-in:focus-visible {
+  outline: 1px solid var(--gold-68);
+  outline-offset: 2px;
+}
+#ask .chat-send[disabled] { opacity: .45 }
+
+@keyframes chat-rise {
+  from { opacity: 0; transform: translateY(6px) }
+  to   { opacity: 1 }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ask .msg { animation: none }
+}
+
+@media (max-width: 640px) {
+  #ask .chat-log { max-height: 52dvh }
+  #ask .msg--asc .msg__text { font-size: 1.08rem }
+}

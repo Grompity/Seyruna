@@ -1,0 +1,13 @@
+{
+  "name": "ascended-ai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Ascended AI \u2014 landing page prototype. Zero-build: semantic HTML, design tokens, vanilla custom elements.",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "python3 server.py 5173",
+    "serve": "nohup python3 server.py 5173 > /tmp/ascended-server.log 2>&1 &"
+  }
+}

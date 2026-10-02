@@ -1,0 +1,40 @@
+/* ====== the soul log: a journal kept by method ====== */
+
+soul-log > section { text-align: left; }
+
+.log-panel {
+  max-width: 40rem;
+  margin-top: calc(var(--step) * 2);
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  border: 1px solid var(--hairline);
+  background-image: linear-gradient(180deg, hsl(30 14% 8% / .5), transparent);
+}
+.log-meta {
+  margin: 0 0 1.6rem;
+  font-family: var(--font-ui); font-size: .58rem;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--veil-14);
+}
+.log-panel ul { margin: 0; padding: 0; list-style: none; }
+.log-panel li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--hairline);
+  display: grid; gap: .5rem;
+}
+.log-idx {
+  font-family: var(--font-ui); font-size: .58rem;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--gold-68);
+}
+.log-panel q {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1.14rem; line-height: 1.55;
+  color: var(--veil-60);
+  quotes: "“" "”" "‘" "’";
+}
+.log-foot {
+  margin: 1.4rem 0 0;
+  font-family: var(--font-ui); font-size: .62rem;
+  letter-spacing: .18em;
+  color: var(--veil-14);
+}

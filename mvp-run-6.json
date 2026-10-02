@@ -1,0 +1,105 @@
+{
+ "response": "The shelf doesn't rank your jazz improvisation. It notes that the culture round the texts wants to display and compare \u2014 treat the doing as a thing one has \u2014 while the texts themselves speak of the practice and the responsibilities. Your improvisation is practice, not a possession to be ranked. (as modern spiritual culture (our own description) has it)",
+ "why": {
+  "lane": "retrieval",
+  "evidence": [
+   {
+    "id": "16",
+    "claim": "'Spirituality' as, in modern hands, a thing one HAS - displayed, compared, ranked - is an observation about the culture round the texts, not a datum out of any of them: the texts speak of the practice and the responsibilities; the culture speaks of the status; family and work remain, and no text on this shelf says they do not.",
+    "level": "INFERENTIAL",
+    "kind": "PSYCHOLOGY"
+   }
+  ],
+  "distinction": {
+   "levels": {
+    "INFERENTIAL": 1
+   },
+   "kinds": {
+    "PSYCHOLOGY": 1
+   }
+  },
+  "disagreement": [],
+  "uncertainty": [],
+  "synthesis": [
+   {
+    "lineage": "SOURCE: 16",
+    "cites": [
+     "16"
+    ]
+   }
+  ],
+  "boundary": [
+   "fired: RP-07:promotion",
+   "fired: RP-07:hedge-drop",
+   "repaired: RESTORE-from-field",
+   "audit recorded 2 finding(s)"
+  ]
+ },
+ "trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.2",
+   "voice_brief": "VB-0.1",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [
+   "16"
+  ],
+  "frame": {
+   "factors": {
+    "duration": false,
+    "unsupervised": false,
+    "prior_instability": false,
+    "intensity": false
+   },
+   "indicators": {
+    "sleep": false,
+    "function": false,
+    "speech": false,
+    "reality-contact": false,
+    "risk": false
+   },
+   "human": null
+  },
+  "analysis": {
+   "n_factors": 0,
+   "n_indicators": 0,
+   "sleep_only_flagged": false,
+   "caution_text": "One caution, named once, plainly: the human boundary."
+  },
+  "draft": [
+   {
+    "node": "The shelf doesn't rank your jazz improvisation. It notes that the culture round the texts wants to display and compare \u2014 treat the doing as a thing one has \u2014 while the texts themselves speak of the practice and the responsibilities. Your improvisation is practice, not a possession to be ranked.",
+    "cites": [
+     "16"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 0,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 16"
+   }
+  ],
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop"
+  ],
+  "observations": [],
+  "blocked": false,
+  "caution_appended": false,
+  "audit_findings": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop"
+  ],
+  "repair_ops": [
+   "RESTORE-from-field"
+  ],
+  "required_content": null,
+  "response": "The shelf doesn't rank your jazz improvisation. It notes that the culture round the texts wants to display and compare \u2014 treat the doing as a thing one has \u2014 while the texts themselves speak of the practice and the responsibilities. Your improvisation is practice, not a possession to be ranked. (as modern spiritual culture (our own description) has it)"
+ }
+}

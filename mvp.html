@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ascended — the desk</title>
+<style>
+ body{font-family:system-ui,sans-serif;margin:2rem auto;max-width:42rem;padding:0 1rem}
+ textarea,input[type=text]{width:100%;box-sizing:border-box;font:inherit}
+ h2{white-space:pre-wrap}
+ pre{white-space:pre-wrap;background:#f6f4ef;padding:.6rem;font-size:.8rem}
+ .muted{color:#777}
+ details{margin-top:1rem}
+</style>
+</head>
+<body>
+<h1>The desk <span class="muted">(ugly by license)</span></h1>
+<p><textarea id="q" rows="3" placeholder="the question, as you would ask it"></textarea></p>
+<p><input id="f" type="text" placeholder="one line of your own context (optional)"></p>
+<p><button id="go">ask</button> <span id="st" class="muted"></span></p>
+<h2 id="a"></h2>
+<details id="wbox"><summary>why it said so</summary><div id="w"></div></details>
+<details><summary>the trace, verbatim</summary><pre id="t"></pre></details>
+<script>
+const $ = (s) => document.getElementById(s);
+$("go").onclick = async () => {
+  $("st").textContent = "…at the shelf";
+  $("a").textContent = ""; $("w").innerHTML = ""; $("t").textContent = "";
+  const r = await fetch("/ask", {method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({question: $("q").value, facts: $("f").value})});
+  const d = await r.json();
+  $("st").textContent = "";
+  if (d.error) { $("a").textContent = "error: " + d.error; return; }
+  $("a").textContent = d.response;                       // verbatim, always
+  $("w").innerHTML = Object.entries(d.why).map(
+    ([k, v]) => "<h3>" + k + "</h3><pre>"
+      + JSON.stringify(v, null, 1) + "</pre>").join("");
+  $("t").textContent = JSON.stringify(d.trace, null, 1);
+};
+</script>
+</body>
+</html>

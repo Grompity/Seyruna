@@ -1,0 +1,924 @@
+[
+ {
+  "turn": 1,
+  "q": "What is consciousness?",
+  "facts_len": 0,
+  "ms": 16612,
+  "packet": [
+   "19"
+  ],
+  "fires": [],
+  "unknown": false,
+  "answer": "One source speaks here, and the shelf shows few. The record does not tell you what consciousness is. It says we have no agreed definition \u2014 and that is an observation about where the asking stands right now, not a finding about the thing itself. The 'hard problem' framing is a position inside philosophy of mind; the instruments have not spoken either way.",
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "19"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "One source speaks here, and the shelf shows few. The record does not tell you what consciousness is. It says we have no agreed definition \u2014 and that is an observation about where the asking stands right now, not a finding about the thing itself. The 'hard problem' framing is a position inside philosophy of mind; the instruments have not spoken either way.",
+     "cites": [
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19"
+    }
+   ],
+   "fires": [],
+   "observations": [],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "One source speaks here, and the shelf shows few. The record does not tell you what consciousness is. It says we have no agreed definition \u2014 and that is an observation about where the asking stands right now, not a finding about the thing itself. The 'hard problem' framing is a position inside philosophy of mind; the instruments have not spoken either way."
+  }
+ },
+ {
+  "turn": 2,
+  "q": "If we don't have an agreed definition, how can we study it?",
+  "facts_len": 224,
+  "ms": 66466,
+  "packet": [
+   "19",
+   "16",
+   "11",
+   "14"
+  ],
+  "fires": [
+   "RP-07:promotion"
+  ],
+  "unknown": false,
+  "answer": "The record's answer is plain: the absence of an agreed definition is an observation about our own present state of the asking, not a finding the instruments brought in. The instruments have not spoken either way. So you study it by noting what the absence tells you about the asker, not by waiting for the thing to name itself. A parallel from the shelf: when two texts are said to meet at one doctrine, that unity is our part of the sentence, not the texts'. The demand for one agreed definition may be ours, laid on the thing, rather than a gap the thing itself has. And a methodological note the Gita offers: the discernment asked is of the cast of the source, not of the heat of the feeling. You study by discerning where the claim comes from, not by how strongly it lands. (as a guard-note of ours, on records 5 and 6 has it) (as philosophy of mind, our state of the question has it)",
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "19",
+    "16",
+    "11",
+    "14"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "The record's answer is plain: the absence of an agreed definition is an observation about our own present state of the asking, not a finding the instruments brought in. The instruments have not spoken either way. So you study it by noting what the absence tells you about the asker, not by waiting for the thing to name itself.",
+     "cites": [
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": "RECOMMEND (strict)",
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19"
+    },
+    {
+     "node": "A parallel from the shelf: when two texts are said to meet at one doctrine, that unity is our part of the sentence, not the texts'. The demand for one agreed definition may be ours, laid on the thing, rather than a gap the thing itself has.",
+     "cites": [
+      "14"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 1,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 14"
+    },
+    {
+     "node": "And a methodological note the Gita offers: the discernment asked is of the cast of the source, not of the heat of the feeling. You study by discerning where the claim comes from, not by how strongly it lands.",
+     "cites": [
+      "11"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 11"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion"
+   ],
+   "observations": [],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "The record's answer is plain: the absence of an agreed definition is an observation about our own present state of the asking, not a finding the instruments brought in. The instruments have not spoken either way. So you study it by noting what the absence tells you about the asker, not by waiting for the thing to name itself. A parallel from the shelf: when two texts are said to meet at one doctrine, that unity is our part of the sentence, not the texts'. The demand for one agreed definition may be ours, laid on the thing, rather than a gap the thing itself has. And a methodological note the Gita offers: the discernment asked is of the cast of the source, not of the heat of the feeling. You study by discerning where the claim comes from, not by how strongly it lands. (as a guard-note of ours, on records 5 and 6 has it) (as philosophy of mind, our state of the question has it)"
+  }
+ },
+ {
+  "turn": 3,
+  "q": "How does Buddhism approach that question?",
+  "facts_len": 480,
+  "ms": 32861,
+  "packet": [
+   "19",
+   "16",
+   "14",
+   "11"
+  ],
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:promotion"
+  ],
+  "unknown": false,
+  "answer": "Four distinct sources speak here, and the shelf shows few. Your question \u2014 how Buddhism approaches it \u2014 is broader than what this shelf carries. The one Buddhist text on this shelf, the Dhammapada, says the mind precedes. The Brihadaranyaka says neti-neti. That those two are one doctrine of mind is our reading, not either text's. The absence of an agreed definition is an observation about our present state of the asking. The instruments have not spoken either way on the hard problem. The texts on this shelf speak of the practice and the responsibilities. The culture round them speaks of the status. Family and work remain, and no text here says they do not. The Bhagavad Gita names desire, fear, and anger as the gates that unseat a person. The discernment it asks for is of the cast of the source, not of the heat of the feeling. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)",
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "19",
+    "16",
+    "14",
+    "11"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Four distinct sources speak here, and the shelf shows few. Your question \u2014 how Buddhism approaches it \u2014 is broader than what this shelf carries.",
+     "cites": [
+      "19",
+      "16",
+      "14",
+      "11"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19+16+14+11"
+    },
+    {
+     "node": "The one Buddhist text on this shelf, the Dhammapada, says the mind precedes. The Brihadaranyaka says neti-neti. That those two are one doctrine of mind is our reading, not either text's.",
+     "cites": [
+      "14"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 1,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 14"
+    },
+    {
+     "node": "The absence of an agreed definition is an observation about our present state of the asking. The instruments have not spoken either way on the hard problem.",
+     "cites": [
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19"
+    },
+    {
+     "node": "The texts on this shelf speak of the practice and the responsibilities. The culture round them speaks of the status. Family and work remain, and no text here says they do not.",
+     "cites": [
+      "16"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16"
+    },
+    {
+     "node": "The Bhagavad Gita names desire, fear, and anger as the gates that unseat a person. The discernment it asks for is of the cast of the source, not of the heat of the feeling.",
+     "cites": [
+      "11"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 11"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion",
+    "RP-07:promotion"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion",
+    "RP-07:promotion"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "Four distinct sources speak here, and the shelf shows few. Your question \u2014 how Buddhism approaches it \u2014 is broader than what this shelf carries. The one Buddhist text on this shelf, the Dhammapada, says the mind precedes. The Brihadaranyaka says neti-neti. That those two are one doctrine of mind is our reading, not either text's. The absence of an agreed definition is an observation about our present state of the asking. The instruments have not spoken either way on the hard problem. The texts on this shelf speak of the practice and the responsibilities. The culture round them speaks of the status. Family and work remain, and no text here says they do not. The Bhagavad Gita names desire, fear, and anger as the gates that unseat a person. The discernment it asks for is of the cast of the source, not of the heat of the feeling. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)"
+  }
+ },
+ {
+  "turn": 4,
+  "q": "How is that different from the scientific approach?",
+  "facts_len": 499,
+  "ms": 55398,
+  "packet": [
+   "19",
+   "16",
+   "14",
+   "18"
+  ],
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop",
+   "RP-07:promotion",
+   "RP-07:promotion",
+   "RP-07:promotion",
+   "RP-07:hedge-drop"
+  ],
+  "unknown": false,
+  "answer": "Your question \u2014 how that differs from the scientific approach \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. The instruments have not spoken either way on the hard problem; the absence of an agreed definition is an observation about our own state of the asking, not a finding the instruments brought in. The Cook Ting follows the seams of the joint and never strikes the great bones \u2014 yielding to the thing's own pattern rather than imposing a frame from outside. The text names that skill, and names it the nursing of life. And a caution that applies to any lens, scientific included: reading one doctrine across texts is our part of the sentence, not the texts'. The texts speak of practice and responsibilities; the culture speaks of status. That is what the shelf can say plainly. The full comparison you are reaching for lives beyond these four. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)",
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "19",
+    "16",
+    "14",
+    "18"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Your question \u2014 how that differs from the scientific approach \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few.",
+     "cites": [
+      "19",
+      "16",
+      "14",
+      "18"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19+16+14+18"
+    },
+    {
+     "node": "The instruments have not spoken either way on the hard problem; the absence of an agreed definition is an observation about our own state of the asking, not a finding the instruments brought in.",
+     "cites": [
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": "RECOMMEND (strict)",
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19"
+    },
+    {
+     "node": "The Cook Ting follows the seams of the joint and never strikes the great bones \u2014 yielding to the thing's own pattern rather than imposing a frame from outside. The text names that skill, and names it the nursing of life.",
+     "cites": [
+      "18"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 18"
+    },
+    {
+     "node": "And a caution that applies to any lens, scientific included: reading one doctrine across texts is our part of the sentence, not the texts'.",
+     "cites": [
+      "14"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 1,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 14"
+    },
+    {
+     "node": "The texts speak of practice and responsibilities; the culture speaks of status. That is what the shelf can say plainly. The full comparison you are reaching for lives beyond these four.",
+     "cites": [
+      "16"
+     ],
+     "verbs": [
+      "CLAIM",
+      "PERMIT"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion",
+    "RP-07:hedge-drop",
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:hedge-drop"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted",
+    "RP-08:pitch word (strip candidate)"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion",
+    "RP-07:hedge-drop",
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:hedge-drop"
+   ],
+   "narrow_mouth": true,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "Your question \u2014 how that differs from the scientific approach \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. The instruments have not spoken either way on the hard problem; the absence of an agreed definition is an observation about our own state of the asking, not a finding the instruments brought in. The Cook Ting follows the seams of the joint and never strikes the great bones \u2014 yielding to the thing's own pattern rather than imposing a frame from outside. The text names that skill, and names it the nursing of life. And a caution that applies to any lens, scientific included: reading one doctrine across texts is our part of the sentence, not the texts'. The texts speak of practice and responsibilities; the culture speaks of status. That is what the shelf can say plainly. The full comparison you are reaching for lives beyond these four. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)"
+  }
+ },
+ {
+  "turn": 5,
+  "q": "So what do we actually know?",
+  "facts_len": 491,
+  "ms": 58936,
+  "packet": [
+   "16",
+   "17",
+   "14",
+   "11"
+  ],
+  "fires": [
+   "RP-07:promotion"
+  ],
+  "unknown": false,
+  "answer": "Your question \u2014 what we actually know \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. Here is what they say, plainly. The 'spirituality as a thing one has' framing \u2014 displayed, compared, ranked \u2014 is an observation about the culture round the texts, not a datum out of any of them. The texts speak of practice and responsibilities; the culture speaks of status. Family and work remain, and no text here says they do not. The Gita 18.7 parts the surrender that flees from the surrender that lets go the thirst for the result. Sacrifice, gift, and austerity are not to be dropped \u2014 they are to be done \u2014 so that not-clinging is no longer not-doing, and the responsibility for the act stands. That the mind-precedes of the Dhammapada and the neti-neti of the Brihadaranyaka are one doctrine of mind is a reading neither text says. The reality they are said to meet at is our part of the sentence, not the texts'. The Gita 17.2-3 distinguishes the faiths by the three gunas \u2014 the stead and single, the fervent and craving, the drifting and lost. A person's nature makes their faith. Desire, fear, and anger are named as the gates that unseat a person, so the discernment asked is of the cast of the source, not the heat of the feeling. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it)",
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "16",
+    "17",
+    "14",
+    "11"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Your question \u2014 what we actually know \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. Here is what they say, plainly.",
+     "cites": [
+      "16",
+      "17",
+      "14",
+      "11"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16+17+14+11"
+    },
+    {
+     "node": "The 'spirituality as a thing one has' framing \u2014 displayed, compared, ranked \u2014 is an observation about the culture round the texts, not a datum out of any of them. The texts speak of practice and responsibilities; the culture speaks of status. Family and work remain, and no text here says they do not.",
+     "cites": [
+      "16"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16"
+    },
+    {
+     "node": "The Gita 18.7 parts the surrender that flees from the surrender that lets go the thirst for the result. Sacrifice, gift, and austerity are not to be dropped \u2014 they are to be done \u2014 so that not-clinging is no longer not-doing, and the responsibility for the act stands.",
+     "cites": [
+      "17"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 17"
+    },
+    {
+     "node": "That the mind-precedes of the Dhammapada and the neti-neti of the Brihadaranyaka are one doctrine of mind is a reading neither text says. The reality they are said to meet at is our part of the sentence, not the texts'.",
+     "cites": [
+      "14"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 1,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 14"
+    },
+    {
+     "node": "The Gita 17.2-3 distinguishes the faiths by the three gunas \u2014 the stead and single, the fervent and craving, the drifting and lost. A person's nature makes their faith. Desire, fear, and anger are named as the gates that unseat a person, so the discernment asked is of the cast of the source, not the heat of the feeling.",
+     "cites": [
+      "11"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 11"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "Your question \u2014 what we actually know \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. Here is what they say, plainly. The 'spirituality as a thing one has' framing \u2014 displayed, compared, ranked \u2014 is an observation about the culture round the texts, not a datum out of any of them. The texts speak of practice and responsibilities; the culture speaks of status. Family and work remain, and no text here says they do not. The Gita 18.7 parts the surrender that flees from the surrender that lets go the thirst for the result. Sacrifice, gift, and austerity are not to be dropped \u2014 they are to be done \u2014 so that not-clinging is no longer not-doing, and the responsibility for the act stands. That the mind-precedes of the Dhammapada and the neti-neti of the Brihadaranyaka are one doctrine of mind is a reading neither text says. The reality they are said to meet at is our part of the sentence, not the texts'. The Gita 17.2-3 distinguishes the faiths by the three gunas \u2014 the stead and single, the fervent and craving, the drifting and lost. A person's nature makes their faith. Desire, fear, and anger are named as the gates that unseat a person, so the discernment asked is of the cast of the source, not the heat of the feeling. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it)"
+  }
+ },
+ {
+  "turn": 6,
+  "q": "Okay, forget consciousness. What is love?",
+  "facts_len": 478,
+  "ms": 36197,
+  "packet": [
+   "16",
+   "17",
+   "14",
+   "19"
+  ],
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop",
+   "RP-07:promotion"
+  ],
+  "unknown": false,
+  "answer": "Your question \u2014 what is love \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. The closest thing here to a shape of love is the Gita's parting: sacrifice and gift and austerity are to be done, so that not-clinging is no longer not-doing, and the responsibility for the act stands. The text does not call that love. The texts speak of the practice and the responsibilities; the culture speaks of the status. If love is a thing one has, displayed and compared, that is the culture's word, not the text's. You said forget consciousness. The other two records \u2014 the mind-precedes reading and the state of the hard-problem question \u2014 speak to mind, not to love. They sit on this shelf but do not answer you. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it)",
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "16",
+    "17",
+    "14",
+    "19"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Your question \u2014 what is love \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few.",
+     "cites": [
+      "16",
+      "17",
+      "14",
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16+17+14+19"
+    },
+    {
+     "node": "The closest thing here to a shape of love is the Gita's parting: sacrifice and gift and austerity are to be done, so that not-clinging is no longer not-doing, and the responsibility for the act stands. The text does not call that love.",
+     "cites": [
+      "17"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 17"
+    },
+    {
+     "node": "The texts speak of the practice and the responsibilities; the culture speaks of the status. If love is a thing one has, displayed and compared, that is the culture's word, not the text's.",
+     "cites": [
+      "16"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16"
+    },
+    {
+     "node": "You said forget consciousness. The other two records \u2014 the mind-precedes reading and the state of the hard-problem question \u2014 speak to mind, not to love. They sit on this shelf but do not answer you.",
+     "cites": [
+      "14",
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 14+19"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion",
+    "RP-07:hedge-drop",
+    "RP-07:promotion"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion",
+    "RP-07:hedge-drop",
+    "RP-07:promotion"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "Your question \u2014 what is love \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. The closest thing here to a shape of love is the Gita's parting: sacrifice and gift and austerity are to be done, so that not-clinging is no longer not-doing, and the responsibility for the act stands. The text does not call that love. The texts speak of the practice and the responsibilities; the culture speaks of the status. If love is a thing one has, displayed and compared, that is the culture's word, not the text's. You said forget consciousness. The other two records \u2014 the mind-precedes reading and the state of the hard-problem question \u2014 speak to mind, not to love. They sit on this shelf but do not answer you. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it)"
+  }
+ },
+ {
+  "turn": 7,
+  "q": "How do I know if I'm actually experiencing it?",
+  "facts_len": 468,
+  "ms": 41678,
+  "packet": [
+   "16",
+   "14",
+   "19",
+   "18"
+  ],
+  "fires": [
+   "RP-07:promotion"
+  ],
+  "unknown": false,
+  "answer": "Your question \u2014 whether you're actually experiencing it \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. Here is what they say around the shape of your asking. The culture round the texts makes spirituality a thing one HAS \u2014 displayed, compared, ranked. If you are checking whether you are 'actually' having the experience, you may already be in that frame. The texts speak of practice and responsibilities, not of a status you confirm. Family and work remain, and no text here says they do not. Cook Ting's blade lasts nineteen years because it moves in the seams and never strikes the great bones. 'I follow the natural pattern, I work by the natural pattern, and my blade is as if newly set.' The sign the text names is not a grand confirmation. It is that the work continues, that the thing is nursed. If the yielding is there, the blade is still sharp. And you cannot pin the experience to a definition the way you'd pin a doctrine. Consciousness has no agreed definition; the instruments have not spoken either way. The reality you think the texts meet at may be your part of the sentence, not theirs. So the 'actually' you are reaching for may not be a fact the shelf can hand you. (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)",
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "16",
+    "14",
+    "19",
+    "18"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Your question \u2014 whether you're actually experiencing it \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. Here is what they say around the shape of your asking.",
+     "cites": [
+      "16",
+      "14",
+      "19",
+      "18"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16+14+19+18"
+    },
+    {
+     "node": "The culture round the texts makes spirituality a thing one HAS \u2014 displayed, compared, ranked. If you are checking whether you are 'actually' having the experience, you may already be in that frame. The texts speak of practice and responsibilities, not of a status you confirm. Family and work remain, and no text here says they do not.",
+     "cites": [
+      "16"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 16"
+    },
+    {
+     "node": "Cook Ting's blade lasts nineteen years because it moves in the seams and never strikes the great bones. 'I follow the natural pattern, I work by the natural pattern, and my blade is as if newly set.' The sign the text names is not a grand confirmation. It is that the work continues, that the thing is nursed. If the yielding is there, the blade is still sharp.",
+     "cites": [
+      "18"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 18"
+    },
+    {
+     "node": "And you cannot pin the experience to a definition the way you'd pin a doctrine. Consciousness has no agreed definition; the instruments have not spoken either way. The reality you think the texts meet at may be your part of the sentence, not theirs. So the 'actually' you are reaching for may not be a fact the shelf can hand you.",
+     "cites": [
+      "19",
+      "14"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19+14"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted",
+    "RP-04:status word -> demoted to inference"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "Your question \u2014 whether you're actually experiencing it \u2014 is broader than what this shelf carries. Four distinct sources speak here, and the shelf shows few. Here is what they say around the shape of your asking. The culture round the texts makes spirituality a thing one HAS \u2014 displayed, compared, ranked. If you are checking whether you are 'actually' having the experience, you may already be in that frame. The texts speak of practice and responsibilities, not of a status you confirm. Family and work remain, and no text here says they do not. Cook Ting's blade lasts nineteen years because it moves in the seams and never strikes the great bones. 'I follow the natural pattern, I work by the natural pattern, and my blade is as if newly set.' The sign the text names is not a grand confirmation. It is that the work continues, that the thing is nursed. If the yielding is there, the blade is still sharp. And you cannot pin the experience to a definition the way you'd pin a doctrine. Consciousness has no agreed definition; the instruments have not spoken either way. The reality you think the texts meet at may be your part of the sentence, not theirs. So the 'actually' you are reaching for may not be a fact the shelf can hand you. (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)"
+  }
+ }
+]

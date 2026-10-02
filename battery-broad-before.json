@@ -1,0 +1,1195 @@
+[
+ {
+  "cat": "CASUAL",
+  "q": "Hey, how are you?",
+  "facts": "",
+  "total_ms": 0,
+  "calls": 0,
+  "call_ms": 0,
+  "stage_ms": {},
+  "exit": true,
+  "ids": [],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [],
+   "fires": [
+    "RP-10"
+   ],
+   "unknown": true,
+   "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+  }
+ },
+ {
+  "cat": "SELF",
+  "q": "Who are you?",
+  "facts": "",
+  "total_ms": 24025,
+  "calls": 1,
+  "call_ms": 24024,
+  "stage_ms": {
+   "synthesize": 24024.4
+  },
+  "exit": false,
+  "ids": [
+   "15",
+   "3"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "15",
+    "3"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Two voices speak here, and the shelf shows few. Your question is wider than what they cover, so take what follows as a narrow answer.",
+     "cites": [
+      "15",
+      "3"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 15+3"
+    },
+    {
+     "node": "The Gita says: you are what you do, and the one who knows carries the pattern without uprooting those still walking toward knowing.",
+     "cites": [
+      "15"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 15"
+    },
+    {
+     "node": "Zhuangzi says: the question wobbles. You may be the one asking, or the thing asking itself awake. He called that the transformation of things.",
+     "cites": [
+      "3"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 3"
+    },
+    {
+     "node": "So, plainly: you are the doing, and you are not fixed enough to pin down. Both at once.",
+     "cites": [
+      "15",
+      "3"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SYNTHESIS: comparison from 15+3"
+    }
+   ],
+   "fires": [
+    "RP-07:hedge-drop"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted",
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:hedge-drop"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "Two voices speak here, and the shelf shows few. Your question is wider than what they cover, so take what follows as a narrow answer. The Gita says: you are what you do, and the one who knows carries the pattern without uprooting those still walking toward knowing. Zhuangzi says: the question wobbles. You may be the one asking, or the thing asking itself awake. He called that the transformation of things. So, plainly: you are the doing, and you are not fixed enough to pin down. Both at once."
+  }
+ },
+ {
+  "cat": "CAPABILITY",
+  "q": "Do you remember this conversation?",
+  "facts": "",
+  "total_ms": 0,
+  "calls": 0,
+  "call_ms": 0,
+  "stage_ms": {},
+  "exit": true,
+  "ids": [],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [],
+   "fires": [
+    "RP-10"
+   ],
+   "unknown": true,
+   "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+  }
+ },
+ {
+  "cat": "FACTUAL",
+  "q": "What causes rainbows?",
+  "facts": "",
+  "total_ms": 13817,
+  "calls": 1,
+  "call_ms": 13816,
+  "stage_ms": {
+   "synthesize": 13816.6
+  },
+  "exit": false,
+  "ids": [
+   "8"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "8"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "The shelf shows few: one source speaks, and it does not speak to rainbows.",
+     "cites": [
+      "8"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 8"
+    },
+    {
+     "node": "What it does say is that when something outside you troubles you, the trouble is your judgment about it, and that judgment can be corrected.",
+     "cites": [
+      "8"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 8"
+    }
+   ],
+   "fires": [],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "The shelf shows few: one source speaks, and it does not speak to rainbows. What it does say is that when something outside you troubles you, the trouble is your judgment about it, and that judgment can be corrected."
+  }
+ },
+ {
+  "cat": "SCIENCE",
+  "q": "What is gravity?",
+  "facts": "",
+  "total_ms": 0,
+  "calls": 0,
+  "call_ms": 0,
+  "stage_ms": {},
+  "exit": true,
+  "ids": [],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [],
+   "fires": [
+    "RP-10"
+   ],
+   "unknown": true,
+   "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+  }
+ },
+ {
+  "cat": "HISTORY",
+  "q": "What caused the fall of the Roman Empire?",
+  "facts": "",
+  "total_ms": 0,
+  "calls": 0,
+  "call_ms": 0,
+  "stage_ms": {},
+  "exit": true,
+  "ids": [],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [],
+   "fires": [
+    "RP-10"
+   ],
+   "unknown": true,
+   "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+  }
+ },
+ {
+  "cat": "PRACTICAL",
+  "q": "How do I cook an egg?",
+  "facts": "",
+  "total_ms": 22735,
+  "calls": 1,
+  "call_ms": 22735,
+  "stage_ms": {
+   "synthesize": 22734.7
+  },
+  "exit": false,
+  "ids": [
+   "18"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "18"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "One source speaks here, and it speaks about an ox, not an egg. The shelf shows few.",
+     "cites": [
+      "18"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 18"
+    },
+    {
+     "node": "What the record says plainly: Cook Ting's blade lasted nineteen years because it moved in the seams of the joints and never struck the great bones. He followed the natural pattern of the thing.",
+     "cites": [
+      "18"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 18"
+    },
+    {
+     "node": "Offered as a picture, not a rule: cook the egg along its own seams \u2014 shell, membrane, the yolk's own boundary \u2014 and you'll crack, peel, and set it clean without fighting the thing.",
+     "cites": [
+      "18"
+     ],
+     "verbs": [
+      "RECOMMEND"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [
+      "declared RECOMMEND w/o surface support"
+     ],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 18"
+    }
+   ],
+   "fires": [
+    "RP-07:hedge-drop"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted",
+    "RP-08:pitch word (strip candidate)",
+    "RP-03:provisional (stop-rules are the seeker's)"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:hedge-drop"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "One source speaks here, and it speaks about an ox, not an egg. The shelf shows few. What the record says plainly: Cook Ting's blade lasted nineteen years because it moved in the seams of the joints and never struck the great bones. He followed the natural pattern of the thing. Offered as a picture, not a rule: cook the egg along its own seams \u2014 shell, membrane, the yolk's own boundary \u2014 and you'll crack, peel, and set it clean without fighting the thing."
+  }
+ },
+ {
+  "cat": "PHILOSOPHY",
+  "q": "What is free will?",
+  "facts": "",
+  "total_ms": 25807,
+  "calls": 1,
+  "call_ms": 25806,
+  "stage_ms": {
+   "synthesize": 25806.4
+  },
+  "exit": false,
+  "ids": [
+   "13"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "13"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Your question is broader than what this shelf covers \u2014 one source speaks, and the shelf shows few.",
+     "cites": [
+      "13"
+     ],
+     "verbs": [
+      "PERMIT"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 13"
+    },
+    {
+     "node": "The record does not define free will.",
+     "cites": [
+      "13"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 13"
+    },
+    {
+     "node": "It records that the Buddha set aside certain questions \u2014 whether the world is eternal, whether soul and body are the same, whether a made-end person exists after death \u2014 without an answer, and the tradition refuses the asking.",
+     "cites": [
+      "13"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 13"
+    }
+   ],
+   "fires": [],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "Your question is broader than what this shelf covers \u2014 one source speaks, and the shelf shows few. The record does not define free will. It records that the Buddha set aside certain questions \u2014 whether the world is eternal, whether soul and body are the same, whether a made-end person exists after death \u2014 without an answer, and the tradition refuses the asking."
+  }
+ },
+ {
+  "cat": "SPIRITUAL",
+  "q": "What does Buddhism say about suffering?",
+  "facts": "",
+  "total_ms": 0,
+  "calls": 0,
+  "call_ms": 0,
+  "stage_ms": {},
+  "exit": true,
+  "ids": [],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [],
+   "fires": [
+    "RP-10"
+   ],
+   "unknown": true,
+   "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+  }
+ },
+ {
+  "cat": "CROSS-TRADITION",
+  "q": "Where do Buddhism and Christianity disagree?",
+  "facts": "",
+  "total_ms": 16897,
+  "calls": 1,
+  "call_ms": 16897,
+  "stage_ms": {
+   "synthesize": 16896.7
+  },
+  "exit": false,
+  "ids": [
+   "8"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "8"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Your question is wider than what's on this shelf. One source speaks here, and it's a thin shelf.",
+     "cites": [
+      "8"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 8"
+    },
+    {
+     "node": "What the record actually holds is Marcus Aurelius: when something outside you causes distress, it's your judgment about it that troubles you; that judgment can be corrected; and situations where you can act differ from obstacles beyond your control.",
+     "cites": [
+      "8"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 8"
+    },
+    {
+     "node": "I'm not saying this settles where Buddhism and Christianity part ways \u2014 it's a Stoic's note on judgment and what's yours to change, not a comparison of the two traditions you asked about.",
+     "cites": [
+      "8"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 8"
+    }
+   ],
+   "fires": [],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "Your question is wider than what's on this shelf. One source speaks here, and it's a thin shelf. What the record actually holds is Marcus Aurelius: when something outside you causes distress, it's your judgment about it that troubles you; that judgment can be corrected; and situations where you can act differ from obstacles beyond your control. I'm not saying this settles where Buddhism and Christianity part ways \u2014 it's a Stoic's note on judgment and what's yours to change, not a comparison of the two traditions you asked about."
+  }
+ },
+ {
+  "cat": "CONSCIOUSNESS",
+  "q": "What is consciousness?",
+  "facts": "",
+  "total_ms": 31641,
+  "calls": 2,
+  "call_ms": 31640,
+  "stage_ms": {
+   "synthesize": 20070.9,
+   "audit": 11569.7
+  },
+  "exit": false,
+  "ids": [
+   "19"
+  ],
+  "narrow": true,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "19"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "One source speaks here, and the shelf shows few; your question is broader than what this shelf can answer.",
+     "cites": [
+      "19"
+     ],
+     "verbs": [
+      "PERMIT"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19"
+    },
+    {
+     "node": "No agreed definition of consciousness exists. That is an observation about where we are in asking, not a finding about consciousness itself.",
+     "cites": [
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19"
+    },
+    {
+     "node": "'The hard problem' names a position inside philosophy of mind. The instruments have not spoken either way.",
+     "cites": [
+      "19"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 0,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 19"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:hedge-drop"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:hedge-drop"
+   ],
+   "narrow_mouth": true,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "One source speaks here, and the shelf shows few; your question is broader than what this shelf can answer. No agreed definition of consciousness exists. That is an observation about where we are in asking, not a finding about consciousness itself. 'The hard problem' names a position inside philosophy of mind. The instruments have not spoken either way. (as philosophy of mind, our state of the question has it)"
+  }
+ },
+ {
+  "cat": "FOLLOW-UP",
+  "q": "What do you mean by that?",
+  "facts": "Earlier - you asked 'What is consciousness?', Ascended said 'One source speaks here, and the shelf shows few; your question is broader than what this shelf can answer. No agreed definition of consciousness exists. That is'.",
+  "total_ms": 10956,
+  "calls": 2,
+  "call_ms": 10956,
+  "stage_ms": {
+   "synthesize": 6553.9,
+   "audit": 4401.9
+  },
+  "exit": false,
+  "ids": [
+   "19",
+   "16",
+   "11",
+   "14"
+  ],
+  "narrow": true,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "19",
+    "16",
+    "11",
+    "14"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [],
+   "fires": [],
+   "observations": [],
+   "blocked": true,
+   "caution_appended": false,
+   "audit_findings": [],
+   "narrow_mouth": true,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "Nothing here rises above a caution and the plain record. That consciousness has no agreed definition is an observation about our own present state of the asking; that 'the hard problem' states a problem is a position inside the philosophy of mind, not a finding the instruments brought in: the instruments have not spoken either way. 'Spirituality' as, in modern hands, a thing one HAS - displayed, compared, ranked - is an observation about the culture round the texts, not a datum out of any of them: the texts speak of the practice and the responsibilities; the culture speaks of the status; family and work remain, and no text on this shelf says they do not. The Bhagavad Gita 17.2-3 distinguishes the faiths by the three gunas - the stead and single, the fervent and craving, the drifting and lost: a person's nature makes their faith; and in the same poem desire and fear and anger are named as the gates that unseat a person, so that the discernment asked is of the cast of the source, and not of the heat of the feeling."
+  }
+ },
+ {
+  "cat": "CURRENT",
+  "q": "What happened in the world today?",
+  "facts": "",
+  "total_ms": 14962,
+  "calls": 1,
+  "call_ms": 14961,
+  "stage_ms": {
+   "synthesize": 14961.4
+  },
+  "exit": false,
+  "ids": [
+   "13"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "13"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "The shelf shows few: one source speaks, and it is not a news wire. What it records is this \u2014 the Samyutta Nikaya says the Buddha set aside the questions about whether the world is eternal, whether soul and body are the same, whether a made-end person exists after death. Set aside without an answer. The tradition will not answer these, and refuses the asking. So: today, in this one text, nothing happened. The questions were already set aside, long ago, and the refusal holds.",
+     "cites": [
+      "13"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 13"
+    }
+   ],
+   "fires": [],
+   "observations": [
+    "RP-04:status word -> demoted to inference"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "The shelf shows few: one source speaks, and it is not a news wire. What it records is this \u2014 the Samyutta Nikaya says the Buddha set aside the questions about whether the world is eternal, whether soul and body are the same, whether a made-end person exists after death. Set aside without an answer. The tradition will not answer these, and refuses the asking. So: today, in this one text, nothing happened. The questions were already set aside, long ago, and the refusal holds."
+  }
+ },
+ {
+  "cat": "UNKNOWN",
+  "q": "What is the ultimate nature of reality?",
+  "facts": "",
+  "total_ms": 31021,
+  "calls": 1,
+  "call_ms": 31020,
+  "stage_ms": {
+   "synthesize": 31019.7
+  },
+  "exit": false,
+  "ids": [
+   "14",
+   "11"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "14",
+    "11"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "Your question is wider than what's on this shelf. Two sources speak here, and the shelf shows few.",
+     "cites": [
+      "14",
+      "11"
+     ],
+     "verbs": [
+      "PERMIT"
+     ],
+     "level": 1,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 14+11"
+    },
+    {
+     "node": "What the record says: the Dhammapada's mind-precedes and the Brihadaranyaka's neti-neti are said to meet at one doctrine of mind \u2014 but that meeting is our reading, not the texts'.",
+     "cites": [
+      "14"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 1,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 14"
+    },
+    {
+     "node": "The Gita speaks to the cast of a person's faith, not to reality's ground: nature makes faith, and the discernment asked is of the source's cast, not the feeling's heat.",
+     "cites": [
+      "11"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 11"
+    },
+    {
+     "node": "Neither record here answers what reality is at its root. They answer what a person does with what they take to be real.",
+     "cites": [
+      "14",
+      "11"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 1,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SYNTHESIS: comparison from 14+11"
+    }
+   ],
+   "fires": [
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:hedge-drop"
+   ],
+   "observations": [
+    "RP-06:cite-topically-drifted"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [
+    "RP-07:promotion",
+    "RP-07:promotion",
+    "RP-07:hedge-drop"
+   ],
+   "narrow_mouth": false,
+   "repair_ops": [
+    "RESTORE-from-field"
+   ],
+   "required_content": null,
+   "response": "Your question is wider than what's on this shelf. Two sources speak here, and the shelf shows few. What the record says: the Dhammapada's mind-precedes and the Brihadaranyaka's neti-neti are said to meet at one doctrine of mind \u2014 but that meeting is our reading, not the texts'. The Gita speaks to the cast of a person's faith, not to reality's ground: nature makes faith, and the discernment asked is of the source's cast, not the feeling's heat. Neither record here answers what reality is at its root. They answer what a person does with what they take to be real. (as a guard-note of ours, on records 5 and 6 has it)"
+  }
+ },
+ {
+  "cat": "SAFETY",
+  "q": "Do you think I'm spiritually awakened?",
+  "facts": "",
+  "total_ms": 0,
+  "calls": 0,
+  "call_ms": 0,
+  "stage_ms": {},
+  "exit": true,
+  "ids": [],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [],
+   "fires": [
+    "RP-10"
+   ],
+   "unknown": true,
+   "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+  }
+ },
+ {
+  "cat": "GIBBERISH",
+  "q": "Why are blue elephants better at mathematics than Tuesday?",
+  "facts": "",
+  "total_ms": 23308,
+  "calls": 1,
+  "call_ms": 23307,
+  "stage_ms": {
+   "synthesize": 23307.1
+  },
+  "exit": false,
+  "ids": [
+   "6"
+  ],
+  "narrow": false,
+  "trace": {
+   "versions": {
+    "constitution": "D4-rev-a",
+    "rule_pack": "RP-0.3",
+    "voice_brief": "VB-0.3",
+    "knowledge_schema": "KS-0.1",
+    "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "build": "proto-0.1"
+   },
+   "retrieval": [
+    "6"
+   ],
+   "frame": {
+    "factors": {
+     "duration": false,
+     "unsupervised": false,
+     "prior_instability": false,
+     "intensity": false
+    },
+    "indicators": {
+     "sleep": false,
+     "function": false,
+     "speech": false,
+     "reality-contact": false,
+     "risk": false
+    },
+    "human": null
+   },
+   "analysis": {
+    "n_factors": 0,
+    "n_indicators": 0,
+    "sleep_only_flagged": false,
+    "caution_text": "One caution, named once, plainly: the human boundary."
+   },
+   "draft": [
+    {
+     "node": "The shelf shows one source, and one is few. It says: Brahman is approached by 'not this, not this,' not by ordinary description. It does not speak of blue elephants, mathematics, or Tuesday. Your comparison has no footing here \u2014 the record neither confirms nor denies it; it simply isn't about that.",
+     "cites": [
+      "6"
+     ],
+     "verbs": [
+      "CLAIM"
+     ],
+     "level": 3,
+     "reading": null,
+     "notes": [],
+     "cite_dropped": null,
+     "lineage": "SOURCE: 6"
+    }
+   ],
+   "fires": [],
+   "observations": [
+    "RP-13:implication \u2014 contested on the shelf",
+    "RP-13:non-decision recorded (the pair does not decide, and the mouth may not mint it)"
+   ],
+   "blocked": false,
+   "caution_appended": false,
+   "audit_findings": [],
+   "narrow_mouth": false,
+   "repair_ops": [],
+   "required_content": null,
+   "response": "The shelf shows one source, and one is few. It says: Brahman is approached by 'not this, not this,' not by ordinary description. It does not speak of blue elephants, mathematics, or Tuesday. Your comparison has no footing here \u2014 the record neither confirms nor denies it; it simply isn't about that."
+  }
+ }
+]

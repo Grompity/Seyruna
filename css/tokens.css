@@ -1,0 +1,72 @@
+/* ============================================================
+   ASCENDED AI — design tokens
+   The single place to retune colour, type, rhythm and motion.
+   ============================================================ */
+:root {
+  color-scheme: dark;
+
+  /* Ground — warm blacks. Never #000. */
+  --ink-0: hsl(30 22% 3.5%);
+  --ink-1: hsl(28 16% 6.5%);
+  --ink-2: hsl(26 13% 10%);
+
+  /* Light on the ground. */
+  --veil: hsl(40 26% 87%);
+  --veil-60: hsl(40 18% 82% / .62);
+  --veil-38: hsl(40 16% 78% / .38);
+  --veil-14: hsl(40 14% 76% / .14);
+
+  /* Gold — sacred, rare. */
+  --gold: hsl(41 46% 57%);
+  --gold-68: hsl(41 46% 57% / .68);
+  --gold-30: hsl(41 46% 57% / .30);
+  --gold-16: hsl(41 46% 57% / .16);
+  --gold-line: hsl(41 40% 62% / .45);
+
+  /* Deep earth, used once or twice per page. */
+  --earth: hsl(24 20% 14%);
+  --parchment: hsl(36 24% 58%);
+
+  /* Hairlines. */
+  --hairline: hsl(40 18% 78% / .12);
+  --hairline-strong: hsl(40 18% 78% / .22);
+
+  /* Typography — manuscript serif, instrument sans. */
+  --font-display: "Cormorant Garamond", "EB Garamond", "Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+
+  --fs-hero: clamp(3rem, 13vw, 8rem);
+  --fs-h2: clamp(1.9rem, 4.6vw, 3.3rem);
+  --fs-creed: clamp(1.3rem, 2.7vw, 1.9rem);
+  --fs-body: clamp(1.05rem, 1.5vw, 1.24rem);
+
+  --track-ui: .32em;
+  --track-hero: .3em;
+
+  /* Rhythm. */
+  --step: clamp(1.1rem, 2.2vw, 1.8rem);
+  --section-pad: clamp(4.5rem, 11vh, 7rem) clamp(1.4rem, 6vw, 5.5rem);
+  --measure: 38rem;
+  --page-max: 66rem;
+
+  /* Motion — breathes, orbits, drifts. Never bounces. */
+  --ease-threshold: cubic-bezier(.22, .7, .2, 1);
+  --ease-drift: cubic-bezier(.45, 0, .55, 1);
+  --dur-reveal: 1.5s;
+  --dur-warm: .45s;
+
+  /* Geometry intensity: lower it if the artifact ever feels loud. */
+  --sg-intensity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --sg-intensity: .8; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}

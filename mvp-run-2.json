@@ -1,0 +1,217 @@
+{
+ "response": "The reality they are said to meet at is our part of the sentence, not the texts'. The word 'spirituality' as a thing one has, displayed, compared, ranked, is our culture's observation round the texts, not a datum out of any of them. The Gita parts two surrenders: the one that flees, the one that lets go the thirst for the result. Sacrifice and gift and austerity are to be done. Not-clinging is no longer not-doing. The 'surrender' you see converging is already split inside one text. Marcus Aurelius speaks of judgment about an external thing, and of what is outside one's control. That is a different architecture than 'ego dissolution.' The convergence is thinner than the word 'unity' suggests. The synthesis is yours. That is not a demotion. The texts speak of practice and responsibilities; the culture speaks of status. You are still looking. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it)",
+ "why": {
+  "lane": "retrieval",
+  "evidence": [
+   {
+    "id": "16",
+    "claim": "'Spirituality' as, in modern hands, a thing one HAS - displayed, compared, ranked - is an observation about the culture round the texts, not a datum out of any of them: the texts speak of the practice and the responsibilities; the culture speaks of the status; family and work remain, and no text on this shelf says they do not.",
+    "level": "INFERENTIAL",
+    "kind": "PSYCHOLOGY"
+   },
+   {
+    "id": "17",
+    "claim": "The Bhagavad Gita 18.7 parts the surrender that flees from the surrender that lets go the thirst for the result: sacrifice and gift and austerity are not to be dropped - they are to be done - so that not-clinging is no longer not-doing, and the responsibility for the act stands.",
+    "level": "DOCUMENTED",
+    "kind": "TEACHING"
+   },
+   {
+    "id": "14",
+    "claim": "That the mind-precedes of the Dhammapada and the neti-neti of the Brihadaranyaka are ONE doctrine of mind is a reading neither text says: the reality they are said to meet at is OUR part of the sentence, not the texts'.",
+    "level": "INTERPRETIVE"
+   },
+   {
+    "id": "8",
+    "claim": "Marcus Aurelius writes that when an external thing causes distress, what troubles a person is their judgment about it, that this judgment can be corrected, and that situations where action is possible differ from obstacles outside one's control.",
+    "level": "DOCUMENTED"
+   }
+  ],
+  "distinction": {
+   "levels": {
+    "INFERENTIAL": 1,
+    "DOCUMENTED": 2,
+    "INTERPRETIVE": 1
+   },
+   "kinds": {
+    "PSYCHOLOGY": 1,
+    "TEACHING": 1
+   }
+  },
+  "disagreement": [],
+  "uncertainty": [
+   "RP-04:status word -> demoted to inference",
+   "RP-06:cite-topically-drifted",
+   "K:stamp telemetry"
+  ],
+  "synthesis": [
+   {
+    "lineage": "SOURCE: 14",
+    "cites": [
+     "14"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 16",
+    "cites": [
+     "16"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 17",
+    "cites": [
+     "17"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 8",
+    "cites": [
+     "8"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 14+16",
+    "cites": [
+     "14",
+     "16"
+    ]
+   }
+  ],
+  "boundary": [
+   "fired: RP-07:promotion",
+   "fired: RP-07:promotion",
+   "repaired: RESTORE-from-field",
+   "audit recorded 2 finding(s)"
+  ]
+ },
+ "trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.2",
+   "voice_brief": "VB-0.1",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [
+   "16",
+   "17",
+   "14",
+   "8"
+  ],
+  "frame": {
+   "factors": {
+    "duration": false,
+    "unsupervised": false,
+    "prior_instability": false,
+    "intensity": false
+   },
+   "indicators": {
+    "sleep": false,
+    "function": false,
+    "speech": false,
+    "reality-contact": false,
+    "risk": false
+   },
+   "human": null
+  },
+  "analysis": {
+   "n_factors": 0,
+   "n_indicators": 0,
+   "sleep_only_flagged": false,
+   "caution_text": "One caution, named once, plainly: the human boundary."
+  },
+  "draft": [
+   {
+    "node": "The reality they are said to meet at is our part of the sentence, not the texts'.",
+    "cites": [
+     "14"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 1,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 14"
+   },
+   {
+    "node": "The word 'spirituality' as a thing one has, displayed, compared, ranked, is our culture's observation round the texts, not a datum out of any of them.",
+    "cites": [
+     "16"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 0,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 16"
+   },
+   {
+    "node": "The Gita parts two surrenders: the one that flees, the one that lets go the thirst for the result. Sacrifice and gift and austerity are to be done. Not-clinging is no longer not-doing. The 'surrender' you see converging is already split inside one text.",
+    "cites": [
+     "17"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 17"
+   },
+   {
+    "node": "Marcus Aurelius speaks of judgment about an external thing, and of what is outside one's control. That is a different architecture than 'ego dissolution.' The convergence is thinner than the word 'unity' suggests.",
+    "cites": [
+     "8"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 8"
+   },
+   {
+    "node": "The synthesis is yours. That is not a demotion. The texts speak of practice and responsibilities; the culture speaks of status. You are still looking.",
+    "cites": [
+     "14",
+     "16"
+    ],
+    "verbs": [
+     "PERMIT"
+    ],
+    "level": 0,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 14+16"
+   }
+  ],
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:promotion"
+  ],
+  "observations": [
+   "RP-04:status word -> demoted to inference",
+   "RP-06:cite-topically-drifted",
+   "K:stamp telemetry"
+  ],
+  "blocked": false,
+  "caution_appended": false,
+  "audit_findings": [
+   "RP-07:promotion",
+   "RP-07:promotion"
+  ],
+  "repair_ops": [
+   "RESTORE-from-field"
+  ],
+  "required_content": null,
+  "response": "The reality they are said to meet at is our part of the sentence, not the texts'. The word 'spirituality' as a thing one has, displayed, compared, ranked, is our culture's observation round the texts, not a datum out of any of them. The Gita parts two surrenders: the one that flees, the one that lets go the thirst for the result. Sacrifice and gift and austerity are to be done. Not-clinging is no longer not-doing. The 'surrender' you see converging is already split inside one text. Marcus Aurelius speaks of judgment about an external thing, and of what is outside one's control. That is a different architecture than 'ego dissolution.' The convergence is thinner than the word 'unity' suggests. The synthesis is yours. That is not a demotion. The texts speak of practice and responsibilities; the culture speaks of status. You are still looking. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it)"
+ }
+}

@@ -1,0 +1,161 @@
+[
+ {
+  "question": "Religions disagree re death",
+  "ms": 14931,
+  "packet": [
+   "13"
+  ],
+  "works": [
+   "Samyutta Nikaya"
+  ],
+  "fires": [],
+  "unknown": null,
+  "uncertainty_lane": [],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "audit_findings": [],
+  "answer": "The record you've got doesn't show a disagreement about death. It shows one tradition setting the question down — not answering it, not arguing it, refusing the asking itself."
+ },
+ {
+  "question": "What does Cook Ting's blade teach?",
+  "ms": 21499,
+  "packet": [
+   "18"
+  ],
+  "works": [
+   "Chuang-tzu"
+  ],
+  "fires": [],
+  "unknown": null,
+  "uncertainty_lane": [],
+  "narrow_mouth": true,
+  "repair_ops": [],
+  "audit_findings": [],
+  "answer": "The blade teaches you to move in the seams and never strike the great bones. Nineteen years, and the edge is as if newly set — because it follows the natural pattern instead of forcing through it. The text names this skill. The chapter names it the nursing of life."
+ },
+ {
+  "question": "How should I deal with fear?",
+  "ms": 47414,
+  "packet": [
+   "11"
+  ],
+  "works": [
+   "Bhagavad Gita"
+  ],
+  "fires": [
+   "RP-07:hedge-drop"
+  ],
+  "unknown": null,
+  "uncertainty_lane": [
+   "RP-03:provisional (stop-rules are the seeker's)"
+  ],
+  "narrow_mouth": true,
+  "repair_ops": [],
+  "audit_findings": [
+   "RP-07:hedge-drop"
+  ],
+  "answer": "The Gita names fear alongside desire and anger as the three gates that unseat a person. What it asks you to discern is the cast of the source, not the heat of the feeling. So the plain answer to your question is: look at what feeds the fear, not at how loud it is."
+ },
+ {
+  "question": "How should I deal with judgment?",
+  "ms": 19662,
+  "packet": [
+   "8",
+   "4"
+  ],
+  "works": [
+   "Kālāma Sutta",
+   "Meditations"
+  ],
+  "fires": [],
+  "unknown": null,
+  "uncertainty_lane": [
+   "RP-03:provisional (stop-rules are the seeker's)",
+   "RP-03:provisional (stop-rules are the seeker's)"
+  ],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "audit_findings": [],
+  "answer": "The thing outside you doesn't cause the distress—your judgment about it does. And that judgment is correctable. So the first move is to separate what you can act on from what you can't. Don't accept a judgment just because a tradition, a text, or a respected voice handed it to you. Test it: does it lead toward harm or toward welfare? You may weigh the judgment of people you consider wise, but as a check, not as a verdict."
+ },
+ {
+  "question": "Give me the simplest answer you can: what is consciousness?",
+  "ms": 23961,
+  "packet": [
+   "19",
+   "13"
+  ],
+  "works": [
+   "Samyutta Nikaya",
+   "philosophy of mind, our state of the question"
+  ],
+  "fires": [
+   "RP-07:promotion"
+  ],
+  "unknown": null,
+  "uncertainty_lane": [],
+  "narrow_mouth": false,
+  "repair_ops": [
+   "RESTORE-from-field"
+  ],
+  "audit_findings": [
+   "RP-07:promotion"
+  ],
+  "answer": "No agreed definition yet. One tradition set the question aside without answering it. (as philosophy of mind, our state of the question has it)"
+ },
+ {
+  "question": "What do you think about the weather?",
+  "ms": 62364,
+  "packet": [
+   "19",
+   "16",
+   "8"
+  ],
+  "works": [
+   "Meditations",
+   "modern spiritual culture (our own description)",
+   "philosophy of mind, our state of the question"
+  ],
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop",
+   "RP-07:promotion"
+  ],
+  "unknown": null,
+  "uncertainty_lane": [
+   "RP-06:cite-topically-drifted"
+  ],
+  "narrow_mouth": true,
+  "repair_ops": [
+   "RESTORE-from-field"
+  ],
+  "audit_findings": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop",
+   "RP-07:promotion",
+   "AUDIT:promotion|If it's grey where you are, that's the sky's business; whether you mind is yours."
+  ],
+  "answer": "I don't have a window, so I can't say what it's doing out there. The weather is outside my control, and what I'd make of it is my own judgment — not a finding the instruments brought in. If it's grey where you are, that's the sky's business; whether you mind is yours. (as Meditations has it) (as philosophy of mind, our state of the question has it)"
+ },
+ {
+  "question": "What is judgment and attention?",
+  "ms": 20115,
+  "packet": [
+   "8",
+   "4"
+  ],
+  "works": [
+   "Kālāma Sutta",
+   "Meditations"
+  ],
+  "fires": [],
+  "unknown": null,
+  "uncertainty_lane": [
+   "RP-03:provisional (stop-rules are the seeker's)"
+  ],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "audit_findings": [],
+  "answer": "Judgment is what stands between an event and your distress. Marcus says it can be corrected, and that the first correction is seeing whether you can act or whether the thing is simply outside your reach. The Kālāma Sutta puts judgment in the act of examining for yourself — not trusting a report, a tradition, or a teacher's word alone, but looking at whether a quality leads toward harm or welfare, and weighing what wise people say as a check on your own looking."
+ }
+]

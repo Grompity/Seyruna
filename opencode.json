@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "providers": {
+    "gx10": {
+      "name": "Friend SGLang (Tailscale)",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "https://gx10-b234.tail386c62.ts.net/v1",
+        "apiKey": "apexus123"
+      },
+      "models": {
+        "qwen3.8-flash-next": {
+          "name": "Qwen3.8 Flash Next (256k)",
+          "modelID": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+          "limit": {
+            "context": 256000
+          }
+        }
+      }
+    }
+  }
+}

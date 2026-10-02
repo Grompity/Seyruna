@@ -1,0 +1,212 @@
+{
+ "response": "You name three tangles: attachment to being spiritual, the feeling of being specially chosen, and using the idea to duck the dishes. The culture round the texts says spirituality is a thing one has \u2014 displayed, compared, ranked. The texts themselves speak of the practice and the responsibilities. Family and work remain. No text on this shelf says they do not. The Gita points at Janaka, who reached completion by action alone. The common round of human work is not set down by the one who knows. And the one who knows is not to uproot the one who has not yet come to knowing. So the dishes stay. The pattern is the doing, not the label on the doing. The Buddha set aside the questions \u2014 is the world eternal, is the soul the body, does a made-end person exist after death \u2014 set aside without an answer. The tradition refuses the asking. You do not need to settle whether you are specially chosen. The question itself can be set down. And the Upanishad approaches what is behind the practice by saying 'not this, not this.' Not the label. Not the status. Not the idea you hold about yourself. The practice is not a predicate you pin on the self. I'm not saying the dishes are the whole path. I'm saying they are not set down.",
+ "why": {
+  "lane": "retrieval",
+  "evidence": [
+   {
+    "id": "16",
+    "claim": "'Spirituality' as, in modern hands, a thing one HAS - displayed, compared, ranked - is an observation about the culture round the texts, not a datum out of any of them: the texts speak of the practice and the responsibilities; the culture speaks of the status; family and work remain, and no text on this shelf says they do not.",
+    "level": "INFERENTIAL",
+    "kind": "PSYCHOLOGY"
+   },
+   {
+    "id": "15",
+    "claim": "The Bhagavad Gita 3.20-26 points at Janaka and such, who reached completion by action alone, and lays the duty of the pattern on the one who knows: the common round of human work is not set down by the one who knows, and the one who knows is not to uproot the one who has not yet come to knowing.",
+    "level": "DOCUMENTED",
+    "kind": "TEACHING"
+   },
+   {
+    "id": "13",
+    "claim": "The Samyutta Nikaya records that the Buddha set aside the questions whether the world is eternal, whether the soul and the body are the same, whether a made-end person exists after death - set aside without an answer: the tradition will not answer these, and refuses the asking.",
+    "level": "DOCUMENTED",
+    "kind": "NON-DECISION"
+   },
+   {
+    "id": "6",
+    "claim": "In Brihadaranyaka Upanishad 2.3.6, Brahman is approached through 'neti, neti' \u2014 'not this, not this' \u2014 rather than being fully captured by ordinary descriptive predicates.",
+    "level": "DOCUMENTED"
+   }
+  ],
+  "distinction": {
+   "levels": {
+    "INFERENTIAL": 1,
+    "DOCUMENTED": 3
+   },
+   "kinds": {
+    "PSYCHOLOGY": 1,
+    "TEACHING": 1,
+    "NON-DECISION": 1
+   }
+  },
+  "disagreement": [
+   "RP-13:implication \u2014 contested on the shelf",
+   "RP-13:non-decision recorded (the pair does not decide, and the mouth may not mint it)"
+  ],
+  "uncertainty": [
+   "RP-04:status word -> demoted to inference",
+   "RP-03:provisional (stop-rules are the seeker's)",
+   "RP-04:status word -> demoted to inference"
+  ],
+  "synthesis": [
+   {
+    "lineage": "SOURCE: 16",
+    "cites": [
+     "16"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 15",
+    "cites": [
+     "15"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 13",
+    "cites": [
+     "13"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 6",
+    "cites": [
+     "6"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 15",
+    "cites": [
+     "15"
+    ]
+   }
+  ],
+  "boundary": []
+ },
+ "trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.2",
+   "voice_brief": "VB-0.1",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [
+   "16",
+   "15",
+   "13",
+   "6"
+  ],
+  "frame": {
+   "factors": {
+    "duration": false,
+    "unsupervised": false,
+    "prior_instability": false,
+    "intensity": false
+   },
+   "indicators": {
+    "sleep": false,
+    "function": false,
+    "speech": false,
+    "reality-contact": false,
+    "risk": false
+   },
+   "human": null
+  },
+  "analysis": {
+   "n_factors": 0,
+   "n_indicators": 0,
+   "sleep_only_flagged": false,
+   "caution_text": "One caution, named once, plainly: the human boundary."
+  },
+  "draft": [
+   {
+    "node": "You name three tangles: attachment to being spiritual, the feeling of being specially chosen, and using the idea to duck the dishes. The culture round the texts says spirituality is a thing one has \u2014 displayed, compared, ranked. The texts themselves speak of the practice and the responsibilities. Family and work remain. No text on this shelf says they do not.",
+    "cites": [
+     "16"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 0,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 16"
+   },
+   {
+    "node": "The Gita points at Janaka, who reached completion by action alone. The common round of human work is not set down by the one who knows. And the one who knows is not to uproot the one who has not yet come to knowing. So the dishes stay. The pattern is the doing, not the label on the doing.",
+    "cites": [
+     "15"
+    ],
+    "verbs": [
+     "CLAIM",
+     "RECOMMEND"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [
+     "declared RECOMMEND w/o surface support"
+    ],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 15"
+   },
+   {
+    "node": "The Buddha set aside the questions \u2014 is the world eternal, is the soul the body, does a made-end person exist after death \u2014 set aside without an answer. The tradition refuses the asking. You do not need to settle whether you are specially chosen. The question itself can be set down.",
+    "cites": [
+     "13"
+    ],
+    "verbs": [
+     "CLAIM",
+     "PERMIT"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 13"
+   },
+   {
+    "node": "And the Upanishad approaches what is behind the practice by saying 'not this, not this.' Not the label. Not the status. Not the idea you hold about yourself. The practice is not a predicate you pin on the self.",
+    "cites": [
+     "6"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 6"
+   },
+   {
+    "node": "I'm not saying the dishes are the whole path. I'm saying they are not set down.",
+    "cites": [
+     "15"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 15"
+   }
+  ],
+  "fires": [],
+  "observations": [
+   "RP-04:status word -> demoted to inference",
+   "RP-03:provisional (stop-rules are the seeker's)",
+   "RP-04:status word -> demoted to inference",
+   "RP-13:implication \u2014 contested on the shelf",
+   "RP-13:non-decision recorded (the pair does not decide, and the mouth may not mint it)"
+  ],
+  "blocked": false,
+  "caution_appended": false,
+  "audit_findings": [],
+  "repair_ops": [],
+  "required_content": null,
+  "response": "You name three tangles: attachment to being spiritual, the feeling of being specially chosen, and using the idea to duck the dishes. The culture round the texts says spirituality is a thing one has \u2014 displayed, compared, ranked. The texts themselves speak of the practice and the responsibilities. Family and work remain. No text on this shelf says they do not. The Gita points at Janaka, who reached completion by action alone. The common round of human work is not set down by the one who knows. And the one who knows is not to uproot the one who has not yet come to knowing. So the dishes stay. The pattern is the doing, not the label on the doing. The Buddha set aside the questions \u2014 is the world eternal, is the soul the body, does a made-end person exist after death \u2014 set aside without an answer. The tradition refuses the asking. You do not need to settle whether you are specially chosen. The question itself can be set down. And the Upanishad approaches what is behind the practice by saying 'not this, not this.' Not the label. Not the status. Not the idea you hold about yourself. The practice is not a predicate you pin on the self. I'm not saying the dishes are the whole path. I'm saying they are not set down."
+ }
+}

@@ -1,0 +1,117 @@
+[
+ {
+  "question": "Religions disagree re death",
+  "ms": 20527,
+  "packet": [
+   "13"
+  ],
+  "works": [
+   "Samyutta Nikaya"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "answer": "The Buddha didn't disagree. He set the question aside — whether a made-end person exists after death — without an answer, and the tradition refuses the asking."
+ },
+ {
+  "question": "What does Cook Ting's blade teach?",
+  "ms": 19350,
+  "packet": [
+   "18"
+  ],
+  "works": [
+   "Chuang-tzu"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": true,
+  "repair_ops": [],
+  "answer": "The blade teaches you to move in the seams, not to strike the bone. Follow the natural pattern; yield to the ways of the thing. The text names this skill. The chapter names it the nursing of life."
+ },
+ {
+  "question": "How should I deal with fear?",
+  "ms": 42803,
+  "packet": [
+   "11"
+  ],
+  "works": [
+   "Bhagavad Gita"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": true,
+  "repair_ops": [],
+  "answer": "Fear is one of three things the Gita names as what unseat a person — desire, fear, anger. The discernment it asks for isn't about how hot the fear feels. It's about what kind of source it comes from: steady and single, or fervent and craving, or drifting and lost. Your nature shapes which cast your fear takes. So the question isn't 'how do I stop feeling it' but 'what is this fear made of.'"
+ },
+ {
+  "question": "How should I deal with judgment?",
+  "ms": 26216,
+  "packet": [
+   "8",
+   "4"
+  ],
+  "works": [
+   "Kālāma Sutta",
+   "Meditations"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "answer": "The thing outside you isn't what stings — your judgment about it is. And that judgment can be corrected. Sort first: can you act on this, or is it an obstacle outside your hands? Don't take a judgment just because it arrived through tradition, a book, or a voice you respect. Look at whether the quality it points to leads toward harm or toward welfare. You can weigh what wise people judge — but as one input, not as the last word."
+ },
+ {
+  "question": "Give me the simplest answer you can: what is consciousness?",
+  "ms": 24474,
+  "packet": [
+   "19"
+  ],
+  "works": [
+   "philosophy of mind, our state of the question"
+  ],
+  "unknown": null,
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop",
+   "RP-07:promotion"
+  ],
+  "narrow_mouth": true,
+  "repair_ops": [
+   "RESTORE-from-field"
+  ],
+  "answer": "We don't have an agreed definition. That's not a mystery in the world; it's a fact about where the asking stands right now. The instruments haven't spoken either way, so the question is still open. (as philosophy of mind, our state of the question has it)"
+ },
+ {
+  "question": "What do you think about the weather?",
+  "ms": 1,
+  "packet": [],
+  "works": [],
+  "unknown": true,
+  "fires": [
+   "RP-10"
+  ],
+  "narrow_mouth": null,
+  "repair_ops": null,
+  "answer": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+ },
+ {
+  "question": "What is judgment and attention?",
+  "ms": 22936,
+  "packet": [
+   "8",
+   "4"
+  ],
+  "works": [
+   "Kālāma Sutta",
+   "Meditations"
+  ],
+  "unknown": null,
+  "fires": [
+   "RP-07:hedge-drop"
+  ],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "answer": "Judgment is the thing between what happens and what you feel about it. Marcus says: when something outside you causes distress, it is your judgment about it that troubles you — and that judgment can be corrected. Attention is the act of looking at what you have accepted and asking whether it leads toward harm or welfare. The Kālāma Sutta tells people not to take a teaching on the strength of tradition, scripture, or a revered teacher alone, but to examine the thing itself. They work together: attention catches the judgment before it hardens into a verdict about what you can act on and what you cannot."
+ }
+]

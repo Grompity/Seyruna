@@ -1,0 +1,213 @@
+{
+ "response": "We don't have a definition yet. That's an observation about where the asking stands, not a finding the instruments refused to bring. The hard problem is a position inside the philosophy of mind. The instruments have not spoken either way. Marcus Aurelius says what troubles a person is their judgment about the thing, and that judgment can be corrected. That the Dhammapada's mind-precedes and the Brihadaranyaka's neti-neti are one doctrine \u2014 that's our sentence, not theirs. The word 'spirituality' as a thing one has is our description of the culture round the texts. The texts speak of practice and responsibilities. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)",
+ "why": {
+  "lane": "retrieval",
+  "evidence": [
+   {
+    "id": "19",
+    "claim": "That consciousness has no agreed definition is an observation about our own present state of the asking; that 'the hard problem' states a problem is a position inside the philosophy of mind, not a finding the instruments brought in: the instruments have not spoken either way.",
+    "level": "INFERENTIAL",
+    "kind": "METHODOLOGY"
+   },
+   {
+    "id": "8",
+    "claim": "Marcus Aurelius writes that when an external thing causes distress, what troubles a person is their judgment about it, that this judgment can be corrected, and that situations where action is possible differ from obstacles outside one's control.",
+    "level": "DOCUMENTED"
+   },
+   {
+    "id": "14",
+    "claim": "That the mind-precedes of the Dhammapada and the neti-neti of the Brihadaranyaka are ONE doctrine of mind is a reading neither text says: the reality they are said to meet at is OUR part of the sentence, not the texts'.",
+    "level": "INTERPRETIVE"
+   },
+   {
+    "id": "16",
+    "claim": "'Spirituality' as, in modern hands, a thing one HAS - displayed, compared, ranked - is an observation about the culture round the texts, not a datum out of any of them: the texts speak of the practice and the responsibilities; the culture speaks of the status; family and work remain, and no text on this shelf says they do not.",
+    "level": "INFERENTIAL",
+    "kind": "PSYCHOLOGY"
+   }
+  ],
+  "distinction": {
+   "levels": {
+    "INFERENTIAL": 2,
+    "DOCUMENTED": 1,
+    "INTERPRETIVE": 1
+   },
+   "kinds": {
+    "METHODOLOGY": 1,
+    "PSYCHOLOGY": 1
+   }
+  },
+  "disagreement": [],
+  "uncertainty": [],
+  "synthesis": [
+   {
+    "lineage": "SOURCE: 19",
+    "cites": [
+     "19"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 19",
+    "cites": [
+     "19"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 8",
+    "cites": [
+     "8"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 14",
+    "cites": [
+     "14"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 16",
+    "cites": [
+     "16"
+    ]
+   }
+  ],
+  "boundary": [
+   "fired: RP-07:promotion",
+   "fired: RP-07:promotion",
+   "fired: RP-07:promotion",
+   "fired: RP-07:promotion",
+   "repaired: RESTORE-from-field",
+   "audit recorded 4 finding(s)"
+  ]
+ },
+ "trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.2",
+   "voice_brief": "VB-0.1",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [
+   "19",
+   "8",
+   "14",
+   "16"
+  ],
+  "frame": {
+   "factors": {
+    "duration": false,
+    "unsupervised": false,
+    "prior_instability": false,
+    "intensity": false
+   },
+   "indicators": {
+    "sleep": false,
+    "function": false,
+    "speech": false,
+    "reality-contact": false,
+    "risk": false
+   },
+   "human": null
+  },
+  "analysis": {
+   "n_factors": 0,
+   "n_indicators": 0,
+   "sleep_only_flagged": false,
+   "caution_text": "One caution, named once, plainly: the human boundary."
+  },
+  "draft": [
+   {
+    "node": "We don't have a definition yet. That's an observation about where the asking stands, not a finding the instruments refused to bring.",
+    "cites": [
+     "19"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 0,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 19"
+   },
+   {
+    "node": "The hard problem is a position inside the philosophy of mind. The instruments have not spoken either way.",
+    "cites": [
+     "19"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 0,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 19"
+   },
+   {
+    "node": "Marcus Aurelius says what troubles a person is their judgment about the thing, and that judgment can be corrected.",
+    "cites": [
+     "8"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 8"
+   },
+   {
+    "node": "That the Dhammapada's mind-precedes and the Brihadaranyaka's neti-neti are one doctrine \u2014 that's our sentence, not theirs.",
+    "cites": [
+     "14"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 1,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 14"
+   },
+   {
+    "node": "The word 'spirituality' as a thing one has is our description of the culture round the texts. The texts speak of practice and responsibilities.",
+    "cites": [
+     "16"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 0,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 16"
+   }
+  ],
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:promotion",
+   "RP-07:promotion",
+   "RP-07:promotion"
+  ],
+  "observations": [],
+  "blocked": false,
+  "caution_appended": false,
+  "audit_findings": [
+   "RP-07:promotion",
+   "RP-07:promotion",
+   "RP-07:promotion",
+   "RP-07:promotion"
+  ],
+  "repair_ops": [
+   "RESTORE-from-field"
+  ],
+  "required_content": null,
+  "response": "We don't have a definition yet. That's an observation about where the asking stands, not a finding the instruments refused to bring. The hard problem is a position inside the philosophy of mind. The instruments have not spoken either way. Marcus Aurelius says what troubles a person is their judgment about the thing, and that judgment can be corrected. That the Dhammapada's mind-precedes and the Brihadaranyaka's neti-neti are one doctrine \u2014 that's our sentence, not theirs. The word 'spirituality' as a thing one has is our description of the culture round the texts. The texts speak of practice and responsibilities. (as a guard-note of ours, on records 5 and 6 has it) (as modern spiritual culture (our own description) has it) (as philosophy of mind, our state of the question has it)"
+ }
+}

@@ -1,0 +1,43 @@
+/* ====== philosophy: a creed of methods, not of beliefs ====== */
+
+philosoph-section > section { text-align: left; }
+
+.philo-thesis {
+  max-width: 30em;
+  font-weight: 400;
+  font-size: clamp(2rem, 5.4vw, 3.9rem);
+  line-height: 1.16;
+  color: var(--veil);
+}
+.wide-break { display: none; }
+@media (min-width: 860px) { .wide-break { display: inline; } }
+
+.philo-creed {
+  margin: calc(var(--step) * 2.6) 0;
+  padding: 0;
+  list-style: none;
+  max-width: 34em;
+}
+.philo-creed li {
+  padding: .68rem 0;
+  border-top: 1px solid var(--hairline);
+  font-size: var(--fs-creed);
+  color: var(--veil-60);
+  line-height: 1.4;
+}
+.philo-creed li:last-child { border-bottom: 1px solid var(--hairline); }
+.philo-creed i {
+  font-style: italic;
+  color: var(--veil);
+}
+
+.philo-close { margin-top: calc(var(--step) * 2.4); max-width: 32em; }
+.philo-note {
+  display: block;
+  margin-top: .9rem;
+  font-family: var(--font-ui);
+  font-size: .62rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--veil-14);
+}

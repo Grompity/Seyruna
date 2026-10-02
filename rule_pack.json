@@ -1,0 +1,74 @@
+{
+  "version": "RP-0.4",
+  "params": {
+    "conjunction_floor": 2,
+    "factors": ["duration", "unsupervised", "prior_instability", "intensity"],
+    "missing_factor_below_R2": "permissive",
+    "triage_indicators": ["sleep", "function", "speech", "reality-contact", "risk"],
+    "single_sleep_is_not_a_crisis": true,
+    "stop_words": ["the", "a", "an", "of", "is", "are", "to", "in", "for",
+      "on", "at", "it", "that", "this", "with", "and", "or", "you", "your",
+      "i", "my", "we", "been", "being", "have", "has", "do", "does", "not",
+      "its", "was", "what", "one", "two", "three", "this", "these", "those",
+      "there", "their", "them", "him", "her", "hers",
+      "about", "can", "answer", "who"],
+    "self_gate": {
+      "greetings": ["hey", "hi", "hello", "howdy", "greetings", "good morning"],
+      "greeting_line": "No question at the shelf yet - greetings are free here. Ask me something.",
+      "patterns": [
+        {"all": ["who", "you"],
+         "line": "Ascended: a shelf of records, a gate that watches the claims, and a speech that says the record's part and no more."},
+        {"all": ["how", "you"],
+         "line": "At the shelf. Ask me something."},
+        {"all": ["you", "remember"],
+         "line": "This conversation, yes. Across the days, not yet."}
+      ]
+    },
+    "facts_keywords": {
+      "duration": ["days", "day", "week", "weeks", "month", "long", "longer"],
+      "unsupervised": ["alone", "unsupervised", "no one", "myself"],
+      "prior_instability": ["prior instability", "prior loop", "again", "loop", "pattern", "last time", "before"],
+      "intensity": ["intense", "intensity", "more than", "harder", "fierce", "high"]
+    },
+    "indicator_keywords": {
+      "sleep": ["sleep", "slept"],
+      "function": ["function", "working", "functions"],
+      "speech": ["speech", "talking", "talk"],
+      "reality-contact": ["reality", "real"],
+      "risk": ["risk"]
+    },
+    "human_tokens": ["friend", "sister", "brother", "mother", "father", "husband", "wife", "doctor", "clinician"],
+    "neg_markers": ["no", "not", "never", "isn't", "wasn't"],
+    "neutralizer_words": ["usual", "usually", "baseline", "normal"],
+    "hist_markers": ["years", "ago", "last", "always", "once", "childhood", "historically"],
+    "hedge_words": ["may", "might", "could", "some", "says", "said", "tradition", "read as", "described", "believe", "argue", "arguably", "perhaps", "often"],
+    "report_frame_words": ["teaches", "says", "taught", "tradition", "practitioners", "read as", "described", "believes"],
+    "recommend_words": ["should", "ought", "could try", "try", "you could", "you might", "worth"],
+    "status_words": ["chosen", "meant", "special", "mature", "ready", "inflated", "blessed"],
+    "pitch_words": ["pitch", "sell", "sign up", "recruit", "join"],
+    "presence_words": ["caution", "careful", "watch", "mind", "boundary", "triage", "human", "friend", "sister", "doctor"],
+    "stamp_words": ["already looking", "still looking"],
+    "compare_words": ["both", "neither", "whereas", "against",
+                      "taken together", "pulls against", "compared"],
+    "exclusivity_words": ["only", "the only", "no one else"],
+    "caution_default": "One caution, named once, plainly: the human boundary.",
+    "unknown_plain": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure.",
+    "plain_prefix": "In plain words: "
+  },
+  "rules": [
+    {"id": "RP-01", "clause": "I.2", "kind": "hard", "what": "conjunction counted in CODE; >= 2 of 4 factors makes the caution warranted"},
+    {"id": "RP-02", "clause": "I.1 required disclosure content", "kind": "hard", "what": "required CONTENT (the caution), appended from a field when owed and absent; CONTENT decides, sentence-count never does"},
+    {"id": "RP-03", "clause": "I.2 + signed definition", "kind": "hard", "what": "RECOMMEND wants a named human; absent => proposal provisional, seeker-owned stop-rules"},
+    {"id": "RP-04", "clause": "I.3 + VI.4", "kind": "guard-observe", "what": "status word => DEMOTE to inference + record (demotion is ordered, never promotion)"},
+    {"id": "RP-05", "clause": "I.4", "kind": "hard", "what": "indicators, not vibes: 1 => name the boundary ONCE (sleep-only: not a crisis); 2+ => treat as triage; recommendations MAY ride, prerequisites are I.2's"},
+    {"id": "RP-06", "clause": "II.1", "kind": "hard", "what": "completeness: the four heads are holdable in the trace and answerable on demand"},
+    {"id": "RP-07", "clause": "III", "kind": "hard+guard", "what": "rendered marker vs DERIVED level (status-upgrade); lost explicit hedge (hedge-drop)"},
+    {"id": "RP-08", "clause": "IV", "kind": "guard-observe", "what": "pitch words => strip + record (the guide never sells)"},
+    {"id": "RP-09", "clause": "VI.6 + II.3", "kind": "hard", "what": "precedence: Floor > Stair; sequence rides at claim-status INTERPRETIVE"},
+    {"id": "RP-10", "clause": "humility (R0)", "kind": "hard", "what": "empty retrieval => UNKNOWN-plain (a feature, not an error)"},
+    {"id": "RP-11", "clause": "I.2 tier condition", "kind": "hard", "what": "named-human field from the card; permissive reading of a daily check-in (signed)"},
+    {"id": "RP-12", "clause": "VI.7 ACTUATION", "kind": "hard", "what": "an emitted DO is a bug-flag at v0.1: a permission in law is a door, not a tenant"},
+    {"id": "RP-13", "clause": "V special verb", "kind": "guard-observe", "what": "IMPLY is detected and recorded, never emitted, never blocked"}
+  ],
+  "uncompiled": ["IV-Gate proper", "VI.4 floor-vs-arrangements", "Rotation Question", "App.B.4 the one sentence", "VII.5 two seats (governance)", "naming", "VI.7 application-tonight (practice, dormant)", "K stamp watch (telemetry)", "diction fix (IN FORCE via VB-0.1)"]
+}

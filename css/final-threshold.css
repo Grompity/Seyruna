@@ -1,0 +1,45 @@
+/* ====== the final threshold ======
+   Everything dims except one mark — the same pair of circles the site
+   began inside (favicon, hero artifact, this). */
+
+final-threshold { min-height: 96svh; }
+final-threshold > section {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding-bottom: clamp(2rem, 8svh, 5rem);
+}
+/* The page drowns gently in the ground colour. */
+final-threshold::before {
+  content: "";
+  position: absolute; inset: auto 0 -2rem 0; height: 42%;
+  background: linear-gradient(180deg, transparent, var(--ink-0) 78%);
+  pointer-events: none;
+}
+
+.final-title {
+  font-weight: 400;
+  letter-spacing: .05em;
+  font-size: clamp(1.9rem, 5vw, 3.2rem);
+  color: var(--veil);
+}
+
+.final-mark {
+  margin-top: clamp(6rem, 17svh, 10rem);
+  width: 64px;
+  opacity: .3;
+  transition: opacity 2.2s var(--ease-drift);
+}
+.final-mark.is-near { opacity: .62; }
+.final-mark svg { width: 100%; height: auto; display: block; }
+.vesica-circle {
+  fill: none; stroke: var(--gold);
+  stroke-width: 1; stroke-opacity: .65;
+}
+
+.final-caption {
+  margin: 1.4rem 0 0;
+  font-family: var(--font-ui);
+  font-size: .56rem; font-weight: 400;
+  letter-spacing: .34em; text-transform: lowercase;
+  color: var(--veil-14);
+}

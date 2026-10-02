@@ -1,0 +1,98 @@
+/* ====== navigation: almost absent until woken ====== */
+
+navigation-frame {
+  position: fixed; inset: 0 0 auto 0; z-index: 30;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: clamp(.9rem, 2.4vh, 1.6rem) clamp(1.2rem, 5vw, 3.4rem);
+  opacity: .06;
+  transition: opacity .8s var(--ease-drift);
+}
+navigation-frame.is-awake,
+navigation-frame:hover,
+navigation-frame:focus-within { opacity: 1; }
+
+.nav-mark {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 500;
+  letter-spacing: .42em;
+  color: var(--veil-60);
+  text-decoration: none;
+  transition: color var(--dur-warm);
+}
+.nav-mark:hover { color: var(--gold); }
+
+.nav-links ul {
+  display: flex; gap: clamp(1.4rem, 3.4vw, 3rem);
+  margin: 0; padding: 0; list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-ui);
+  font-size: .62rem; font-weight: 400;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--veil-38);
+  text-decoration: none;
+  padding-block: .4rem;
+  white-space: nowrap;
+  transition: color var(--dur-warm), letter-spacing var(--dur-warm);
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--gold); letter-spacing: .38em; }
+
+.nav-menu-btn {
+  display: none;
+  appearance: none; background: none; border: 0; padding: .6rem;
+  font-family: var(--font-ui); font-size: .62rem;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--veil-60); cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  navigation-frame { opacity: 1; }
+  .nav-links { display: none; }
+  .nav-menu-btn { display: block; }
+}
+
+/* — full-screen menu (mobile) — */
+.nav-menu {
+  position: fixed; inset: 0; z-index: 50;
+  display: grid; place-items: center;
+  background: color-mix(in oklab, var(--ink-0) 92%, transparent);
+  backdrop-filter: blur(6px);
+}
+.nav-menu[hidden] { display: none; }
+.nav-menu ul { margin: 0; padding: 0; list-style: none; text-align: center; }
+.nav-menu li + li { margin-top: clamp(1.4rem, 4svh, 2.6rem); }
+.nav-menu a {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 8vw, 2.4rem);
+  letter-spacing: .12em;
+  color: var(--veil-60);
+  text-decoration: none;
+}
+.nav-menu a:hover { color: var(--gold); }
+.nav-menu__close {
+  position: absolute; top: clamp(1rem, 4svh, 2rem); right: clamp(1.2rem, 6vw, 3rem);
+  appearance: none; background: none; border: 0;
+  font-family: var(--font-ui); font-size: .64rem;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--veil-38); cursor: pointer;
+}
+.nav-menu__close:hover { color: var(--gold); }
+
+/* — The chat-tab wears its own gold hairline: the one live door. — */
+.nav-links .nav-cta a {
+  color: var(--gold-68);
+  border: 1px solid var(--gold-30);
+  border-radius: .34rem;
+  padding: .34rem .85rem .3rem;
+  transition: color var(--dur-warm), border-color var(--dur-warm);
+}
+.nav-links .nav-cta a:hover,
+.nav-links .nav-cta a:focus-visible { border-color: var(--gold-68); }
+
+/* — Crowded band (six tabs must breathe before the menu wakes): tighten
+   the tracking, not the words. — */
+@media (max-width: 1080px) {
+  navigation-frame { padding-inline: clamp(.9rem, 3vw, 2rem); }
+  .nav-links ul { gap: clamp(.9rem, 2.2vw, 1.6rem); }
+  .nav-links a { font-size: .58rem; letter-spacing: .22em; }
+}

@@ -1,0 +1,35 @@
+{
+ "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure.",
+ "why": {
+  "lane": "retrieval",
+  "evidence": [],
+  "distinction": {
+   "levels": {},
+   "kinds": {}
+  },
+  "disagreement": [],
+  "uncertainty": [
+   "the UNKNOWN exit spoke (RP-10): the shown set was empty \u2014 the mouth was not called"
+  ],
+  "synthesis": [],
+  "boundary": [
+   "fired: RP-10"
+  ]
+ },
+ "trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.2",
+   "voice_brief": "VB-0.1",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [],
+  "fires": [
+   "RP-10"
+  ],
+  "unknown": true,
+  "response": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+ }
+}

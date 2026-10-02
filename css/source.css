@@ -1,0 +1,38 @@
+/* ====== the names: gathered, not equated ====== */
+
+source-section > section { text-align: center; }
+
+.source-words {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .4rem clamp(1.4rem, 4.5vw, 3.4rem);
+  margin: clamp(2.6rem, 8vw, 4.6rem) auto;
+  padding: 0;
+  list-style: none;
+  max-width: 60rem;
+}
+.source-words li {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4.2vw, 2.9rem);
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--veil-14);
+  cursor: default;
+  opacity: 0; transform: translateY(10px);
+  transition:
+    color .8s var(--ease-drift),
+    letter-spacing .8s var(--ease-threshold),
+    opacity 1.6s var(--ease-threshold) var(--d, 0ms),
+    transform 1.6s var(--ease-threshold) var(--d, 0ms);
+}
+.source-words li.is-listen { opacity: 1; transform: none; }
+.source-words li:hover { color: var(--gold); letter-spacing: .24em; }
+/* The last word is the honest one. */
+.source-words li:last-child { color: var(--veil-60); font-style: italic; text-transform: none; letter-spacing: .06em; }
+
+.source-foot {
+  max-width: 32em;
+  margin-inline: auto;
+  color: var(--veil-60);
+  font-style: italic;
+}

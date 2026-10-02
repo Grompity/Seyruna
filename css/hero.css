@@ -1,0 +1,70 @@
+/* ====== hero: a threshold, not a feature grid ====== */
+
+hero-threshold { position: relative; overflow: clip; }
+
+hero-threshold > section {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding-block: clamp(2rem, 8svh, 6rem) 4rem;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-hero);
+  line-height: 1;
+  letter-spacing: var(--track-hero);
+  text-indent: var(--track-hero);
+  color: var(--veil);
+  text-shadow: 0 0 70px hsl(40 30% 88% / .06);
+}
+
+.hero-intent {
+  max-width: 32rem;
+  margin: calc(var(--step) * 1.6) 0 calc(var(--step) * 2.6);
+  font-style: italic;
+  font-size: calc(var(--fs-body) * 1.05);
+  color: var(--veil-60);
+}
+
+.hero-threshold {
+  display: flex; gap: clamp(.9rem, 2.6vw, 1.7rem);
+  flex-wrap: wrap; justify-content: center;
+}
+
+/* The answer to clicking the point of light. */
+.hero-whisper {
+  min-height: 2.2em; margin: calc(var(--step) * 2) 0 0;
+  font-family: var(--font-display); font-style: italic;
+  color: var(--gold-68);
+  opacity: 0; transform: translateY(6px);
+  transition: opacity 1.8s var(--ease-drift), transform 1.8s var(--ease-drift);
+}
+.hero-whisper.is-said { opacity: 1; transform: none; }
+
+.scroll-hint {
+  position: absolute; left: 50%; bottom: 2.6rem;
+  width: 1px; height: 3.6rem;
+  background: linear-gradient(var(--hairline-strong), transparent);
+  transform-origin: top center;
+  animation: hint 4.2s var(--ease-drift) infinite;
+}
+@keyframes hint {
+  0%, 100% { opacity: 0; transform: scaleY(.4); }
+  30%       { opacity: 1; }
+  60%       { opacity: 0; transform: scaleY(1); }
+}
+
+/* The dust field lives behind everything but the text. */
+.hero-dust {
+  position: absolute; inset: 0; z-index: 1;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  :root { --track-hero: .22em; --fs-hero: clamp(2.6rem, 15vw, 4.4rem); }
+  .hero-threshold .btn { flex: 1 1 auto; text-align: center; }
+}

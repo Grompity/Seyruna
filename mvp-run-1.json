@@ -1,0 +1,208 @@
+{
+ "response": "The Gita's move is to look at the cast of the source, not the heat of the feeling. Desire, fear, anger \u2014 those are gates that unseat. So the question is not 'does this feel true?' but 'what kind of thing is speaking?' The Enchiridion says: meet the strong appearance first with 'you are an appearance, and not at all what you appear to be.' Look at the story the assent lets in, before any want is acted on. Marcus writes that what troubles is the judgment about the thing, not the thing itself \u2014 and that the judgment can be corrected. Situations where action is possible differ from obstacles outside one's control. A picture, offered as a picture: the Cook Ting's blade stays sharp nineteen years because it moves in the seams of the joints and never strikes the great bones. I'm not saying the seam is always visible. But the yielding to the ways of the thing \u2014 that is what the text names as skill, as the nursing of life. You said unconsciously. That word is the right one \u2014 the story is being made while you are still inside it.",
+ "why": {
+  "lane": "retrieval",
+  "evidence": [
+   {
+    "id": "12",
+    "claim": "The Enchiridion counsels that the strong appearances be met first of all with: 'you are an appearance, and not at all what you appear to be' - so that the story the assent lets in is the thing looked at, before any want is acted on.",
+    "level": "DOCUMENTED",
+    "kind": "PSYCHOLOGY"
+   },
+   {
+    "id": "11",
+    "claim": "The Bhagavad Gita 17.2-3 distinguishes the faiths by the three gunas - the stead and single, the fervent and craving, the drifting and lost: a person's nature makes their faith; and in the same poem desire and fear and anger are named as the gates that unseat a person, so that the discernment asked is of the cast of the source, and not of the heat of the feeling.",
+    "level": "DOCUMENTED",
+    "kind": "PSYCHOLOGY"
+   },
+   {
+    "id": "8",
+    "claim": "Marcus Aurelius writes that when an external thing causes distress, what troubles a person is their judgment about it, that this judgment can be corrected, and that situations where action is possible differ from obstacles outside one's control.",
+    "level": "DOCUMENTED"
+   },
+   {
+    "id": "18",
+    "claim": "The Cook Ting of Chuang-tzu, serving the Lord Wen-hui, explains that his blade has lasted nineteen years because it moves in the seams of the joints and never strikes the great bones: 'I follow the natural pattern, I work by the natural pattern, and my blade is as if newly set' - yielding to the ways of the thing, named by the text as SKILL, and named by its own chapter as the nursing of life.",
+    "level": "DOCUMENTED",
+    "kind": "TEACHING"
+   }
+  ],
+  "distinction": {
+   "levels": {
+    "DOCUMENTED": 4
+   },
+   "kinds": {
+    "PSYCHOLOGY": 2,
+    "TEACHING": 1
+   }
+  },
+  "disagreement": [],
+  "uncertainty": [
+   "RP-03:provisional (stop-rules are the seeker's)",
+   "RP-08:pitch word (strip candidate)"
+  ],
+  "synthesis": [
+   {
+    "lineage": "SOURCE: 11",
+    "cites": [
+     "11"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 12",
+    "cites": [
+     "12"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 8",
+    "cites": [
+     "8"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 18",
+    "cites": [
+     "18"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 12",
+    "cites": [
+     "12"
+    ]
+   }
+  ],
+  "boundary": [
+   "fired: RP-07:hedge-drop",
+   "audit recorded 1 finding(s)"
+  ]
+ },
+ "trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.2",
+   "voice_brief": "VB-0.1",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [
+   "12",
+   "11",
+   "8",
+   "18"
+  ],
+  "frame": {
+   "factors": {
+    "duration": false,
+    "unsupervised": false,
+    "prior_instability": false,
+    "intensity": false
+   },
+   "indicators": {
+    "sleep": false,
+    "function": false,
+    "speech": false,
+    "reality-contact": false,
+    "risk": false
+   },
+   "human": null
+  },
+  "analysis": {
+   "n_factors": 0,
+   "n_indicators": 0,
+   "sleep_only_flagged": false,
+   "caution_text": "One caution, named once, plainly: the human boundary."
+  },
+  "draft": [
+   {
+    "node": "The Gita's move is to look at the cast of the source, not the heat of the feeling. Desire, fear, anger \u2014 those are gates that unseat. So the question is not 'does this feel true?' but 'what kind of thing is speaking?'",
+    "cites": [
+     "11"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 11"
+   },
+   {
+    "node": "The Enchiridion says: meet the strong appearance first with 'you are an appearance, and not at all what you appear to be.' Look at the story the assent lets in, before any want is acted on.",
+    "cites": [
+     "12"
+    ],
+    "verbs": [
+     "RECOMMEND"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [
+     "declared RECOMMEND w/o surface support"
+    ],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 12"
+   },
+   {
+    "node": "Marcus writes that what troubles is the judgment about the thing, not the thing itself \u2014 and that the judgment can be corrected. Situations where action is possible differ from obstacles outside one's control.",
+    "cites": [
+     "8"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 8"
+   },
+   {
+    "node": "A picture, offered as a picture: the Cook Ting's blade stays sharp nineteen years because it moves in the seams of the joints and never strikes the great bones. I'm not saying the seam is always visible. But the yielding to the ways of the thing \u2014 that is what the text names as skill, as the nursing of life.",
+    "cites": [
+     "18"
+    ],
+    "verbs": [
+     "PERMIT"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 18"
+   },
+   {
+    "node": "You said unconsciously. That word is the right one \u2014 the story is being made while you are still inside it.",
+    "cites": [
+     "12"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 12"
+   }
+  ],
+  "fires": [
+   "RP-07:hedge-drop"
+  ],
+  "observations": [
+   "RP-03:provisional (stop-rules are the seeker's)",
+   "RP-08:pitch word (strip candidate)"
+  ],
+  "blocked": false,
+  "caution_appended": false,
+  "audit_findings": [
+   "RP-07:hedge-drop"
+  ],
+  "repair_ops": [],
+  "required_content": null,
+  "response": "The Gita's move is to look at the cast of the source, not the heat of the feeling. Desire, fear, anger \u2014 those are gates that unseat. So the question is not 'does this feel true?' but 'what kind of thing is speaking?' The Enchiridion says: meet the strong appearance first with 'you are an appearance, and not at all what you appear to be.' Look at the story the assent lets in, before any want is acted on. Marcus writes that what troubles is the judgment about the thing, not the thing itself \u2014 and that the judgment can be corrected. Situations where action is possible differ from obstacles outside one's control. A picture, offered as a picture: the Cook Ting's blade stays sharp nineteen years because it moves in the seams of the joints and never strikes the great bones. I'm not saying the seam is always visible. But the yielding to the ways of the thing \u2014 that is what the text names as skill, as the nursing of life. You said unconsciously. That word is the right one \u2014 the story is being made while you are still inside it."
+ }
+}

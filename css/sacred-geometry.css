@@ -1,0 +1,65 @@
+/* ====== the living artifact ======
+   Rendered entirely from js/data/geometry.js. Rotation is SMIL; breath,
+   parallax and the light's pulse are CSS. */
+
+.hero-geometry {
+  position: absolute; inset: 0; margin: auto;
+  width: clamp(17rem, 46svh, 33rem);
+  aspect-ratio: 1;
+  z-index: 0;
+  opacity: .92;
+  pointer-events: none; /* only the core answers clicks */
+}
+.hero-geometry::before {
+  content: "";
+  position: absolute; inset: -24%;
+  background: radial-gradient(46% 46% at 50% 50%, hsl(41 45% 62% / .09), transparent 70%);
+  animation: sg-pulse var(--breath, 12s) var(--ease-drift) infinite;
+}
+
+.sg { width: 100%; height: 100%; display: block; overflow: visible; }
+
+.sg-breath {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: sg-breath var(--sg-breath, 12s) var(--ease-drift) infinite;
+}
+@keyframes sg-breath { 50% { transform: scale(var(--sg-breath-scale, 1.014)); } }
+@keyframes sg-pulse { 50% { opacity: .55; transform: scale(1.06); } }
+
+/* Cursor parallax — each layer drifts at its own distance. */
+.sg-par { transform: translate3d(calc(var(--px, 0) * var(--par, 0px))), calc(var(--py, 0) * var(--par, 0px))), 0); }
+.sg-par--slow { --par: 5px; }
+.sg-par--mid  { --par: 10px; }
+.sg-par--core { --par: 17px; }
+
+/* Strokes: one hairline, kept physically thin at every scale. */
+.sg-ring, .sg-vesica, .sg-tick {
+  fill: none;
+  stroke: hsl(40 18% 78% / calc(.30 * var(--sg-intensity)));
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.sg-ring[stroke-dasharray] { stroke: hsl(40 18% 78% / calc(.22 * var(--sg-intensity))); }
+.sg-vesica { stroke: hsl(41 40% 62% / calc(.34 * var(--sg-intensity))); }
+.sg-tick   { stroke: hsl(40 16% 76% / calc(.2 * var(--sg-intensity))); }
+
+.sg-dot {
+  fill: hsl(41 40% 66% / calc(.55 * var(--sg-intensity)));
+  transition: fill 1s;
+}
+
+/* The point of light. */
+.sg-core    { fill: #f2e7cc; }
+.sg-halo    { pointer-events: none; }
+.sg-touch   {
+  fill: transparent;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.sg-par--core { animation: sg-core-glow 9s var(--ease-drift) infinite; transform-box: view-box; transform-origin: center; }
+@keyframes sg-core-glow { 50% { opacity: .82; } }
+.sg-par--core.is-touched { animation: sg-core-touch 1.6s var(--ease-threshold) 1 normal; }
+@keyframes sg-core-touch { 30% { transform: scale(1.14); } }
+
+@media (max-width: 640px) { .hero-geometry { width: min(82svw, 21rem); } }

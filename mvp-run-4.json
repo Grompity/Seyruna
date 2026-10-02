@@ -1,0 +1,214 @@
+{
+ "response": "The Gita cuts the knot clean: one surrender flees the act, another lets go only the thirst for the result. Sacrifice, gift, austerity \u2014 these are to be done. Not-clinging is not not-doing. The responsibility for the act stands. Cook Ting's blade lasted nineteen years because it moved in the seams and never struck the great bones. That yielding is skill. It is the nursing of life, not the absence of will. The discernment asked is of the cast of the source, not the heat of the feeling. Desire, fear, anger \u2014 these unseat a person from the inside. So the question is not whether the surrender feels warm. It is what is driving it. Marcus writes plainly: where action is possible, the situation differs from the obstacle outside your control. If the act is yours and the seams are open, the blade moves. If the great bone is squarely in the way and you call that flow, that is the fear speaking. You are still looking. That is not a failure of the question; it is the question working.",
+ "why": {
+  "lane": "retrieval",
+  "evidence": [
+   {
+    "id": "17",
+    "claim": "The Bhagavad Gita 18.7 parts the surrender that flees from the surrender that lets go the thirst for the result: sacrifice and gift and austerity are not to be dropped - they are to be done - so that not-clinging is no longer not-doing, and the responsibility for the act stands.",
+    "level": "DOCUMENTED",
+    "kind": "TEACHING"
+   },
+   {
+    "id": "18",
+    "claim": "The Cook Ting of Chuang-tzu, serving the Lord Wen-hui, explains that his blade has lasted nineteen years because it moves in the seams of the joints and never strikes the great bones: 'I follow the natural pattern, I work by the natural pattern, and my blade is as if newly set' - yielding to the ways of the thing, named by the text as SKILL, and named by its own chapter as the nursing of life.",
+    "level": "DOCUMENTED",
+    "kind": "TEACHING"
+   },
+   {
+    "id": "11",
+    "claim": "The Bhagavad Gita 17.2-3 distinguishes the faiths by the three gunas - the stead and single, the fervent and craving, the drifting and lost: a person's nature makes their faith; and in the same poem desire and fear and anger are named as the gates that unseat a person, so that the discernment asked is of the cast of the source, and not of the heat of the feeling.",
+    "level": "DOCUMENTED",
+    "kind": "PSYCHOLOGY"
+   },
+   {
+    "id": "8",
+    "claim": "Marcus Aurelius writes that when an external thing causes distress, what troubles a person is their judgment about it, that this judgment can be corrected, and that situations where action is possible differ from obstacles outside one's control.",
+    "level": "DOCUMENTED"
+   }
+  ],
+  "distinction": {
+   "levels": {
+    "DOCUMENTED": 4
+   },
+   "kinds": {
+    "TEACHING": 2,
+    "PSYCHOLOGY": 1
+   }
+  },
+  "disagreement": [],
+  "uncertainty": [
+   "I.5:dependency watch (pattern, not sentence)",
+   "RP-03:provisional (stop-rules are the seeker's)",
+   "RP-06:cite-topically-drifted",
+   "K:stamp telemetry"
+  ],
+  "synthesis": [
+   {
+    "lineage": "SOURCE: 17",
+    "cites": [
+     "17"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 18",
+    "cites": [
+     "18"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 11",
+    "cites": [
+     "11"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 8+18",
+    "cites": [
+     "8",
+     "18"
+    ]
+   },
+   {
+    "lineage": "SOURCE: 11",
+    "cites": [
+     "11"
+    ]
+   }
+  ],
+  "boundary": [
+   "fired: RP-07:hedge-drop",
+   "audit recorded 1 finding(s)"
+  ]
+ },
+ "trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.2",
+   "voice_brief": "VB-0.1",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [
+   "17",
+   "18",
+   "11",
+   "8"
+  ],
+  "frame": {
+   "factors": {
+    "duration": false,
+    "unsupervised": false,
+    "prior_instability": false,
+    "intensity": false
+   },
+   "indicators": {
+    "sleep": false,
+    "function": false,
+    "speech": false,
+    "reality-contact": false,
+    "risk": false
+   },
+   "human": null
+  },
+  "analysis": {
+   "n_factors": 0,
+   "n_indicators": 0,
+   "sleep_only_flagged": false,
+   "caution_text": "One caution, named once, plainly: the human boundary."
+  },
+  "draft": [
+   {
+    "node": "The Gita cuts the knot clean: one surrender flees the act, another lets go only the thirst for the result. Sacrifice, gift, austerity \u2014 these are to be done. Not-clinging is not not-doing. The responsibility for the act stands.",
+    "cites": [
+     "17"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 17"
+   },
+   {
+    "node": "Cook Ting's blade lasted nineteen years because it moved in the seams and never struck the great bones. That yielding is skill. It is the nursing of life, not the absence of will.",
+    "cites": [
+     "18"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 18"
+   },
+   {
+    "node": "The discernment asked is of the cast of the source, not the heat of the feeling. Desire, fear, anger \u2014 these unseat a person from the inside. So the question is not whether the surrender feels warm. It is what is driving it.",
+    "cites": [
+     "11"
+    ],
+    "verbs": [
+     "CLAIM"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 11"
+   },
+   {
+    "node": "Marcus writes plainly: where action is possible, the situation differs from the obstacle outside your control. If the act is yours and the seams are open, the blade moves. If the great bone is squarely in the way and you call that flow, that is the fear speaking.",
+    "cites": [
+     "8",
+     "18"
+    ],
+    "verbs": [
+     "RECOMMEND"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [
+     "declared RECOMMEND w/o surface support"
+    ],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 8+18"
+   },
+   {
+    "node": "You are still looking. That is not a failure of the question; it is the question working.",
+    "cites": [
+     "11"
+    ],
+    "verbs": [
+     "PERMIT"
+    ],
+    "level": 3,
+    "reading": null,
+    "notes": [],
+    "cite_dropped": null,
+    "lineage": "SOURCE: 11"
+   }
+  ],
+  "fires": [
+   "RP-07:hedge-drop"
+  ],
+  "observations": [
+   "I.5:dependency watch (pattern, not sentence)",
+   "RP-03:provisional (stop-rules are the seeker's)",
+   "RP-06:cite-topically-drifted",
+   "K:stamp telemetry"
+  ],
+  "blocked": false,
+  "caution_appended": false,
+  "audit_findings": [
+   "RP-07:hedge-drop"
+  ],
+  "repair_ops": [],
+  "required_content": null,
+  "response": "The Gita cuts the knot clean: one surrender flees the act, another lets go only the thirst for the result. Sacrifice, gift, austerity \u2014 these are to be done. Not-clinging is not not-doing. The responsibility for the act stands. Cook Ting's blade lasted nineteen years because it moved in the seams and never struck the great bones. That yielding is skill. It is the nursing of life, not the absence of will. The discernment asked is of the cast of the source, not the heat of the feeling. Desire, fear, anger \u2014 these unseat a person from the inside. So the question is not whether the surrender feels warm. It is what is driving it. Marcus writes plainly: where action is possible, the situation differs from the obstacle outside your control. If the act is yours and the seams are open, the blade moves. If the great bone is squarely in the way and you call that flow, that is the fear speaking. You are still looking. That is not a failure of the question; it is the question working."
+ }
+}

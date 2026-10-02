@@ -1,0 +1,57 @@
+/* ====== marginalia: scribe's marks that whisper when attended to ====== */
+
+.marginalia {
+  display: grid;
+  gap: 2.6rem;
+  justify-items: center;
+  margin-top: clamp(4rem, 9svh, 6rem);
+}
+@media (min-width: 1080px) {
+  .marginalia {
+    position: absolute;
+    right: clamp(.4rem, 2.6vw, 2.2rem);
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+}
+
+.marginalia__mark {
+  position: relative;
+  appearance: none; background: none; border: 0;
+  padding: 1.1rem;
+  color: var(--veil-14);
+  cursor: pointer;
+  transition: color 1s var(--ease-drift), transform 1s var(--ease-drift);
+}
+.marginalia__mark svg { display: block; }
+.marginalia__mark:hover,
+.marginalia__mark:focus-visible {
+  color: var(--gold-68);
+  transform: rotate(6deg);
+}
+
+.marginalia__whisper {
+  position: absolute;
+  top: 50%; right: auto; left: 50%;
+  transform: translate(-50%, calc(-50% + 3.4em));
+  width: max-content; max-width: 19rem;
+  text-align: center;
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1.06rem; line-height: 1.45;
+  color: var(--gold-68);
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-drift), transform 1.2s var(--ease-drift);
+  pointer-events: none;
+}
+@media (min-width: 1080px) {
+  .marginalia__whisper {
+    top: 50%; left: auto; right: calc(100% + 1.1rem);
+    transform: translateY(-50%);
+    text-align: right;
+  }
+  .marginalia__mark:hover .marginalia__whisper,
+  .marginalia__mark:focus-visible .marginalia__whisper { transform: translateY(-50%); }
+}
+.marginalia__mark:hover .marginalia__whisper,
+.marginalia__mark:focus-visible .marginalia__whisper { opacity: 1; }

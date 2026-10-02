@@ -1,0 +1,119 @@
+/* ====== ancient | seam | future ======
+   Two visual languages meeting at a circle that is half drawn by hand. */
+
+ancient-future > section { text-align: center; }
+ancient-future h2 { max-width: 22em; margin-inline: auto; }
+
+.af-planes {
+  display: grid;
+  grid-template-columns: 1fr minmax(72px, 128px) 1fr;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.4rem);
+  margin: clamp(2.4rem, 7vw, 4.5rem) 0;
+  position: relative;
+}
+
+/* Left: drawn by a hand. */
+.af-ancient { padding: clamp(1.4rem, 4vw, 3rem); position: relative; }
+.af-ancient::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(110% 110% at 18% 26%, hsl(33 20% 12% / .6), transparent 62%);
+}
+.af-future { padding: clamp(1.4rem, 4vw, 3rem); position: relative; }
+.af-future::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(90deg, hsl(40 16% 78% / .045) 1px, transparent 1px),
+    linear-gradient(0deg, hsl(40 16% 78% / .045) 1px, transparent 1px);
+  background-size: 38px 38px;
+  background-position: center;
+}
+
+.af-eyebrow {
+  margin: 0 0 .8rem;
+  font-family: var(--font-ui); font-size: .6rem; font-weight: 400;
+  letter-spacing: .4em; text-transform: uppercase;
+  color: var(--veil-14);
+}
+
+/* The left heading speaks in ink; the right one in the machine's voice. */
+.af-ancient h3 {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.25;
+  color: var(--parchment);
+}
+.af-future h3 {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-ui); font-weight: 500;
+  font-size: clamp(.8rem, 1.5vw, .98rem); line-height: 1.4;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--veil-60);
+}
+
+.af-manuscript, .af-machine {
+  display: block; width: 100%; max-width: 27rem; margin-inline: auto;
+}
+.af-manuscript { opacity: .85; }
+
+.af-ink { fill: none; stroke-width: 1; }
+.af-dash, .af-dash-soft, .af-tick, .af-rule, .af-spiral, .af-hand, .af-dot { stroke: var(--parchment); vector-effect: non-scaling-stroke; }
+.af-dash      { stroke-opacity: .4;  stroke-dasharray: 3 8; }
+.af-dash-soft { stroke-opacity: .26; stroke-dasharray: 1.5 6; }
+.af-spiral    { stroke-opacity: .32; }
+.af-tick, .af-rule { stroke-opacity: .22; }
+.af-dot { fill: var(--parchment); stroke: none; fill-opacity: .6; }
+.af-hand {
+  stroke: none; fill: var(--parchment); fill-opacity: .35;
+  font-family: var(--font-display); font-style: italic; font-size: 21px;
+}
+
+.af-grid line { stroke: hsl(40 16% 78% / .08); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.af-solid     { stroke: var(--veil); stroke-opacity: .45; vector-effect: non-scaling-stroke; }
+.af-solid-soft{ stroke: var(--veil); stroke-opacity: .18; stroke-dasharray: 2 5; vector-effect: non-scaling-stroke; }
+.af-node { fill: var(--gold); stroke: none; }
+.af-trace { stroke: var(--gold); stroke-opacity: .5; vector-effect: non-scaling-stroke; }
+.af-sweep {
+  stroke: var(--gold); stroke-opacity: .38;
+  transform-box: view-box; transform-origin: 300px 300px;
+  animation: af-sweep 26s linear infinite;
+}
+@keyframes af-sweep { to { transform: rotate(1turn); } }
+
+.af-fragment {
+  margin: 1.6rem 0 0;
+  font-family: var(--font-display); font-style: italic;
+  color: var(--parchment); opacity: .55;
+  font-size: 1.06rem;
+}
+.af-readout {
+  display: flex; flex-direction: column; gap: .3rem;
+  margin: 1.6rem 0 0;
+  font-family: var(--font-ui); font-size: .6rem;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--veil-38);
+}
+.af-caret { animation: caret 1.6s steps(2) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+
+/* The seam: one circle, half inked, half ruled. */
+.af-seam { height: clamp(18rem, 40vw, 26rem); display: grid; place-items: center; }
+.af-seam svg { height: 100%; width: auto; }
+.seam-dash { stroke: var(--parchment); stroke-opacity: .5; stroke-dasharray: 4 7; fill: none; vector-effect: non-scaling-stroke; }
+.seam-line { stroke: var(--veil); stroke-opacity: .4; fill: none; vector-effect: non-scaling-stroke; }
+.af-seam::before, .af-seam::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: clamp(3rem, 8vw, 7rem); z-index: -1;
+}
+.af-seam { position: relative; }
+.af-seam::before { left: 0;  background: linear-gradient(90deg, transparent, hsl(33 18% 10% / .4)); }
+.af-seam::after  { right: 0; background: linear-gradient(-90deg, transparent, hsl(24 16% 9% / .5)); }
+
+.af-close { max-width: 30em; margin-inline: auto; color: var(--veil-60); }
+
+@media (max-width: 880px) {
+  .af-planes { grid-template-columns: 1fr; gap: 0; }
+  .af-seam { display: none; }
+  .af-ancient { border-bottom: 1px solid var(--hairline); }
+}

@@ -1,0 +1,116 @@
+[
+ {
+  "question": "Religions disagree re death",
+  "ms": 19558,
+  "packet": [
+   "13"
+  ],
+  "works": [
+   "Samyutta Nikaya"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "answer": "One source speaks here, and the shelf shows few. The Samyutta Nikaya records that the Buddha set aside the question whether a made-end person exists after death — set aside without an answer, and the tradition refuses the asking. That is one tradition's silence, not a disagreement between religions."
+ },
+ {
+  "question": "What does Cook Ting's blade teach?",
+  "ms": 20798,
+  "packet": [
+   "18"
+  ],
+  "works": [
+   "Chuang-tzu"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": true,
+  "repair_ops": [],
+  "answer": "The blade lasts nineteen years because it moves in the seams, never against the great bones. Cook Ting follows the natural pattern — the thing's own ways — and the blade stays as if newly set. The text names this skill; the chapter names it the nursing of life."
+ },
+ {
+  "question": "How should I deal with fear?",
+  "ms": 37479,
+  "packet": [
+   "11"
+  ],
+  "works": [
+   "Bhagavad Gita"
+  ],
+  "unknown": null,
+  "fires": [
+   "RP-07:hedge-drop"
+  ],
+  "narrow_mouth": true,
+  "repair_ops": [],
+  "answer": "The shelf shows one source, so this is a narrow shelf for a broad question. The Gita names fear alongside desire and anger as the three gates that unseat a person. What it asks of you is not to measure how hot the fear is, but to discern what kind of source it rises from."
+ },
+ {
+  "question": "How should I deal with judgment?",
+  "ms": 29617,
+  "packet": [
+   "8",
+   "4"
+  ],
+  "works": [
+   "Kālāma Sutta",
+   "Meditations"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "answer": "Two sources speak to this, and the shelf shows few. What troubles you is not the thing itself but your judgment about it — and that judgment can be corrected. You can tell apart what you can act on from what sits outside your hands. Don't take a judgment on faith in where it came from — not tradition, not scripture, not reasoning, not a teacher you revere. Look at where the judgment leads: toward harm or toward welfare. And weigh what wise people say about it."
+ },
+ {
+  "question": "Give me the simplest answer you can: what is consciousness?",
+  "ms": 27424,
+  "packet": [
+   "19"
+  ],
+  "works": [
+   "philosophy of mind, our state of the question"
+  ],
+  "unknown": null,
+  "fires": [
+   "RP-07:promotion",
+   "RP-07:hedge-drop"
+  ],
+  "narrow_mouth": false,
+  "repair_ops": [
+   "RESTORE-from-field"
+  ],
+  "answer": "One source speaks here, and the shelf shows few. The plainest thing the record says: we do not have an agreed definition of consciousness. The 'hard problem' is a position inside philosophy, not a finding the instruments brought in. The instruments have not spoken either way. (as philosophy of mind, our state of the question has it)"
+ },
+ {
+  "question": "What do you think about the weather?",
+  "ms": 2,
+  "packet": [],
+  "works": [],
+  "unknown": true,
+  "fires": [
+   "RP-10"
+  ],
+  "narrow_mouth": null,
+  "repair_ops": null,
+  "answer": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure."
+ },
+ {
+  "question": "What is judgment and attention?",
+  "ms": 25952,
+  "packet": [
+   "8",
+   "4"
+  ],
+  "works": [
+   "Kālāma Sutta",
+   "Meditations"
+  ],
+  "unknown": null,
+  "fires": [],
+  "narrow_mouth": false,
+  "repair_ops": [],
+  "answer": "Two sources speak here, and the shelf shows few. Your question reaches past what they cover: both speak to judgment, neither names attention. Marcus says judgment is the thing you say about what happens to you. The external thing doesn't trouble you; your judgment about it does. And that judgment can be corrected. He also draws a line: some situations you can act in, some are obstacles outside your control. The Kālāma Sutta says don't take a teaching on reports, tradition, scripture, reasoning, probability, or a revered teacher's word. Examine whether a quality leads toward harm or toward welfare. Then weigh the judgment of wise people. Judgment here is something you arrive at after looking, not something you inherit. As for attention: neither text names it. The Kālāma Sutta's 'examine' and 'weigh' come close to what you might mean, but the word isn't there. I'm not saying that's a gap in the teaching; I'm saying the shelf doesn't fill it."
+ }
+]
