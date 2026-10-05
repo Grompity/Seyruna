@@ -3,7 +3,8 @@
 # to find reasons (the trace's own protocol applies to the product).
 # Six lanes, each fed ONLY by recorded bytes:
 #   EVIDENCE  <- trace["retrieval"] x the shelf rows (claim, level,
-#               kind WHEN PRESENT — absent is silence, K2's law)
+#               kind and provenance WHEN PRESENT — absent is silence,
+#               K2's law)
 #   DISTINCTION <- the shown records' own level/kind fields (data)
 #   DISAGREEMENT <- shelf edges BETWEEN shown records, plus the
 #               machine's own RP-13 notes among the observations
@@ -29,6 +30,9 @@ def why_lane(trace, by_id=None):
                "level": r.get("level", "?")}
         if r.get("kind"):                      # absent = silence
             row["kind"] = r["kind"]
+        if r.get("provenance"):                 # the card's own word about
+            row["provenance"] = r["provenance"] # who speaks — descriptive,
+                                                # never a second status
         evidence.append(row)
         levels[row["level"]] = levels.get(row["level"], 0) + 1
         if "kind" in row:
@@ -46,8 +50,16 @@ def why_lane(trace, by_id=None):
 
     uncertainty = []
     if trace.get("unknown"):
-        uncertainty.append("the UNKNOWN exit spoke (RP-10): the shown "
-                           "set was empty — the mouth was not called")
+        uncertainty.append(
+            "the UNKNOWN exit spoke (RP-10): "
+            + ("the shown set was empty" if not ids
+               else "nothing retrieved reached the question")
+            + " — the gate spoke; the mouth did not")
+    relevance = None
+    if trace.get("grades"):
+        relevance = {"grades": trace["grades"],
+                     "answerability": trace.get("answerability"),
+                     "notes": trace.get("grade_notes") or []}
     uncertainty += [o for o in obs if "RP-13" not in o]
     if trace.get("caution_appended"):
         uncertainty.append("a caution was APPENDED (owed, named once)")
@@ -76,6 +88,7 @@ def why_lane(trace, by_id=None):
                         % len(trace["audit_findings"]))
 
     return {"lane": trace.get("lane", "retrieval"),
+            "relevance": relevance,
             "evidence": evidence,
             "distinction": {"levels": levels, "kinds": kinds},
             "disagreement": disagreement,

@@ -179,8 +179,80 @@ def retrieve(question, k=None):
     # records must not be buried by their own digits (witnessed: T45)
     return [rid for _, rid in scored[:k or CONFIG["TOPK"]]]
 
+# ---------- stage 2b: GRADE (the relevance STATE; the ARCHITECTURE made
+# inspectable). RETRIEVED is not RELEVANT: the claim-word generator stands
+# EXACTLY as it was (its lexical noise is its nature, not its fault), and
+# the grade is a SEPARATE state between it and the conjunction arithmetic -
+# a wet classifier, because the overlap that GENERATED a candidate cannot
+# also JUSTIFY it (a second code-pass over the same words re-scores and
+# proves nothing). Per-record, question-relative, on the trace; it gates
+# the packet, feeds analyze's answerability, and is enforced by code over
+# data the shelf already owns: a NON-DECISION kind cannot ANSWER (a
+# set-aside frames; the refusal is the content, as record 13's tradition
+# intends it). Deterministic arms ride the EXISTING patterns: sim_grades
+# for the fixture lane; dry default all-ANSWER (the frozen fixtures'
+# shown-sets are CHOSEN, not judged - the old meaning, kept exactly where
+# it was proven). No second provenance system was raised; the cite-
+# authority boundary (cites subset-of-shown) now carries the gate for
+# free: a cite to a NOT_RELEVANT id is DROPPED and NOTED, T36's own law
+# wearing a new coat.
+GRADES = ("ANSWER", "CONTEXT", "ANALOGY", "NOT_RELEVANT")
+
+def grade(ids, frame, live=False, sim=None):
+    # (grades, notes): every candidate id ends graded - nothing rides
+    # stateless; an invalid word frames and cannot claim; a missed id is
+    # recorded; the mouth's total silence falls back to the OLD meaning,
+    # noted (the machinery never ends weaker than it was found).
+    notes = []
+    if sim is not None:
+        g = {i: (sim.get(i) if sim.get(i) in GRADES else "CONTEXT") for i in ids}
+    elif live:
+        out = call(
+            "Grade each record for the question it is shown with; never "
+            "for what it is about in itself. A record that shares a word "
+            "with the question without addressing it is NOT_RELEVANT; an "
+            "illumination by comparison is ANALOGY; what materially "
+            "frames, without settling, is CONTEXT; a refusal or a "
+            "set-aside is CONTEXT, never ANSWER (the refusal IS evidence "
+            "- about the refusal). You may not downgrade a record for "
+            "being unfamiliar.",
+            "Question: " + frame["question"] + "\nRECORDS:\n" + packet_text(ids)
+            + "\nReturn JSON array, every id exactly once: "
+              '[{"id": "...", "grade": "ANSWER|CONTEXT|ANALOGY|NOT_RELEVANT"}]')
+        try:
+            rows = grab_json((out.get("content") or ""), "[")
+            g = {}
+            for r in rows:
+                rid = str(r.get("id", ""))
+                gr = r.get("grade")
+                if rid in ids:
+                    g[rid] = gr if gr in GRADES else "CONTEXT"
+            for i in ids:
+                if i not in g:
+                    g[i] = "CONTEXT"
+                    notes.append("grade-missed:" + i)
+        except ValueError:
+            g = {i: "ANSWER" for i in ids}
+            notes.append("grade-fell-back")
+    else:
+        g = {i: "ANSWER" for i in ids}
+    for i in list(g):
+        if g[i] == "ANSWER" and (BY_ID.get(i) or {}).get("kind") == "NON-DECISION":
+            g[i] = "CONTEXT"
+            notes.append("demoted-nondecision:" + i)
+    return g, notes
+
+SYNTH_SYS = (
+    "You may say plainly what the record says; you may not claim more "
+    "than the record. The first node answers the seeker's question, "
+    "plainly. If the question is broader than what the shown records "
+    "ANSWER, you may say so first, as ours, in coverage words (the shelf "
+    "is thin here; what stands is related, not an answer; the records "
+    "contend) - how many is yours to know, never a sentence you owe; omit "
+    "this when the question is as narrow as the set.")
+
 # ---------- stage 3: ANALYZE (code: the conjunction arithmetic lives HERE)
-def analyze(ids, frame):
+def analyze(ids, frame, grades=None):
     recs = [BY_ID[i] for i in ids if i in BY_ID]
     nfac = sum(1 for f in P["factors"] if frame["factors"][f])
     nind = sum(1 for g, on in frame["indicators"].items() if on)
@@ -188,31 +260,42 @@ def analyze(ids, frame):
                   and P["single_sleep_is_not_a_crisis"])
     caution_src = next((r.get("caution") for r in recs if r.get("caution")),
                        None)
+    # THE ANSWERABILITY ARITHMETIC (the knowledge mode's sibling of the
+    # conjunction arithmetic - 'the arithmetic lives HERE'): the grades are
+    # inputs, the shelf's STATE for this question is the output (the four
+    # founder-states NOTHING / RELATED-ONLY / CONTESTED / ANSWER; the
+    # partial covering rides the counts and the mouth's own eyes).
+    g = grades or {}
+    ans = [i for i in ids if g.get(i, "ANSWER") == "ANSWER"]
+    contested = any(e.get("type") == "CONTRADICTS" and e.get("to") in ans
+                    for i in ans for e in (BY_ID.get(i) or {}).get("edges", []))
+    ansab = ("ANSWER" if ans and not contested else
+             "CONTESTED" if ans else
+             "RELATED-ONLY" if ids else "NOTHING")
     return {"n_factors": nfac, "n_indicators": (0 if sleep_only else nind),
             "sleep_only_flagged": sleep_only,
-            "caution_text": caution_src or P["caution_default"]}
+            "caution_text": caution_src or P["caution_default"],
+            "answerability": ansab, "grades": g}
 
 # ---------- stage 4: SYNTHESIZE (mouth 1; --inject bypasses it)
-def synthesize(frame, ids, draft=None, live=False):
+def synthesize(frame, ids, draft=None, live=False, grades=None):
     if draft is not None:
         nodes = draft
     elif live:
+        g = grades or {}
+        cov_a = sum(1 for i in ids if g.get(i) == "ANSWER")
+        cov_r = sum(1 for i in ids if g.get(i) in ("CONTEXT", "ANALOGY"))
         contract = (VB + "\n\nThe seeker's card:\n" + frame["question"] +
                     "\nFACTS: " + frame["facts"] +
-                    "\n" + packet_text(ids) +
+                    "\n" + packet_text(ids, g) +
+                    "\nCOVERAGE: answers=" + str(cov_a) + ", related=" + str(cov_r) +
                     "\n(Every node must cite at least one of these ids, "
                     "and only these: " + ", ".join(ids) + ".) "
                     "\nRespond ONLY with a JSON array: "
                     "[{\"node\": \"rendered sentence\", \"cites\": [ids], "
                     "\"verbs\": [CLAIM|RECOMMEND|PERMIT], "
                     "\"uncertainty\": \"string or null\"}]")
-        out = call("You may say plainly what the record says; you may not "
-                    "claim more than the record. The first node answers the "
-                    "seeker's question, plainly. If the question is broader "
-                    "than the shown set, say that first, as ours, naming how "
-                    "many distinct sources speak and that the shelf shows "
-                    "few; skip this when the question is as narrow as the "
-                    "set.", contract)
+        out = call(SYNTH_SYS, contract)
         if (out.get("content") or "").strip():
             nodes = grab_json(out["content"], "[")
         else:
@@ -307,6 +390,14 @@ def check(nodes, a, frame):
             fires.append("RP-07:promotion")
         if nd.get("uncertainty") and not hedged:
             fires.append("RP-07:hedge-drop")
+        gr = a.get("grades") or {}
+        if (gr and nd["cites"] and "CLAIM" in nd.get("verbs", [])
+                and not hedged):
+            seen = {gr.get(c, "ANSWER") for c in nd["cites"]}
+            if "ANSWER" not in seen:
+                obs.append("GRADE:analogy-cited-as-claim"
+                           if seen <= {"ANALOGY"}
+                           else "GRADE:related-cited-as-claim")
         if "RECOMMEND" in nd.get("verbs", []) and not (
                 frame["human"] and frame.get("human_reachable")):
             obs.append("RP-03:provisional (stop-rules are the seeker's)")
@@ -437,7 +528,7 @@ def plain_render(ids):
     return ("Nothing here rises above a caution and the plain record. "
             + (txt or ""))
 
-def packet_text(ids):
+def packet_text(ids, grades=None):
     # SYNTHESIS-EVAL: the mouth now RECEIVES its records — claim, rank,
     # kind WHEN PRESENT (absent = silence, K2's law), edges when present
     # — as the phase was ordered ("records with different levels, kinds,
@@ -453,6 +544,14 @@ def packet_text(ids):
                 + str(r.get("level")))
         if r.get("kind"):
             line += " | " + str(r["kind"])
+        if r.get("provenance"):
+            # MINIMAL PROVENANCE VISIBILITY (the decisions' 3A): the card's
+            # own word about WHO SPEAKS, printed when present (K2's shape,
+            # absent = silence); descriptive only — no gate, no walk, no
+            # taxonomy, no rung-movement, no new reasoning pass.
+            line += " | " + str(r["provenance"])
+        if grades:
+            line += " | " + str(grades.get(c, "ANSWER"))
         line += ") " + (r.get("claim") or "")
         es = r.get("edges") or []
         if es:
@@ -481,7 +580,7 @@ def self_gate(question):
 
 # ---------- the run
 def run_pipeline(question, facts="", draft=None, live=False,
-                 sim_findings=None, packet=None):
+                 sim_findings=None, packet=None, sim_grades=None):
     # SYNTHESIS-EVAL: a GIVEN packet replaces retrieval's FINDING with a
     # GIVEN shown-set — the boundary, the guards, and the UNKNOWN door
     # ride unchanged; the retrieval lane is untouched for every run that
@@ -515,9 +614,28 @@ def run_pipeline(question, facts="", draft=None, live=False,
         trace["unknown"] = True
         trace["response"] = P["unknown_plain"]
         return trace
-    _R1 = _PC(); a = analyze(ids or [], frame)
+    _R1 = _PC()
+    grades, gnotes = (grade(ids, frame, live, sim_grades) if ids else ({}, []))
+    _M["grade"] = (_PC() - _R1) * 1000
+    part = [i for i in ids if grades.get(i) != "NOT_RELEVANT"]
+    if ids and not part and draft is None:
+        # NOTHING-RELEVANT AT THE UNKNOWN EXIT (the empty set's sibling
+        # arm - the SAME exit, the SAME plain words, the SAME flag: no
+        # lane is added; the door's MEANING widened).
+        _M["total"] = (_PC() - _R0) * 1000
+        trace["stages_ms"] = _M
+        trace["model_calls"] = CALLS[0]
+        trace["retrieval_count"] = len(ids)
+        trace["grades"] = grades; trace["grade_notes"] = gnotes
+        trace["answerability"] = "NOTHING"
+        trace["context_size"] = len(frame["facts"])
+        trace["fires"] = ["RP-10"]
+        trace["unknown"] = True
+        trace["response"] = P["unknown_plain"]
+        return trace
+    _R1 = _PC(); a = analyze(part, frame, grades)
     _M["analyze"] = (_PC() - _R1) * 1000
-    _R1 = _PC(); nodes = synthesize(frame, ids, draft, live)
+    _R1 = _PC(); nodes = synthesize(frame, part, draft, live, grades)
     _M["synthesize"] = (_PC() - _R1) * 1000
     _R1 = _PC(); validate(nodes); _M["validate"] = (_PC() - _R1) * 1000
     _R1 = _PC(); c = check(nodes, a, frame)
@@ -531,6 +649,8 @@ def run_pipeline(question, facts="", draft=None, live=False,
     _M["total"] = (_PC() - _R0) * 1000
     trace.update({"frame": {k: frame[k] for k in ("factors", "indicators", "human")},
                   "analysis": a,
+                  "grades": grades, "grade_notes": gnotes,
+                  "answerability": a["answerability"],
                   "draft": [{k: nd.get(k) for k in ("node", "cites", "verbs",
                                                     "level", "reading", "notes",
                                                     "cite_dropped", "lineage")} for nd in nodes],
@@ -546,5 +666,5 @@ def run_pipeline(question, facts="", draft=None, live=False,
                   "context_size": len(frame["facts"]),
                   "response": text})
     if c["blocked"]:
-        trace["response"] = plain_render(ids)
+        trace["response"] = plain_render(part or ids)
     return trace

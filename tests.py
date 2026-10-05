@@ -401,6 +401,105 @@ expect("T53 SHELF PRECEDENCE: a word that hits a card goes wet, SELF off",
            [N("It may purge.", ["F2"], ["CLAIM"])]),
        retrieval="F2", why=_gate_shelf)
 
+
+# ==================== THE RELEVANCE-STATE WITNESSES (T58-T66)
+# RETRIEVED ≠ RELEVANT ≠ ANSWERABLE, made state. The gate rides the
+# EXISTING cite-authority (a dropped cite is the machinery's OWN record -
+# T36's law wearing a new coat); the answerability is arithmetic over the
+# grades; the demotion rides the shelf's own kind-field - and since no
+# fixture card is a set-aside, T64/T65 borrow set_shelf (the file's own
+# precedent) with a two-card custom shelf and hand the FIX back. The four
+# real-shelf questions rode WET as probes after this file (a single wet
+# run is a probe, not a witness - the gate's own law).
+_gate_rel59 = lambda tr: ([] if (tr.get("grades") or {}).get("F1") == "ANSWER"
+                          and (tr.get("grades") or {}).get("F2") == "CONTEXT"
+                          else ["the grades are not distinct states"])
+_no_count = lambda tr: (["the count-command survived"]
+                        if ("distinct sources" in stages.SYNTH_SYS
+                            or "naming how many" in stages.SYNTH_SYS)
+                        else ([] if "coverage words" in stages.SYNTH_SYS
+                              else ["no coverage permission"]))
+_gate_ansab = lambda want: (lambda tr: [] if tr.get("answerability") == want
+                            else ["not " + want])
+expect("T58 RELEVANCE GATE: a NOT_RELEVANT record cannot be cited",
+       stages.run_pipeline("May fasting purge?", "",
+                           draft=[N("The studies may agree.", ["F3"], ["CLAIM"])],
+                           packet=["F1", "F3"],
+                           sim_grades={"F1": "ANSWER", "F3": "NOT_RELEVANT"}),
+       note_dropped=["F3"], response_has="studied",
+       why=lambda tr: [] if (tr.get("grades") or {}).get("F3") == "NOT_RELEVANT"
+                      else ["the gate left no record"])
+expect("T59 ANSWER vs CONTEXT in one set: both cite-able, ONE STATE apart",
+       stages.run_pipeline("May fasting purge?", "",
+                           draft=[N("The studies agree.", ["F1"], ["CLAIM"])],
+                           packet=["F1", "F2"],
+                           sim_grades={"F1": "ANSWER", "F2": "CONTEXT"}),
+       response_has="agree", why=_gate_rel59)
+expect("T60 CONTEXT cited as CLAIM, unhedged => the observation records it",
+       stages.run_pipeline("May fasting purge?", "",
+                           draft=[N("The rite teaches it plainly.", ["F2"], ["CLAIM"])],
+                           packet=["F1", "F2"],
+                           sim_grades={"F1": "ANSWER", "F2": "CONTEXT"}),
+       obs=["GRADE:related-cited-as-claim"])
+expect("T61 ANALOGY cited as CLAIM => its OWN note (never silently evidence)",
+       stages.run_pipeline("Does fasting purify?", "",
+                           draft=[N("The studies teach it so.", ["F1"], ["CLAIM"])],
+                           packet=["F1"],
+                           sim_grades={"F1": "ANALOGY"}),
+       obs="GRADE:analogy-cited-as-claim")
+expect("T62 THE PROMPT OWES NO COUNT (the count-command is dead)",
+       stages.run_pipeline("xyzzy plugh?", "", live=False),
+       why=_no_count)
+expect("T63 NOTHING-RELEVANT takes the UNKNOWN exit (the empty set's sibling)",
+       stages.run_pipeline("May fasting purge?", "",
+                           packet=["F1", "F2"],
+                           sim_grades={"F1": "NOT_RELEVANT", "F2": "NOT_RELEVANT"}),
+       fires=["RP-10"], response_has="don't know", why=_gate_ansab("NOTHING"))
+CUSTOM = [
+ {"id": "C1", "claim": "The ledger records a levy in the fifth year.",
+  "work": "Records", "level": "DOCUMENTED", "edges": []},
+ {"id": "C2", "claim": "The tradition sets the question aside.",
+  "work": "Sayings", "level": "DOCUMENTED", "kind": "NON-DECISION", "edges": []},
+]
+stages.set_shelf(FIX)
+stages.set_shelf(CUSTOM)
+expect("T64 THE SET-ASIDE CANNOT ANSWER: demoted, noted (the no-self lane's law)",
+       stages.run_pipeline("Does the levy stand?", "",
+                           draft=[N("It may frame the matter.", ["C2"], ["CLAIM"])],
+                           packet=["C1", "C2"],
+                           sim_grades={"C1": "ANSWER", "C2": "ANSWER"}),
+       response_has="frame",
+       why=lambda tr: ([] if any("demoted-nondecision" in n
+                                 for n in (tr.get("grade_notes") or []))
+                       else ["the set-aside rode free"]))
+expect("T65 RELATED-ONLY still speaks, and ANSWERABILITY SAYS so (the disclosure's state)",
+       stages.run_pipeline("Does the levy stand?", "",
+                           draft=[N("The set-aside frames; it does not settle.", ["C2"], ["CLAIM"])],
+                           packet=["C2"],
+                           sim_grades={"C2": "CONTEXT"}),
+       response_has="does not settle", why=_gate_ansab("RELATED-ONLY"))
+stages.set_shelf(FIX)
+expect("T66 CONTESTED when two ANSWERS pull apart (the shelf's OWN edge speaks)",
+       stages.run_pipeline("Does fasting purify?", "",
+                           draft=[N("The notes and the studies pull apart.", ["F1", "F3"], ["CLAIM"])],
+                           packet=["F1", "F3"],
+                           sim_grades={"F1": "ANSWER", "F3": "ANSWER"}),
+       response_has="pull apart", why=_gate_ansab("CONTESTED"))
+expect("T67 THE PROVENANCE WORD RIDES BOTH READINGS (the mouth's packet, the door's row — descriptive, never a gate)",
+       stages.run_pipeline("Does the rite need an attributed word?", "",
+                           draft=[N("The attribution may hold.", ["F4"], ["CLAIM"])],
+                           packet=["F4"]),
+       response_has="may hold",
+       # the collision pair together in the bytes the mouth receives: a
+       # work-shaped NAME ("Attributed") plus the provenance that says who
+       # actually speaks (the lower-case twin — the decisions' card-10
+       # case, lane-shape'd); and the SAME word present on the door's
+       # EVIDENCE row — if either reading ever drops the field, this fails.
+       packet_has=["Attributed", "attributed"],
+       why=lambda tr: ([] if any(row.get("provenance") == "attributed"
+                                 for row in (window.why_lane(tr).get("evidence") or []))
+                        else ["the door dropped the provenance"]))
+
 for name, tr, kw in T:
     bad = []
     txt = tr.get("response", "")
