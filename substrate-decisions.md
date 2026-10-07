@@ -440,7 +440,14 @@ What these decisions now **authorize** — listed, not done:
   §10 collision awaiting its "clarify"); the one sentence (App. B.4, on purpose); the Gate
   proper; the R0–R4 tiers; SANCTION/JUDGMENT/ACT classes.
 - **Unresolved, preserved by order** (none is this pass's work): **six vs nine** (the law's own
-  examples lean on both lists — recorded, not reconciled); the four governance questions
+  examples lean on both lists — recorded, not reconciled); **[Closure — founder ruling,
+  2026-10-05: the relation is SETTLED AS DECLARED** — the law's six + the door are the ranks
+  (CONSTITUTION XI); the data's nine are the working set (II.5/XII.1); never a merge, never a
+  new enum (XII.1; XIV). What remains deferred in this entry is implementation **ownership
+  only** — which list the future rung-held rule governs, and which list a future rung-table
+  reads — both non-operative while the machinery is rung-blind (no code writes `level`; the
+  rungs do not move). This is a record, not a reconciliation (XIII.0)**]; the four governance
+  questions
   (Hand/Rotation; whose assent licenses a card's rung-move; the sealing ruling; first-person as
   a Foundation line); `K2`'s home (statement located — `golden-set.md` A–K batteries; the
   **specific citation** of "K2" remains not located in any artifact read this pass — UNKNOWN

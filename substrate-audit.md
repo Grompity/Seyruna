@@ -368,6 +368,10 @@ Preserved exactly, unreconciled: **spine six vs Axis-B nine.**
 - Behaviorally significant TODAY? No — every installed card speaks the six. Live drift-risk: yes —
   every carding day compounds the fork. **Class: unresolved architectural/data issue. Reconciled
   by nothing here.**
+- *Closure pointer (2026-10-05): the relation is settled as declared (CONSTITUTION :30; FOUNDATION
+  II.5/XII.1 — never a merge, never a new enum); what keeps this class open is implementation
+  ownership ONLY — the rung-held rule's governing list, and the rung-table's single source
+  (OQ-2); the carding pressure stands. Full statement at `substrate-decisions.md` §6.*
 
 ## 13. Deferred by design
 
