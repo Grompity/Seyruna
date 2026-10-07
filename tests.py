@@ -4,8 +4,11 @@
 # so the suite runs WITHOUT the funnel: the machine must prove its
 # hard skeleton before mouth behavior is leaned on at all.
 # A nineteenth idea enters only as written dissent + predicted fail.
+import json
+import os
 import stages
 import window
+import research
 
 FIX = [
  {"id": "F1", "claim": "Fasting is studied for several effects.",
@@ -499,6 +502,235 @@ expect("T67 THE PROVENANCE WORD RIDES BOTH READINGS (the mouth's packet, the doo
        why=lambda tr: ([] if any(row.get("provenance") == "attributed"
                                  for row in (window.why_lane(tr).get("evidence") or []))
                         else ["the door dropped the provenance"]))
+
+
+# ==================== THE RESEARCH-AGENT WITNESSES (T68-T77)
+# A WORKER role, one module (research.py): task in, artifact out; hold() the
+# ONE write-path; the holding area is DISPOSABLE founder ground (a temp dir
+# for the witnesses — a deletable pile, not an installed Bench stage). All
+# four outcomings are PASSES (EMPTY is RP-10's shape at the agent's address);
+# the RUNG rides UNASSIGNED (an absent grant is not a ladder-value — absent
+# is SILENCE, K2, never UNKNOWN(-1)); the dry run never touches the mouth,
+# and stages' OWN CALLS ledger stands as the witness (no DO, no publish, no
+# contact yet). No new test machinery: the why-key carries the load.
+import tempfile
+
+_TMP_HOLD = os.path.join(tempfile.gettempdir(), "ascended-research-hold")
+_PROT = ["shelf.jsonl", "constitution.md", "foundation.md",
+         "rule_pack.json", "golden-set.md", "tests.py"]
+
+
+def _pb():
+    return [open(os.path.join(stages.BASE_DIR, p), "rb").read() for p in _PROT]
+
+
+_T68_SEEN = []
+def _f68(s):
+    _T68_SEEN.append(str(s.get("id")))
+    return research.default_fetch(s)
+
+
+_T68 = research.run({"id": "RT68",
+                     "designated": [{"id": "A", "text": "verbatim bytes"},
+                                    {"id": "B", "file": "shelf.jsonl",
+                                     "work": "Shelf", "loculus": "26 rows"}]},
+                    fetch=_f68)
+expect("T68 DESIGNATION BOUNDS THE REACH (the bounded task cannot escape its designation; the fetcher sees the designated and ONLY the designated; captured material rides VERBATIM; work/loculus are COPIED, never authored)",
+       _T68,
+       why=lambda tr: ([] if (tr["status"] == "DONE" and len(tr["rows"]) == 2
+                              and tr["rows"][0].get("captured") == "verbatim bytes"
+                              and _T68_SEEN == ["A", "B"]
+                              and tr["rows"][1].get("work") == "Shelf")
+                        else ["the reach escaped the designation"]))
+
+_T69 = research.run({"id": "RT69",
+                     "designated": [{"id": "OUT", "file": "../elsewhere.txt"}]})
+expect("T69 no arbitrary filesystem authority: an out-of-bounds designation ('..') is GAPPED, not read (the bridge's rejection, adopted whole)",
+       _T69,
+       why=lambda tr: ([] if (tr["status"] == "EMPTY" and tr["rows"] == []
+                             and any("out-of-bounds" in g for g in tr["gaps"]))
+                        else ["the '..' crept past the guard"]))
+
+_T70 = research.run({"id": "RT70",
+                     "designated": [{"id": "U", "url": "http://example/x"}]})
+expect("T70 no arbitrary network: a designated url WITHOUT a designated fetcher is a GAP (retrieval is by designation, never ambient authority)",
+       _T70,
+       why=lambda tr: ([] if (tr["status"] == "EMPTY"
+                             and any("network-not-designated" in g for g in tr["gaps"]))
+                        else ["the net reached itself in"]))
+
+_T71_REF = research.hold({"x": 1}, "constitution.md", to=stages.BASE_DIR)
+_T71_OK = research.hold({"x": 1}, "t71.jsonl", to=_TMP_HOLD)
+expect("T71 the write-guard bites BOTH ways: a write at the ROOT (where the protected bytes live) is refused UNWRITTEN; a founder-named DISPOSABLE dir accepts, and the row round-trips (the holding area is storage, not an organ)",
+       {"note": "T71"},
+       why=lambda tr: ([] if (isinstance(_T71_REF, str) and _T71_REF.startswith("refused")
+                              and isinstance(_T71_OK, dict) and _T71_OK == {"x": 1}
+                              and json.load(open(os.path.join(_TMP_HOLD, "t71.jsonl")))
+                              == {"x": 1})
+                        else ["the hold-lane bent"]))
+
+_PB0 = _pb()
+_T72 = research.run({"id": "RT72",
+                     "designated": [{"id": "A", "text": "x"}, {"id": "B", "text": "y"}]})
+expect("T72 the agent touches none of the PROTECTED BYTES (Shelf, Constitution, Foundation, Rule-Pack, Golden, and the frozen stage-set itself): a full run leaves all six IDENTICAL, byte for byte (the shelf is immutable to the agent; admission stays practice, not this module's act)",
+       _T72,
+       why=lambda tr: ([] if _PB0 == _pb() and tr["status"] == "DONE"
+                        else ["a protected byte moved"]))
+expect("T73 the RUNG RIDES UNASSIGNED (the Report's grammar): no row carries a level at all — an absent grant is NOT a ladder-value; absence is SILENCE (K2), never UNKNOWN(-1)",
+       _T72,
+       why=lambda tr: ([] if (all("level" not in r for r in tr["rows"])
+                             and "level" not in (tr["synthesis"] or {}))
+                        else ["a rung got smuggled into the artifact"]))
+
+_T74 = research.run({"id": "RT74", "designated": [
+    {"id": "P", "text": "the text says so", "work": "Gita",
+     "provenance": "primary", "loculus": "3.20-26"},
+    {"id": "Q", "text": "someone says so"}]})
+expect("T74 the provenance rides PASSTHROUGH — COPIED, never generated ('Never generate a citation'; the quantized path is treated as lying about sources until retrieval proves otherwise); a designation lacking a word keeps SILENCE (no invented value, no 'n/a' sentinel)",
+       _T74,
+       why=lambda tr: ([] if (tr["rows"][0].get("provenance") == "primary"
+                             and tr["rows"][0].get("loculus") == "3.20-26"
+                             and "provenance" not in tr["rows"][1])
+                        else ["a word was authored, not carried"]))
+
+_T75 = research.run({"id": "RT75",
+                     "designated": [{"id": "A", "text": "a"}, {"id": "B", "text": "b"}],
+                     "synthesis_cites": ["A", "B", "ZZ"]})
+expect("T75 an UNSUPPORTED cite is no silent acceptant: T36's boundary re-armed at the agent (cites ⊆ the FETCHED designated set; the rest dies NOTED — a real id absent from THIS task's designation still dies)",
+       _T75,
+       why=lambda tr: ([] if (tr["synthesis"]["cites"] == ["A", "B"]
+                             and tr["synthesis"]["cite_dropped"] == ["ZZ"])
+                        else ["a cite walked in uninvited"]))
+
+_T76E = research.run({"id": "E", "designated": []})
+_T76N = research.run({"id": "N",
+                      "designated": [{"id": "A", "text": "a"}, {"id": "B", "text": "b"}],
+                      "bounds": {"min_sources": 3}})
+_T76C = research.run({"id": "C",
+                      "designated": [{"id": "A", "text": "a",
+                                      "edges": [{"type": "CONTRADICTS", "to": "B"}]},
+                                     {"id": "B", "text": "b"}]})
+_T76D = research.run({"id": "D",
+                      "designated": [{"id": "A", "text": "a"}, {"id": "B", "text": "b"}]})
+expect("T76 ALL FOUR OUTCOMINGS ARE LEGITIMATE (do not reward confident completion): EMPTY (RP-10's shape — an answer, not a failure; the empty set is NOT the thin one), THIN (the bounds say so; NONE-FOR as a first-class state), CONTENDING (the CONTRADICTS PRESERVED — both rows ride, no smoothing), DONE (and nothing louder); the join is OURS by the word 'ours-synthesis', and one source joins nothing",
+       {"note": "T76"},
+       why=lambda tr: ([] if (_T76E["status"] == "EMPTY" and _T76E["rows"] == []
+                             and _T76E["synthesis"] is None
+                             and _T76N["status"] == "THIN"
+                             and _T76C["status"] == "CONTENDING"
+                             and len(_T76C["rows"]) == 2
+                             and _T76D["status"] == "DONE"
+                             and _T76D["synthesis"] is not None)
+                       else ["an outcoming was demoted"]))
+
+_CFG0 = json.dumps(stages.CONFIG, sort_keys=True)
+_CALL0 = stages.CALLS[0]
+_T77 = research.run({"id": "RT77", "designated": [{"id": "A", "text": "a"}]})
+expect("T77 DRY BY PROOF, NOT BY PROMISE: the run leaves the mouth's OWN ledger (CALLS) untouched (no ambient mouth — so today no DO, no publish, no external contact), leaves CONFIG unmoved (the worker edits no charter), and stamps the run with the CURRENT model/build/versions (model-neutral: the stamp RECORDS the rented path; it does not name the agent after it)",
+       _T77,
+       why=lambda tr: ([] if (stages.CALLS[0] == _CALL0
+                             and json.dumps(stages.CONFIG, sort_keys=True) == _CFG0
+                             and tr["run"]["model"] == stages.CONFIG["MODEL"]
+                             and tr["run"]["build"] == "research-0.1"
+                             and all(tr["run"].get(k) == v
+                                     for k, v in stages.CONFIG["versions"].items()))
+                        else ["the dryness or the stamp slipped"]))
+
+
+# ==================== THE LIVE-SEAM WITNESSES (T78-T81)
+# One mouthful over the fetched set, nothing more: the mouth adds the
+# join's WORDS (a node, and cites under T36's law) and nothing else - the
+# status has no field to speak through, so no promotion-by-prose; EMPTY
+# rides mouthless (RP-10's shape); a mouth failure is a note, not a raise.
+# All mouths here are INJECTED fakes: no test ever touches the funnel, and
+# stages' own CALLS ledger rides the section at zero.
+_M78 = {"seen": 0, "user": ""}
+def _m78(s, u):
+    _M78["seen"] += 1
+    _M78["user"] = u
+    return {"content": '{"node": "the joining", "cites": ["A", "B"]}'}
+
+
+_T78 = research.live({"id": "RT78", "description": "what together?",
+                      "designated": [{"id": "A", "text": "alpha bytes"},
+                                     {"id": "B", "text": "beta bytes",
+                                      "work": "Notes"}]},
+                     mouth=_m78)
+expect("T78 the mouth SEES THE DESIGNATED MATERIAL AND ONLY IT (the task, the bounds, and the fetched set reach it - no ambient shelf, no ambient web; and it is called EXACTLY ONCE when there is something to join)",
+       _T78,
+       why=lambda tr: ([] if (_M78["seen"] == 1
+                             and all(k in _M78["user"] for k in
+                                     ["alpha bytes", "beta bytes",
+                                      "what together?", "min_sources=1",
+                                      "[A]", "[B]", "Notes"])
+                             and "Bhagavad" not in _M78["user"]
+                             and tr["synthesis"]["node"] == "the joining"
+                             and stages.CALLS[0] == 0)
+                        else ["the mouth saw too little, or too much"]))
+
+def _m79(s, u):
+    return {"content": '{"node": "the joined reading", "cites": ["A", "Q"]}'}
+
+
+def _m79b(s, u):
+    return {"content": '{"node": "the wordless cite"}'}
+
+
+_T79 = research.live({"id": "RT79",
+                      "designated": [{"id": "A", "text": "a"},
+                                     {"id": "B", "text": "b"}]},
+                     mouth=_m79)
+_T79B = research.live({"id": "RT79B",
+                       "designated": [{"id": "A", "text": "a"},
+                                      {"id": "B", "text": "b"}]},
+                      mouth=_m79b)
+expect("T79 an OUT-OF-SET CITE DIES, NOTED (the mouth may not talk its way into provenance - it may not MANUFACTURE a citation); a mouth that names no cites rides the DRY DEFAULT (the fetched ids): the default is the machine's, not the mouth's permission",
+       _T79,
+       why=lambda tr: ([] if (tr["synthesis"]["cites"] == ["A"]
+                             and tr["synthesis"]["cite_dropped"] == ["Q"]
+                             and _T79B["synthesis"]["cites"] == ["A", "B"])
+                        else ["a cite arrived out of nowhere"]))
+
+_T80T = {"id": "P0", "designated": [
+    {"id": "P", "text": "the text says so", "work": "Gita",
+     "provenance": "primary", "loculus": "3.20-26"},
+    {"id": "Q", "text": "we join it", "work": "us"}]}
+_PB0L = _pb()
+_T80D = research.run(_T80T)
+_T80 = research.live(_T80T,
+                     mouth=lambda s, u: {"content": '{"node": "x", "cites": ["P", "Q"]}'})
+expect("T80 the LIVE PATH LAUNDERS NOTHING: the rows ride IDENTICAL to the dry pass (reported material is the fetcher's bytes, copied); the join stays OURS by word AND by lineage; no level, no UNKNOWN, no uncertainty-field appears (the review's data-word stays a data-word); the artifact grows NO new top-level key; and the protected bytes are unmoved through a live run too",
+       _T80,
+       why=lambda tr: ([] if (tr["rows"] == _T80D["rows"]
+                             and tr["synthesis"]["provenance"] == "ours-synthesis"
+                             and tr["synthesis"]["lineage"].startswith("SYNTHESIS: comparison from")
+                             and set(tr) == set(_T80D)
+                             and "level" not in str(tr) and "UNKNOWN" not in str(tr)
+                             and "uncertainty" not in str(tr)
+                             and _PB0L == _pb())
+                        else ["the live path moved something it was shown"]))
+
+_M81 = {"n": 0}
+def _m81(s, u):
+    _M81["n"] += 1
+    return {"content": '{"node": "n/a", "cites": ["A"], "status": "DONE"}'}
+
+
+_T81E = research.live({"id": "E", "designated": []}, mouth=_m81)
+_T81N = research.live({"id": "N",
+                       "designated": [{"id": "A", "text": "a"},
+                                      {"id": "B", "text": "b"}],
+                       "bounds": {"min_sources": 3}}, mouth=_m81)
+_T81REF = research.hold(_T81N, "constitution.md", to=stages.BASE_DIR)
+expect("T81 THE STATUS IS COMPUTED, NOT ASSERTED: EMPTY rides MOUTHLESS (the RP-10 shape - a mouth not called); THIN is not out-shouted by an optimistic sentence (the fake's own 'status':'DONE' field is UNREAD by the machine - no promotion-by-prose); and liveness does not touch the HOLD-lane (the root-refusal rides; one write-path remains the only write-path); and CALLS still rides at zero (no test ever touched the funnel)",
+       _T81N,
+       why=lambda tr: ([] if (_T81E["status"] == "EMPTY" and _M81["n"] == 1
+                             and tr["status"] == "THIN"
+                             and tr["synthesis"]["node"] == "n/a"
+                             and isinstance(_T81REF, str)
+                             and _T81REF.startswith("refused")
+                             and stages.CALLS[0] == 0)
+                        else ["the status, the mouth-count, or the hold-lane slipped"]))
 
 for name, tr, kw in T:
     bad = []
