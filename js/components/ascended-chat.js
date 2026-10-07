@@ -11,6 +11,8 @@
  * the shelf, the ladder, and the guards decide what may be said.
  * One turn, one door-call; no model is spent on memory.
  */
+import { SITE } from '../data/site.js?v=7'
+
 const STORE = 'ascended-chat-v1'
 const MAX_TURNS = 2 // exchanges carried into the next door-call
 const CAP_MSG = 160 // characters per carried message (the deterministic cut)
@@ -66,7 +68,7 @@ export class AscendedChat extends HTMLElement {
     this.inbox.value = ''
     this.inbox.style.height = 'auto'
     this.say('user', q)
-    this.status.textContent = 'Ascended is at the shelf'
+    this.status.textContent = SITE.project + ' ' + SITE.status.working
     let d
     const t0 = Date.now()
     try {
@@ -79,7 +81,7 @@ export class AscendedChat extends HTMLElement {
       if (d.error) throw new Error(d.error)
     } catch (err) {
       this.status.textContent = ''
-      this.sayErr('Ascended did not answer: ' + (err?.message || err))
+      this.sayErr(SITE.project + ' ' + SITE.status.failed + ': ' + (err?.message || err))
       this.busy = false
       this.send.disabled = false
       return
@@ -111,7 +113,7 @@ export class AscendedChat extends HTMLElement {
     box.className = 'msg msg--' + (who === 'user' ? 'user' : 'asc')
     const lab = document.createElement('span')
     lab.className = 'msg__who'
-    lab.textContent = who === 'user' ? 'You' : 'Ascended'
+    lab.textContent = who === 'user' ? 'You' : SITE.project
     const body = document.createElement('p')
     body.className = 'msg__text'
     body.textContent = text // verbatim, always; never markup

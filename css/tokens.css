@@ -10,15 +10,16 @@
   --ink-1: hsl(28 16% 6.5%);
   --ink-2: hsl(26 13% 10%);
 
-  /* Light on the ground. */
+  /* Light on the ground. Four steady steps — content never rides on a
+     decorative value: a thing that communicates must be readable first. */
   --veil: hsl(40 26% 87%);
-  --veil-60: hsl(40 18% 82% / .62);
-  --veil-38: hsl(40 16% 78% / .38);
-  --veil-14: hsl(40 14% 76% / .14);
+  --veil-60: hsl(40 20% 84% / .74);
+  --veil-38: hsl(40 18% 80% / .55);
+  --veil-14: hsl(40 16% 78% / .30);
 
   /* Gold — sacred, rare. */
   --gold: hsl(41 46% 57%);
-  --gold-68: hsl(41 46% 57% / .68);
+  --gold-68: hsl(41 46% 57% / .78);
   --gold-30: hsl(41 46% 57% / .30);
   --gold-16: hsl(41 46% 57% / .16);
   --gold-line: hsl(41 40% 62% / .45);

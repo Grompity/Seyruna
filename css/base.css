@@ -83,6 +83,9 @@ h2 {
 /* — Threshold buttons: crossing, not submitting. — */
 .btn {
   appearance: none;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
   padding: .85em 2.6em;
   background: transparent;
   border: 1px solid var(--hairline-strong);

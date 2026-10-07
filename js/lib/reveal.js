@@ -1,4 +1,4 @@
-import { prefersReducedMotion } from './motion.js?v=2'
+import { prefersReducedMotion } from './motion.js?v=7'
 
 /**
  * Scroll reveals. Content is readable without JavaScript; the hidden state is

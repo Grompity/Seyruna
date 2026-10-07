@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /ask
+Disallow: /api/

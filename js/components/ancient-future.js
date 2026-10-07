@@ -1,4 +1,4 @@
-import { spiralPath } from './glyphs.js?v=2'
+import { spiralPath } from './glyphs.js?v=7'
 
 /**
  * Two visual languages, one seam. The left is drawn by a hand (generated

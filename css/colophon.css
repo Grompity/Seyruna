@@ -1,0 +1,29 @@
+/* ====== colophon: the About block ======
+   The one plainly-worded section. No reveal drama, no mystique — just a
+   direct statement of who Seyruna is, and a real point of contact. */
+
+colophon > section { text-align: left; }
+
+.colophon-plain {
+  max-width: var(--measure);
+  margin: 0;
+  color: var(--veil-60);
+}
+
+.colophon-contact {
+  margin: var(--step) 0 0;
+  font-size: .95rem;
+}
+.colophon-mail {
+  color: var(--gold-68);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-30);
+  transition: color var(--dur-warm), border-color var(--dur-warm);
+}
+.colophon-mail:hover,
+.colophon-mail:focus-visible { color: var(--gold); border-color: var(--gold-68); }
+.colophon-note { color: var(--veil-38); }
+
+@media (max-width: 640px) {
+  .colophon-note { display: block; margin-top: .3rem; }
+}

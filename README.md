@@ -1,4 +1,4 @@
-# Ascended AI — Landing (Prototype I)
+# Seyruna — company site (Ascended is its flagship project)
 
 A design-first landing page. Not a product, not a CMS — a visual and
 interactive argument for what Ascended AI *is*: a place where old languages
@@ -9,7 +9,7 @@ attention.
 answers every response with `Cache-Control: no-store`, so a hot edit is
 visible on the very next reload). Zero build step, zero dependencies —
 `server.py` is only the stock Python HTTP server plus one header. Module
-imports carry a `?v=2` stamp so a browser that cached an older copy is
+imports carry a `?v=4` stamp so a browser that cached an older copy is
 forced onto fresh cache keys; bump the stamp (or rely on no-store) after
 breaking edits.
 
@@ -33,6 +33,7 @@ js/
   main.js                  boot: components, marginalia, reveals, the typed door
   data/                    the symbolic layer — content kept out of components
     geometry.js            the hero artifact, as pure parameters
+  site.js                  the single brand config (Seyruna/Ascended)
     constellation.js       the knowledge web: nodes, wires, dust field
     marginalia.js          the margin whispers
     copy.js                the two discoveries
@@ -51,6 +52,7 @@ js/
     ancient-future.js      manuscript spiral + machine grid, drawn by code
     source-section.js      names fade in when the field is in view
     final-threshold.js     the closing mark
+  ascended-principles.js   two commitments (staggers; tag = insight-section)
 ```
 
 ## The project files (beyond the site)
@@ -80,7 +82,7 @@ js/
    foot of the page: the sentence the site refuses to shout.
 3. **The seam** — the final mark *is* the hero geometry; the page ends inside
    the shape it began in.
-4. **The margins** — five marginalia, one per section, that whisper to the
+4. **The margins** — a few marginalia, on the sections that carry them, that whisper to the
    attentive (mouse or Tab — keyboard-reachable, never announced).
 
 ## Design rules for future editors

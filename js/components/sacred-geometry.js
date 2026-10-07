@@ -1,5 +1,5 @@
-import { geometry } from '../data/geometry.js?v=2'
-import { prefersReducedMotion } from '../lib/motion.js?v=2'
+import { geometry } from '../data/geometry.js?v=7'
+import { prefersReducedMotion } from '../lib/motion.js?v=7'
 
 const SVGNS = 'http://www.w3.org/2000/svg'
 const C = 500 // view-box center

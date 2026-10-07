@@ -1,6 +1,6 @@
 /* ====== philosophy: a creed of methods, not of beliefs ====== */
 
-philosoph-section > section { text-align: left; }
+insight-section > section { text-align: left; }
 
 .philo-thesis {
   max-width: 30em;

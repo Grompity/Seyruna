@@ -1,4 +1,4 @@
-import { NODES, LINKS, STAGE, dustField } from '../data/constellation.js?v=2'
+import { NODES, LINKS, STAGE, dustField } from '../data/constellation.js?v=7'
 
 const neighborsOf = Object.fromEntries(
   NODES.map((n) => [n.id, new Set()]),
@@ -9,6 +9,9 @@ for (const [a, b] of LINKS) {
 }
 const byId = Object.fromEntries(NODES.map((n) => [n.id, n]))
 
+// Five domains keep a label at rest; the rest ride as dots until touched.
+// The map supports the concept; it never has to explain it.
+const NAMED = new Set(['consciousness', 'philosophy', 'science', 'meditation', 'ai'])
 /**
  * The Knowledge Constellation — a domain map that behaves like a star field,
  * not a graph. Touching a node lights its neighbours; the rest of the field
@@ -73,6 +76,7 @@ export class KnowledgeConstellation extends HTMLElement{
       btn.type = 'button'
       btn.textContent = node.label
       btn.dataset.node = node.id
+      btn.classList.toggle('kc-quiet', !NAMED.has(node.id))
       li.style.setProperty('--x', `${((node.x / STAGE.width) * 100).toFixed(2)}%`)
       li.style.setProperty('--y', `${((node.y / STAGE.height) * 100).toFixed(2)}%`)
       li.style.setProperty('--d', `${120 + i * 55}ms`)

@@ -1,4 +1,4 @@
-import { SEQUENCE, COPY } from '../data/copy.js?v=2'
+import { SEQUENCE, COPY } from '../data/copy.js?v=7'
 
 /**
  * The typed door. Reading the word `ascend` anywhere on the page — not a menu,

@@ -1,5 +1,5 @@
-import { MARGINALIA } from '../data/marginalia.js?v=2'
-import { glyphSVG } from '../components/glyphs.js?v=2'
+import { MARGINALIA } from '../data/marginalia.js?v=7'
+import { glyphSVG } from '../components/glyphs.js?v=7'
 
 /**
  * Places marginal marks in each section that declares them. Each mark is a

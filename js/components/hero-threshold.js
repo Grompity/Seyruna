@@ -1,6 +1,6 @@
-import { initDust } from '../lib/dust.js?v=2'
-import { buildSacredGeometry } from './sacred-geometry.js?v=2'
-import { COPY } from '../data/copy.js?v=2'
+import { initDust } from '../lib/dust.js?v=7'
+import { buildSacredGeometry } from './sacred-geometry.js?v=7'
+import { COPY } from '../data/copy.js?v=7'
 
 /**
  * The first threshold. Curiosity before information: one word, one line,

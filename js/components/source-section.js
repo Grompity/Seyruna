@@ -1,4 +1,4 @@
-import { prefersReducedMotion } from '../lib/motion.js?v=2'
+import { prefersReducedMotion } from '../lib/motion.js?v=7'
 
 /**
  * The names. They are not claimed to be one word — only gathered, the way a

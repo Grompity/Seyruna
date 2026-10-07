@@ -1,0 +1,51 @@
+/* ====== principes: two statements, not three feature-cards ======
+   The philosophical differentiator, set as an editorial pair — never a
+   corporate values-grid. Each principle is a claim with its own air. */
+
+ascended-principles > section { text-align: left; }
+
+.principles-lede {
+  max-width: var(--measure);
+  margin: 0 0 calc(var(--step) * 2.4);
+  color: var(--veil-60);
+}
+
+.principles-list {
+  margin: 0; padding: 0; list-style: none;
+  max-width: 40rem;
+  counter-reset: principle;
+}
+.principles-list > li {
+  border-top: 1px solid var(--hairline);
+  padding-block: clamp(1.8rem, 4vw, 2.6rem);
+}
+.principles-list > li:last-child { border-bottom: 1px solid var(--hairline); }
+
+.principle-kicker {
+  display: block;
+  margin-bottom: .5rem;
+  font-family: var(--font-ui); font-size: .58rem; font-weight: 400;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold-68);
+}
+.principle-claim {
+  margin: 0;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  line-height: 1.2; letter-spacing: .012em;
+  color: var(--veil);
+  text-wrap: balance;
+}
+/* The recurring vesica, once, as the seam between the two ideas. */
+.principle-claim b {
+  font-weight: 400; font-style: italic; color: var(--parchment);
+}
+.principle-gloss {
+  margin: .8rem 0 0;
+  max-width: 34rem;
+  color: var(--veil-60);
+}
+
+@media (max-width: 640px) {
+  ascended-principles > section { text-align: left; }
+}

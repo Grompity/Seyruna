@@ -10,4 +10,4 @@ export class PhilosophSection extends HTMLElement{
     })
   }
 }
-customElements.define('philosophy-section', PhilosophSection)
+customElements.define('insight-section', PhilosophSection)

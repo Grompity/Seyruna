@@ -5,6 +5,23 @@
 knowledge-constellation > section { text-align: center; }
 knowledge-constellation .section-lede { margin-inline: auto; }
 
+/* The flagship's own doorway, set under the lede and above the map. */
+.ascended-banner {
+  margin: calc(var(--step) * .4) 0 calc(var(--step) * 1.6);
+}
+.ascended-banner a {
+  display: inline-block;
+  padding-block-end: .15rem;
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold-68);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-30);
+  transition: color var(--dur-warm), border-color var(--dur-warm);
+}
+.ascended-banner a:hover,
+.ascended-banner a:focus-visible { color: var(--gold); border-color: var(--gold-68); }
+
 .kc-stage {
   position: relative;
   width: min(62rem, 96vw);
@@ -26,9 +43,14 @@ knowledge-constellation .section-lede { margin-inline: auto; }
 .kc-wires line.is-on { stroke: var(--gold-line); }
 .kc-stars circle { opacity: .5; }
 
+/* Nodes hold their points; labels hang beneath the dots. */
+.kc-nodes { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
+.kc-nodes li { position: absolute; left: var(--x); top: var(--y); }
+
 /* Everything recedes when something is touched — except the neighbours. */
-.kc-stage.is-active .kc-node {
+.kc-node {
   position: relative;
+  transform: translate(-50%, -50%);
   appearance: none; background: none; border: 0; padding: .9rem .4rem;
   cursor: pointer;
   font-family: var(--font-ui);
@@ -42,6 +64,7 @@ knowledge-constellation .section-lede { margin-inline: auto; }
     opacity .6s var(--ease-drift),
     letter-spacing .6s var(--ease-drift);
 }
+.kc-stage.is-active .kc-node:not(.is-on):not(.is-near) { opacity: .32; }
 .kc-node::before {
   content: "";
   position: absolute; left: 50%; top: 50%;
@@ -58,6 +81,13 @@ knowledge-constellation .section-lede { margin-inline: auto; }
 }
 .kc-node.is-on::before { box-shadow: 0 0 12px 2px var(--gold-30); }
 .kc-node.is-near { color: var(--veil); }
+
+/* Quiet nodes carry no label at rest — the field is mostly dots, and the
+   labels that remain are the minority voice, not the main event. */
+.kc-node.kc-quiet { font-size: 0; padding: 1.25rem; }
+.kc-node.kc-quiet::before { transform: translate(-50%, -50%); }
+.kc-node.kc-quiet.is-on,
+.kc-node.kc-quiet.is-near { font-size: clamp(.56rem, 1.15cqw, .7rem); }
 
 .kc-info {
   min-height: 2.6em;
@@ -81,9 +111,8 @@ knowledge-constellation .section-lede { margin-inline: auto; }
 
 /* Compose for small rooms: the field remains, the labels come forward. */
 @media (max-width: 860px) {
-  .kc-node { font-size: 0; padding: 1.4rem; }           /* dots only */
+  .kc-node { font-size: 0; padding: 1.4rem; transform: translate(-50%, -50%) scale(1.15); }
   .kc-node::before { transform: translate(-50%, -50%); }
   .kc-node.is-on, .kc-node.is-near { font-size: .6rem; } /* the touched one speaks */
   .kc-stage { aspect-ratio: 1000 / 760; }
-  .kc-nodes li { transform: translate(-50%, -50%) scale(1.15); }
 }

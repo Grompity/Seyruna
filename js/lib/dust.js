@@ -1,4 +1,4 @@
-import { prefersReducedMotion } from './motion.js?v=2'
+import { prefersReducedMotion } from './motion.js?v=7'
 
 /**
  * Dust — a few dozen motes adrift in the hero, stirred by the pointer.
