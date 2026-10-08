@@ -14,7 +14,7 @@
 import { SITE } from '../data/site.js?v=7'
 
 const STORE = 'ascended-chat-v1'
-const MAX_TURNS = 2 // exchanges carried into the next door-call
+const MAX_TURNS = 1 // the ONE prior exchange carried - the window, not a store
 const CAP_MSG = 160 // characters per carried message (the deterministic cut)
 
 const cut = (s) => (s.length > CAP_MSG ? s.slice(0, CAP_MSG) + '…' : s)

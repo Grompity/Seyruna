@@ -49,7 +49,14 @@ def why_lane(trace, by_id=None):
     disagreement = edges + [o for o in obs if "RP-13" in o]
 
     uncertainty = []
-    if trace.get("unknown"):
+    if trace.get("unknown") and trace.get("lane") == "general":
+        # THE GENERAL EXIT IS NOT THE UNKNOWN EXIT (the RESPONSE ≠
+        # RETRIEVAL round): the flag still says the SHELF was silent -
+        # here the mouth spoke, without a record, and says so.
+        uncertainty.append(
+            "the shelf brought nothing; the general mouth answered as "
+            "itself (UNSOURCED - no record shown, no citation claimed)")
+    elif trace.get("unknown"):
         uncertainty.append(
             "the UNKNOWN exit spoke (RP-10): "
             + ("the shown set was empty" if not ids

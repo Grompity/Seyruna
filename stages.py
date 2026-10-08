@@ -140,7 +140,14 @@ def _human_state(low):
     return (None, None)
 
 def intent(question, facts):
-    low = (" " + (facts or "").lower() + " ")
+    # THE ONE-TURN BOUNDARY (the continuity round): what rides AFTER the
+    # marker is the PRIOR EXCHANGE - the conversation, not the seeker's
+    # word. The scan stops at the marker, so no prior word (the mouth's own
+    # "alone", the seeker's own yesterday) votes a factor, an indicator, or
+    # the human-state; the prompts still read the WHOLE of frame["facts"],
+    # so the mouth hears the context it needs and the law counts only what
+    # the seeker said. Memory is context, not truth.
+    low = (" " + (facts or "").split(P["prior_marker"], 1)[0].lower() + " ")
     flags = {f: _counted(low, P["facts_keywords"][f], False, True)
              for f in P["factors"]}
     inds = {g: _counted(low, kws, True, True)
@@ -571,16 +578,144 @@ def self_gate(question):
     g = P["self_gate"]
     words = {w for w in question.lower().replace("?", " ").replace("!", " ")
              .replace(",", " ").replace(";", " ").replace(".", " ").split()}
-    if words & set(g["greetings"]):
-        return g["greeting_line"]
+    # GREETINGS now read with the PATTERNS' OWN eyes (the multi-word
+    # "good morning" was a set-entry the token-set could never strike):
+    # an entry is a TOKEN SET the question must CONTAIN, and a single-word
+    # entry is byte-identical under that law (T50-T53 stand).
+    for entry in g["greetings"]:
+        if all(w in words for w in entry.split()):
+            return g["greeting_line"]
     for pat in g["patterns"]:
+        if all(w in words for w in pat["all"]):
+            return pat["line"]
+    # THE PHATIC BUCKET (the continuity round, smallest possible): a small
+    # word-shape with no question in it gets the machine's own small nod -
+    # no mouth called, no unknown flag, no crisis vote (the gate sits where
+    # the shelf already brought nothing). No second matcher, no second
+    # pipeline: the bucket rides the pattern's own law at the gate's own
+    # place at the exit.
+    for pat in g.get("phatics", []):
         if all(w in words for w in pat["all"]):
             return pat["line"]
     return None
 
+GENERAL_SYS = (
+    "The shelf brought nothing for this question, so you speak AS ASCENDED "
+    "FROM GENERAL SPEECH - no record stands behind you, and none may be "
+    "claimed. You may not say the shelf says, holds, or counts what it was "
+    "never shown. Answer plainly; if you cannot answer responsibly, say "
+    "so - knows:false is a pass, not a failure. "
+    "What reached you as the EARLIER exchange (it rides the FACTS line) is "
+    "the CONVERSATION, not the RECORD: it may steer your words, it stands "
+    "behind none of them, and only the shelf may be cited. A phatic word "
+    "with no question in it deserves a plain acknowledgment, not knows:false.")
+
+
+def general_exit(trace, frame, live, sim=None):
+    """THE GENERAL ARM (the RESPONSE ≠ RETRIEVAL round): at the shelf's
+    silence the machine asks ITS OWN MOUTH - the existing call seam, ONE
+    mouthful, no packet, no compose to launder. The verdict is small:
+    knows + node (+ the verbs, so the human-rule's eye still rides).
+    knows:false, silence, or a mouth that fell to noise takes the SHELF'S
+    own honest exit (RP-10's words, byte-identical) - which is exactly how
+    RP-10 stopped being AUTOMATIC at these sites: where a mouth is present
+    (wet or injected) it is ASKED FIRST, and the dry lane with no injection
+    keeps the old return whole (the frozen fixtures' meaning: the dry exit
+    is the SHELF'S claim, not the product's). The word may not CLAIM A
+    RECORD it was not given (no fabricated cites, no second provenance
+    system - the lineage word rides the EXISTING UNSOURCED: the mouth's own
+    thinking, NOT a statement's decay into speculation). What it may not
+    escape: the constitutional machinery that never rode a retrieval - the
+    risk arithmetic and the caution owed (RP-01/02/05, computed from the
+    FACTS, so the crisis takes no holiday because the shelf is quiet), and
+    the WORD-watches that check() reserves to the cite-bearing clause (the
+    status/pitch/dependency/stamp eyes, RP-03's eye on the named human - a
+    record-less word has no record to launder but still may not mint).
+    RP-06's no-attribution is filtered HERE on purpose: this word does not
+    FAIL attribution, it is UNSOURCED by kind - and the lane's own word
+    names that once, honestly. No compose, no blocked flag: those are the
+    RECORD lane's words, and a word without a record has no record to
+    break - which is why the general lane could not ride the knowledge
+    lane's cite-machinery without its honesty strangling its speech."""
+    if sim is None and not live:
+        return False
+    if sim is not None:
+        row = sim
+    else:
+        _tg = _PC()
+        out = call(GENERAL_SYS,
+                   VB + "\n\nTHE SHELF: nothing relevant was found; you "
+                   "speak from general knowledge, not from a record.\n"
+                   "THE SEEKER: " + frame["question"]
+                   + "\nFACTS: " + frame["facts"]
+                   + "\nRespond ONLY with JSON: {\"knows\": true|false, "
+                   "\"node\": \"plain speech or empty\", "
+                   "\"verbs\": [CLAIM|RECOMMEND|PERMIT]}")
+        trace["stages_ms"]["general"] = (_PC() - _tg) * 1000
+        trace["model_calls"] = CALLS[0]                # the ledger keeps
+        try:                                           # the truth of it
+            row = grab_json(out.get("content") or "", "{")
+        except ValueError:
+            trace["general_note"] = "mouth-fell-back"
+            return False                               # laned, not raised
+    if not isinstance(row, dict):
+        trace["general_note"] = "mouth-fell-back"
+        return False
+    node_txt = str(row.get("node") or "").strip()
+    if not row.get("knows") or not node_txt:
+        return False            # the mouth's own humility rides RP-10
+    if node_txt.lower() in {str(ph).lower()
+                            for ph in P["general_placeholders"]}:
+        # THE PLACEHOLDER ANSWERED (the validation's contract-fragility
+        # find): the mouth once handed back its OWN contract's words as
+        # the node - a non-empty mumble is no word to speak. It rides the
+        # SAME honest lane as the humility, with the same small note.
+        trace["general_note"] = "mouth-fell-back"
+        return False
+    node = {"node": str(row["node"]).strip(), "cites": [],
+            "verbs": [str(v) for v in (row.get("verbs") or [])]}
+    a = analyze([], frame, {})          # the risk's arithmetic rides the
+    c = check([node], a, frame)         # FACTS - retrieval-independent
+    t = node["node"].lower()
+    obs = list(c["obs"])
+    if _has(P["status_words"], t):
+        obs.append("RP-04:status word -> demoted to inference")
+    if _has(P["pitch_words"], t):
+        obs.append("RP-08:pitch word (strip candidate)")
+    if _has(P["exclusivity_words"], t):
+        obs.append("I.5:dependency watch (pattern, not sentence)")
+    if _has(P["stamp_words"], t):
+        obs.append("K:stamp telemetry")
+    if ("RECOMMEND" in node["verbs"]
+            and not (frame["human"] and frame.get("human_reachable"))):
+        obs.append("RP-03:provisional (stop-rules are the seeker's)")
+    if frame.get("human") and not frame.get("human_reachable"):
+        obs.append("named human NOT reachable-that-day (signed definition)")
+    text, added = node["node"], ""
+    if c["owed"] and not _has(P["presence_words"], text.lower()):
+        added = a["caution_text"]                      # RP-02's demand, ONCE
+        text = (text + " " + added).strip()
+    if trace.get("lane"):
+        trace["lane_prev"] = trace["lane"]             # the packet lane's
+    trace["lane"] = "general"                          # name survives
+    trace["response"] = text
+    trace["lineage"] = "UNSOURCED"                     # the EXISTING word;
+    trace["unknown"] = True                            # the SHELF was
+    trace["fires"] = (["GENERAL:UNSOURCED"]             # silent - the
+                      + [f for f in c["fires"]         # flag's meaning
+                         if f != "RP-06:no-attribution"])
+    trace["observations"] = obs
+    if added:
+        trace["caution_appended"] = True
+        trace["required_content"] = {"text": added, "rule": "RP-02",
+                                      "survives_to_speech": True}
+    return True
+
+
 # ---------- the run
 def run_pipeline(question, facts="", draft=None, live=False,
-                 sim_findings=None, packet=None, sim_grades=None):
+                 sim_findings=None, packet=None, sim_grades=None,
+                 sim_general=None):
     # SYNTHESIS-EVAL: a GIVEN packet replaces retrieval's FINDING with a
     # GIVEN shown-set — the boundary, the guards, and the UNKNOWN door
     # ride unchanged; the retrieval lane is untouched for every run that
@@ -610,6 +745,8 @@ def run_pipeline(question, facts="", draft=None, live=False,
             trace["fires"] = ["SELF:ITSELF"]
             trace["response"] = self_line
             return trace
+        if general_exit(trace, frame, live, sim_general):   # THE PLANNER
+            return trace                                    # (option B)
         trace["fires"] = ["RP-10"]
         trace["unknown"] = True
         trace["response"] = P["unknown_plain"]
@@ -629,6 +766,8 @@ def run_pipeline(question, facts="", draft=None, live=False,
         trace["grades"] = grades; trace["grade_notes"] = gnotes
         trace["answerability"] = "NOTHING"
         trace["context_size"] = len(frame["facts"])
+        if general_exit(trace, frame, live, sim_general):   # THE PLANNER
+            return trace                                    # (option B)
         trace["fires"] = ["RP-10"]
         trace["unknown"] = True
         trace["response"] = P["unknown_plain"]
