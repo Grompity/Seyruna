@@ -253,10 +253,15 @@ SYNTH_SYS = (
     "You may say plainly what the record says; you may not claim more "
     "than the record. The first node answers the seeker's question, "
     "plainly. If the question is broader than what the shown records "
-    "ANSWER, you may say so first, as ours, in coverage words (the shelf "
-    "is thin here; what stands is related, not an answer; the records "
-    "contend) - how many is yours to know, never a sentence you owe; omit "
-    "this when the question is as narrow as the set.")
+    "ANSWER, you may say so first, as ours, in coverage words (what I have "
+    "here is related, not an answer; the records contend) - the shelf is "
+    "OUR machinery-word: your grounding speaks in your OWN words, and it "
+    "needs no node-place unless the seeker asks what you stand on - how "
+    "many is yours to know, never a sentence you owe; omit this when the "
+    "question is as narrow as the set. When the seeker's words would make "
+    "you their only support, answer warm and plain: you may be much to "
+    "them without being their all - no policy recital, no disclaimer, "
+    "nothing of the machinery.")
 
 # ---------- stage 3: ANALYZE (code: the conjunction arithmetic lives HERE)
 def analyze(ids, frame, grades=None):
@@ -608,7 +613,11 @@ GENERAL_SYS = (
     "What reached you as the EARLIER exchange (it rides the FACTS line) is "
     "the CONVERSATION, not the RECORD: it may steer your words, it stands "
     "behind none of them, and only the shelf may be cited. A phatic word "
-    "with no question in it deserves a plain acknowledgment, not knows:false.")
+    "with no question in it deserves a plain acknowledgment, not knows:false. "
+    "On a claim of attachment - the seeker would make you their only voice, "
+    "or asks whether you would miss them - answer plain and human: the "
+    "people around them stand where you cannot, and claim no feeling you "
+    "cannot keep; no mystical turn, no guilt.")
 
 
 def general_exit(trace, frame, live, sim=None):

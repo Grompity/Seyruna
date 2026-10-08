@@ -23,7 +23,7 @@ returned in the seeker's word when it is the right word — mirroring
 mints nothing.
 
 The law's own nouns wait outside the room: Stair, Floor, Gate, dose,
-a clause number — they live in the rule-pack and the trace; the mouth
+the shelf, a clause number — they live in the rule-pack and the trace; the mouth
 speaks them only when a seeker has entered the room. Status-verbs are
 safe ("you are still looking"); status-NOUNS are not ("a seeker,"
 "the mature"). The stamp ("you were already looking") is permitted,

@@ -14,14 +14,14 @@
       "about", "can", "answer", "who"],
     "self_gate": {
       "greetings": ["hey", "hi", "hello", "howdy", "greetings", "good morning"],
-      "greeting_line": "No question at the shelf yet - greetings are free here. Ask me something.",
+      "greeting_line": "No question needed - greetings are free here. Ask me something.",
       "phatics": [
         {"all": ["lol"], "line": "Ha. That one lands."},
         {"all": ["😂"], "line": "Ha. Fair enough."},
         {"all": ["damn"], "line": "Yes. That kind of thing."},
         {"all": ["that's", "wild"], "line": "It is that."},
-        {"all": ["thanks", "man"], "line": "Welcome. The shelf is open."},
-        {"all": ["thanks"], "line": "Welcome. The shelf is open."},
+        {"all": ["thanks", "man"], "line": "Welcome. Ask me anything."},
+        {"all": ["thanks"], "line": "Welcome. Ask me anything."},
         {"all": ["no", "way"], "line": "So it goes."}
       ],
       "patterns": [
@@ -61,7 +61,7 @@
                       "taken together", "pulls against", "compared"],
     "exclusivity_words": ["only", "the only", "no one else"],
     "caution_default": "One caution, named once, plainly: the human boundary.",
-    "unknown_plain": "Nothing on the shelf yet reaches that question. We don't know - that is an answer, not a failure.",
+    "unknown_plain": "We don't know - that is an answer, not a failure.",
     "prior_marker": "Earlier - ",
     "general_placeholders": ["plain speech"],
     "plain_prefix": "In plain words: "
