@@ -816,3 +816,49 @@ def run_pipeline(question, facts="", draft=None, live=False,
     if c["blocked"]:
         trace["response"] = plain_render(part or ids)
     return trace
+
+
+# ---------- THE DOOR (A1): one law for BOTH doors, no second pipeline ------
+def _cut(s, cap):
+    s = str(s or "")
+    return (s[:cap] + "\u2026") if len(s) > cap else s
+
+
+def digest(history, cap_turns=None, cap_chars=None):
+    """THE CARRYING LAW (A1): a pure, bounded, deterministic digest of the
+    earlier exchange into the FACTS channel the architecture already grew
+    for 'what the seeker has said.' An empty history is '' — the first turn
+    stays byte-identical to a one-question ask. A turn is {'q','a'}; keys
+    beyond those ride in silence (K2). The caps are the rule-pack's own
+    numbers (letter C: the finalized vocabularies AND figures live in the
+    rule-pack). The shape of the bytes is the browser's former law, kept
+    byte-for-byte so no spoken word moves."""
+    ct = cap_turns if cap_turns is not None else P.get("carry_turns", 3)
+    cc = cap_chars if cap_chars is not None else P.get("carry_cap_msg", 160)
+    recent = [t for t in (history or []) if isinstance(t, dict)][-ct:]
+    if not recent:
+        return ""
+    return ("Earlier - " + " then ".join(
+        "you asked '" + _cut(t.get("q"), cc) + "', Ascended said '"
+        + _cut(t.get("a"), cc) + "'" for t in recent) + ".")
+
+
+def door(body):
+    """THE ONE DOOR LAW: the task lane first (a '/task ...' command spends
+    ZERO mouthfuls — the runner answers from bytes), then the conversational
+    lane (explicit facts ride verbatim — the compatibility road; else the
+    digested history; else the first turn's ''). Returns (dict, code): the
+    doors themselves are transport only."""
+    q = (body.get("question") or "").strip()
+    if q.startswith("/task"):
+        import task
+        return task.handle(q), 200
+    if not q:
+        return {"error": "no question"}, 400
+    facts = body.get("facts")
+    if facts is None:
+        facts = digest(body.get("history"))
+    tr = run_pipeline(q, str(facts or "").strip(), live=True)
+    import window
+    return {"response": tr.get("response", ""), "why": window.why_lane(tr),
+            "trace": tr}, 200

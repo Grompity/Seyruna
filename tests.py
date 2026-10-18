@@ -970,16 +970,17 @@ expect("T94 THE PHATIC NOD (the smallest bucket, at the gate's own place): 'than
 _T95 = stages.run_pipeline("What of the zephyr?",
     "Earlier - " + ("messy 'quoted' claim, with commas; a semicolon. " * 18),
     live=False, sim_general=dict(_CALM_R))
-expect("T95 THE BOUNDARY IS SMALL AND THE BYTES PROVE IT: a long, quote-and-comma-messy prior half passes the marker whole to the mouths and the scan whole-ignores it without a raise (the mouth's word rides whole, the RECOMMEND keeps its provisional eye); and the window itself is ONE constant's letter - the carried exchanges now one, the deterministic cut (CAP_MSG = 160) preserved, and the marker's own letters ('Earlier - ') still shared across the door",
+expect("T95 THE BOUNDARY IS SMALL AND THE BYTES PROVE IT: a long, quote-and-comma-messy prior half passes the marker whole to the mouths and the scan whole-ignores it without a raise (the mouth's word rides whole, the RECOMMEND keeps its provisional eye); and the window itself is ONE law's HOME now (the A1 re-anchor): the figures ride the rule-pack's numbers, the marker's letters ride stages.digest, and the browser carries turns with NO second copy of the law (the two-place drift is dead)",
        _T95, response_has="It may rest.",
-       why=lambda tr: ([] if ("MAX_TURNS = 1" in _JS
-                              and "MAX_TURNS = 2" not in _JS
-                              and "Earlier - " in _JS
-                              and "CAP_MSG = 160" in _JS
+       why=lambda tr: ([] if (stages.P.get("carry_turns") == 3
+                              and stages.P.get("carry_cap_msg") == 160
+                              and "Earlier - " in stages.digest([{"q": "a", "a": "b"}])
+                              and "Earlier - " not in _JS
+                              and "MAX_TURNS" not in _JS
                               and tr.get("lane") == "general"
                               and any("RP-03:provisional" in o
                                       for o in (tr.get("observations") or [])))
-                       else ["the window's bytes moved twice"]))
+                       else ["the window's law changed homes (A1: rule-pack figures, stages.digest marker, the browser carries turns)"]))
 
 # ============ THE SURFACE ROUND (the shelf is infrastructure, not persona) =
 # The line being witnessed: machinery-words may live in the trace, the
@@ -1083,6 +1084,176 @@ expect("T105 THE EYE SEES BOTH LANES - PROVEN, NOT ASSUMED: a CITED knowledge-la
              and "only support" in _BRIEF
              and "without being their all" in _BRIEF)
            else ["a province lost the boundary, or the brief lost the clause"]))
+
+# ============ THE A1 WITNESSES (T106-T115): the runner, the door, the laws
+# task.py rides research's passes and stages' mouth (no second pipeline, no
+# second provenance); the door (stages.door) is ONE law for BOTH doors; the
+# carrying law (stages.digest) is pure, bounded, deterministic. The task lane
+# spends ZERO mouthfuls - stages' CALLS ledger stands as the instrument. A
+# scripted mouth (stages.call's shape) and a fixed clock keep every number
+# exact; the holding area is the founder's disposable pile (temp dirs), never
+# the protected root - whose bytes are weighed around a full voyage (T115)
+# by the research block's own scale.
+import task as _task
+
+class _Mouth:
+    def __init__(self, replies):
+        self.q, self.n = list(replies), 0
+    def __call__(self, system, user, maxtok=None):
+        self.n += 1
+        return {"content": (self.q.pop(0) if self.q else '{"designated": []}')}
+
+def _a1(tag):
+    return os.path.join(tempfile.gettempdir(), "a1-" + tag)
+
+def _a1f(tag):
+    # fresh: the holding area outlives a run (it is a pile, not a register),
+    # so a witness that OWNS its premise wipes its own pile first. Witnesses
+    # that RIDE a prior witness's bytes (_T109*, _R112) call _a1, not _a1f.
+    d = _a1(tag)
+    if os.path.isdir(d):
+        import shutil
+        shutil.rmtree(d)
+    return d
+
+_J106 = _Mouth(['{"node": "joined.", "cites": ["A", "B"]}'])
+_T106 = _task.Task(to=_a1f("t106"), mouth=_J106, clock=lambda: 5.0)
+_T106.start("J106", "what remains?", [{"id": "A", "text": "one."},
+                                     {"id": "B", "text": "two."}],
+            designated=["A", "B"])
+expect("T106 A HAND-DESIGNATED PASS SPENDS NO PLAN MOUTH AND JOINS EXACTLY ONCE: the served voyage writes the crash-safe state AND the terminal report to the holding area (checkpoint and report are the same bytes' two words); the first pass by hand is one mouth, never two",
+       _T106.r,
+       why=lambda tr: ([] if (tr["status"] == "DONE" and tr["spent"]["calls"] == 1
+                             and tr["spent"]["passes"] == 1
+                             and "designated by hand" in tr["notes"]
+                             and os.path.isfile(os.path.join(_T106.to, "task_state.json"))
+                             and any(f.startswith("task-J106-done")
+                                     for f in os.listdir(_T106.to)))
+                        else ["the served lane did not ride"]))
+
+_M107 = _Mouth(['{"designated": ["A"]}', '{"designated": ["B"]}'])
+_T107 = _task.Task(to=_a1f("t107"), mouth=_M107, clock=lambda: 3.0)
+_T107.start("J107", "spread", [{"id": "A", "text": "a"}, {"id": "B", "text": "b"}],
+            bounds={"min_sources": 2})
+_MID107 = _T107.status()
+_T107.resume()
+expect("T107 THE FLOOR IS CROSS-PASS AND THE MOUTH STAYS BOUNDED: one settled source under a floor of two is NOT served (the voyage rides OPEN between door-calls - the crash-recovery point, not a failure); the second pass sees the floor met and CLOSES the voyage - and neither single-source pass ever mouthed to join (the dry law rode the whole way)",
+       _T107.r,
+       why=lambda tr: ([] if (_MID107 == "OPEN" and tr["status"] == "DONE"
+                             and _M107.n == 2 and tr["settled"] == ["A", "B"])
+                        else ["the floor or the mouth-count moved"]))
+
+_T108 = _task.Task(to=_a1f("t108"), mouth=_Mouth(['{"designated": ["U"]}'] * 3),
+                   clock=lambda: 1.0)
+_T108.start("J108", "web?", [{"id": "U", "url": "http://x/y"}])
+_T108.resume()
+_T108.resume()
+expect("T108 THE AMBIGUOUS REQUEST REPEATS, IT DOES NOT RE-SPEAK: a pass that OPENS a fresh gap counts as progress (the gap-words are research's OWN words, never a second vocabulary); a pass that neither settles nor opens is ONE coin, and its repeat STALLS the voyage - the anti-reroll law at the task's address, with every failed reach gapped and no row fabricated",
+       _T108.r,
+       why=lambda tr: ([] if (tr["status"] == "STALLED"
+                             and tr["gaps"] == ["gap:network-not-designated:U"]
+                             and all(a["rows"] == [] for a in tr["artifacts"])
+                             and any("no reroll" in n for n in tr["notes"]))
+                        else ["the stall lane or the gap-word moved"]))
+
+_T109 = _task.Task(to=_a1("t107"), mouth=_Mouth([]), clock=lambda: 3.0)
+_T109.start("RESTART", "the shelf rode", [])
+_T109B = _task.Task(to=_a1("t107"), mouth=_Mouth(['x']), clock=lambda: 3.0)
+_T109B.pause()
+_R109B = _T109B.start("NOPE", "afloat?", [])
+expect("T109 AFLOAT IS GUARDED BOTH WAYS (the ALREADY_COMPLETE law, adopted whole): a TERMINAL past restarts clean under a fresh id, while an OPEN-then-PAUSED voyage REFUSES start (id stands, status stands) with the note naming the way out - resume it, or cancel",
+       _T109B.r,
+       why=lambda tr: ([] if (_T109.r["id"] == "RESTART"
+                             and tr["id"] == "RESTART"
+                             and tr["status"] == "PAUSED"
+                             and any("afloat" in n for n in tr["notes"]))
+                        else ["the afloat guard moved"]))
+
+_T110 = _task.Task(to=_a1f("t110"), mouth=_Mouth(['{"designated": ["A"]}']),
+                   clock=lambda: 2.0)
+_T110.start("J110", "bounded", [{"id": "A", "text": "a"}],
+            bounds={"min_sources": 2},
+            budget={"max_passes": 9, "max_calls": 2})
+_MID110 = _T110.status()
+_T110.resume()
+_T110B = _task.Task(to=_a1f("t110b"), mouth=_Mouth([]), clock=lambda: 0.1)
+_T110B.start("J110B", "timeless", [{"id": "A", "text": "a"}],
+             budget={"max_secs": 0.0})
+expect("T110 THE BUDGET IS A PRE-REQUEST GATE, NOT A POST-Facto: a pass does not START without one mouth's margin left (the conservative margin is the point), a zero-seconds voyage never coins at all (passes=0), and the BUDGET close still writes the report - the caps stop the voyage, the caps do not launder the evidence",
+       _T110.r,
+       why=lambda tr: ([] if (_MID110 == "OPEN" and tr["status"] == "BUDGET"
+                             and tr["spent"] == {"passes": 1, "calls": 1, "secs": 0.0}
+                             and any(f.startswith("task-J110-budget")
+                                     for f in os.listdir(_T110.to))
+                             and _T110B.status() == "BUDGET"
+                             and _T110B.r["spent"]["passes"] == 0)
+                        else ["the pre-request gate moved"]))
+
+_M111 = _Mouth(['{"designated": ["A"]}', '{"designated": ["B"]}'])
+_T111 = _task.Task(to=_a1f("t111"), mouth=_M111, clock=lambda: 3.0)
+_T111.start("J111", "spread", [{"id": "A", "text": "a"}, {"id": "B", "text": "b"}],
+            bounds={"min_sources": 2})
+_T111.pause()
+_MID111 = _task.Task(to=_a1("t111"), mouth=_M111,
+                     clock=lambda: 3.0).status()          # RELOADED from bytes
+_T111.resume()
+expect("T111 PAUSE LANDS ON THE BYTES AND RESUME PICKES UP WHERE THE BYTE STOOD: the PAUSE persists across a fresh reader of the state (a crash and a pause are the SAME recovery road - the checkpoint is the truth, the object is not), and the resume finishes the served voyage the pause left mid-floor",
+       _T111.r,
+       why=lambda tr: ([] if (_MID111 == "PAUSED" and tr["status"] == "DONE"
+                             and _M111.n == 2)
+                        else ["the pause/resume road moved"]))
+
+_R112 = _task.Task(to=_a1("t108"), mouth=_Mouth([]), clock=lambda: 1.0).cancel()
+expect("T112 THE CANCELLED WORD IS TERMINAL AND THE REPORT SPEAKS IT: cancel rides the same durable road (state + report file), and the report's OWN last line is the law's word - the open work rides the gaps and the notes, NOT the silence",
+       _R112,
+       why=lambda tr: ([] if (tr["status"] == "CANCELLED"
+                             and tr["lines"][-1] == "the open work rides the gaps and the notes, not the silence."
+                             and any(f.startswith("task-J108-cancelled")
+                                     for f in os.listdir(_a1("t108"))))
+                        else ["the terminal word moved"]))
+
+_CALLS113 = stages.CALLS[0]
+_R113 = stages.door({"question": "/task squawk"})
+_R113B = stages.door({"question": "   "})
+expect("T113 THE TASK LANE SPENDS ZERO MOUTHFULS (the CALLS ledger stands as the instrument) AND BOTH UNHANDLED OUTCOMINGS ANSWER USEFULLY: an unknown command word names the recognized words rather than shrug or model, and a bare ask gets the 400-with-reason the surface round made law",
+       _R113[0],
+       why=lambda tr: ([] if (stages.CALLS[0] == _CALLS113
+                             and "recognized" in tr.get("response", "")
+                             and _R113[1] == 200
+                             and _R113B[1] == 400 and "error" in _R113B[0])
+                        else ["the door lane moved"]))
+
+_D114 = [{"q": "why?"}, {"q": "and you?", "a": "well."},
+         {"q": "third", "a": "x" * 200}, {"q": "fourth", "a": "y"}]
+_OLDRP = stages.run_pipeline
+stages.run_pipeline = lambda q, f="", **kw: {"response": f or "(plain)", "retrieval": []}
+_H114 = stages.door({"question": "and you?", "history": [{"q": "first", "a": "said"}]})
+_F114 = stages.door({"question": "x?", "facts": "VERBATIM",
+                     "history": [{"q": "p", "a": "q"}]})
+stages.run_pipeline = _OLDRP
+expect("T114 THE CARRYING LAW IS PURE, BOUNDED, DETERMINISTIC, AND BYTE-KEPT: an empty history is the first turn's '' (byte-identical to a one-question ask); the carried bytes are the browser's FORM kept whole; the caps bite by the rule-pack's numbers; the door folds history into FACTS - and an explicit facts rides VERBATIM over a history (the compatibility road never launders)",
+       {"lane": "digest"},
+       why=lambda tr: ([] if (stages.digest([]) == "" and stages.digest(None) == ""
+                             and stages.digest([{"q": "p", "a": "q"}]) ==
+                                 "Earlier - you asked 'p', Ascended said 'q'."
+                             and "why?" not in stages.digest(_D114)
+                             and "fourth" in stages.digest(_D114)
+                             and "\u2026" in stages.digest(_D114)
+                             and _H114[1] == 200
+                             and _H114[0]["response"].startswith("Earlier - you asked 'first'")
+                             and _F114[0]["response"] == "VERBATIM")
+                        else ["the carrying law moved"]))
+
+_PB1150 = _pb()
+_T115 = _task.Task(to=_a1f("t115"),
+                   mouth=_Mouth(['{"node": "joined.", "cites": ["A", "B"]}']),
+                   clock=lambda: 9.0)
+_T115.start("J115", "weigh?", [{"id": "A", "text": "one."},
+                               {"id": "B", "text": "two."}], designated=["A", "B"])
+expect("T115 THE RUNNER'S PEN TOUCHES THE HOLDING AREA ONLY: a full served voyage - plan lane, evidence, one join, state, report - moves NONE of the protected bytes (the research block's own scale re-weighed; research.hold's refusal at the root is inherited whole by the runner's single write-path)",
+       _T115.r,
+       why=lambda tr: ([] if (tr["status"] == "DONE" and _PB1150 == _pb())
+                        else ["the runner's pen strayed onto protected ground"]))
 
 for name, tr, kw in T:
     bad = []

@@ -16,7 +16,6 @@ import sys
 # the door (MVP): the product rides INSIDE the same process as the
 # shelf and the spine — stdlib all the way, the funnel spoke by stages.
 import stages
-import window
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -45,15 +44,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             body = json.loads((self.rfile.read(n) or b'{}').decode())
             if self.path.split('?')[0] != '/ask':
                 raw, code = b'{"error": "no route"}', 404
-            elif not (body.get('question') or '').strip():
-                raw, code = b'{"error": "no question"}', 400
             else:
-                tr = stages.run_pipeline(body['question'].strip(),
-                                         (body.get('facts') or '').strip(),
-                                         live=True)
-                raw = json.dumps({'response': tr.get('response', ''),
-                                  'why': window.why_lane(tr),
-                                  'trace': tr}).encode()
+                payload, code = stages.door(body)
+                raw = json.dumps(payload).encode()
         except Exception as e:
             raw, code = json.dumps({'error': repr(e)}).encode(), 500
         self.send_response(code)

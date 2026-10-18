@@ -64,7 +64,9 @@
     "unknown_plain": "We don't know - that is an answer, not a failure.",
     "prior_marker": "Earlier - ",
     "general_placeholders": ["plain speech"],
-    "plain_prefix": "In plain words: "
+    "plain_prefix": "In plain words: ",
+    "carry_turns": 3,
+    "carry_cap_msg": 160
   },
   "rules": [
     {"id": "RP-01", "clause": "I.2", "kind": "hard", "what": "conjunction counted in CODE; >= 2 of 4 factors makes the caution warranted"},

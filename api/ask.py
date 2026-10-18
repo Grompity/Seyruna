@@ -14,7 +14,6 @@ if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
 import stages
-import window
 
 class handler(BaseHTTPRequestHandler):
     def do_POST(self):
@@ -22,12 +21,8 @@ class handler(BaseHTTPRequestHandler):
         try:
             n = int(self.headers.get("Content-Length") or 0)
             body = json.loads((self.rfile.read(n) or b"{}").decode() or "{}")
-            tr = stages.run_pipeline((body.get("question") or "").strip(),
-                                     (body.get("facts") or "").strip(),
-                                     live=True)
-            raw = json.dumps({"response": tr.get("response", ""),
-                              "why": window.why_lane(tr),
-                              "trace": tr}).encode()
+            payload, code = stages.door(body)
+            raw = json.dumps(payload).encode()
         except Exception as e:
             raw, code = json.dumps({"error": repr(e)}).encode(), 500
         self.send_response(code)

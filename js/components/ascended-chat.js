@@ -5,19 +5,17 @@
  * stages.run_pipeline(question, facts, live=True) and the speech arrives
  * verbatim. The element adds a conversation shell and nothing else:
  * the turns live here (and in sessionStorage, which IS the session), and
- * each next turn carries a bounded, deterministic digest of the recent
- * exchanges as FACTS — the channel the architecture already grew for
- * "what the seeker already said". Conversation is context, not evidence:
+ * each next turn carries the recent exchange itself; the SERVER's carrying
+ * law (stages.digest) folds them, bounded and deterministic, into FACTS —
+ * the channel the architecture already grew for "what the seeker already
+ * said". Conversation is context, not evidence:
  * the shelf, the ladder, and the guards decide what may be said.
  * One turn, one door-call; no model is spent on memory.
  */
 import { SITE } from '../data/site.js?v=7'
 
 const STORE = 'ascended-chat-v1'
-const MAX_TURNS = 1 // the ONE prior exchange carried - the window, not a store
-const CAP_MSG = 160 // characters per carried message (the deterministic cut)
-
-const cut = (s) => (s.length > CAP_MSG ? s.slice(0, CAP_MSG) + '…' : s)
+const CARRY = 3 // the bounded window; the SERVER holds the cap law (P.carry_turns)
 const debugOn = new URLSearchParams(location.search).has('debug')
 
 export class AscendedChat extends HTMLElement {
@@ -48,15 +46,6 @@ export class AscendedChat extends HTMLElement {
     })
   }
 
-  // The bounded, deterministic digest of what came before. Empty on the
-  // first turn — so the first turn is byte-identical to a one-question ask.
-  facts() {
-    const recent = this.turns.slice(-MAX_TURNS)
-    if (!recent.length) return ''
-    return 'Earlier - ' + recent.map(t =>
-      "you asked '" + cut(t.q) + "', Ascended said '" + cut(t.a) + "'").join(' then ') + '.'
-  }
-
   async submitTurn() {
     if (this.busy) return
     const q = this.inbox.value.trim()
@@ -75,7 +64,10 @@ export class AscendedChat extends HTMLElement {
       const r = await fetch('/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: q, facts: this.facts() }),
+        body: JSON.stringify({
+          question: q,
+          history: this.turns.slice(-CARRY).map(t => ({ q: t.q, a: t.a })),
+        }),
       })
       d = await r.json()
       if (d.error) throw new Error(d.error)
