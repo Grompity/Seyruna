@@ -1255,6 +1255,188 @@ expect("T115 THE RUNNER'S PEN TOUCHES THE HOLDING AREA ONLY: a full served voyag
        why=lambda tr: ([] if (tr["status"] == "DONE" and _PB1150 == _pb())
                         else ["the runner's pen strayed onto protected ground"]))
 
+# ============================ A2: THE MENU IS DATA ============================
+# The founder's menu rides as a root FILE; the campaign drives the SAME Task,
+# the SAME pass function, the SAME report (no daemon, no second pipeline). Two
+# menu lanes reach beyond the hand — a bare shelf id names a row's OWN words,
+# a query designates through the FREE SEARCH (stages.retrieve — the door's own
+# search, zero mouthfuls; the CALLS ledger stands as the instrument). Dead
+# lanes die NOTED (the cite-law's shape at the menu's address). The caps ride
+# the file beside the thing they bound (letter C). coral.py is the narrow
+# handoff to the sibling CORAL lab: it READS the lab, WRITES only the holding
+# area, and claims nothing the lab has not said (evaluated_by_lab False).
+import coral as _coral
+
+def _a2(tag):
+    return os.path.join(tempfile.gettempdir(), "a2-" + tag)
+
+def _a2f(tag):
+    # fresh: the holding area is a pile; an A2 witness OWNS its premise (the
+    # A1 re-run law, adopted whole), and its menu fixture lands inside it.
+    d = _a2(tag)
+    if os.path.isdir(d):
+        import shutil
+        shutil.rmtree(d)
+    os.makedirs(d, exist_ok=True)
+    return d
+
+# The shelf-lane facts are weighed against the shelf AS WRITTEN (the root
+# bytes) — the harness swapped a FIXTURE shelf in at import, so A2 restores
+# the real rows for this window and puts the fixture back after it. A2 speaks
+# to the shelf's bytes, not to a fixture's convenience.
+_A2SHELF = stages._load_shelf()
+stages.set_shelf(_A2SHELF)
+_C1160 = stages.CALLS[0]
+_PB1160 = _pb()
+_M116 = _task.load_menu()
+_I116 = [e["id"] for e in _M116["entries"]]
+_116_SRC = json.load(open(os.path.join(stages.BASE_DIR, "research-menu.json")))
+_116_HAND = [e for e in _116_SRC["menu"] if "query" not in e
+             and ("file" in e or "text" in e)]
+_116_Q = [e for e in _116_SRC["menu"] if e.get("query")]
+_116_QIDS = stages.retrieve(_116_Q[0]["query"], _116_Q[0].get("k"))
+_116_NOTES = "\n".join(_M116["notes"])
+_116_HAND_OK = True
+for _s in _116_HAND:
+    _116_HAND_OK = _116_HAND_OK and (str(_s.get("id")) in _I116)
+_116_QSUB_OK = True
+for _q in _116_QIDS:
+    _116_QSUB_OK = _116_QSUB_OK and (_q in _I116)
+_116_CALLS_OK = stages.CALLS[0] == _C1160
+stages.set_shelf(FIX)                          # the fixture goes back; A2's
+                                               # facts are BAKED (the why-key
+                                               # reads bytes, not BY_ID)
+expect("T116 THE FOUNDER'S MENU IS DATA, NOT AN ORGAN: the root menu loads as a FILE (the reading is a read — the runner's pen is still research.hold alone), the A1 hand roads ride VERBATIM (entry for entry), the shelf and search lanes reach through the SAME stages.retrieve the door uses (ids match the search's own answer; the load spends zero mouthfuls — the CALLS ledger stands as the instrument), the menu's caps MERGE over the runner's DEFAULTS (letter C: the figures with the thing they bound), and the protected bytes do not move for the reading",
+       {"ids": _I116},
+       why=lambda tr: ([] if (_M116["id"] == "A2-CAMPAIGN-1"
+                             and "SPINE" in tr["ids"] and "MVP" in tr["ids"]
+                             and "2" in tr["ids"] and _116_HAND_OK
+                             and _116_QSUB_OK
+                             and ("query found %d" % len(_116_QIDS)) in _116_NOTES
+                             and _M116["designated"] == ["SPINE"]
+                             and _M116["bounds"].get("min_sources") == 2
+                             and sorted(_M116["caps"]) == sorted(
+                                 ("max_passes", "max_calls", "max_secs", "margin_secs"))
+                             and _116_CALLS_OK
+                             and _PB1160 == _pb())
+                      else ["the menu stopped being data"]))
+
+_A2F117 = _a2f("t117")
+_MF117 = os.path.join(_A2F117, "menu.json")
+json.dump({"id": "J117", "objective": "what binds?", "designated": ["1"],
+           "bounds": {"min_sources": 3},
+           "caps": {"max_passes": 1, "max_calls": 3, "max_secs": 90.0},
+           "menu": [{"id": "1"}, {"query": "windowsill barn"},
+                    {"id": "9999"}, {"id": "1"}]},
+          open(_MF117, "w"))
+stages.set_shelf(_A2SHELF)
+_C1170 = stages.CALLS[0]
+_L117 = _task.load_menu(_MF117)
+_BY117 = {}
+for _e in _L117["entries"]:
+    _BY117[_e["id"]] = _e
+_N117 = "\n".join(_L117["notes"])
+_117_ROWS_OK = (_BY117.get("1", {}).get("text") == stages.BY_ID["1"]["claim"]
+                and _BY117.get("1", {}).get("loculus") == stages.BY_ID["1"]["locus"]
+                and _BY117.get("1", {}).get("work") == stages.BY_ID["1"]["work"]
+                and _BY117.get("1", {}).get("provenance") == stages.BY_ID["1"]["provenance"])
+_117_SEARCH_OK = (stages.retrieve(
+    "renunciation fruit action sacrifice austerity attachment inaction", 3)
+    == ["1", "26", "17"])
+_117_CAPS_OK = _task.load_menu(_MF117)["caps"].get("max_secs") == 90.0
+_117_CALLS_OK = stages.CALLS[0] == _C1170
+stages.set_shelf(FIX)
+expect("T117 THE SHELF LANES SPEAK THE ROW'S OWN WORDS AND THE DEAD LANES DIE NOTED: a bare id expands to the row's claim (the claim IS the source at this address; locus rides the artifact's loculus word; work/who/date/provenance ride COPIED, never generated — K2's absent-is-silence kept); a query lane's expansion equals the SAME stages.retrieve the door uses (the designator is the free search, no second search); an id off the shelf and a query that finds none are NOTES, not raises (the cite-law's shape); the caps read straight from the file; and the load is FREE (the CALLS ledger)",
+       {"ids": sorted(_BY117)},
+       why=lambda tr: ([] if (tr["ids"] == ["1"]
+                             and _117_ROWS_OK
+                             and "windowsill" in _N117 and "9999" in _N117
+                             and _117_SEARCH_OK and _117_CAPS_OK and _117_CALLS_OK)
+                      else ["the shelf lanes or the notes moved"]))
+
+_A2F118 = _a2f("t118")
+_MF118 = os.path.join(_A2F118, "menu.json")
+json.dump({"id": "J118", "objective": "spread?", "designated": ["A"],
+           "bounds": {"min_sources": 2},
+           "caps": {"max_passes": 2, "max_calls": 8},
+           "menu": [{"id": "A", "text": "one."}, {"id": "B", "text": "two."},
+                    {"id": "C", "text": "three."}]},
+          open(_MF118, "w"))
+_MOUTH118 = _Mouth(['{"designated": ["B", "C"]}',
+                    '{"node": "joined.", "cites": ["B","C"]}'])
+_T118 = _task.campaign(menu_path=_MF118, to=os.path.join(_A2F118, "pile"),
+                       mouth=_MOUTH118, clock=lambda: 5.0)
+expect("T118 THE A2 CAMPAIGN IS A BOUNDED MULTI-PASS VOYAGE ON THE EXISTING ROAD: pass one by hand (zero plan mouthfuls), auto() on the SAME pass function to a terminal state (no daemon, no second pipeline), TWO passes to the served floor with EXACTLY TWO mouthfuls (the scripted mouth's own count stands as the instrument), the menu's caps merging into the record's budget, and the terminal report plus the crash-safe state riding the holding area",
+       _T118.r,
+       why=lambda tr: ([] if (tr["status"] == "DONE"
+                             and tr["spent"]["passes"] == 2 and tr["spent"]["calls"] == 2
+                             and _MOUTH118.n == 2
+                             and tr["budget"]["max_passes"] == 2
+                             and sorted(tr["settled"]) == ["A", "B", "C"]
+                             and "designated by hand" in tr["notes"]
+                             and sorted(os.listdir(os.path.join(_A2F118, "pile")))
+                             == ["task-J118-done.json", "task_state.json"])
+                      else ["the campaign lane moved"]))
+
+_A2F119 = _a2f("t119")
+_PB1190 = _pb()
+_H119 = _coral.proposal(("research-menu.json", "task.py", "coral.py", "tests.py"),
+                        task_art={"task_id": "J119", "status": "DONE"},
+                        notes=("the fixture speaks",),
+                        to=_A2F119,
+                        lab=os.path.join(_A2F119, "no-lab"))
+_PM119 = True
+for _k119, _p119 in _H119["pins"].items():
+    _PM119 = _PM119 and _p119["match"]
+_R119 = _coral.proposal(("x",), to=stages.BASE_DIR)         # the root lane
+expect("T119 THE HANDOFF IS A FROZEN RECORD HELD BY THE ONE PEN: the keys cannot move (the lab's G7 bug-class, adopted whole), evaluated_by_lab rides FALSE until the lab says otherwise (the vacuity clause names WHY: its gate is a unittest law and Ascended answers with a custom harness), the pen writes the holding area ONLY (the root lane returns the refusal STRING unwritten), the reweighed pins all match, and no protected byte moved",
+       _H119,
+       why=lambda tr: ([] if (isinstance(_H119, dict)
+                             and tuple(sorted(_H119)) == _coral.KEY_ORDER
+                             and _H119["evaluated_by_lab"] is False
+                             and "VACUOUS" in _H119["notes"][0]
+                             and _H119["lab"]["present"] is False         # the fixture lab
+                             and isinstance(_R119, str) and "refused" in _R119
+                             and not os.path.isfile(os.path.join(stages.BASE_DIR, "a2-handoff.json"))
+                             and _PM119
+                             and os.path.isfile(os.path.join(_a2("t119"), "a2-handoff.json"))
+                             and _PB1190 == _pb())
+                      else ["the handoff moved or claimed more than the bytes"]))
+
+_A2L120 = _a2f("t120lab")
+os.makedirs(os.path.join(_A2L120, ".git", "refs", "heads"), exist_ok=True)
+open(os.path.join(_A2L120, ".git", "HEAD"), "w").write("ref: refs/heads/o1-controller\n")
+open(os.path.join(_A2L120, ".git", "refs", "heads", "o1-controller"), "w").write(
+    _coral.PINNED_TIP + "0000000000000000000000000000\n")
+open(os.path.join(_A2L120, ".git", "refs", "heads", "main"), "w").write(
+    _coral.PINNED_MAIN + "0000000000000000000000000000\n")
+_F120 = _coral.lab_refs(_A2L120)
+_S120 = _coral.pins()
+_AB120 = _coral.lab_refs(os.path.join(_a2("t120none"), "nowhere"))
+_TB120 = open(os.path.join(stages.BASE_DIR, "tests.py")).read()
+_LB120 = ""
+_LP120 = True
+for _f120 in _coral.EVAL_FILES:
+    _LP120 = _LP120 and os.path.isfile(os.path.join(_coral.LAB_DEFAULT, _f120))
+if os.path.isfile(os.path.join(_coral.LAB_DEFAULT, _coral.EVAL_FILES[0])):
+    _LB120 = open(os.path.join(_coral.LAB_DEFAULT, _coral.EVAL_FILES[0])).read()
+expect("T120 THE BOUNDARY WEIGHS ON THE LAB'S OWN SCALE AND COLLECTS NOTHING FROM THIS SHAPE: the three protected docs reweigh EXACTLY at the lab's recorded prefixes on the lab's scale (shasum -b — the lab's record corrected this repo's first wrong guess of sha256), the lab's .git bytes are READ (the fixture answers byte-faithful; an absent lab is a present-lane of FALSE, never a raise), the lab's evaluator files are NAMED and never executed from here, and the collection-shape law is BYTES: the lab's law rides the unittest shape, Ascended's witnesses name no such class (a green there over this tree is a VACUOUS green, and the O2 law refuses to credit a green already-present or absent-to-collect as an improvement)",
+       {"refs": _F120, "scale": _S120},
+       why=lambda tr: ([] if (tr["refs"]["present"] is True
+                             and tr["refs"]["branch"].endswith("o1-controller")
+                             and tr["refs"]["tip"].startswith(_coral.PINNED_TIP)
+                             and tr["refs"]["main"].startswith(_coral.PINNED_MAIN)
+                             and tr["scale"]["constitution.md"]["now"] == "af3117a6ca"
+                             and tr["scale"]["foundation.md"]["now"] == "d7724cb793"
+                             and tr["scale"]["golden-set.md"]["now"] == "be650831cf"
+                             and _AB120["present"] is False
+                             and _LP120
+                             and ("Test" + "Case") in _LB120
+                             and ("Test" + "Case") not in _TB120
+                             and _coral.lab_clean(_coral.LAB_DEFAULT) is True)
+                      else ["the boundary's scale or the collection-shape fact moved"]))
+
+
 for name, tr, kw in T:
     bad = []
     txt = tr.get("response", "")

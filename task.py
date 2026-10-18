@@ -351,3 +351,90 @@ def handle(q, task=None, clock=None):
     if word in ("inspect", "status", "report", "why"):
         line += "\n" + "\n".join(t.report()["lines"])
     return {"response": line, "why": {"lane": "task", "task": t.r}, "trace": t.r}
+
+
+# ---------- A2: the menu is DATA, and the campaign rides the SAME road ----------
+# A2 adds no law and no pipeline. The founder's menu rides as a root FILE (the
+# reading is a read; the runner's pen is still research.hold alone). Two menu
+# lanes reach beyond the hand: a bare shelf id names a row's OWN words, and a
+# QUERY designates through the FREE SEARCH (stages.retrieve — the same search
+# the door uses; zero mouthfuls, so the campaign can run unattended and the
+# CALLS ledger still stands as the instrument). The menu's caps merge over the
+# runner's DEFAULTS: the figures ride the file beside the thing they bound
+# (letter C). A lane that names no id dies NOTED — the cite-law's shape at the
+# menu's own address.
+MENU = os.path.join(stages.BASE_DIR, "research-menu.json")
+SHELF_WORDS = ("work", "who", "date", "provenance")           # the row's OWN words
+
+
+def _shelf_entry(rid):
+    row = stages.BY_ID.get(str(rid))
+    if row is None:
+        return None
+    e = {"id": str(rid), "text": str(row.get("claim") or "")}   # the claim IS the source
+    for k in SHELF_WORDS:
+        if k in row:
+            e[k] = row[k]
+    if "locus" in row:                                          # the artifact's word
+        e["loculus"] = row["locus"]
+    if row.get("edges"):
+        e["edges"] = row["edges"]
+    return e
+
+
+def load_menu(path=None):
+    """the founder's menu, read as a file. Entries pass through verbatim (the
+    A1 hand road); a bare {"id": ...} names a shelf row; a {"query": ...,
+    "k": ...} expands through stages.retrieve. Returns a ready record:"""
+    src = json.load(open(path or MENU))
+    entries, notes = [], []
+    for e in (src.get("menu") or []):
+        if e.get("query"):
+            ids = stages.retrieve(e["query"], e.get("k"))
+            notes.append("menu: query found %d: %s" % (len(ids), e["query"][:40]))
+            for rid in ids:
+                ent = _shelf_entry(rid)
+                if ent is None:
+                    notes.append("menu: shelf lacks id " + str(rid))
+                else:
+                    entries.append(ent)
+        elif "file" in e or "text" in e:
+            entries.append(dict(e))                    # verbatim — no new words
+        elif "id" in e:
+            ent = _shelf_entry(e["id"])
+            if ent is None:
+                notes.append("menu: shelf lacks id " + str(e["id"]))
+            else:
+                entries.append(ent)
+    return {"id": str(src.get("id") or "A2"), "objective": str(src.get("objective") or ""),
+            "entries": entries, "designated": [str(d) for d in (src.get("designated") or [])],
+            "bounds": dict(src.get("bounds") or {}), "caps": dict(src.get("caps") or {}),
+            "notes": notes}
+
+
+def campaign(task_id=None, menu_path=None, to=None, mouth=None, fetch=None,
+             clock=None):
+    """A2's bounded unattended voyage on the EXISTING road: load the menu,
+    start (the hand lane runs pass one, as ever), and auto() to a terminal
+    state — the SAME pass function, no daemon, no second pipeline. A voyage
+    still afloat at that address is RESUMED, not restarted (the
+    ALREADY_COMPLETE law, adopted whole)."""
+    m = load_menu(menu_path)
+    t = Task(to=to, mouth=mouth, fetch=fetch, clock=clock)
+    if t.r is not None and t.status() in RESUMABLE:
+        m = load_menu(menu_path)                    # the afloat lane: the caps
+        raised = {}                                 # (menu's lane rides too,
+        for k in ("max_passes", "max_calls", "max_secs"):      # zero waste)
+            if k in m["caps"]:
+                raised[k] = m["caps"][k]
+        t.resume(**raised)
+        if t.status() in RESUMABLE:
+            t.auto()
+        t.r["notes"] = m["notes"] + (t.r.get("notes") or [])
+        return t
+    t.start(m["id"] if task_id is None else task_id, m["objective"], m["entries"],
+            designated=m["designated"], bounds=m["bounds"], budget=m["caps"])
+    t.r["notes"] = m["notes"] + (t.r.get("notes") or [])
+    if t.status() in RESUMABLE:
+        t.auto()
+    return t

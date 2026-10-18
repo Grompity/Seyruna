@@ -1,0 +1,13 @@
+{
+  "id": "A2-CAMPAIGN-1",
+  "objective": "How do the designated sources bound acting without thirst for the fruit, and where do they leave non-doing? Weigh the tradition's designated words against the project's own design.",
+  "designated": ["SPINE"],
+  "bounds": {"min_sources": 2},
+  "menu": [
+    {"id": "SPINE", "file": "spine.md", "work": "spine.md", "who": "the Ascended design"},
+    {"id": "MVP", "file": "mvp_proposal.md", "work": "mvp_proposal.md", "who": "the Ascended proposal"},
+    {"id": "2"},
+    {"query": "renunciation fruit action sacrifice austerity attachment inaction", "k": 3}
+  ],
+  "caps": {"max_passes": 4, "max_calls": 6, "max_secs": 300.0, "margin_secs": 30.0}
+}
