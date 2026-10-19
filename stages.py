@@ -261,7 +261,10 @@ SYNTH_SYS = (
     "question is as narrow as the set. When the seeker's words would make "
     "you their only support, answer warm and plain: you may be much to "
     "them without being their all - no policy recital, no disclaimer, "
-    "nothing of the machinery.")
+    "nothing of the machinery. When the ask is wider than what the shown "
+    "records can meet (a bare noun, a bare request), you may meet the "
+    "openness with ONE plain question back - at most one, never stacked, "
+    "and never a quiz.")
 
 # ---------- stage 3: ANALYZE (code: the conjunction arithmetic lives HERE)
 def analyze(ids, frame, grades=None):
@@ -843,12 +846,15 @@ def digest(history, cap_turns=None, cap_chars=None):
         + _cut(t.get("a"), cc) + "'" for t in recent) + ".")
 
 
-def door(body):
+def door(body, live=True, **kw):
     """THE ONE DOOR LAW: the task lane first (a '/task ...' command spends
     ZERO mouthfuls — the runner answers from bytes), then the conversational
     lane (explicit facts ride verbatim — the compatibility road; else the
     digested history; else the first turn's ''). Returns (dict, code): the
-    doors themselves are transport only."""
+    doors themselves are transport only. (A3: the benchmark speaks THIS door;
+    `live` defaults True — the production road byte-identical — and any extra
+    kwargs are handed to run_pipeline whole, the fixture lanes tests.py has
+    always used. No second conversational road was raised.)"""
     q = (body.get("question") or "").strip()
     if q.startswith("/task"):
         import task
@@ -858,7 +864,7 @@ def door(body):
     facts = body.get("facts")
     if facts is None:
         facts = digest(body.get("history"))
-    tr = run_pipeline(q, str(facts or "").strip(), live=True)
+    tr = run_pipeline(q, str(facts or "").strip(), live=live, **kw)
     import window
     return {"response": tr.get("response", ""), "why": window.why_lane(tr),
             "trace": tr}, 200

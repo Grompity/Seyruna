@@ -1437,6 +1437,150 @@ expect("T120 THE BOUNDARY WEIGHS ON THE LAB'S OWN SCALE AND COLLECTS NOTHING FRO
                       else ["the boundary's scale or the collection-shape fact moved"]))
 
 
+# ---------- A3: the evaluator. The benchmark rides the SAME door, so the
+# witnesses ride the same shelf the door rides: the fixture cites the REAL
+# rows, the real shelf is mounted for the block, and the FIXTURE goes back
+# at its end (the A2 windowsill shape). Every A3 witness is DRY: fixture
+# lanes, zero mouthfuls - the frozen suite still runs without the funnel.
+import evaluator as _eval
+
+_A3SHELF = stages._load_shelf()
+stages.set_shelf(_A3SHELF)
+
+_A3E_BAD = _eval.validate_doc(
+    {"benchmark": "X", "cases": [
+        {"id": "Z", "kind": "k", "turns": [{"say": "a"}],
+         "checks": [{"id": "a", "type": "nonsense"}]},
+        {"id": "Y", "kind": "k", "turns": []}]})
+_A3E_OK = _eval.validate_doc(_eval.load_doc())
+_A3N121 = len(_eval.load_doc()["cases"])
+expect("T121 THE BENCHMARK IS DATA AND ITS SCHEMA BITES: the committed fixture validates CLEAN (ten cases, unique ids); a case with no turns and a check of an unknown kind is a BUILD failure spoken AT ONCE (a non-empty list of problems, never a shrug); and the validator knows the five declared check kinds and nothing else (a sixth eye must be WRITTEN IN before it watches)",
+       {"ok": _A3E_OK, "bad": _A3E_BAD, "n": _A3N121},
+       why=lambda tr: ([] if (tr["ok"] == [] and len(tr["bad"]) >= 2
+                              and tr["n"] == 10)
+                        else ["the schema or the ten moved"]))
+
+_C122 = stages.CALLS[0]
+_A3DRY = _eval.run(mode="dry")
+_A3SEM122 = sorted({s["verdict"] for c in _A3DRY["cases"].values()
+                    for s in c["semantic"]})
+expect("T122 THE DRY ROAD RUNS THE WHOLE BENCHMARK AT ZERO MOUTHFULS: every case ANSWERED on the fixture lanes, every deterministic check PASSED (the ten roads ride the real shelf's bytes), every semantic property recorded UNSCORED with the human-eye word (NO verdict is minted for a reviewer that was not asked), and the CALLS ledger stands as the instrument",
+       _A3DRY,
+       why=lambda tr: ([] if (stages.CALLS[0] == _C122
+                             and tr["meta"]["calls"] == 0
+                             and all(c["status"] == "ANSWERED" for c in tr["cases"].values())
+                             and tr["meta"]["complete"]
+                             and sorted({ck["verdict"] for c in tr["cases"].values()
+                                         for ck in c["checks"]}) == ["PASS"]
+                             and _A3SEM122 == ["UNSCORED"])
+                        else ["the dry road spoke too much or too little"]))
+
+_A3B2 = _A3DRY["cases"]["B2"]["turns"]
+_A3B7 = _A3DRY["cases"]["B7"]["turns"]
+_A3CONT123 = all(c["verdict"] == "PASS"
+                 for c in _A3DRY["cases"]["B2"]["checks"] + _A3DRY["cases"]["B7"]["checks"]
+                 if c["type"] == "context_carries")
+expect("T123 CONTINUITY IS BYTES, NOT PROMISE: the second turn's FACTS carry the digest's own prefix and the FIRST turn's seeker words (the carrying law at stages.digest - the prior marker the intent stage counts by), in BOTH multi-turn cases, and the two context_carries verdicts stand on those bytes, not on the answer's mood",
+       {"b2": _A3B2, "b7": _A3B7},
+       why=lambda tr: ([] if (_A3CONT123
+                              and tr["b2"][1]["facts"].startswith("Earlier - ")
+                              and tr["b2"][0]["say"] in tr["b2"][1]["facts"]
+                              and tr["b7"][0]["say"] in tr["b7"][1]["facts"])
+                        else ["the carried bytes moved"]))
+
+_V124 = [0.0, 0.0, 5.0, 5.0]
+_A3NOCLOCK = lambda: 0.0
+_A3ZERO124 = _eval.run(mode="dry", only=["B1", "B7"], max_secs=0, clock=_A3NOCLOCK)
+_A3NOCALL124 = _eval.run(mode="dry", only=["B7"], max_calls=0, clock=_A3NOCLOCK)
+_A3MID124 = _eval.run(mode="dry", only=["B7"], max_secs=1, clock=lambda: _V124.pop(0))
+expect("T124 THE CAPS ARE A PRE-REQUEST GATE, NOT A POST-Facto (the task lane's law at the conversational address): a zero-clock run turns NOTHING at all (every case INCOMPLETE, the run not complete), a zero-call budget never coins, and a mid-run deadline trip LEAVES THE EARLY TURNS AND THEIR EVIDENCE (the second turn of a two-turn case simply is not run) - the caps stop the run; the caps do not launder the evidence",
+       {"zero": _A3ZERO124, "nocalls": _A3NOCALL124, "mid": _A3MID124},
+       why=lambda tr: ([] if (all(c["status"] == "INCOMPLETE" for c in tr["zero"]["cases"].values())
+                             and not tr["zero"]["meta"]["complete"]
+                             and all(c["status"] == "INCOMPLETE" and c["turns"] == []
+                                     for c in tr["nocalls"]["cases"].values())
+                             and tr["mid"]["cases"]["B7"]["status"] == "INCOMPLETE"
+                             and len(tr["mid"]["cases"]["B7"]["turns"]) == 1
+                             and tr["mid"]["cases"]["B7"]["turns"][0]["error"] is None
+                             and _V124 == [])
+                        else ["the gate moved"]))
+
+_M125 = _Mouth(["[MOUTH ERROR: boom]"] * 6)
+_A3ERR = _eval.run(mode="live", only=["B1"], mouth=_M125, clock=lambda: 0.0)
+_M125B = _Mouth(["no json at all"] * 6)
+_A3MUMB = _eval.run(mode="live", only=["B5"], mouth=_M125B, clock=lambda: 0.0)
+expect("T125 A FAILED REQUEST IS NOT A POOR ANSWER (the distinction the report must keep): a mouth that spits the error lane RAISES the road and the case is REQUEST-FAILED with every check UNSCORED (the note says so - no verdict is minted on bytes that never arrived); a mumble that merely fails to parse LANES (the existing mouth-fell-back road takes the shelf's own plain words) and the case rides ANSWERED - the machinery is never weaker than it was found",
+       {"err": _A3ERR, "mumb": _A3MUMB},
+       why=lambda tr: ([] if (tr["err"]["cases"]["B1"]["status"] == "REQUEST-FAILED"
+                             and all(ck["verdict"] == "UNSCORED"
+                                     and "request failed" in ck["note"]
+                                     for ck in tr["err"]["cases"]["B1"]["checks"])
+                             and _M125.n >= 1
+                             and tr["mumb"]["cases"]["B5"]["status"] == "ANSWERED"
+                             and "don't know" in
+                             tr["mumb"]["cases"]["B5"]["turns"][0]["response"])
+                        else ["the error and the mumble spoke the same word"]))
+
+def _a3flip(rec, cid, kid, to):
+    r = json.loads(json.dumps(rec))
+    for ck in r["cases"][cid]["checks"]:
+        if ck["id"] == kid:
+            ck["verdict"] = to
+    return r
+
+_A3SELF126 = _eval.compare(_A3DRY, _A3DRY)
+_A3REG126 = _eval.compare(_A3DRY, _a3flip(_A3DRY, "B1", "answers-the-question", "FAIL"))
+_A3IMP126 = _eval.compare(_a3flip(_A3DRY, "B6", "no-minted-study", "FAIL"), _A3DRY)
+_A3INC126 = _a3flip(_A3DRY, "B3", "frames-without-asserting", "PASS")
+_A3INC126["cases"]["B3"]["status"] = "INCOMPLETE"
+_A3INC126 = _eval.compare(_A3DRY, _A3INC126)
+expect("T126 THE COMPARISON SPEAKS ONLY THE TRUTHS IT CAN SEE: the same run against itself moves NOTHING (all checks SAME); PASS->FAIL is ONE regression and nothing else; the same move read backwards is ONE improvement (the road is symmetric, the claim is not); and an incomplete candidate is FLAGGED, never ranked (a missing half-run buys no verdict)",
+       {"self": _A3SELF126, "reg": _A3REG126, "imp": _A3IMP126, "inc": _A3INC126},
+       why=lambda tr: ([] if (tr["self"]["summary"]["regressions"] == 0
+                             and tr["self"]["summary"]["improvements"] == 0
+                             and tr["self"]["summary"]["same"] > 0
+                             and tr["reg"]["summary"]["regressions"] == 1
+                             and tr["reg"]["summary"]["improvements"] == 0
+                             and tr["imp"]["summary"]["improvements"] == 1
+                             and tr["imp"]["summary"]["regressions"] == 0
+                             and tr["inc"]["summary"]["regressions"] == 0
+                             and any("INCOMPLETE" in f for f in tr["inc"]["summary"]["flags"]))
+                        else ["the comparison minted a verdict it may not mint"]))
+
+_A3D127 = os.path.join(tempfile.gettempdir(), "a3-t127")
+_A3P127 = _eval.write(_A3DRY, "t127", out_dir=_A3D127)
+_A3R127 = _eval.run(mode="dry")                        # the second honest dry run
+_A3RE127 = json.loads(open(_A3P127).read())
+expect("T127 THE EVIDENCE IS A PILE THAT REWEIGHS THE SAME (the idempotency law at the conversational address): the record WRITES to the designated holding area and reads back; the volatile projection (the run's numbers stripped) is BYTE-IDENTICAL across two honest dry runs; and a rerun under the same name overwrites its OWN bytes rather than adding a second truth",
+       {"path": _A3P127,
+         "same": (json.dumps(_eval.volatile(_A3DRY), sort_keys=True)
+                  == json.dumps(_eval.volatile(_A3R127), sort_keys=True))},
+       why=lambda tr: ([] if (os.path.isfile(tr["path"])
+                             and tr["same"]
+                             and json.dumps(_eval.volatile(_A3RE127), sort_keys=True)
+                             == json.dumps(_eval.volatile(_A3DRY), sort_keys=True)
+                             and os.listdir(_A3D127).count("bench-t127.json") == 1)
+                        else ["the evidence lane moved"]))
+
+_A3D128 = stages.door({"question": "Qwerty uiop asdf zxcv?"}, live=False)
+_A3E128 = stages.door({"question": "   "})
+_A3P128 = stages.P["unknown_plain"]
+expect("T128 THE BENCHMARK DID NOT MOVE THE DOOR (the public-road law): a first turn with nothing behind it answers the shelf's OWN plain words at 200 through stages.door with the window riding (the kwarg defaults keep the production road byte-identical); the empty-question lane still answers 400-with-reason; and the law-watches the benchmark declares ride PASSED on the dry road: III never-sells on B1, and the honest UNKNOWN at B5 and B6",
+       {"door": _A3D128, "err400": _A3E128},
+       why=lambda tr: ([] if (tr["door"][1] == 200
+                             and tr["door"][0]["response"] == _A3P128
+                             and "why" in tr["door"][0]
+                             and tr["err400"][1] == 400
+                             and [ck for ck in _A3DRY["cases"]["B1"]["checks"] if ck["id"] == "never-sells-III"][0]["verdict"] == "PASS"
+                             and [ck for ck in _A3DRY["cases"]["B5"]["checks"]
+                                  if ck["id"] == "honest-unknown-flag"][0]["verdict"] == "PASS"
+                             and [ck for ck in _A3DRY["cases"]["B6"]["checks"]
+                                  if ck["id"] == "honest-unknown-flag"][0]["verdict"] == "PASS")
+                        else ["the door moved or a law-watch blinked"]))
+
+stages.set_shelf(FIX)                                  # the fixture goes back
+
+
 for name, tr, kw in T:
     bad = []
     txt = tr.get("response", "")
