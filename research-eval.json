@@ -1,0 +1,25 @@
+{
+ "eval": "EA-0.1",
+ "note": "The A5 fixed evaluation: six questions at the web lanes, the wording FROZEN (the seeker's words ride as spoken). The expected-lane words were written from a live search-level probe of the day BEFORE the run (an expectation, never a score). Scoring rides SEPARATE axes (no one number); the machine fills retrieval/traceability/independence words, the OPERATOR (the A5 hand, same brain that wrote the code - disclosed, not independent) fills the review axes after inspecting the answer against the bytes that reached the mouth. Absent axes read UNREVIEWED, never a silent pass.",
+ "caps": {"max_calls_per_question": 8, "max_secs_per_question": 240},
+ "questions": [
+  {"id": "EA1", "kind": "stable-fact",
+   "question": "Ashoka rock edict",
+   "expect": "an origin abstract + a read origin page; ONE origin voice (independence none by law); this question IS the A4 bytes (web-run-1) - the A4-to-A5 comparison rides here"},
+  {"id": "EA2", "kind": "exact-date-or-number",
+   "question": "Magna Carta",
+   "expect": "the provider may answer by ITS OWN house stubs alone (attribution-only shape); an exact 1215 is then NOT in the bytes that reached the mouth - an unsourced date must show on the citation-support axis, not acquire false DOCUMENTED airs"},
+  {"id": "EA3", "kind": "possible-conflict",
+   "question": "Krishna",
+   "expect": "a disambiguation-shaped answer (many referents): conflict rides UNRESOLVED at the packet (the provider's bytes carry no edges); the answer must not pick a referent and call it fact"},
+  {"id": "EA4", "kind": "evidence-insufficient",
+   "question": "Zzzyx plingworth",
+   "expect": "search-empty: the honest lane - the web says it brought nothing, NO citation minted, the existing roads answer with their plain bytes"},
+  {"id": "EA5", "kind": "fact-vs-interpretation",
+   "question": "Upanishad",
+   "expect": "an origin definitional sentence (documented: what the texts verifiably are) while any READING of them rides the mouth's own voice (interpretation); the answer must keep the two apart"},
+  {"id": "EA6", "kind": "cross-perspective",
+   "question": "Kalama Sutta",
+   "expect": "the P7 experiment: one text with genuinely different interpretive traditions (Buddhist exegesis, scholarly reading, modern appropriation); an accessible origin source exists; the answer must separate the text's words, a tradition's reading, scholarship, and what the sources cannot settle; convergence is a hypothesis, not a result"}
+ ]
+}

@@ -88,13 +88,14 @@ def search_url(name, query, n):
     return "%s/search?q=%s&format=json" % (base, q)          # searxng
 
 
-def _rec(url, title, snippet):
+def _rec(url, title, snippet, lane):
     r = {"url": url}
     if title:
         r["title"] = title
     if snippet:
         r["snippet"] = snippet
-    return r
+    r["lane"] = lane                      # WHERE the bytes rode from (the
+    return r                              # provider's own word, never a wish)
 
 
 def results_from(name, doc):
@@ -102,7 +103,11 @@ def results_from(name, doc):
     SILENCE for absent (K2 adopted - an empty field is not a field). The
     ddg-ia lane rides its own order of goodness: the ABSTRACT first (its
     url the ORIGIN's address), then Results, then RelatedTopics - all cut
-    by the caller's cap; the searxng lane reads its results[]."""
+    by the caller's cap; the searxng lane reads its results[]. Every row
+    carries its LANE word (abstract/result/related): the bytes' own
+    PROVENANCE-PATH, which the rows later speak as KIND (A5 P3: a reviewer
+    can tell fetched-page bytes from the index's snippet from the
+    abstract's summary - three different claims-to-evidence, one field)."""
     out = []
     if name == "ddg-ia":
         if doc.get("AbstractText") and doc.get("AbstractURL"):
@@ -112,20 +117,20 @@ def results_from(name, doc):
             # provider's word - not an invented title).
             out.append(_rec(doc["AbstractURL"],
                             doc.get("AbstractSource") or doc.get("Heading"),
-                            doc.get("AbstractText")))
+                            doc.get("AbstractText"), "abstract"))
         for row in doc.get("Results") or []:
             if row.get("FirstURL"):
                 out.append(_rec(row["FirstURL"], row.get("Text"),
-                                row.get("Result")))
+                                row.get("Result"), "result"))
         for row in doc.get("RelatedTopics") or []:
             if row.get("FirstURL"):
                 out.append(_rec(row["FirstURL"], row.get("Text"),
-                                row.get("Result")))
+                                row.get("Result"), "related"))
     else:
         for row in doc.get("results") or []:
             if row.get("url"):
                 out.append(_rec(row["url"], row.get("title"),
-                                row.get("content")))
+                                row.get("content"), "result"))
     return out
 
 
@@ -259,21 +264,95 @@ def fetch(url, max_bytes=MAX_BYTES, timeout=TIMEOUT, allow_local=False):
 
 
 TAGOUT = re.compile(r"(?is)<(script|style|nav|footer|header|aside|form|"
-                    r"fieldset|figure|noscript|template|svg)\b.*?</\1\s*>")
+                    r"fieldset|figure|noscript|template|svg|head)\b.*?</\1\s*>")
 TAGS = re.compile(r"(?s)<[^>]*>")
 SPACES = re.compile(r"[\s\u00a0]+")
 
 
-def extract(html, max_chars=MAX_CHARS):
+THIN = 60     # a LINE thinner than this reads as FURNITURE at the page road
+              # (a title, a jump-link, a tagline - the A4-live witness: the
+              # wikipedia claim rode "…Jump to content…From Wikipedia, the
+              # free encyclopedia…" where its lead paragraph waited). THE
+              # LAW RIDES PAGES ONLY (a snippet passes thin=0 - a short
+              # TRUE sentence is no chrome at the index's lane); and its
+              # limit is stated: a short TRUE line at a page can fall to it.
+
+def extract(html, max_chars=MAX_CHARS, thin=THIN):
     """Readable text, then the CAP: the page is NOT kept - the first
     excerpt is. Scripts, styles, and the navigation furniture go FIRST
-    (a menu of forty links is not a page's speech); remote javascript is
-    never RUN here, only read."""
+    (a menu of forty links is not a page's speech); the BLOCK ENDS hold
+    the lines apart (A5: the chrome of a page is a THIN LINE, and a
+    paragraph's speech is not); remote javascript is never RUN, only read.
+    A cut excerpt RIDES ITS OWN MARK - truncation that speaks is not a
+    claim of completeness."""
     t = TAGOUT.sub(" ", html)
     t = re.sub(r"(?s)<!--.*?-->", " ", t)
+    t = re.sub(r"(?i)</(p|li|h[1-6]|div|section|blockquote|dd|dt|br)\s*>",
+                "\n", t)
+    t = re.sub(r"(?i)<br\s*/?>", "\n", t)
     t = TAGS.sub(" ", t)
-    t = SPACES.sub(" ", t).strip()
-    return t[:max_chars]
+    lines = []
+    for ln in t.split("\n"):
+        ln = SPACES.sub(" ", ln).strip()
+        if ln and len(ln) >= thin:
+            lines.append(ln)
+    out = " ".join(lines)
+    if len(out) > max_chars:
+        return out[:max_chars - 1].rstrip() + "…"
+    return out
+
+
+def provider_host(name=None):
+    """The provider's OWN house (its result-lanes that ride it are
+    ATTRIBUTION - a redirect to the answer, not a second voice; the A4-live
+    bytes showed the ddg-ia FirstURL lane riding duckduckgo.com's own stub
+    pages while the ABSTRACT rode the ORIGIN). Derived from the provider's
+    own search_url, so a config move moves it along; the "api." porch is
+    the provider's own front door, not its house."""
+    h = urllib.parse.urlparse(search_url(name or provider_name(), "x", 1))[1]
+    parts = h.lower().split(".")
+    if parts[0] == "api":
+        parts = parts[1:]
+    return ".".join(parts)
+
+
+def corroboration(packet, name=None):
+    """The narrow evidence-quality word (A5 P4): COUNTS, never claims.
+    How many ADDRESSES rode (urls), how many PAGES were actually READ
+    (read - bytes in hand, not a status code), how many of the addresses
+    are the provider's OWN house (attribution: a syndicated redirect is
+    not a second voice - three stub-URLs on the house count as none, and
+    three URLs on one publisher count as ONE publisher), how many ORIGIN
+    publishers stand behind READ bytes, and the conservative INDEPENDENCE
+    word:
+      "none"      - one origin voice read (or none) - nothing corroborated
+      "candidate" - >=2 distinct origin publishers READ (two publishers
+                    MAY corroborate; domain difference alone proves nothing
+                    - the word says candidate, never TRUE)
+      "unknown"   - origin addresses exist but no origin was READ (bytes
+                    not in hand: no counting a page never opened).
+    And the CONFLICT word, honestly: the provider's bytes carry no edges
+    between themselves, so a packet of web rows has not SEEN its passages
+    disagree - "unknown" until a mechanism weighs them (the shelf's own
+    DISAGREEMENT lanes stay the place where a contradiction rides).
+    The heuristic's limits: a publisher's many domains would count twice;
+    the house is one label; and independence is NEVER asserted."""
+    ph = provider_host(name)
+    hosts = [urllib.parse.urlparse(r["url"])[1].lower()
+             for r in packet["results"]]
+    origins = [(h, r) for h, r in zip(hosts, packet["results"]) if h != ph]
+    read = sorted({h for (h, r) in origins if r.get("text")})
+    if len(read) >= 2:
+        word = "candidate"
+    elif len(read) == 1:
+        word = "none"
+    else:
+        word = "unknown"
+    return {"urls": len(packet["results"]),
+            "read": sum(1 for r in packet["results"] if r.get("text")),
+            "attribution": sum(1 for h in hosts if h == ph),
+            "origin_publishers": len(read),
+            "independence": word, "conflict": "unknown"}
 
 
 # ---------- the packet: the same words the pipeline already speaks ----------
@@ -327,19 +406,33 @@ def to_rows(packet, max_chars=MAX_CHARS):
             claim = SENTENCE.split(rec["text"])[0][:max_chars]
         else:
             # A snippet rides the SAME furniture-removal law as a page (the
-            # provider's Result-field can carry anchor markup - remote bytes
-            # are data, and markup is the least of it).
+            # provider's Result-field can carry anchor markup) - but at
+            # thin=0: the THIN LINE law is a PAGE law, and the index's short
+            # true words are no chrome.
             claim = extract(rec.get("snippet") or rec.get("title")
-                            or rec["url"], max_chars)
+                            or rec["url"], max_chars, 0)
         row = {"id": rid, "claim": claim, "level": "DOCUMENTED",
                "provenance": "web", "work": urllib.parse.urlparse(rec["url"])[1],
                "edges": []}
+        # THE KIND-LANE (A5 P3, the traceability word): page bytes, the
+        # origin's own ABSTRACT, or the index's SNIPPET - three different
+        # claims-to-evidence that a URL alone cannot tell apart. A row with
+        # only a title (or only an address) rides NO kind word: silence is
+        # the truth (K2). A URL in the trace is not yet a DOCUMENTED claim;
+        # the kind word says WHAT KIND of seeing the bytes got.
+        if rec.get("text"):
+            row["kind"] = "page"
+        elif rec.get("snippet"):
+            row["kind"] = ("abstract" if rec.get("lane") == "abstract"
+                           else "snippet")
         if rec.get("text"):
             row["evidence"] = "PRESENT"
         elif rec.get("error") or rec.get("skipped"):
             row["evidence"] = "NONE-FOR"
         if rec.get("status") is not None:
             row["note"] = "http " + str(rec["status"])
+            if (rec.get("text") or "").endswith("…"):
+                row["note"] += " (capped)"       # truncation SPEAKS (P5)
         elif rec.get("error"):
             row["note"] = rec["error"]
         elif rec.get("skipped"):

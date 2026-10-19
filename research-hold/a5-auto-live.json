@@ -1,0 +1,78 @@
+{
+ "note": "A5 priority-1: the AUTO lanes through the live door; the real shelf (26 rows); the real provider; the real mouths",
+ "date": "20261018",
+ "cases": [
+  {
+   "case": "1: shelf holds it (rows 17/26/15/11 in sight)",
+   "question": "What does the Gita 18.7 say about surrender?",
+   "code": 200,
+   "secs": 67.3,
+   "lane": null,
+   "web_invoked": false,
+   "web": null,
+   "retrieval": [
+    "17",
+    "26",
+    "15",
+    "11"
+   ],
+   "response": "18.7 draws a line between two kinds of surrender: the surrender that runs away from duty, and the surrender that lets go the thirst for the result. Sacrifice, gift, austerity \u2014 these are not to be dropped; they are to be done. The point is that not-clinging stops meaning not-doing, and the responsibility for the act stands. Worth noting alongside: the Gita's whole teaching sits on a field of grief and answers it with action without thirst for the fruit \u2014 the same shape you see in the First Sermon's path out of dukkha. (as Bhagavad Gita & First Sermon (comparison) has it)"
+  },
+  {
+   "case": "2: shelf silent, the web can reach it",
+   "question": "Ashoka rock edict",
+   "code": 200,
+   "secs": 86.7,
+   "lane": "web",
+   "web_invoked": true,
+   "web": {
+    "provider": "ddg-ia",
+    "fetched": 3,
+    "gaps": [],
+    "sources": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+      "title": "Wikipedia"
+     },
+     {
+      "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+      "title": "Edicts of Ashoka Category"
+     },
+     {
+      "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+      "title": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c."
+     },
+     {
+      "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+      "title": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire..."
+     },
+     {
+      "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+      "title": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts."
+     }
+    ]
+   },
+   "retrieval": [
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "response": "The Major Rock Edicts are 14 detailed inscriptions of Ashoka, among the earliest dated rock inscriptions of any Indian monarch. They're 3rd-century BCE sandstone carvings, found across South Asia. Ashoka's edicts were either carved on in-situ rocks or engraved on pillars erected throughout the empire. What about them are you after?"
+  },
+  {
+   "case": "3: ordinary conversation",
+   "question": "How do you stand today?",
+   "code": 200,
+   "secs": 23.7,
+   "lane": "general",
+   "web_invoked": false,
+   "web": null,
+   "retrieval": [
+    "9"
+   ],
+   "response": "Steady, here. How about you?"
+  }
+ ]
+}

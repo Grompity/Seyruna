@@ -1,0 +1,359 @@
+{
+ "eval": "EA-0.1",
+ "mode": "search-only",
+ "provider": "ddg-ia",
+ "caps": {
+  "max_calls_per_question": 8,
+  "max_secs_per_question": 240
+ },
+ "date": "20261018",
+ "review": "operator (the A5 hand; same brain that wrote the code - disclosed, not independent)",
+ "questions": [
+  {
+   "question": "Ashoka rock edict",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": true,
+    "results": 5,
+    "gaps": [],
+    "spent": {
+     "search": 1,
+     "fetch": 3,
+     "calls": 4,
+     "ms": 2357.2
+    },
+    "corroboration": {
+     "urls": 5,
+     "read": 1,
+     "attribution": 4,
+     "origin_publishers": 1,
+     "independence": "none",
+     "conflict": "unknown"
+    },
+    "rows": [
+     {
+      "id": "W1",
+      "kind": "page",
+      "evidence": "PRESENT",
+      "note": "http 200 (capped)",
+      "work": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+      "claim": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location &lt;b id=\\\"mwCw\\\">Bahapur&lt;/b>&lt;/a>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Saru_Maru\\\" title=\\\"Saru Maru\\\" id=\\\"mwDw\\\">Saru Maru&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Maski\\\" title=\\\"Maski\\\" id=\\\"mwEw\\\">Maski&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Yerragudi?action=edit&amp;amp;redlink=1\\\" title=\\\"Yerragudi\\\" class=\\\"new\\\" typeof=\\\"mw:LocalizedAttrs\\\" id=\\\"mwGw\\\" data-mw-i18n=&apos;{\\\"title\\\":{\\\"lang\\\":\\\"x-page\\\",\\\"key\\\":\\\"red-link-title\\\",\\\"params\\\":[\\\"Yerragudi\\\"]}}&apos;>Yerragudi&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Bairat\\\" title=\\\"Bairat\\\" class=\\\"mw-redirect\\\" id=\\\"mwIA\\\">Bairat&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Ahraura\\\" title=\\\"Ahraura\\\" id=\\\"mwJA\\\">Ahraura&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Barabar_Caves\\\" title=\\\"Barabar Caves\\\" id=\\\"mwJg\\\">Barabar&lt;/a>&lt;/b>\"}'> &lt;b id=\\\"mwKA\\\">Taxila&lt;/b>&lt;/a>&lt;br id=\\\"mwKQ\\\"/>&lt;b id=\\\"mwKg\\\">(&lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Aramaic\\\" tit\u2026"
+     },
+     {
+      "id": "W2",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+      "claim": "Edicts of Ashoka Category"
+     },
+     {
+      "id": "W3",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+      "claim": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c."
+     },
+     {
+      "id": "W4",
+      "kind": "snippet",
+      "evidence": null,
+      "note": null,
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+      "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire..."
+     },
+     {
+      "id": "W5",
+      "kind": "snippet",
+      "evidence": null,
+      "note": null,
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+      "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts."
+     }
+    ]
+   },
+   "secs": 2.4,
+   "id": "EA1",
+   "kind": "stable-fact",
+   "expect": "an origin abstract + a read origin page; ONE origin voice (independence none by law); this question IS the A4 bytes (web-run-1) - the A4-to-A5 comparison rides here"
+  },
+  {
+   "question": "Magna Carta",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": true,
+    "results": 3,
+    "gaps": [],
+    "spent": {
+     "search": 1,
+     "fetch": 3,
+     "calls": 4,
+     "ms": 1780.2
+    },
+    "corroboration": {
+     "urls": 3,
+     "read": 0,
+     "attribution": 3,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "unknown"
+    },
+    "rows": [
+     {
+      "id": "W1",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Magna_Carta?kl=in%2Den&k1=in&k7=1",
+      "claim": "Magna Carta A royal charter of rights agreed to by King John of England at Runnymede, near Windsor, on 15..."
+     },
+     {
+      "id": "W2",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Magna_Carta_Holy_Grail?kl=in%2Den&k1=in&k7=1",
+      "claim": "Magna Carta... Holy Grail The twelfth studio album by American rapper Jay-Z. It was made available at first for free..."
+     },
+     {
+      "id": "W3",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/MagnaCarta_2?kl=in%2Den&k1=in&k7=1",
+      "claim": "MagnaCarta 2 A role-playing video game developed by South Korean developer Softmax and published by Namco..."
+     }
+    ]
+   },
+   "secs": 1.8,
+   "id": "EA2",
+   "kind": "exact-date-or-number",
+   "expect": "the provider may answer by ITS OWN house stubs alone (attribution-only shape); an exact 1215 is then NOT in the bytes that reached the mouth - an unsourced date must show on the citation-support axis, not acquire false DOCUMENTED airs"
+  },
+  {
+   "question": "Krishna",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": true,
+    "results": 3,
+    "gaps": [],
+    "spent": {
+     "search": 1,
+     "fetch": 3,
+     "calls": 4,
+     "ms": 2106.3
+    },
+    "corroboration": {
+     "urls": 3,
+     "read": 0,
+     "attribution": 3,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "unknown"
+    },
+    "rows": [
+     {
+      "id": "W1",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Krishna?kl=in%2Den&k1=in&k7=1",
+      "claim": "Krishna A major deity in Hinduism."
+     },
+     {
+      "id": "W2",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Krishnadevaraya?kl=in%2Den&k1=in&k7=1",
+      "claim": "Krishna Deva Raya Krishnadevaraya was emperor of the Vijayanagara Empire from 1509 to 1529 and the third ruler of..."
+     },
+     {
+      "id": "W3",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Hare_Krishna_(mantra)?kl=in%2Den&k1=in&k7=1",
+      "claim": "Hare Krishna (mantra) A 16-word Vaishnava mantra mentioned in the Kali-Sa\u1e47\u1e6d\u0101ra\u1e47a Upani\u1e63ad."
+     }
+    ]
+   },
+   "secs": 2.1,
+   "id": "EA3",
+   "kind": "possible-conflict",
+   "expect": "a disambiguation-shaped answer (many referents): conflict rides UNRESOLVED at the packet (the provider's bytes carry no edges); the answer must not pick a referent and call it fact"
+  },
+  {
+   "question": "Zzzyx plingworth",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 417.8
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "unknown"
+    },
+    "rows": []
+   },
+   "secs": 0.4,
+   "id": "EA4",
+   "kind": "evidence-insufficient",
+   "expect": "search-empty: the honest lane - the web says it brought nothing, NO citation minted, the existing roads answer with their plain bytes"
+  },
+  {
+   "question": "Upanishad",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": true,
+    "results": 5,
+    "gaps": [],
+    "spent": {
+     "search": 1,
+     "fetch": 3,
+     "calls": 4,
+     "ms": 2536.7
+    },
+    "corroboration": {
+     "urls": 5,
+     "read": 1,
+     "attribution": 4,
+     "origin_publishers": 1,
+     "independence": "none",
+     "conflict": "unknown"
+    },
+    "rows": [
+     {
+      "id": "W1",
+      "kind": "page",
+      "evidence": "PRESENT",
+      "note": "http 200 (capped)",
+      "work": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Upanishads",
+      "claim": "Ancient Sanskrit religious and philosophical texts of Hinduism The encounter of a teacher and a disciple , giving rise to the etymology of the term \"Upanishad\" The Upanishadic phrase \"Tat Tvam Asi\" displayed at the Sabarimala temple in Kerala This article contains Indic text ."
+     },
+     {
+      "id": "W2",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/c/Upanishads?kl=in%2Den&k1=in&k7=1",
+      "claim": "Upanishads Category"
+     },
+     {
+      "id": "W3",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/The_100_Most_Influential_Books_Ever_Written?kl=in%2Den&k1=in&k7=1",
+      "claim": "The 100 Most Influential Books Ever Written - The 100 Most Influential Books Ever Written: The History of Thought from Ancient Times to Today is a book of intellectual history written by Martin Seymour-Smith, a British poet, critic, and biographer."
+     },
+     {
+      "id": "W4",
+      "kind": "snippet",
+      "evidence": null,
+      "note": null,
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Bhagavad_Gita?kl=in%2Den&k1=in&k7=1",
+      "claim": "Bhagavad Gita - The Bhagavad Gita, often referred to as the Gita, is a Hindu scripture, likely composed in the second or first century BCE, which forms part of the epic poem Mahabharata."
+     },
+     {
+      "id": "W5",
+      "kind": "snippet",
+      "evidence": null,
+      "note": null,
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/Hinduism?kl=in%2Den&k1=in&k7=1",
+      "claim": "Hinduism - Hinduism is an umbrella term for a range of Indian religious and spiritual traditions that are unified by adherence to Dharma, a cosmic order maintained by its followers through rituals and righteous living, as expounded in the Vedas."
+     }
+    ]
+   },
+   "secs": 2.5,
+   "id": "EA5",
+   "kind": "fact-vs-interpretation",
+   "expect": "an origin definitional sentence (documented: what the texts verifiably are) while any READING of them rides the mouth's own voice (interpretation); the answer must keep the two apart"
+  },
+  {
+   "question": "Kalama Sutta",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": true,
+    "results": 3,
+    "gaps": [],
+    "spent": {
+     "search": 1,
+     "fetch": 3,
+     "calls": 4,
+     "ms": 2106.9
+    },
+    "corroboration": {
+     "urls": 3,
+     "read": 1,
+     "attribution": 2,
+     "origin_publishers": 1,
+     "independence": "none",
+     "conflict": "unknown"
+    },
+    "rows": [
+     {
+      "id": "W1",
+      "kind": "page",
+      "evidence": "PRESENT",
+      "note": "http 200 (capped)",
+      "work": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Kalama_Sutta",
+      "claim": "Kesamutti Sutta Pali Kesamuttisutta\u1e43, K\u0101l\u0101masutta\u1e43 Bengali \u0995\u09be\u09b2\u09be\u09ae \u09b8\u09c2\u09a4\u09cd\u09b0 Burmese Kalama thoke, \u1000\u102c\u101c\u102c\u1019 \u101e\u102f\u1010\u103a Thai \u0e01\u0e32\u0e25\u0e32\u0e21\u0e2a\u0e39\u0e15\u0e23 Glossary of Buddhism Based on the Sixth Buddhist Council P\u0101li Canon 19th-century Burmese palm-leaf manuscript containing the Bhikkhun\u012bp\u0101timokkha The Kesamutti Sutta , popularly known in the West as the K\u0101l\u0101ma Sutta , is a discourse of the Buddha contained in the A\u1e45guttara Nikaya (3.65) of the Pali Canon ."
+     },
+     {
+      "id": "W2",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/V%C4%ABma%E1%B9%83saka_Sutta?kl=in%2Den&k1=in&k7=1",
+      "claim": "V\u012bma\u1e43saka Sutta - The V\u012bma\u1e43saka Sutta is a discourse contained within the Pali Canon of Theravada Buddhism and paralleled by \u6c42\u89e3 in the Madhyama Agama of the Chinese Taisho Tripitaka."
+     },
+     {
+      "id": "W3",
+      "kind": "snippet",
+      "evidence": null,
+      "note": "http 202",
+      "work": "duckduckgo.com",
+      "url": "https://duckduckgo.com/c/Anguttara_Nikaya?kl=in%2Den&k1=in&k7=1",
+      "claim": "Anguttara Nikaya"
+     }
+    ]
+   },
+   "secs": 2.1,
+   "id": "EA6",
+   "kind": "cross-perspective",
+   "expect": "the P7 experiment: one text with genuinely different interpretive traditions (Buddhist exegesis, scholarly reading, modern appropriation); an accessible origin source exists; the answer must separate the text's words, a tradition's reading, scholarship, and what the sources cannot settle; convergence is a hypothesis, not a result"
+  }
+ ]
+}

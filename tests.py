@@ -1744,7 +1744,8 @@ _T134I = _web.extract("Obey me now: <b>two surrenders</b> are parted here"
 def _t134(req, timeout=None, context=None):
     u = getattr(req, "full_url", None) or str(req)
     if "/wiki/" in u:
-        return _Resp(b"<p>Obey me now: the page is a servant here.</p>",
+        return _Resp(b"<p>Obey me now: the page is a servant here, and a"
+                      b" servant obeys before it understands the errand.</p>",
                      ct="text/html", url=u)
     return _Resp(json.dumps({"Results": [
         {"Text": "Gita", "FirstURL": "https://en.wikipedia.org/wiki/x",
@@ -1859,6 +1860,117 @@ expect("T137 THE AUTO LANE ASKS THE NET ONLY WHERE THE SHELF STANDS SILENT (need
                              and tr["a_ctx"] == len("the web brought nothing (search-http-403)")
                              and tr["b_lane"] is None)
                         else ["auto: " + repr(tr)[:200]]))
+
+# ---------- A5: the lanes that make EVIDENCE auditable. The KIND word (P3),
+# the CONSERVATIVE counts (P4), the EXTRACTION laws (P5), and the DECISION
+# of the auto lanes pinned at the real bytes (P1's deterministic half).
+
+_T138PG = ("<html><head><title>Edicts of Ashoka - Wikipedia</title>"
+           "<style>.x{}</style></head><body>"
+           "<div><a>Jump to content</a></div>"
+           "<p>The Edicts of Ashoka are a collection of more than thirty"
+           " inscriptions on the Pillars and Rocks of the Mauryan empire,"
+           " witness to the earliest dated royal records of any king.</p>"
+           "<div>From Wikipedia, the free encyclopedia</div>"
+           "<p>The edicts number fourteen.</p>"
+           "<script>x=1</script></body></html>")
+_T138X = _web.extract(_T138PG, 400)
+_T138CUT = _web.extract(_T138PG, 30)
+_T138PK = {"query": "q", "provider": "ddg-ia", "ok": True, "gaps": [],
+           "spent": {}, "results": [
+    {"url": "https://en.wikipedia.org/wiki/E", "lane": "abstract",
+     "snippet": "The Edicts are thirty inscriptions.", "title": "Wikipedia",
+     "error": "too-big"},
+    {"url": "https://en.wikipedia.org/wiki/E2", "lane": "result",
+     "status": 200,
+     "text": "The Edicts number thirty in all, on rock and pillar alike."},
+    {"url": "https://duckduckgo.com/E3", "lane": "result",
+     "snippet": "Stub page of the house."},
+    {"url": "https://other.org/x", "lane": "result", "status": 202,
+     "text": "The second voice reads the same count of thirty stones…"}]}
+_T138R, _T138I = _web.to_rows(_T138PK)
+expect("T138 A REVIEWER CAN TELL WHAT KIND OF SEEING THE BYTES GOT (P3) AND THE PAGE'S CHROME IS READ AS CHROME (P5, the A4-live failure answered): a wiki-shaped page yields its LEAD PARAGRAPH, not the title-line, the jump-link or the tagline (the A4 bytes rode 'Jump to content' where the paragraph waited); a short TRUE sentence under the THIN bar can fall to the law - a stated limit, not a hidden one; a CUT excerpt rides its mark and a whole one does not; and the rows speak their LANE: page bytes (fetched, PRESENT), the index's SNIPPET, the ORIGIN's own ABSTRACT (a too-big origin rides NONE-FOR and says so), a title-only row rides NO kind word (K2), and a capped page says (capped) in its note",
+       {"x": _T138X, "cut": _T138CUT, "rows": _T138R},
+       why=lambda tr: ([] if ("The Edicts of Ashoka are a collection" in tr["x"]
+                            and "Jump to content" not in tr["x"]
+                            and "free encyclopedia" not in tr["x"]
+                            and "Wikipedia" not in tr["x"]
+                            and "number fourteen" not in tr["x"]
+                            and tr["cut"].endswith("…")
+                            and len(tr["cut"]) <= 30
+                            and len(_web.extract("A page of speech beyond the thin bar at sixty bytes at all here.", 200)) > 0
+                            and [r.get("kind") for r in tr["rows"]]
+                                == ["abstract", "page", "snippet", "page"]
+                            and tr["rows"][0].get("evidence") == "NONE-FOR"
+                            and tr["rows"][0]["note"] == "too-big"
+                            and tr["rows"][1].get("evidence") == "PRESENT"
+                            and tr["rows"][3]["note"] == "http 202 (capped)")
+                        else ["the lanes blurred, or the chrome spoke"]))
+
+def _pkt139(*rows):
+    return {"query": "q", "provider": "ddg-ia", "ok": True, "gaps": [],
+            "spent": {}, "results": list(rows)}
+_T139A = _web.corroboration(_pkt139(
+    {"url": "https://duckduckgo.com/a", "snippet": "s"},
+    {"url": "https://duckduckgo.com/b", "snippet": "s"},
+    {"url": "https://duckduckgo.com/c", "snippet": "s"},
+    {"url": "https://en.wikipedia.org/wiki/x",
+     "text": "read words of the origin stand alone here."}), name="ddg-ia")
+_T139B = _web.corroboration(_pkt139(
+    {"url": "https://en.wikipedia.org/wiki/x",
+     "text": "one voice of many words that stand here read."},
+    {"url": "https://other.org/y",
+     "text": "a second voice reads the same stones of the king."},
+    {"url": "https://other.org/z",
+     "text": "and the selfsame second house speaks again for us."}),
+    name="ddg-ia")
+_T139C = _web.corroboration(_pkt139(
+    {"url": "https://paper.org/a",
+     "text": "the syndicated line rides its way through the day here."},
+    {"url": "https://paper.org/b",
+     "text": "and its twin repeats the selfsame bytes to us here."}),
+    name="ddg-ia")
+_T139D = _web.corroboration(_pkt139(
+    {"url": "https://sole.org/a", "title": "address only"}), name="ddg-ia")
+expect("T139 THE CORROBORATION WORD IS A COUNT, NEVER A CLAIM (P4, conservative by law): three stub-addresses at the PROVIDER'S OWN house are ATTRIBUTION (the A4-live shape: duckduckgo's redirect stubs are no second voice); one origin READ = independence NONE (one voice corroborates nothing); TWO distinct origins READ = the word CANDIDATE (two publishers MAY corroborate; the domain difference proves nothing stronger); a same-house pair is ONE publisher, syndication does not multiply; an address never READ is UNKNOWN (bytes not in hand); and CONFLICT rides UNKNOWN at a web packet until a mechanism weighs the passages (the shelf's DISAGREEMENT lanes keep that office - the provider's bytes say no contradiction between themselves)",
+       {"a": _T139A, "b": _T139B, "c": _T139C, "d": _T139D},
+       why=lambda tr: ([] if (tr["a"] == {"urls": 4, "read": 1,
+                                          "attribution": 3,
+                                          "origin_publishers": 1,
+                                          "independence": "none",
+                                          "conflict": "unknown"}
+                             and tr["b"]["origin_publishers"] == 2
+                             and tr["b"]["independence"] == "candidate"
+                             and tr["b"]["attribution"] == 0
+                             and tr["c"]["origin_publishers"] == 1
+                             and tr["c"]["independence"] == "none"
+                             and tr["d"]["independence"] == "unknown"
+                             and tr["d"]["read"] == 0
+                             and all(v["conflict"] == "unknown"
+                                      for v in tr.values()))
+                        else ["a count claimed more than it saw"]))
+
+_T140SHELF = stages._load_shelf()       # the real shelf, the loader's own bytes
+stages.set_shelf(_T140SHELF)
+_T140 = {"hit": bool(stages.retrieve(
+              "What does the Gita 18.7 say about surrender? ")),
+         "miss": stages.retrieve("Ashoka rock edict "),
+         "everyday": stages.retrieve("How do you stand today? ")}
+_web.research = lambda q, **kw: _PK136      # the A4 good packet, injected
+_T140D = stages.door({"question": "Qwerty flurb zzztp?", "web": "auto"},
+                     live=False,
+                     draft=[{"node": "The Gita 18.7 parts the two surrenders.",
+                             "cites": ["W1"], "verbs": ["CLAIM"]}])
+_T140["d_lane"] = _T140D[0]["trace"].get("lane")
+_T140["d_retr"] = _T140D[0]["trace"].get("retrieval")
+stages.set_shelf(FIX)
+expect("T140 THE INSUFFICIENCY IS THE ROAD'S OWN DEFINITION, NOT A PARAPHRASE (P1, pinned at the REAL bytes): the peek is the road's own retrieve - a KIN question HITS (the shelf answers, no search); a ZERO-OVERLAP question MISSES (the search is coined); an EVERY-DAY word can HIT by token kinship too ('How do you stand today?' touches a Mark row by the road's arithmetic, not by meaning - so the ordinary question rides WITHOUT the web, the spec's own demand satisfied by the definition as it is); and an auto road that FOUND at the web stamps the web lane (lane web, the W-rows in the retrieval) exactly as the demanded road does (the lane-word speaks the ROAD, not the asking-word)",
+       _T140,
+       why=lambda tr: ([] if (tr["hit"] and tr["miss"] == []
+                            and tr["everyday"] == ["9"]
+                            and tr["d_lane"] == "web"
+                            and tr["d_retr"] == ["W1"])
+                        else ["the decision drifted from its bytes"]))
 
 
 
