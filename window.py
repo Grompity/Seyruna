@@ -33,6 +33,8 @@ def why_lane(trace, by_id=None):
         if r.get("provenance"):                 # the card's own word about
             row["provenance"] = r["provenance"] # who speaks — descriptive,
                                                 # never a second status
+        if r.get("url"):                        # A4: the cite's own address
+            row["url"] = r["url"]
         evidence.append(row)
         levels[row["level"]] = levels.get(row["level"], 0) + 1
         if "kind" in row:

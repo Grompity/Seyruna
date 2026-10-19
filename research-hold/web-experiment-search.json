@@ -1,0 +1,18 @@
+{
+ "question": "what does the Bhagavad Gita say in chapter 18 verse 7 about surrender",
+ "packet": {
+  "query": "what does the Bhagavad Gita say in chapter 18 verse 7 about surrender",
+  "provider": "ddg-ia",
+  "ok": false,
+  "results": [],
+  "gaps": [
+   "search-empty"
+  ],
+  "spent": {
+   "search": 1,
+   "fetch": 0,
+   "calls": 1,
+   "ms": 597.1
+  }
+ }
+}

@@ -565,6 +565,10 @@ def packet_text(ids, grades=None):
             # absent = silence); descriptive only — no gate, no walk, no
             # taxonomy, no rung-movement, no new reasoning pass.
             line += " | " + str(r["provenance"])
+        if r.get("url"):
+            # A4: the web row's own ADDRESS rides the mouth's sight-line,
+            # the same K2 shape (a shelf row carries none and rides as ever).
+            line += " | " + str(r["url"])
         if grades:
             line += " | " + str(grades.get(c, "ANSWER"))
         line += ") " + (r.get("claim") or "")
@@ -864,7 +868,45 @@ def door(body, live=True, **kw):
     facts = body.get("facts")
     if facts is None:
         facts = digest(body.get("history"))
-    tr = run_pipeline(q, str(facts or "").strip(), live=live, **kw)
+    facts = str(facts or "").strip()
+    # THE A4 WEB LANES (the reach is a DESIGNATION, never ambient): body's
+    # "web": true asks the net at once; "auto" asks it ONLY where the shelf
+    # would have stood silent (the road's own retrieval, re-weighed — a
+    # code peek, zero mouthfuls). A FAILED look is spoken, not hidden: the
+    # facts-line carries what the web could not reach, so the existing
+    # roads (general mouth, then RP-10) answer honestly and invent nothing.
+    # The WEB reach is no MOUTH: it rides ANY road (the dry one included).
+    # What keeps the frozen suite net-free is the INJECTED seam (T131+), not
+    # a road-law - and the suite's door-runs with a web word all inject one.
+    web = body.get("web")
+    pkt = None
+    if web == "auto" and retrieve(q + " " + facts):
+        web = None
+    if web:
+        import web_research
+        pkt = web_research.research(q)
+        if pkt["ok"]:
+            rows, ids = web_research.to_rows(pkt)
+            old_shelf = SHELF[:]
+            set_shelf(old_shelf + rows)
+            kw = dict(kw, packet=ids)
+        else:
+            facts = (facts + " " if facts else "") + \
+                "the web brought nothing (" + \
+                (pkt["gaps"][0] if pkt["gaps"] else "empty") + ")"
+            pkt = None
+    tr = run_pipeline(q, facts, live=live, **kw)
     import window
-    return {"response": tr.get("response", ""), "why": window.why_lane(tr),
+    if pkt is not None:
+        tr["lane"] = "web"
+        tr["web"] = {"provider": pkt["provider"],
+                     "fetched": pkt["spent"]["fetch"],
+                     "gaps": pkt["gaps"],
+                     "sources": [{"url": r["url"], "title": r.get("title")}
+                                 for r in pkt["results"]]}
+        why = window.why_lane(tr)                  # weighed BEFORE restore
+        set_shelf(old_shelf)
+    else:
+        why = window.why_lane(tr)
+    return {"response": tr.get("response", ""), "why": why,
             "trace": tr}, 200

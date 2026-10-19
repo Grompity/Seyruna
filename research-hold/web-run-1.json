@@ -1,0 +1,171 @@
+{
+ "note": "A4 live evidence - the ddg-ia provider, the real road, no mocks",
+ "date": "20261018",
+ "e1_search_fetch": {
+  "question": "Ashoka rock edict",
+  "provider": "ddg-ia",
+  "ok": true,
+  "n_results": 5,
+  "fetched": 3,
+  "calls": 4,
+  "secs": 2.9,
+  "gaps": [],
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+    "title": "Wikipedia",
+    "status": 200,
+    "err": null,
+    "text_chars": 1200
+   },
+   {
+    "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+    "title": "Edicts of Ashoka Category",
+    "status": 202,
+    "err": null,
+    "text_chars": 41
+   },
+   {
+    "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+    "title": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c.",
+    "status": 202,
+    "err": null,
+    "text_chars": 42
+   },
+   {
+    "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+    "title": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire...",
+    "status": null,
+    "err": null,
+    "text_chars": 0
+   },
+   {
+    "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+    "title": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts.",
+    "status": null,
+    "err": null,
+    "text_chars": 0
+   }
+  ],
+  "rows": [
+   {
+    "id": "W1",
+    "claim": "Edicts of Ashoka - Wikipedia Jump to content From Wikipedia, the free encyclopedia 3rd-century BCE inscriptions in South",
+    "evidence": "PRESENT",
+    "note": "http 200",
+    "work": "en.wikipedia.org",
+    "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka"
+   },
+   {
+    "id": "W2",
+    "claim": "Edicts_of_Ashoka at DuckDuckGo DuckDuckGo",
+    "evidence": "PRESENT",
+    "note": "http 202",
+    "work": "duckduckgo.com",
+    "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1"
+   },
+   {
+    "id": "W3",
+    "claim": "Pillars_of_Ashoka at DuckDuckGo DuckDuckGo",
+    "evidence": "PRESENT",
+    "note": "http 202",
+    "work": "duckduckgo.com",
+    "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1"
+   },
+   {
+    "id": "W4",
+    "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashok",
+    "evidence": null,
+    "note": null,
+    "work": "duckduckgo.com",
+    "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1"
+   },
+   {
+    "id": "W5",
+    "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are",
+    "evidence": null,
+    "note": null,
+    "work": "duckduckgo.com",
+    "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1"
+   }
+  ]
+ },
+ "e2_door_live": {
+  "question": "Ashoka rock edict",
+  "code": 200,
+  "lane": "web",
+  "response": "There are fourteen Major Rock Edicts of Ashoka \u2014 significantly detailed inscriptions, among the earliest dated rock inscriptions of any Indian monarch, and they are preceded chronologically by a set of Minor Rock Edicts. They were carved on in-situ rock faces across the Mauryan empire in the third century BCE, carrying teachings drawn from the Buddha's path. The wider body of Ashoka's edicts \u2014 rock and pillar alike \u2014 is cut in sandstone and scattered across what is now India, Nepal, Pakistan, Afghanistan, and Bangladesh. Were you asking about the fourteen major ones specifically, or the whole rock-edict set including the minor ones?",
+  "secs": 78.7,
+  "web": {
+   "provider": "ddg-ia",
+   "fetched": 3,
+   "gaps": [],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+     "title": "Wikipedia"
+    },
+    {
+     "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+     "title": "Edicts of Ashoka Category"
+    },
+    {
+     "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+     "title": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c."
+    },
+    {
+     "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+     "title": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire..."
+    },
+    {
+     "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+     "title": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts."
+    }
+   ]
+  },
+  "evidence_rows": [
+   {
+    "id": "W1",
+    "claim": "Edicts of Ashoka - Wikipedia Jump to content From Wikipedia, the free encyclopedia 3rd-century BCE inscriptions in South Asia Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location &lt;b id=\\\"mwCw\\\">Bahapur&lt;/b>&lt;/a>\"}'> Bahapur &lt;b id=\\\"mwDQ\\\">Gujarra&lt;/b>&lt;/a>\"}'> Gujarra &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Saru_Maru\\\" title=\\\"Saru Maru\\\" id=\\\"mwDw\\\">Saru Maru&lt;/a>&lt;/b>\"}'> Saru Maru Udegolam&lt;/b>\"}'> Udegolam Nittur&lt;/b>\"}'> Nittur &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Maski\\\" title=\\\"Maski\\\" id=\\\"mwEw\\\">Maski&lt;/a>&lt;/b>\"}'> Maski Siddapur&lt;/a>\"}'> Siddapur Brahmagiri&lt;/b>\"}'> Brahmagiri Jatinga&lt;/b>\"}'> Jatinga &lt;b id=\\\"mwGA\\\">Pakilgundu&lt;/b>&lt;/a>\"}'> Pakilgundu Rajula Mandagiri&lt;/b>\"}'> Rajula Mandagiri &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Yerragudi?action=edit&amp;amp;redlink=1\\\" title=\\\"Yerragudi\\\" class=\\\"new\\\" typeof=\\\"mw:LocalizedAttrs\\\" id=\\\"mwGw\\\" data-mw-i18n=&apos;{\\\"title\\\":{\\\"lang\\\":\\\"x-page\\\",\\\"key\\\":\\\"red-link-title\\\",\\\"params\\\":[\\\"Yerragudi\\\"]}}&apos;>Yerragudi&lt;/a>&lt;/b>\"}'> Yerragudi Sa",
+    "level": "DOCUMENTED",
+    "provenance": "web",
+    "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka"
+   },
+   {
+    "id": "W2",
+    "claim": "Edicts_of_Ashoka at DuckDuckGo DuckDuckGo",
+    "level": "DOCUMENTED",
+    "provenance": "web",
+    "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1"
+   },
+   {
+    "id": "W3",
+    "claim": "Pillars_of_Ashoka at DuckDuckGo DuckDuckGo",
+    "level": "DOCUMENTED",
+    "provenance": "web",
+    "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1"
+   },
+   {
+    "id": "W4",
+    "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire...",
+    "level": "DOCUMENTED",
+    "provenance": "web",
+    "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1"
+   },
+   {
+    "id": "W5",
+    "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts.",
+    "level": "DOCUMENTED",
+    "provenance": "web",
+    "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1"
+   }
+  ]
+ },
+ "e2b_honest_lane": {
+  "question": "What do the Ashoka rock edicts say about tolerance?",
+  "lane": "general",
+  "context_size": 38,
+  "response": "Rock Edict XII is the one that speaks most directly to tolerance. Ashoka says: do not honor only your own sect and disparage another's. Honor all sects, each on its proper occasion. The reason he gives is practical, not sentimental \u2014 disparaging another sect actually harms your own. The aim he names is the growth of all sects, not the triumph of one. He also urges listening to one another's teachings, and warns that a person devoted to their own sect can, by praising it too loudly, do more damage to it than to the other. The edict is addressed to officials and to the public alike, and it names the Buddhist, Brahman, Ajivika, and Jain communities among those to be respected. It is a call for mutual restraint, not for doctrinal agreement.",
+  "secs": 29.6
+ }
+}
