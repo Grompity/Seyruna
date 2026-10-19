@@ -336,7 +336,11 @@ def provider_host(name=None):
     pages while the ABSTRACT rode the ORIGIN). Derived from the provider's
     own search_url, so a config move moves it along; the "api." porch is
     the provider's own front door, not its house."""
-    h = urllib.parse.urlparse(search_url(name or provider_name(), "x", 1))[1]
+    h = (name if name is not None else provider_name())
+    if h == "named":
+        return ""            # the named road asked NO provider: no house
+                             # word, no attribution lane (A10)
+    h = urllib.parse.urlparse(search_url(h, "x", 1))[1]
     parts = h.lower().split(".")
     if parts[0] == "api":
         parts = parts[1:]
@@ -528,6 +532,58 @@ def research(query, results_n=RESULTS_N, fetch_n=FETCH_MAX,
     spent["ms"] = round((clock() - t0) * 1000, 1)
     gaps = ([gap] if gap else []) + [r["error"] for r in rows if "error" in r]
     return {"query": query, "provider": provider_name(), "ok": bool(rows),
+             "results": rows, "gaps": gaps, "spent": spent}
+
+
+def reads(query, urls, max_bytes=MAX_BYTES, max_chars=MAX_CHARS,
+          allow_local=False, timeout=TIMEOUT, clock=time.perf_counter):
+    """A10: the NAMED road - NO search at all, the named addresses fetched
+    themselves through the SAME guards (the road-gate, the read-wide size
+    law, the content-type weighing, the after-redirect re-weigh, the
+    MAX_SECS pre-request gate). A named address that will not open is a
+    LANED WORD - a record of the failure, never a fallback: the road does
+    not go looking elsewhere because one page did not open (SearXNG's
+    mirror remembered). The A7 laws ride whole: the identity is computed
+    for every row, the dup-words for the selfsame road and the already-
+    spoken publisher, and a named origin is no surer a SECOND voice than a
+    searched one - corroboration still weighs bytes, not wishes."""
+    LEDGER[0] = 0
+    t0 = clock()
+    rows = []
+    spent = {"search": 0}                        # the named road never asks
+    seen_urls, read_pubs = set(), set()          # a provider
+    for url in urls:
+        if clock() - t0 >= MAX_SECS:
+            rows.append({"url": url, "lane": "named", "skipped": "budget"})
+            continue
+        pub = publisher(url)
+        cu = canon_url(url)
+        rec = {"url": url, "lane": "named", "publisher": pub, "canon": cu}
+        if cu in seen_urls:
+            rec["skipped"] = "dup-url"
+            rows.append(rec)
+            continue
+        if pub in read_pubs:
+            rec["skipped"] = "dup-publisher"
+            rows.append(rec)
+            continue
+        seen_urls.add(cu)
+        got = fetch(url, max_bytes, timeout, allow_local)
+        if "status" in got:
+            rec["status"] = got["status"]
+            rec["retrieved"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+            rec["text"] = extract(got["body"].decode("utf-8", "replace")
+                                  if isinstance(got["body"], bytes)
+                                  else str(got["body"]), max_chars)
+            read_pubs.add(pub)
+        else:
+            rec["error"] = got["error"]
+        rows.append(rec)
+    spent["fetch"] = sum(1 for r in rows if "status" in r)
+    spent["calls"] = LEDGER[0]
+    spent["ms"] = round((clock() - t0) * 1000, 1)
+    gaps = [r["error"] for r in rows if "error" in r]
+    return {"query": query, "provider": "named", "ok": bool(rows),
              "results": rows, "gaps": gaps, "spent": spent}
 
 

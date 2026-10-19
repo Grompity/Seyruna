@@ -2269,6 +2269,169 @@ expect("T149 THE IDENTITY RIDES THE WHOLE ROAD (auditable end to end, and the A4
                             and tr["plain"] is None)
                        else ["the identity or the audit-word fell off the road"]))
 
+# ---------- A10: the NAMED road (no search, two addresses, every guard
+# whole). Deterministic here; the live read rides a10-report.md alone.
+class _Named:
+    def __init__(self, plan):
+        self.plan = plan
+    def __call__(self, req, timeout=None, context=None):
+        u = getattr(req, "full_url", None) or str(req)
+        for key, val in self.plan.items():
+            if key in u:
+                if val is None:
+                    raise _HE("403 Forbidden")
+                if val == "kind":
+                    return _Resp(b"junk", ct="application/pdf", url=u)
+                return _Resp(val, ct="text/html", url=u)
+        raise _HE("404 Not Found")
+_T150A = _Named({"ONE": b"<p>The edicts of the king styled Devanampiyen"
+                       b" Piyadassen, carved in stone at the middle of the"
+                       b" third century before the common era, are numbered"
+                       b" by modern scholars among the records of kings.</p>",
+                 "TWO": b"<p>These rock-inscriptions speak in the first person"
+                        b" of the Mauryan king beloved of the gods, and of"
+                        b" the moral law he set in stone for his people.</p>"}
+                ).__call__
+_web.urlopen = _Named({"ONE": b"<p>The edicts of the king styled Devanampiyen"
+                       b" Piyadassen, carved in stone at the middle of the"
+                       b" third century before the common era, are numbered"
+                       b" among the earliest records of kings.</p>",
+                       "TWO": b"<p>These rock-inscriptions speak in the first"
+                              b" person of the Mauryan king beloved of the"
+                              b" gods, and of the moral law set in stone.</p>"})
+_T1501 = _web.reads("q", ["https://en.wikipedia.org/wiki/ONE",
+                          "https://en.wikisource.org/wiki/TWO"])
+_web.urlopen = _Named({"ONE": b"<p>The edicts of the king styled Devanampiyen"
+                              b" Piyadassen, carved at stone, are numbered"
+                              b" among the earliest dated royal records here.</p>",
+                       "TWO": None})
+_T1502 = _web.reads("q", ["https://en.wikipedia.org/wiki/ONE",
+                          "https://other.org/wiki/TWO"])
+_web.urlopen = _Named({"ONE": b"<p>Enough words to pass the bar at pages does.</p>",
+                       "TWO": b"<p>Enough words to pass the bar at pages does.</p>"})
+_T1503 = _web.reads("q", ["https://x.org/wiki/ONE?utm_source=ddg",
+                          "https://x.org/wiki/ONE", "https://x.org/wiki/TWO"])
+_web.urlopen = _Named({"ONE": "kind", "TWO": b"<p>Enough words to pass the bar at pages does.</p>"})
+_T1504 = _web.reads("q", ["https://x.org/wiki/ONE", "https://x.org/wiki/TWO"])
+_web.urlopen = web_urlopen
+_T150W = _web.corroboration(_T1501, name="named")
+_T150W2 = _web.corroboration(_T1502, name="named")
+expect("T150 THE NAMED ROAD ASKS NO PROVIDER AND WASTES NO COIN: two named addresses ride as two PUBLISHERS read (the word candidate), the ledger says ZERO searches (the provider was never asked - the packet's own word is named, and corroboration at a named packet has NO house word: no attribution lane, since nothing redirected through a provider's stub), a closed door LANES (blocked-or-rate:403 - a record of the failure, NEVER a fallback: the road does not go looking elsewhere because one page did not open, and the other page's passage still rides), a clothed selfsame address is dup-url and a second page of a spoken publisher is dup-publisher BEFORE any coin moves, and a page of the wrong kind lanes wrong-kind:application/pdf with the row riding its error (the content-type weighing whole at the named road, as at the searched)",
+       {"two": (_T1501["provider"], _T1501["spent"]["search"],
+                _T1501["spent"]["calls"], [r.get("publisher") for r in _T1501["results"]]),
+        "fail": (_T1502["gaps"], [r.get("skipped") or r.get("error")
+                                  for r in _T1502["results"]],
+                  bool(_T1502["results"][0].get("text"))),
+        "dups": [r.get("skipped") for r in _T1503["results"]],
+        "dups-calls": _T1503["spent"]["calls"],
+        "kind": _T1504["results"][0].get("error"),
+        "w": _T150W, "w2": _T150W2},
+       why=lambda tr: ([] if (tr["two"] == ("named", 0, 2,
+                                            ["wikipedia.org", "wikisource.org"])
+                            and tr["fail"][0] == ["blocked-or-rate:403"]
+                            and tr["fail"][1][1] == "blocked-or-rate:403"
+                            and tr["fail"][2] is True
+                            and tr["dups"] == [None, "dup-url",
+                                                "dup-publisher"]
+                            and tr["dups-calls"] == 1
+                            and tr["kind"] == "wrong-kind:application/pdf"
+                            and tr["w"]["independence"] == "candidate"
+                            and tr["w"]["attribution"] == 0
+                            and tr["w2"]["independence"] == "none"
+                            and tr["w2"]["conflict"] == "insufficient")
+                       else ["the named road asked a provider it never met"]))
+
+_T151SHARE = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "the reign of 2080 BCE at the middle."},
+    {"url": "https://two.org/b", "text": "Ashoka reigned from 2080 onward here."}),
+    name="named")
+_T151CLASH = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "the reign from 2080 at the middle."},
+    {"url": "https://two.org/b", "text": "the reign from 1320 at the end here."}),
+    name="named")
+_T151INCOMP = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "the edicts speak in the first person."},
+    {"url": "https://two.org/b", "text": "the moral law was set in stone."}),
+    name="named")
+_T151SYN = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "one translation rides two houses here."},
+    {"url": "https://two.org/b", "text": "one translation rides two houses here."}),
+    name="named")
+_T151ROWS = _web.to_rows(_pkt139(
+    {"url": "https://one.org/a", "text": "the reign from 2080 at the middle."},
+    {"url": "https://two.org/b", "text": "the reign from 1320 at the end here."}))
+expect("T151 THE LADDER STANDS AT THE NAMED ROAD UNMOVED (the A7 laws whole): two named publishers SHARING a year-shape ride bytes-share (the BYTES agree; the pages may still be reporting one underlying source - agreement is not entailment and a shared-sources failure is the operator's EYES, not the machine's, disclosed); DISJOINT years ride bytes-clash-possible with BOTH passages riding to the last row (the disagreement KEPT); no years at all rides the honest unknown - and a claim that the two pages even TALK about the same thing is COMPARABILITY, an operator's judgment the ladder never claims; syndicated twins (identical bytes, two publishers) keep candidate WITH the flag; and one closed door is one voice (none + insufficient), never corroboration",
+       {"share": _T151SHARE["conflict"], "clash": _T151CLASH["conflict"],
+        "incomp": _T151INCOMP["conflict"],
+        "syn": (_T151SYN["syndicated-possible"], _T151SYN["independence"]),
+        "rows": [r["id"] for r in _T151ROWS[0]],
+        "kinds": [r.get("kind") for r in _T151ROWS[0]]},
+       why=lambda tr: ([] if (tr["share"] == "bytes-share"
+                            and tr["clash"] == "bytes-clash-possible"
+                            and tr["incomp"] == "unknown"
+                            and tr["syn"] == (True, "candidate")
+                            and tr["rows"] == ["W1", "W2"]
+                            and tr["kinds"] == ["page", "page"])
+                       else ["the ladder reached or stumbled at the named road"]))
+
+_PK152 = {"query": "q", "provider": "named", "ok": True,
+          "results": [
+     {"url": "https://en.wikipedia.org/wiki/ONE", "lane": "named",
+      "publisher": "wikipedia.org", "status": 200,
+      "text": "Heed these words: the edicts name the king Devanampiyen Piyadassen."},
+     {"url": "https://en.wikisource.org/wiki/TWO", "lane": "named",
+      "publisher": "wikisource.org", "status": 200,
+      "text": "The edicts speak in the first person of the beloved of the gods."}],
+          "gaps": [], "spent": {"search": 0, "fetch": 2, "calls": 2, "ms": 8.0}}
+_web.reads = lambda q, urls, **kw: _PK152
+_T152 = stages.door({"question": "What do Ashoka's edicts say of their king?",
+                     "web": True,
+                     "reads": ["https://en.wikipedia.org/wiki/ONE",
+                               "https://en.wikisource.org/wiki/TWO"]},
+                    live=False,
+                    draft=[{"node": "The king speaks in stone.",
+                            "cites": ["W1", "W2"], "verbs": ["CLAIM"]}])
+_T152EV = _T152[0]["why"]["evidence"]
+_T152SRC = _T152[0]["trace"]["web"]["sources"]
+_T152CALLS = []
+def _spy_reads(q, urls, **kw):
+    _T152CALLS.append("reads")
+    return _PK152
+def _spy_research(*a, **kw):
+    _T152CALLS.append("research")
+    return _PK136
+_web.reads, _web.research = _spy_research, _spy_reads   # crossed on purpose
+_T152MIS = stages.door({"question": "Qwerty flurb zzztp?", "web": "auto",
+                        "reads": ["https://x.org/a"]}, live=False,
+                       draft=[{"node": "Plain words.", "cites": ["F1"],
+                               "verbs": ["CLAIM"]}])
+_web.reads = lambda q, urls, **kw: (_ for _ in ()).throw.__name__  # raises if coined
+def _no_reads(q, urls, **kw):
+    raise AssertionError("the named road was coined without a designation")
+_web.reads = _no_reads
+_T152PLAIN = stages.door({"question": "May fasting purge?"}, live=False,
+                         draft=[{"node": "The tradition may read it so.",
+                                 "cites": ["F2"], "verbs": ["CLAIM"]}])
+expect("T152 THE DOOR RIDES THE NAMED WORD WITHOUT DISTURBING ANY OTHER ROAD: web:true WITH a reads-list speaks the web lane on the NAMED packet (the trace's provider word is named, corroboration is stamped at the PACKET's OWN word - candidate at two read publishers, NO house-word asked of any provider), the sources-list names each publisher and how it was seen, the window carries publisher into the evidence row, the COMMANDING bytes (Heed these words) ride DOCUMENTED as ever, and the roads are unmoved: an AUTO miss with a reads-word riding still coins RESEARCH not reads (the crossed spies prove the gate: named-road code never fires unless web:true AND reads present), the plain road coins NOTHING (both spies ready to raise), the shelf leaves UNMOVED. The guards need no re-pinning here: the private-redirect block rode T135 and the untrusted-bytes rode T134/T149 - the named road re-uses the SAME fetch whole",
+       {"t": _T152, "src": _T152SRC, "ev": _T152EV,
+        "mis": _T152MIS[0]["trace"].get("lane"), "calls": list(_T152CALLS),
+        "plain": _T152PLAIN[0]["trace"].get("lane")},
+       why=lambda tr: ([] if (tr["t"][0]["trace"]["lane"] == "web"
+                            and tr["t"][0]["trace"]["web"]["provider"] == "named"
+                            and tr["t"][0]["trace"]["web"]["corroboration"]
+                                ["independence"] == "candidate"
+                            and [s.get("publisher") for s in tr["src"]] ==
+                                ["wikipedia.org", "wikisource.org"]
+                            and [s.get("seen") for s in tr["src"]] ==
+                                ["read", "read"]
+                            and tr["ev"][0].get("publisher") == "wikipedia.org"
+                            and tr["ev"][0]["level"] == "DOCUMENTED"
+                            and "Heed these words" in tr["ev"][0]["claim"]
+                            and tr["mis"] == "web" and tr["calls"] == ["research"]
+                            and "W1" not in stages.BY_ID
+                            and tr["plain"] is None)
+                       else ["the named word moved a road it should have left alone"]))
+
 
 
 for name, tr, kw in T:

@@ -1,0 +1,81 @@
+{
+ "milestone": "A10",
+ "road": "the actual door, dry (live=False); this artifact is pass 2 (web_research.reads direct, the same call the door makes); pass 1 was the door itself and agreed",
+ "pre-registered": {
+  "question": "What do Ashoka's rock edicts say about their king - who he was, by what style he is named, and when he reigned?",
+  "claim-to-compare": "the edicts are rock-carved records issued by the Mauryan king Ashoka, styled Devanampiya Piyadassi (beloved-of-the-gods), of the third century BCE",
+  "urls": [
+   "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+   "https://en.wikisource.org/wiki/Edicts_of_Ashoka"
+  ],
+  "no-fallback": true
+ },
+ "observed": {
+  "provider": "named",
+  "spent": {
+   "search": 0,
+   "fetch": 1,
+   "calls": 2,
+   "ms": 1801.9
+  },
+  "secs-wall": 1.8,
+  "gaps": [
+   "http-404"
+  ],
+  "corroboration": {
+   "urls": 2,
+   "read": 1,
+   "attribution": 0,
+   "origin_publishers": 1,
+   "independence": "none",
+   "conflict": "insufficient",
+   "publishers_seen": 2,
+   "duplication": 0,
+   "syndicated-possible": false
+  },
+  "source-records": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+    "publisher": "wikipedia.org",
+    "canon": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+    "status-or-error": 200
+   },
+   {
+    "url": "https://en.wikisource.org/wiki/Edicts_of_Ashoka",
+    "publisher": "wikisource.org",
+    "canon": "https://en.wikisource.org/wiki/Edicts_of_Ashoka",
+    "status-or-error": "http-404"
+   }
+  ],
+  "u1-text-length": 1200,
+  "u1-excerpt": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Af",
+  "u1-word-flags": {
+   "Ashoka": true,
+   "Piyadassi": false,
+   "Devanampiya": false,
+   "edict": true,
+   "rock": false,
+   "stone": true,
+   "inscript": true,
+   "Maurya": true
+  },
+  "u1-year-shapes": [],
+  "u2-status": "http-404"
+ },
+ "rows": [
+  {
+   "id": "W1",
+   "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+   "kind": "page",
+   "publisher": "wikipedia.org",
+   "claim-head": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan,"
+  },
+  {
+   "id": "W2",
+   "url": "https://en.wikisource.org/wiki/Edicts_of_Ashoka",
+   "kind": null,
+   "publisher": "wikisource.org",
+   "claim-head": "https://en.wikisource.org/wiki/Edicts_of_Ashoka"
+  }
+ ]
+}

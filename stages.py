@@ -884,7 +884,9 @@ def door(body, live=True, **kw):
         web = None
     if web:
         import web_research
-        pkt = web_research.research(q)
+        named = body.get("reads")
+        pkt = (web_research.reads(q, named) if named
+               else web_research.research(q))
         if pkt["ok"]:
             rows, ids = web_research.to_rows(pkt)
             old_shelf = SHELF[:]
@@ -902,7 +904,8 @@ def door(body, live=True, **kw):
         tr["web"] = {"provider": pkt["provider"],
                      "fetched": pkt["spent"]["fetch"],
                      "gaps": pkt["gaps"],
-                     "corroboration": web_research.corroboration(pkt),
+                     "corroboration": web_research.corroboration(
+                         pkt, pkt["provider"]),
                      "sources": [{"url": r["url"], "title": r.get("title"),
                                   "publisher": web_research.publisher(r["url"]),
                                   "lane": r.get("lane"),
