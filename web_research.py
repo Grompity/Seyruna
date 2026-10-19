@@ -287,6 +287,19 @@ def extract(html, max_chars=MAX_CHARS, thin=THIN):
     claim of completeness."""
     t = TAGOUT.sub(" ", html)
     t = re.sub(r"(?s)<!--.*?-->", " ", t)
+    # THE ESCAPED-MARKUP CLAUSE (A6, the ONE intervention the review
+    # justified): some sites (observed LIVE at EA1/EA5's wikipedia-family
+    # pages) serve their markup ALREADY ESCAPED - &lt;b ...&gt; - so the
+    # tag-saw (a real <...>) sees NO tags and the claim drowns in attribute
+    # shavings. The clause cuts escaped spans and their residue-RUNS
+    # ("}'> - three or more of quote-brace-angle-quote in a row is no
+    # prose); multi-script bytes (Bengali, Burmese) ride UNTOUCHED (the
+    # residue class is four characters, not a script). The span CLOSES at
+    # a real > OR at &gt; - the live bytes close almostEVERY escape with a
+    # REAL > (only the < is escaped), and a law that required &gt; matched
+    # NOTHING: the standalone probe caught that BEFORE any witness rode.
+    t = re.sub(r"(?s)&lt;.*?(?:>|&gt;)", " ", t)
+    t = re.sub(r"[\"'}>]{3,}", " ", t)
     t = re.sub(r"(?i)</(p|li|h[1-6]|div|section|blockquote|dd|dt|br)\s*>",
                 "\n", t)
     t = re.sub(r"(?i)<br\s*/?>", "\n", t)

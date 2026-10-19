@@ -1,0 +1,32 @@
+{
+ "protocol": "RRV-0.1",
+ "raised": "A6, BEFORE any score was assigned (criteria may not move after seeing results)",
+ "reviewer-who": "The GPT leg of the founder's bridge (reviewer/reviewer_ask.py: Responses-API, gpt-6-astra default) is a GENUINELY DIFFERENT family from the answering mouth (RadixArk/Qwen3.8-Flash-Next-NVFP4 per config.json) - but the key (OPENAI_API_KEY) is ABSENT on the day, so the leg 'waits': what actually reviewed A6 is the DETERMINISTIC AUDIT (token-law, review.py) plus the DISCLOSED OPERATOR - model independence is DESIGNED and BLOCKED (concrete: one env var), not fake-proven. The bridge's own standing orders (gpt-reviewer.md: source-report vs interpretation vs synthesis; no hallucinated answerability; UNKNOWN may be correct; do-not-change) are the reviewer's temperament ADOPTED for the manual pass, family or no family.",
+ "status-vocab": {
+  "claim-support": ["DIRECTLY-SUPPORTED (the passage's own bytes carry the claim)",
+                    "PARTIALLY-SUPPORTED (part rides, the rest does not - what is missing is NAMED)",
+                    "CONTRADICTED (a byte says otherwise)",
+                    "UNSUPPORTED (the bytes do not carry it and the claim is presented as fact)",
+                    "INTERPRETIVE (the mouth's own reading, marked as such or harmless)",
+                    "UNASSESSABLE (what is needed to judge is not in the bytes that reached the mouth)"],
+  "verdicts": ["PASS (evidence supports under the stated criterion)",
+                "FAIL (evidence contradicts or materially fails to support)",
+                "UNREVIEWABLE (the needed evidence or a reliable judgment is absent)",
+                "N/A (the criterion does not apply to this claim)"]},
+ "measures": {
+  "factual-correctness": "Do the ANSWER'S important claims ride the bytes that reached the mouth (the packet rows' claims - exactly what the mouths saw, packet_text's law)? NOT the modern web-page (a present-day page may not replace the experiment's bytes without that being said).",
+  "claim-to-passage-support": "Per claim: WHICH row supports it, and is the claim STRONGER or MORE SPECIFIC than that row? (A day is not a date; an association is not a cause; a possibility is not a fact; a number is not a month.)",
+  "citation-integrity": "Every citation resolves to a row that rode the shown set; a clean cite-trail is NOT itself support (the illusion clause); no cite was minted for a failed look.",
+  "appropriate-uncertainty": "Does the caution ride WHERE the bytes need it (EA2's refusal) and NOT where they do not (no hedging fog)?",
+  "contradiction-handling": "Are conflicting bytes VISIBLE (not averaged away)? At a web packet the conflict word stands UNKNOWN by law - 'hidden by machinery' would be a FAIL, 'admitted by design' does not hide.",
+  "retrieval-failure-honesty": "A failed look rides the road's own words, NO citation minted (the EA4 test).",
+  "unnecessary-refusal": "Does the answer withhold what the bytes ACTUALLY carry (evasiveness measured against the bytes, never against the reviewer's own knowledge)?",
+  "reviewer-independence": "WHO weighed it: deterministic-token-law (machine, no judgment), operator (disclosed same-brain), GPT-family (independent - BLOCKED pending the key). Never may the answering family be called independent of ITSELF.",
+  "unreviewable-claims": "Which claims CANNOT be judged from the bytes that reached the mouth - named, never silently passed."},
+ "adversarial-orders": ["assume the answer MAY be wrong",
+  "a citation-trail is not a pass",
+  "caution is not a pass",
+  "check every number, date, and named entity against the bytes the mouth SAW",
+  "the machine word speaks token-presence and NEVER entailment (its limit is stated, not hidden)"],
+ "law-of-the-artifact": "The claims listed per answer are the OPERATOR'S extraction of the answer's important claims (a judgment, disclosed); each claim's support-check is the MACHINE'S token-law over the experiment's own bytes (deterministic, re-runnable: python3 review.py). Statuses adjudicated by the operator FROM the machine's findings; no status may rest on a present-day page unless that is said."
+}

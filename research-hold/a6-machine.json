@@ -1,0 +1,846 @@
+{
+ "machine-pass": "A6 token-law",
+ "source": "a5-eval-live.json",
+ "at": "20261019",
+ "independence": {
+  "answering-family": "RadixArk/Qwen3.8-Flash (config's MODEL)",
+  "reviewer-family": "gpt (the bridge's leg)",
+  "key-present": false,
+  "status": "BLOCKED: OPENAI_API_KEY absent - independence is DESIGNED, not proven; the deterministic audit and the DISCLOSED OPERATOR carry the review"
+ },
+ "questions": [
+  {
+   "id": "EA1",
+   "question": "Ashoka rock edict",
+   "answer": "The Major Rock Edicts of Ashoka are fourteen detailed inscriptions carved into in-situ rock, among the earliest dated rock inscriptions of any Indian monarch. They were created in the 3rd century BCE under the Mauryan Emperor Ashoka, and their content centers on the teachings of Buddha. They are preceded chronologically by the Minor Rock Edicts. The broader Edicts of Ashoka \u2014 rock and pillar alike \u2014 are found across Nepal, India, Pakistan, Afghanistan, and Bangladesh.",
+   "sentences": [
+    {
+     "sig": {
+      "numbers": [
+       "14"
+      ],
+      "entities": [
+       "Ashoka",
+       "Edicts",
+       "Indian",
+       "Major",
+       "Rock"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "14",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Edicts",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Indian",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Indian",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Indian",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Major",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Major",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Rock",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Rock",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "The Major Rock Edicts of Ashoka are fourteen detailed inscriptions carved into in-situ rock, among the earliest dated rock inscriptions of any Indian monarch."
+    },
+    {
+     "sig": {
+      "numbers": [
+       "3"
+      ],
+      "entities": [
+       "Ashoka",
+       "Buddha",
+       "Emperor",
+       "Mauryan"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "3",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "3",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "3",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Buddha",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Emperor",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Emperor",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Emperor",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Mauryan",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Mauryan",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "They were created in the 3rd century BCE under the Mauryan Emperor Ashoka, and their content centers on the teachings of Buddha."
+    },
+    {
+     "sig": {
+      "numbers": [],
+      "entities": [
+       "Edicts",
+       "Minor",
+       "Rock"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "Edicts",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Edicts",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Minor",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Rock",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Rock",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "They are preceded chronologically by the Minor Rock Edicts."
+    },
+    {
+     "sig": {
+      "numbers": [],
+      "entities": [
+       "Afghanistan",
+       "Ashoka",
+       "Bangladesh",
+       "Edicts",
+       "India",
+       "Nepal",
+       "Pakistan"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "Afghanistan",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Ashoka",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Bangladesh",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Edicts",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Edicts",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Edicts",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "India",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "India",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "India",
+       "row": "W4",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "India",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Nepal",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Pakistan",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "The broader Edicts of Ashoka \u2014 rock and pillar alike \u2014 are found across Nepal, India, Pakistan, Afghanistan, and Bangladesh."
+    }
+   ],
+   "machine-findings": []
+  },
+  {
+   "id": "EA2",
+   "question": "Magna Carta",
+   "answer": "Magna Carta was a royal charter of rights, agreed to by King John of England at Runnymede, near Windsor, on the 15th \u2014 the record cuts off there, so I can't tell you the month.",
+   "sentences": [
+    {
+     "sig": {
+      "numbers": [
+       "15"
+      ],
+      "entities": [
+       "Carta",
+       "England",
+       "John",
+       "King",
+       "Magna",
+       "Runnymede",
+       "Windsor"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "15",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Carta",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Carta",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Carta",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "England",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "John",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "King",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Magna",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Magna",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Magna",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Runnymede",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Windsor",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "Magna Carta was a royal charter of rights, agreed to by King John of England at Runnymede, near Windsor, on the 15th \u2014 the record cuts off there, so I can't tell you the month."
+    }
+   ],
+   "machine-findings": []
+  },
+  {
+   "id": "EA3",
+   "question": "Krishna",
+   "answer": "Krishna is a major deity in Hinduism.",
+   "sentences": [
+    {
+     "sig": {
+      "numbers": [],
+      "entities": [
+       "Hinduism",
+       "Krishna"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "Hinduism",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Krishna",
+       "row": "W1",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Krishna",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Krishna",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "Krishna is a major deity in Hinduism."
+    }
+   ],
+   "machine-findings": []
+  },
+  {
+   "id": "EA4",
+   "question": "Zzzyx plingworth",
+   "answer": "We don't know - that is an answer, not a failure.",
+   "sentences": [
+    {
+     "sig": {
+      "numbers": [],
+      "entities": []
+     },
+     "missing": [],
+     "evidence": [],
+     "status-machine": "token-free",
+     "sentence": "We don't know - that is an answer, not a failure."
+    }
+   ],
+   "machine-findings": []
+  },
+  {
+   "id": "EA5",
+   "question": "Upanishad",
+   "answer": "The Upanishads are ancient Sanskrit religious and philosophical texts of Hinduism. The name itself comes from the encounter of a teacher and a disciple.",
+   "sentences": [
+    {
+     "sig": {
+      "numbers": [],
+      "entities": [
+       "Hinduism",
+       "Sanskrit",
+       "Upanishads"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "Hinduism",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Hinduism",
+       "row": "W5",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Sanskrit",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Upanishads",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Upanishads",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "The Upanishads are ancient Sanskrit religious and philosophical texts of Hinduism."
+    },
+    {
+     "sig": {
+      "numbers": [],
+      "entities": []
+     },
+     "missing": [],
+     "evidence": [],
+     "status-machine": "token-free",
+     "sentence": "The name itself comes from the encounter of a teacher and a disciple."
+    }
+   ],
+   "machine-findings": []
+  },
+  {
+   "id": "EA6",
+   "question": "Kalama Sutta",
+   "answer": "The Kalama Sutta is a discourse of the Buddha, contained in the A\u1e45guttara Nikaya (3.65) of the Pali Canon. In Pali it's called the Kesamutti Sutta. The A\u1e45guttara Nikaya is the collection it sits in.",
+   "sentences": [
+    {
+     "sig": {
+      "numbers": [
+       "3.65"
+      ],
+      "entities": [
+       "A\u1e45guttara",
+       "Buddha",
+       "Canon",
+       "Kalama",
+       "Nikaya",
+       "Pali",
+       "Sutta"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "3.65",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "A\u1e45guttara",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Buddha",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Canon",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Canon",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Kalama",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Nikaya",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Nikaya",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Pali",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Pali",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Sutta",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Sutta",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "The Kalama Sutta is a discourse of the Buddha, contained in the A\u1e45guttara Nikaya (3.65) of the Pali Canon."
+    },
+    {
+     "sig": {
+      "numbers": [],
+      "entities": [
+       "Kesamutti",
+       "Pali",
+       "Sutta"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "Kesamutti",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Pali",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Pali",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      },
+      {
+       "token": "Sutta",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Sutta",
+       "row": "W2",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "In Pali it's called the Kesamutti Sutta."
+    },
+    {
+     "sig": {
+      "numbers": [],
+      "entities": [
+       "A\u1e45guttara",
+       "Nikaya"
+      ]
+     },
+     "missing": [],
+     "evidence": [
+      {
+       "token": "A\u1e45guttara",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Nikaya",
+       "row": "W1",
+       "kind": "page",
+       "work": "en.wikipedia.org"
+      },
+      {
+       "token": "Nikaya",
+       "row": "W3",
+       "kind": "snippet",
+       "work": "duckduckgo.com"
+      }
+     ],
+     "status-machine": "tokens-present",
+     "sentence": "The A\u1e45guttara Nikaya is the collection it sits in."
+    }
+   ],
+   "machine-findings": []
+  }
+ ]
+}

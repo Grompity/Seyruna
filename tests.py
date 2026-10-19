@@ -1972,6 +1972,101 @@ expect("T140 THE INSUFFICIENCY IS THE ROAD'S OWN DEFINITION, NOT A PARAPHRASE (P
                             and tr["d_retr"] == ["W1"])
                         else ["the decision drifted from its bytes"]))
 
+# ---------- A6: the deterministic audit leg. The second brain's FAMILY
+# (gpt-6-astra behind the bridge's leg) is BLOCKED today by one named env
+# word; what carries the review is the TOKEN-LAW (machine, humble) and the
+# DISCLOSED OPERATOR (same brain, disclosed). The witnesses run the LAW
+# itself - no net, no mouthfuls.
+import review as _rev
+
+_T141DOC, _T141PROB = _rev.load_protocol()
+_T141BAD = _rev.load_protocol.__doc__ is not None   # the leg exists (a nod)
+_T141MUT = dict(_T141DOC, measures={"one": 1})       # a five-short spine
+_T141 = {"protocol": _T141DOC.get("protocol"), "problems": _T141PROB,
+         "spine9": len(_T141DOC.get("measures") or {}),
+         "mut-problems": (lambda d: [
+             p for p in ((None if d.get("protocol") is not None
+                          else "no protocol id"),
+                         (None if len(d.get("measures") or {}) == 9
+                          else "the nine measures are the spine"),
+                         (None if (len((d.get("status-vocab") or {})
+                                        .get("claim-support") or [])) == 6
+                               and (len((d.get("status-vocab") or {})
+                                        .get("verdicts") or [])) == 4
+                               else "the status vocabularies moved"))
+             if p])(_T141MUT)}
+expect("T141 THE PROTOCOL IS DATA AND ITS SCHEMA BITES (the A3 validator's convention adopted whole): the committed RRV-0.1 validates CLEAN; the nine measures ARE the spine (a doc with one measure is a BUILD failure spoken at once); and the status vocabularies are SIX claim-statuses and FOUR verdicts - the words the artifact may speak, no more, no less (a seventh status must be WRITTEN IN before it watches)",
+       _T141,
+       why=lambda tr: ([] if (tr["protocol"] == "RRV-0.1" and tr["problems"] == []
+                            and tr["spine9"] == 9 and len(tr["mut-problems"]) == 1)
+                        else ["the protocol rode unvalidated or too loose"]))
+
+_ROWS6 = [{"id": "W1", "claim": "The Major Rock Edicts refer to 14 separate inscriptions.",
+           "kind": "page", "work": "en.wikipedia.org", "url": "http://en.wikipedia.org/x"},
+          {"id": "W2", "claim": "A stub of the house.", "kind": "snippet",
+           "work": "duckduckgo.com", "url": "http://duckduckgo.com/y"}]
+_T142A = _rev.check("The edicts number fourteen separate.", _ROWS6)
+_T142B = _rev.check("Chartered in the year 1215 at Runnymede.", _ROWS6)
+_T142C = _rev.check("It may be read many ways.", _ROWS6)
+_T142D = _rev.check("Chartered at Runnymede.", _ROWS6)
+expect("T142 THE TOKEN-LAW SPEAKS THREE HUMBLE WORDS AND NO FOURTH: a spelled NUMBER (fourteen) folds to the byte's OWN digits (14) - the table's whole point (fourteen and 14 are the ONE claim); a year the bytes never carried is token-ABSENT with its OWN word in the missing-list (e:1215 rides too - the place the bytes lack); a sentence of QUALITY alone (no signature at all) is TOKEN-FREE - the machine STANDS ASIDE, it does not pass it (that would be the self-grading sin in a new coat); and when signatures DO ride, the evidence-findings say WHICH ROW and of WHAT KIND (a page's seeing is not a snippet's) - and the word tokens-present means support is POSSIBLE, NEVER that it IS (the limit rides, stated)",
+       {"a": _T142A, "b": _T142B, "c": _T142C, "d": _T142D},
+       why=lambda tr: ([] if (tr["a"]["status-machine"] == "tokens-present"
+                            and any(e.get("row") == "W1" and e.get("kind") == "page"
+                                    for e in tr["a"]["evidence"])
+                            and "14" in tr["a"]["sig"]["numbers"]
+                            and tr["b"]["status-machine"] == "token-absent"
+                            and "n:1215" in tr["b"]["missing"]
+                            and "Runnymede" in tr["b"]["sig"]["entities"]
+                            and tr["c"]["status-machine"] == "token-free"
+                            and tr["d"]["status-machine"] == "token-absent"
+                            and "e:Runnymede" in tr["d"]["missing"])
+                        else ["the law grew a fourth word or lost its humility"]))
+
+_T143 = _rev.independence_words()
+_T143READY = dict(os.environ)
+os.environ["OPENAI_API_KEY"] = "not-printed-anywhere"
+_T143R = _rev.independence_words()
+os.environ.clear(); os.environ.update(_T143READY)
+expect("T143 THE INDEPENDENCE WORD TELLS THE TRUTH IT CAN TELL (the value of the key is NEVER printed, only its presence): today the leg is BLOCKED by one NAMED env var - the words say independence is DESIGNED, not proven, and name what carries the review (the deterministic audit + the disclosed operator); with a key present the word moves to READY - and STILL not PROVEN (the leg's own live road is its own experiment); and the FAMILIES are named apart (the answering RadixArk/Qwen vs the bridge's gpt) so nobody may call a model independent of ITSELF by an accident of prose",
+       {"now": _T143, "ready": _T143R},
+       why=lambda tr: ([] if (tr["now"]["key-present"] is False
+                            and tr["now"]["status"].startswith("BLOCKED")
+                            and tr["ready"]["key-present"] is True
+                            and tr["ready"]["status"].startswith("READY")
+                            and "unproven" in tr["ready"]["status"]
+                            and "Qwen" in tr["now"]["answering-family"]
+                            and "gpt" in tr["now"]["reviewer-family"])
+                        else ["the second brain over-claimed or hid its gate"]))
+
+_T144PAGE = ("<html><body>"
+ "<div>Edicts of Ashoka - A Major Pillar Edict of Ashoka, in Lauriya, Bihar, India</div>"
+ "<div>Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh "
+ "Location &lt;b id=\"mwCw\">Bahapur&lt;/b>&lt;/a>\"}'> "
+ "&lt;a rel=\"mw:WikiLink\" href=\"./Maski\" title=\"Maski\" id=\"mwEw\">Maski&lt;/a>&lt;/b>\"}'> </div>"
+ "<div>&lt;b id=\"mwKA\">&lt;/b>&lt;a rel=\"mw:WikiLink\" href=\"./Aramaic\" title=\"Aramaic\">&lt;/a></div>"
+ "<p>The Major Rock Edicts of Ashoka number 14 separate inscriptions, the earliest dated rock inscriptions of any Indian monarch.</p>"
+ "</body></html>")
+_T144OUT = _web.extract(_T144PAGE, max_chars=4000)
+_T144SNIP = _web.extract("<p>Agreed to by King John on 15 June.</p>",
+                         max_chars=200, thin=0)
+expect("T144 THE ESCAPED-MARKUP CLAUSE KEEPS ITS HANDS OFF THE PROSE (the fixture copies EA1's LIVE bytes, simplified): the caption's prose and the definition's sentence SURVIVE; the shaving DIES (no &lt;, no rel=, no mw:WikiLink, no residue-RUN); a PURE-GUNK half-escape yields NOTHING at all (its shavings are furniture ONCE SEEN, and the THIN-law finishes what the eye revealed); a SNIPPET that never knew escaping (T134's lane) rides UNTOUCHED - a law aimed at ONE shape must not bend ANOTHER; and the clause's span-law-shape (a closer at a real > OR at &gt;) was FORGED by the standalone probe's CATCH BEFORE any witness rode (the bytes close almostEVERY escape with a REAL > - only the < is escaped - and a law that required &gt; matched NOTHING)",
+       {"out": _T144OUT, "snip": _T144SNIP},
+       why=lambda tr: ([] if (
+               all(s in tr["out"] for s in ("Material Sandstone",
+                                            "3rd century BCE",
+                                            "Maski",
+                                            "14 separate inscriptions"))
+               and "&lt;" not in tr["out"]
+               and "rel=" not in tr["out"]
+               and "mw:WikiLink" not in tr["out"]
+               and "\"}'>" not in tr["out"]
+               and _web.extract('<div>&lt;b id="mwKA">Bahapur&lt;/b></div>',
+                                max_chars=4000) == ""
+               and "Agreed to by King John on 15 June." in tr["snip"])
+           else ["the clause gobbled prose, missed the shavings, "
+                 "or bent the snippet-lane"]))
+
 
 
 for name, tr, kw in T:

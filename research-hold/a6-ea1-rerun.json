@@ -1,0 +1,95 @@
+{
+ "rerun": "A6 \u00a76 - the ONE intervention (the escaped-markup clause) tested at the affected case under comparable conditions",
+ "date": "20261019",
+ "provider": "ddg-ia",
+ "question": "Ashoka rock edict",
+ "result": {
+  "question": "Ashoka rock edict",
+  "web": {
+   "provider": "ddg-ia",
+   "ok": true,
+   "results": 5,
+   "gaps": [],
+   "spent": {
+    "search": 1,
+    "fetch": 3,
+    "calls": 4,
+    "ms": 2512.9
+   },
+   "corroboration": {
+    "urls": 5,
+    "read": 1,
+    "attribution": 4,
+    "origin_publishers": 1,
+    "independence": "none",
+    "conflict": "unknown"
+   },
+   "rows": [
+    {
+     "id": "W1",
+     "kind": "page",
+     "evidence": "PRESENT",
+     "note": "http 200 (capped)",
+     "work": "en.wikipedia.org",
+     "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+     "claim": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location The Edicts of Ashoka are a collection of more than thirty inscriptions on the Pillars of Ashoka , as well as boulders and cave walls, attributed to Emperor Ashoka of the Mauryan Empire who ruled most of the Indian subcontinent from 268 BCE to 232 BCE."
+    },
+    {
+     "id": "W2",
+     "kind": "snippet",
+     "evidence": null,
+     "note": "http 202",
+     "work": "duckduckgo.com",
+     "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+     "claim": "Edicts of Ashoka Category"
+    },
+    {
+     "id": "W3",
+     "kind": "snippet",
+     "evidence": null,
+     "note": "http 202",
+     "work": "duckduckgo.com",
+     "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+     "claim": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c."
+    },
+    {
+     "id": "W4",
+     "kind": "snippet",
+     "evidence": null,
+     "note": null,
+     "work": "duckduckgo.com",
+     "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+     "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire..."
+    },
+    {
+     "id": "W5",
+     "kind": "snippet",
+     "evidence": null,
+     "note": null,
+     "work": "duckduckgo.com",
+     "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+     "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts."
+    }
+   ]
+  },
+  "door": {
+   "code": 200,
+   "lane": "web",
+   "retrieval": [
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "response": "The Major Rock Edicts are 14 separate inscriptions, significantly detailed, and among the earliest dated rock inscriptions of any Indian monarch. They are preceded chronologically by the Minor Rock Edicts. They belong to a larger collection of more than thirty inscriptions attributed to Emperor Ashoka of the Mauryan Empire, who ruled most of the Indian subcontinent from 268 BCE to 232 BCE. These rock edicts were carved on in-situ rocks, as distinct from the pillar edicts erected throughout the empire. Were you looking at a particular site, or the edicts as a whole?",
+   "model_calls": 3,
+   "web_stamped": true
+  },
+  "secs": 71.1,
+  "id": "EA1",
+  "kind": "stable-fact",
+  "expect": "an origin abstract + a read origin page; ONE origin voice (independence none by law); this question IS the A4 bytes (web-run-1) - the A4-to-A5 comparison rides here"
+ },
+ "note": "the claim-lanes are the TEST of the intervention; the answer-words ride for REGRESSIONS only; the provider's lane-shape may rotate day to day and that is allowed for"
+}

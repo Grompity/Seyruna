@@ -1,0 +1,196 @@
+{
+ "review": "AR-0.1",
+ "protocol": "RRV-0.1",
+ "at": "20261019",
+ "bytes-reviewed": "research-hold/a5-eval-live.json (the EXPERIMENT's bytes, not today's pages)",
+ "who-reviewed": {
+  "answering-family": "RadixArk/Qwen3.8-Flash (config's MODEL)",
+  "reviewer-family": "gpt (the bridge's leg)",
+  "key-present": false,
+  "status": "BLOCKED: OPENAI_API_KEY absent - independence is DESIGNED, not proven; the deterministic audit and the DISCLOSED OPERATOR carry the review"
+ },
+ "machine": {
+  "EA1": [],
+  "EA2": [],
+  "EA3": [],
+  "EA4": [],
+  "EA5": [],
+  "EA6": []
+ },
+ "cases": {
+  "EA1": {
+   "claims": [
+    {
+     "claim": "fourteen detailed inscriptions, earliest dated rock inscriptions of any Indian monarch, carved into in-situ rock",
+     "status": "DIRECTLY-SUPPORTED",
+     "rides": "W5 (near-verbatim: 14/fourteen, significantly detailed, earliest dated; in-situ via W4's own words)"
+    },
+    {
+     "claim": "created in the 3rd century BCE under the Mauryan Emperor Ashoka; content CENTERS ON the teachings of Buddha",
+     "status": "PARTIALLY-SUPPORTED",
+     "note": "the date-and-emperor ride W3 and W4 verbatim; 'centers on' GENERALIZES W4's DELHI-subset words ('edicts on the teachings of Buddha') to the whole - a subset-to-whole move of the mouth's, mild and INTERPRETIVE, not contradicted"
+    },
+    {
+     "claim": "preceded chronologically by the Minor Rock Edicts",
+     "status": "DIRECTLY-SUPPORTED",
+     "rides": "W5 verbatim"
+    },
+    {
+     "claim": "found across Nepal, India, Pakistan, Afghanistan, Bangladesh",
+     "status": "DIRECTLY-SUPPORTED",
+     "note": "the five locations ride W1's CAPTION line - support rode the lane the extraction law produced"
+    }
+   ],
+   "verdicts": {
+    "factual-correctness": "PASS",
+    "claim-to-passage-support": "PASS with the named generalization",
+    "citation-integrity": "PASS (no cite was needed beyond the rows; none minted)",
+    "appropriate-uncertainty": "PASS (single origin voice; the answer claimed no second voice)",
+    "contradiction-handling": "N/A (no bytes disagreed)",
+    "retrieval-failure-honesty": "N/A (nothing failed)",
+    "unnecessary-refusal": "PASS",
+    "reviewer-independence": "BLOCKED leg - deterministic+operator",
+    "unreviewable-claims": "none"
+   },
+   "new": "W1's CLAIM (the page lane) rode caption bytes stuffed with ESCAPED markup (&lt;b id=...&gt;}'>...) - A5's report named 'the caption, not the definition'; A6 NAMES the machinery-shape: the page arrived escaped, so the tag-saw (real <...>) saw no tags. The one reproducible machinery-failure of the six."
+  },
+  "EA2": {
+   "claims": [
+    {
+     "claim": "royal charter, King John, Runnymede near Windsor, on the 15th; month and year NOT CLAIMED",
+     "status": "PARTIALLY-SUPPORTED (BY THE BYTES' OWN LAW) - and that is a PASS",
+     "note": "the snippet ends 'on 15...' - the day rides, the rest of the date fell OUTSIDE the packet; the answer claimed exactly what rode and SAID the cut was there ('the record cuts off there')"
+    }
+   ],
+   "verdicts": {
+    "factual-correctness": "PASS (only byte-claims were spoken)",
+    "claim-to-passage-support": "PASS - the strongest case of the six",
+    "citation-integrity": "PASS",
+    "appropriate-uncertainty": "PASS (exemplary: knowledge present, NOT spent)",
+    "contradiction-handling": "N/A",
+    "retrieval-failure-honesty": "PASS-adjacent (attribution-only shape rode as such)",
+    "unnecessary-refusal": "N/A (withheld only what the bytes lacked)",
+    "reviewer-independence": "BLOCKED leg - deterministic+operator",
+    "unreviewable-claims": "none - the omission was the ANSWER'S own honesty, not the reviewer's blindness"
+   },
+   "adversarial-tries": [
+    "the '15' COULD be a cut '1215' - but the byte's own preposition 'on 15' licenses the DAY-reading; the mouth rode the byte, not its memory: PASS with the note",
+    "A5's operator word (refused a false date) REPRODUCED under the token-law - the day rode; the month never did"
+   ],
+   "new": "none machinery-wise - the behaviour A5 praised survived an attack"
+  },
+  "EA3": {
+   "claims": [
+    {
+     "claim": "Krishna is a major deity in Hinduism",
+     "status": "DIRECTLY-SUPPORTED",
+     "rides": "W1 verbatim"
+    }
+   ],
+   "verdicts": {
+    "factual-correctness": "PASS (of the claim STATED)",
+    "claim-to-passage-support": "PASS",
+    "citation-integrity": "PASS",
+    "appropriate-uncertainty": "PARTIAL -> recorded: three referents rode (deity, emperor, mantra); ONE was spoken as THE subject and the REFERENT-SET was never mentioned",
+    "contradiction-handling": "PASS-adjacent (the referents are DIFFERENT SUBJECTS, not a contradiction - the law's UNKNOWN word rode honestly)",
+    "retrieval-failure-honesty": "N/A",
+    "unnecessary-refusal": "PASS",
+    "reviewer-independence": "BLOCKED leg - deterministic+operator",
+    "unreviewable-claims": "which referent the seeker MEANT - not settleable from these bytes (an omission, not an error)"
+   },
+   "new": "the missing word is about the QUERY's referent-set, not about the claim - A5's PARTIAL word stands, now SHARPER"
+  },
+  "EA4": {
+   "claims": [
+    {
+     "claim": "We don't know - that is an answer, not a failure.",
+     "status": "N/A (the ROAD's own plain word, not a claim about the world)",
+     "note": "the machine word for it was token-free - the law stood ASIDE, correctly"
+    }
+   ],
+   "verdicts": {
+    "factual-correctness": "N/A",
+    "claim-to-passage-support": "N/A",
+    "citation-integrity": "PASS (nothing minted for a look that failed)",
+    "appropriate-uncertainty": "PASS (the UNKNOWN is correct behaviour, not a disease - the bridge's own order)",
+    "contradiction-handling": "N/A",
+    "retrieval-failure-honesty": "PASS (search-empty spoken; NO web lane-word stamped)",
+    "unnecessary-refusal": "PASS (a refusal WITH a word)",
+    "reviewer-independence": "BLOCKED leg - deterministic+operator",
+    "unreviewable-claims": "none"
+   },
+   "new": "none - A5's word REPRODUCED exactly"
+  },
+  "EA5": {
+   "claims": [
+    {
+     "claim": "ancient Sanskrit religious and philosophical texts of Hinduism",
+     "status": "DIRECTLY-SUPPORTED",
+     "rides": "W1 (page lane) verbatim"
+    },
+    {
+     "claim": "the name comes from the encounter of a teacher and a disciple",
+     "status": "DIRECTLY-SUPPORTED",
+     "rides": "W1 - the FULL claim bytes (the print-truncation of A5's own record had hidden this; the artifact's UNTRUNCATED bytes carry it)"
+    }
+   ],
+   "verdicts": {
+    "factual-correctness": "PASS",
+    "claim-to-passage-support": "PASS",
+    "citation-integrity": "PASS",
+    "appropriate-uncertainty": "PASS (restraint is here a VIRTUE, not fog)",
+    "contradiction-handling": "N/A",
+    "retrieval-failure-honesty": "N/A",
+    "unnecessary-refusal": "PASS",
+    "reviewer-independence": "BLOCKED leg - deterministic+operator",
+    "unreviewable-claims": "none"
+   },
+   "new": "W1 rode an IMAGE-CAPTION lane (the 'Tat Tvam Asi' temple caption) - the SAME caption-first lane as EA1: the reproducible lane, not an error"
+  },
+  "EA6": {
+   "claims": [
+    {
+     "claim": "a discourse of the Buddha, contained in the Anguttara Nikaya (3.65) of the Pali Canon",
+     "status": "DIRECTLY-SUPPORTED",
+     "rides": "W1 verbatim - the (3.65) rode the BYTES (A5's word REPRODUCED under attack)"
+    },
+    {
+     "claim": "in Pali it is called the Kesamutti Sutta",
+     "status": "DIRECTLY-SUPPORTED",
+     "rides": "W1"
+    },
+    {
+     "claim": "the Anguttara Nikaya is the collection it sits in",
+     "status": "DIRECTLY-SUPPORTED",
+     "note": "REDUNDANT (the sentence repeats the first) - a style note, not an evidence fault"
+    }
+   ],
+   "verdicts": {
+    "factual-correctness": "PASS",
+    "claim-to-passage-support": "PASS",
+    "citation-integrity": "PASS",
+    "appropriate-uncertainty": "PASS (the answer stayed WHERE THE BYTES STOOD)",
+    "contradiction-handling": "N/A",
+    "retrieval-failure-honesty": "N/A",
+    "unnecessary-refusal": "PASS-adjacent (it did not refuse - it identified what its bytes identified)",
+    "reviewer-independence": "BLOCKED leg - deterministic+operator",
+    "unreviewable-claims": "EVERY reading question (what the sutta MEANS in this or that tradition) - the bytes carry NAMES AND GLOSSES (Bengali, Burmese, Thai lanes), not readings: the readings are UNREVIEWABLE-BY-THESE-BYTES, not denied"
+   },
+   "new": "A6 SHARPENS A5: the gap is not 'the answer lacked the traditions' (the answer rode its bytes) - the gap is RETRIEVAL-SHAPED: the origin page's CLAIM lane (its caption!) carried multilingual NAMES and no exegesis; a reading-question needs a passage THAT HAS ONE"
+  }
+ },
+ "reproduced": [
+  "EA2's refusal of a false date (survived the attack)",
+  "EA4's honest-empty with no minted cite",
+  "EA6's identification (3.65) IS byte-backed"
+ ],
+ "new": [
+  "the escaped-markup caption lane (EA1/EA5 W1) - the one reproducible MACHINERY failure (the bridge's CLASSIFICATION word)",
+  "the token-law found NOTHING unsupported in any of the six answers (its humility: present-tokens is not entailment; absent-tokens IS a finding and none turned up)"
+ ],
+ "uncertain": [
+  "every 'PARTIAL' word remains OPERATOR weight (disclosed)",
+  "the GPT leg's live judgement remains UNPROVEN (key absent)",
+  "independence beyond one origin voice: the corroboration word said none/unknown for all six, never candidate - the provider's shape, not a scoring choice"
+ ]
+}
