@@ -102,9 +102,12 @@ def results_from(name, doc):
     """The normalized reading of the provider's json: url/title/snippet,
     SILENCE for absent (K2 adopted - an empty field is not a field). The
     ddg-ia lane rides its own order of goodness: the ABSTRACT first (its
-    url the ORIGIN's address), then Results, then RelatedTopics - all cut
+    url the ORIGIN's address), then the DEFINITION (A7: the dictionary's
+    own lane, when FILLED - at a Type-"D" doc every text lane may ride
+    PRESENT-BUT-EMPTY, and an empty lane is SILENCE), then Results, then
+    RelatedTopics - all cut
     by the caller's cap; the searxng lane reads its results[]. Every row
-    carries its LANE word (abstract/result/related): the bytes' own
+    carries its LANE word (abstract/definition/result/related): the bytes' own
     PROVENANCE-PATH, which the rows later speak as KIND (A5 P3: a reviewer
     can tell fetched-page bytes from the index's snippet from the
     abstract's summary - three different claims-to-evidence, one field)."""
@@ -118,6 +121,17 @@ def results_from(name, doc):
             out.append(_rec(doc["AbstractURL"],
                             doc.get("AbstractSource") or doc.get("Heading"),
                             doc.get("AbstractText"), "abstract"))
+        if doc.get("DefinitionWord") and doc.get("DefinitionURL"):
+            # THE DEFINITION LANE (A7): the dictionary's own lane - when
+            # FILLED its url is a SECOND origin's address (often apart from
+            # the wiki: the one second voice a SINGLE search can hold), and
+            # its words the origin's own. The live bytes showed every text
+            # lane can ride present-but-empty at a Type-"D" doc; empty is
+            # SILENCE (K2 whole), so the row appears only when BOTH the
+            # words and the address ride - no invented address, ever.
+            out.append(_rec(doc["DefinitionURL"],
+                            doc.get("DefinitionSource"),
+                            doc.get("DefinitionWord"), "definition"))
         for row in doc.get("Results") or []:
             if row.get("FirstURL"):
                 out.append(_rec(row["FirstURL"], row.get("Text"),
@@ -329,6 +343,55 @@ def provider_host(name=None):
     return ".".join(parts)
 
 
+# ---------- A7: the IDENTITY laws (a publisher is not a host; a road is
+# not a cloth). THE DIRECTION IS CHOSEN ON PURPOSE: both laws may UNDER-
+# count (read two voices as one), neither may OVER-count - the counts may
+# HIDE an independence, never INVENT one (A5's P4 law, adopted whole).
+SECOND = ("com", "co", "net", "org", "ac", "gov", "edu", "or", "ne", "go")
+#   the second-labels that ride UNDER a two-letter country code (the
+#   bbc.co.uk shape). The set is a CHOICE, stated; an unlisted shape falls
+#   to the two-label law and UNDER-counts.
+
+
+def publisher(target):
+    """The ORIGIN'S identity: the registrable domain of the host - the last
+    two labels, or THREE when the second is a second-level word under a
+    two-letter country code. en.wikipedia.org and de.wikipedia.org are ONE
+    voice (the A5 host-count INFLATED them into two); www. is no label and
+    a port rides no weight; unicode hosts are NOT decoded (a puny-form
+    reads apart from its decoded twin - apart, never wrongly-collapsed).
+    Accepts an address OR a bare host."""
+    h = urllib.parse.urlparse(target).netloc or target
+    h = h.split(":")[0].strip(".").lower()
+    parts = h.split(".")
+    if len(parts) > 1 and parts[0] == "www":
+        parts = parts[1:]
+    if len(parts) >= 3 and parts[-2] in SECOND and len(parts[-1]) == 2:
+        return ".".join(parts[-3:])
+    return ".".join(parts[-2:]) if len(parts) >= 2 else h
+
+
+TRACKED = ("gclid", "gbraid", "fbclid", "msclk", "igoid", "_ga", "gclsrc",
+           "fb_action_id", "fb_source", "ref_src", "spm")
+
+
+def canon_url(url):
+    """The address WITHOUT its tracking clothes: the fragment falls (the
+    provider's #kp anchors are no second road), and the NAMED tracking
+    params fall (the utm_ family, the click-ids, the social pixels); a
+    param that carries MEANING (?action=edit!) rides on, and a PATH is
+    never collapsed (distinct pages of one site never merge into one
+    address). A param not NAMED rides too - the conservative direction
+    again: over-split at worst, two addresses that MIGHT be one road."""
+    parts = urllib.parse.urlsplit(url.split("#", 1)[0])
+    kept = [kv for kv in parts.query.split("&")
+            if kv and kv.split("=", 1)[0] not in TRACKED
+            and not kv.startswith("utm_")]
+    return "%s://%s%s%s" % (parts.scheme.lower(), parts.netloc.lower(),
+                            parts.path.rstrip("/") or "/",
+                            ("?" + "&".join(kept)) if kept else "")
+
+
 def corroboration(packet, name=None):
     """The narrow evidence-quality word (A5 P4): COUNTS, never claims.
     How many ADDRESSES rode (urls), how many PAGES were actually READ
@@ -344,28 +407,79 @@ def corroboration(packet, name=None):
                     - the word says candidate, never TRUE)
       "unknown"   - origin addresses exist but no origin was READ (bytes
                     not in hand: no counting a page never opened).
-    And the CONFLICT word, honestly: the provider's bytes carry no edges
-    between themselves, so a packet of web rows has not SEEN its passages
-    disagree - "unknown" until a mechanism weighs them (the shelf's own
-    DISAGREEMENT lanes stay the place where a contradiction rides).
-    The heuristic's limits: a publisher's many domains would count twice;
-    the house is one label; and independence is NEVER asserted."""
+    A5's limits were stated; A7 MOVES ONE of them and ADDS, never loosens:
+    the counts now ride PUBLISHERS not hosts (en.wikipedia.org and
+    de.wikipedia.org are ONE voice - the host-count INFLATED); publishers-
+    seen says how many origin voices the provider SPOKE at all (read or
+    not - what COULD have been weighed); duplication counts the picker's
+    dup-words (a tracking-clothed twin and a re-road of one publisher are
+    ONE road); and two READ passages of DIFFERENT publishers whose bytes
+    are IDENTICAL raise the syndicated flag (two addresses may be one
+    voice; syndication is DETECTED here, never ASSUMED away).
+    THE CONFLICT word moves from a blanket unknown to a LADDER, humble by
+    its words:
+      "insufficient"          - fewer than two origin voices READ: there is
+                                NOTHING to weigh (the A4/EA4 truth; the
+                                blanket unknown hid that the looking itself
+                                was too thin)
+      "unknown"               - two voices read, the bytes carry no year-
+                                worth comparison (a stated limit - the real
+                                contradiction-home stays the shelf's own
+                                DISAGREEMENT lanes; a contradiction a
+                                passage resolves by TONE stays outside
+                                every machine here)
+      "bytes-share"           - two READ publishers SHARE a year-shaped
+                                number - the BYTES agree (two voices can
+                                still BOTH be wrong: agreement of bytes is
+                                not entailment - A5's law kept whole)
+      "bytes-clash-possible"  - both voices carry years, NONE is shared:
+                                the disagreement is KEPT, not averaged -
+                                and NOT proven (two pages may simply
+                                speak of different facts; the -possible
+                                tail is the whole point, the rows both
+                                ride on regardless - nothing chooses)
+    Independence is NEVER asserted."""
     ph = provider_host(name)
     hosts = [urllib.parse.urlparse(r["url"])[1].lower()
              for r in packet["results"]]
-    origins = [(h, r) for h, r in zip(hosts, packet["results"]) if h != ph]
-    read = sorted({h for (h, r) in origins if r.get("text")})
+    pubs = [publisher(h) or "?" for h in hosts]
+    origins = [(p, r) for p, r in zip(pubs, packet["results"]) if p != ph]
+    read = sorted({p for (p, r) in origins if r.get("text")})
     if len(read) >= 2:
         word = "candidate"
     elif len(read) == 1:
         word = "none"
     else:
         word = "unknown"
+    if len(read) < 2:
+        conflict = "insufficient"                     # nothing to weigh
+    else:
+        years = {}
+        for p, r in origins:
+            if r.get("text"):
+                years.setdefault(p, set()).update(
+                    {n for n in re.findall(r"\b\d{4}\b", r["text"])
+                     if "1000" <= n <= "2199"})
+        voiced = [v for p, v in sorted(years.items()) if v]
+        if len(voiced) < 2:
+            conflict = "unknown"
+        elif any(voiced[i] & voiced[j]
+                 for i in range(len(voiced))
+                 for j in range(i + 1, len(voiced))):
+            conflict = "bytes-share"
+        else:
+            conflict = "bytes-clash-possible"
+    pairs = {(p, r["text"]) for p, r in origins if r.get("text")}
     return {"urls": len(packet["results"]),
             "read": sum(1 for r in packet["results"] if r.get("text")),
-            "attribution": sum(1 for h in hosts if h == ph),
+            "attribution": sum(1 for p in pubs if p == ph),
             "origin_publishers": len(read),
-            "independence": word, "conflict": "unknown"}
+            "independence": word, "conflict": conflict,
+            "publishers_seen": len({p for p, r in origins}),
+            "duplication": sum(1 for r in packet["results"]
+                               if str(r.get("skipped") or "")
+                               .startswith("dup")),
+            "syndicated-possible": len({t for _, t in pairs}) < len(pairs)}
 
 
 # ---------- the packet: the same words the pipeline already speaks ----------
@@ -380,10 +494,24 @@ def research(query, results_n=RESULTS_N, fetch_n=FETCH_MAX,
     spent = {"search": LEDGER[0]}
     fetched = 0
     if rows:
-        for rec in rows[:fetch_n]:
-            if clock() - t0 >= MAX_SECS:                 # the budget's own word
+        seen_urls, read_pubs = set(), set()
+        for rec in rows:                                    # A7: the coins
+            if fetched >= fetch_n:                          # ride PUBLISHERS
+                break                                       # (not the first
+                                                            # N addresses)
+            if clock() - t0 >= MAX_SECS:                    # the budget's word
                 rec["skipped"] = "budget"
                 continue
+            pub = publisher(rec["url"])
+            rec["publisher"] = pub                          # the lineage rides
+            rec["canon"] = canon_url(rec["url"])            # EVERY walked row
+            if rec["canon"] in seen_urls:
+                rec["skipped"] = "dup-url"                  # the selfsame road
+                continue                                    # in new clothes
+            if pub in read_pubs:
+                rec["skipped"] = "dup-publisher"            # a publisher READ
+                continue                                    # once speaks once
+            seen_urls.add(rec["canon"])
             got = fetch(rec["url"], max_bytes, timeout, allow_local)
             if "status" in got:
                 rec["status"] = got["status"]
@@ -391,9 +519,10 @@ def research(query, results_n=RESULTS_N, fetch_n=FETCH_MAX,
                 rec["text"] = extract(got["body"].decode("utf-8", "replace")
                                       if isinstance(got["body"], bytes)
                                       else str(got["body"]), max_chars)
-                fetched += 1
-            else:
-                rec["error"] = got["error"]
+                read_pubs.add(pub)                          # a failed look is
+                fetched += 1                                # NOT a voice -
+            else:                                           # the house may
+                rec["error"] = got["error"]                 # speak again
     spent["fetch"] = fetched
     spent["calls"] = LEDGER[0]
     spent["ms"] = round((clock() - t0) * 1000, 1)
@@ -426,6 +555,8 @@ def to_rows(packet, max_chars=MAX_CHARS):
                             or rec["url"], max_chars, 0)
         row = {"id": rid, "claim": claim, "level": "DOCUMENTED",
                "provenance": "web", "work": urllib.parse.urlparse(rec["url"])[1],
+               "publisher": rec.get("publisher") or publisher(rec["url"]),
+               "canon": rec.get("canon") or canon_url(rec["url"]),
                "edges": []}
         # THE KIND-LANE (A5 P3, the traceability word): page bytes, the
         # origin's own ABSTRACT, or the index's SNIPPET - three different
@@ -436,7 +567,8 @@ def to_rows(packet, max_chars=MAX_CHARS):
         if rec.get("text"):
             row["kind"] = "page"
         elif rec.get("snippet"):
-            row["kind"] = ("abstract" if rec.get("lane") == "abstract"
+            row["kind"] = ("abstract" if rec.get("lane") in ("abstract",
+                                                             "definition")
                            else "snippet")
         if rec.get("text"):
             row["evidence"] = "PRESENT"

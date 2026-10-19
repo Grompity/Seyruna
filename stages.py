@@ -902,7 +902,15 @@ def door(body, live=True, **kw):
         tr["web"] = {"provider": pkt["provider"],
                      "fetched": pkt["spent"]["fetch"],
                      "gaps": pkt["gaps"],
-                     "sources": [{"url": r["url"], "title": r.get("title")}
+                     "corroboration": web_research.corroboration(pkt),
+                     "sources": [{"url": r["url"], "title": r.get("title"),
+                                  "publisher": web_research.publisher(r["url"]),
+                                  "lane": r.get("lane"),
+                                  "seen": ("read" if r.get("text") else
+                                           (r.get("error")
+                                            or (("skipped:" + r["skipped"])
+                                                if r.get("skipped")
+                                                else "bytes-not-read")))}
                                  for r in pkt["results"]]}
         why = window.why_lane(tr)                  # weighed BEFORE restore
         set_shelf(old_shelf)

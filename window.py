@@ -35,6 +35,8 @@ def why_lane(trace, by_id=None):
                                                 # never a second status
         if r.get("url"):                        # A4: the cite's own address
             row["url"] = r["url"]
+        if r.get("publisher"):                   # A7: the ORIGIN's identity
+            row["publisher"] = r["publisher"]    # (registrable, not a host)
         evidence.append(row)
         levels[row["level"]] = levels.get(row["level"], 0) + 1
         if "kind" in row:

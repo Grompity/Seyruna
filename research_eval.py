@@ -55,6 +55,7 @@ def run_one(qtext, live, caps):
                   "rows": [{"id": r["id"], "kind": r.get("kind"),
                             "evidence": r.get("evidence"),
                             "note": r.get("note"), "work": r.get("work"),
+                            "publisher": r.get("publisher"),
                             "url": r["url"], "claim": r["claim"]}
                            for r in rows]}        # THE BYTES THE MOUTH SAW
     left = caps.get("max_secs_per_question", 240) - (time.time() - t0)

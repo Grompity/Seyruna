@@ -1712,7 +1712,10 @@ class _Five:
             self.n += 1
             return _Resp(b"<p>a page of words.</p>", ct="text/html", url=u)
         return _Resp(json.dumps({"Results": [
-            {"Text": "A%d" % i, "FirstURL": "https://en.wikipedia.org/wiki/x%d" % i,
+            {"Text": "A%d" % i, "FirstURL": ("https://britannica.org/wiki/x%d"
+                                             if i % 2 else
+                                             "https://en.wikipedia.org/wiki/x%d")
+             % i,
              "Result": "s%d" % i} for i in range(5)]}).encode())
 _web.urlopen = _Five()
 _T133 = _web.research("anything at all", fetch_n=2)
@@ -1938,7 +1941,10 @@ expect("T139 THE CORROBORATION WORD IS A COUNT, NEVER A CLAIM (P4, conservative 
                                           "attribution": 3,
                                           "origin_publishers": 1,
                                           "independence": "none",
-                                          "conflict": "unknown"}
+                                          "conflict": "insufficient",
+                                          "publishers_seen": 1,
+                                          "duplication": 0,
+                                          "syndicated-possible": False}
                              and tr["b"]["origin_publishers"] == 2
                              and tr["b"]["independence"] == "candidate"
                              and tr["b"]["attribution"] == 0
@@ -1946,8 +1952,9 @@ expect("T139 THE CORROBORATION WORD IS A COUNT, NEVER A CLAIM (P4, conservative 
                              and tr["c"]["independence"] == "none"
                              and tr["d"]["independence"] == "unknown"
                              and tr["d"]["read"] == 0
-                             and all(v["conflict"] == "unknown"
-                                      for v in tr.values()))
+                             and tr["c"]["conflict"] == "insufficient"
+                             and tr["b"]["conflict"] == "unknown"
+                             and tr["d"]["conflict"] == "insufficient")
                         else ["a count claimed more than it saw"]))
 
 _T140SHELF = stages._load_shelf()       # the real shelf, the loader's own bytes
@@ -2066,6 +2073,201 @@ expect("T144 THE ESCAPED-MARKUP CLAUSE KEEPS ITS HANDS OFF THE PROSE (the fixtur
                and "Agreed to by King John on 15 June." in tr["snip"])
            else ["the clause gobbled prose, missed the shavings, "
                  "or bent the snippet-lane"]))
+
+# ---------- A7: SOURCE INDEPENDENCE, CORROBORATION, CONFLICT. The identity
+# laws (a publisher is not a host; an address is not a cloth), the picker
+# that spends coins on VOICES, the Definition lane, the LADDER at the
+# conflict-word, and the identity riding the whole road to the window.
+# All synthetic here; the live bytes speak in a7-report.md, never here.
+_T145P = {"wiki-en": _web.publisher("https://en.wikipedia.org/wiki/A"),
+          "wiki-de": _web.publisher("https://de.wikipedia.org/wiki/B"),
+          "www": _web.publisher("http://www.nytimes.com/x"),
+          "cc-shape": _web.publisher("https://www.bbc.co.uk/news"),
+          "plain": _web.publisher("https://x.com/a"),
+          "port": _web.publisher("https://x.com:8080/a")}
+_T145C = {"cloth": _web.canon_url("https://x.org/A?utm_source=news&gclid=7&action=edit#kp2"),
+          "bare": _web.canon_url("https://x.org/A?action=edit"),
+          "slash": _web.canon_url("https://x.org/A/?action=edit"),
+          "path-b": _web.canon_url("https://x.org/B?action=edit")}
+expect("T145 THE IDENTITY LAWS UNDER-count ON PURPOSE, NEVER OVER-count (A5's own law, adopted whole): en. and de. wikipedia are ONE voice (the A5 host-count INFLATED them into two), www. is no label and a port rides no weight, the two-label law BENDS at the second-level-shape under a two-letter country code (the bbc.co.uk form keeps three labels), and the address sheds its tracking CLOTHES - the fragment falls, the utm-family and the named click-ids fall, a MEANING-carrying param rides ON, and a PATH never collapses (two pages of one house are never merged); an unlisted shape reads APART, never wrongly one",
+       {"p": _T145P, "c": _T145C},
+       why=lambda tr: ([] if (tr["p"]["wiki-en"] == tr["p"]["wiki-de"] == "wikipedia.org"
+                            and tr["p"]["www"] == "nytimes.com"
+                            and tr["p"]["cc-shape"] == "bbc.co.uk"
+                            and tr["p"]["plain"] == "x.com"
+                            and tr["p"]["port"] == "x.com"
+                            and tr["c"]["cloth"] == tr["c"]["bare"]
+                            and tr["c"]["slash"] == tr["c"]["bare"]
+                            and "action=edit" in tr["c"]["bare"]
+                            and tr["c"]["path-b"] != tr["c"]["bare"])
+                       else ["the identity law moved the wrong way"]))
+
+_T146DOC = {"AbstractText": "the song of the Gita, sung at the field.",
+            "AbstractSource": "Wikipedia",
+            "AbstractURL": "https://en.wikipedia.org/wiki/Gita",
+            "DefinitionWord": "a sacred text of the Indians",
+            "DefinitionSource": "Merriam Webster",
+            "DefinitionURL": "https://merriam-webster.org/d/gita",
+            "Results": [{"Text": "x", "FirstURL": "https://x.org/a",
+                         "Result": "y"}]}
+_T146EMPTY = {"AbstractText": "", "AbstractURL": "https://en.wikipedia.org/wiki/Gita",
+              "Definition": "", "DefinitionURL": "", "DefinitionSource": "",
+              "RelatedTopics": [{"Text": "Krishna",
+                                 "FirstURL": "https://duckduckgo.com/rt"}]}
+_T146L = _web.results_from("ddg-ia", _T146DOC)
+_T146E = _web.results_from("ddg-ia", dict(_T146DOC, DefinitionWord=""))
+_T146T = _web.results_from("ddg-ia", _T146EMPTY)
+_T146K = _web.to_rows(_pkt139(
+    {"url": "https://merriam-webster.org/d/gita", "lane": "definition",
+     "snippet": "a sacred text of the Indians"},
+    {"url": "https://x.org/a", "lane": "result",
+     "snippet": "the index says", "title": "t"}))[0]
+expect("T146 THE DEFINITION LANE RIDES WHEN FILLED AND KEEPS SILENCE OTHERWISE (the live bytes showed EVERY text lane can ride present-but-empty at a Type-'D' doc - an empty field is SILENCE, the K2 law whole): the parse reads abstract first, DEFINITION second (its url a second origin's address - the one second voice a single search can hold), results after, and a DefinitionWord without an ADDRESS is silence (no invented address); at a doc whose text-lanes all ride EMPTY only the related stub speaks (the house, as ever, and the bare AbstractURL rides no row - an address without its text is silence too); and the definition's own summary rides the rows as KIND ABSTRACT (the origin's words - A5's P3 set, the lane-SET moved, never the law relaxed) while a result-row rides SNIPPET",
+       {"lanes": [r["lane"] for r in _T146L],
+        "empty-word": [r["lane"] for r in _T146E],
+        "all-empty": [(r["lane"], r["url"]) for r in _T146T],
+        "kinds": [r.get("kind") for r in _T146K]},
+       why=lambda tr: ([] if (tr["lanes"] == ["abstract", "definition", "result"]
+                            and tr["empty-word"] == ["abstract", "result"]
+                            and tr["all-empty"] == [("related",
+                                                     "https://duckduckgo.com/rt")]
+                            and tr["kinds"] == ["abstract", "snippet"])
+                        else ["the lane read a wish instead of the bytes"]))
+
+# the A5 block left a PATCHED research on the module (T140's
+# injected packet, the house's own hygiene) - the picker witness
+# takes the genuine road back:
+import importlib as _il147
+_web = _il147.reload(_web)
+
+class _Pick7:
+    def __call__(self, req, timeout=None, context=None):
+        u = getattr(req, "full_url", None) or str(req)
+        if "/wiki/" in u:
+            return _Resp(b"<p>a page of the voice asked, and it spoke enough to pass the thin bar at pages.</p>", ct="text/html",
+                         url=u)
+        return _Resp(json.dumps({"Results": [
+            {"Text": "one", "FirstURL":
+             "https://en.wikipedia.org/wiki/A", "Result": "s1"},
+            {"Text": "cloth", "FirstURL":
+             "https://en.wikipedia.org/wiki/A?utm_source=ddg", "Result": "s2"},
+            {"Text": "twin", "FirstURL":
+             "https://en.wikipedia.org/wiki/B", "Result": "s3"},
+            {"Text": "two", "FirstURL":
+             "https://britannica.org/wiki/C", "Result": "s4"},
+            {"Text": "stub", "FirstURL":
+             "https://duckduckgo.com/wiki/D", "Result": "s5"},
+            {"Text": "stub2", "FirstURL":
+             "https://duckduckgo.com/wiki/E", "Result": "s6"},
+            {"Text": "past", "FirstURL":
+             "https://other.org/wiki/F", "Result": "s7"}]}).encode())
+_web.urlopen = _Pick7()
+_T147 = _web.research("anything", fetch_n=3)
+_T147W = _web.corroboration(_T147, name="ddg-ia")
+_web.urlopen = web_urlopen
+expect("T147 THE PICKER SPENDS COINS ON VOICES, NOT ON ADDRESSES (the bounded discovery): the clothed twin (same road, utm-cloth) is dup-URL before any coin moves, the second page of a publisher ALREADY READ is dup-publisher (a voice that spoke once needs no second coin - the spare coin reaches a VOICE BEHIND, where the A4 first-N law wasted it), the house's own stub spends a coin and rides as ATTRIBUTION (A5's word kept whole - the house is a publisher too, and its SECOND stub bows to the dup-law), and the cap still STOPS without a word (the row past the stop rides CLEAN of any skipped-mark - T133's law adopted whole); the lineage (publisher, canon) rides EVERY walked row INCLUDING the dup-words (the dup can be SPOKEN because the identity survived), and the counts speak it all: independence candidate at two READ origins, seen voices TWO (the doc rode five rows at the provider's own cap - the voices beyond it were never SPOKEN at this road: seen means the bytes rode the packet), duplication two, attribution ONE (the provider's own five-row cap trimmed the second stub from the packet - the doc's bulk is the provider's word, not ours, and no law here widens it), the cap's stop adding no marker of its own, and the syndicated flag UP (every page here rode the selfsame bytes - two publishers, one text: DETECTED, never assumed, and the candidate word NOT moved)",
+       {"statuses": [i for i, r in enumerate(_T147["results"]) if "status" in r],
+        "skips": [(i, r["skipped"]) for i, r in enumerate(_T147["results"])
+                   if "skipped" in r],
+        "markers": sorted(k for r in _T147["results"]
+                           for k in ("error", "skipped") if k in r),
+        "spent": (_T147["spent"]["fetch"], _T147["spent"]["calls"]),
+        "lineage": (_T147["results"][0]["publisher"],
+                    _T147["results"][1]["canon"]
+                    == _T147["results"][0]["canon"]),
+        "w": _T147W},
+       why=lambda tr: ([] if (tr["statuses"] == [0, 3, 4]
+                            and tr["skips"] == [(1, "dup-url"),
+                                                (2, "dup-publisher")]
+                            and tr["markers"] == ["skipped", "skipped"]
+                            and tr["spent"] == (3, 4)
+                            and tr["lineage"] == ("wikipedia.org", True)
+                            and tr["w"]["independence"] == "candidate"
+                            and tr["w"]["publishers_seen"] == 2
+                            and tr["w"]["duplication"] == 2
+                            and tr["w"]["attribution"] == 1
+                            and tr["w"]["syndicated-possible"] is True
+                            and tr["w"]["conflict"] == "unknown")
+                       else ["the picker spent its coins wrong, or the words miscounted"]))
+
+_T148SHARE = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "the charter of 1215 rode the field."},
+    {"url": "https://two.org/b", "text": "sealed in 1215, the second voice."}),
+    name="ddg-ia")
+_T148CLASH = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "the charter of 1215 rode the field."},
+    {"url": "https://two.org/b", "text": "sealed in 1227, the second voice."}),
+    name="ddg-ia")
+_T148NOISE = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "the charter of 1215 rode the field."},
+    {"url": "https://two.org/b", "text": "the second voice speaks of stones."}),
+    name="ddg-ia")
+_T148SOLE = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "the charter of 1215 rode the field."}),
+    name="ddg-ia")
+_T148SYN = _web.corroboration(_pkt139(
+    {"url": "https://one.org/a", "text": "one article rides two houses here."},
+    {"url": "https://two.org/b", "text": "one article rides two houses here."}),
+    name="ddg-ia")
+_T148KEEP = _web.to_rows(_pkt139(
+    {"url": "https://one.org/a", "text": "the charter of 1215 rode the field."},
+    {"url": "https://two.org/b", "text": "sealed in 1227, the second voice."}))[0]
+expect("T148 THE LADDER WEIGHS ONLY WHAT THE BYTES SAY, AND SAYS THE REST AS SILENCE OR AS CLASH-POSSIBLE: two READ publishers SHARING a year-shaped number ride bytes-share (the BYTES agree - two voices can still BOTH be wrong: agreement is not entailment, A5's law kept whole); two voices with DISJOINT years ride bytes-clash-possible (the disagreement KEPT - never averaged, never CHOSEN - both passages ride the shown set to the last row, the -possible tail because two pages may merely speak of different facts); one voiced and one bare of years rides the honest UNKNOWN (no comparison at all); fewer than two READ voices rides INSUFFICIENT (nothing to weigh - the A4/EA4 truth, which A5's blanket unknown hid); a single voice is never called corroborated; and a syndicated twin - IDENTICAL bytes at two publishers - rides candidate WITH the flag (two addresses, one voice DETECTED, never assumed away)",
+       {"share": _T148SHARE["conflict"], "clash": _T148CLASH["conflict"],
+        "noise": _T148NOISE["conflict"], "sole": (_T148SOLE["conflict"],
+                                                  _T148SOLE["independence"]),
+        "syn": (_T148SYN["syndicated-possible"], _T148SYN["independence"],
+                _T148SYN["conflict"]),
+        "keep": [(_r["id"], _r.get("kind")) for _r in _T148KEEP]},
+       why=lambda tr: ([] if (tr["share"] == "bytes-share"
+                            and tr["clash"] == "bytes-clash-possible"
+                            and tr["noise"] == "unknown"
+                            and tr["sole"] == ("insufficient", "none")
+                            and tr["syn"] == (True, "candidate", "unknown")
+                            and tr["keep"] == [("W1", "page"), ("W2", "page")])
+                       else ["the ladder reached above its rung, or fell"]))
+
+_PK149 = {"query": "q", "provider": "ddg-ia", "ok": True, "results": [
+    {"url": "https://en.wikipedia.org/wiki/Gita-18", "lane": "abstract",
+     "snippet": "two surrenders", "status": 200,
+     "text": "Read me well: two surrenders are parted here in the Gita's own words."},
+    {"url": "https://britannica.org/topic/Gita", "lane": "definition",
+     "snippet": "the song of the field", "status": 200,
+     "text": "the Gita is sung on the field of the Kurus, both sides reckoning."},
+    {"url": "https://duckduckgo.com/rt/Gita", "lane": "related",
+     "snippet": "stub of the house", "skipped": "dup-publisher"}],
+    "gaps": [], "spent": {"search": 1, "fetch": 2, "calls": 3, "ms": 9.0}}
+_web.research = lambda q, **kw: _PK149
+_T149 = stages.door({"question": "What does the Gita say of surrender?",
+                     "web": True}, live=False,
+                    draft=[{"node": "Two surrenders ride the field.",
+                             "cites": ["W1", "W2"], "verbs": ["CLAIM"]}])
+_T149EV = _T149[0]["why"]["evidence"]
+_T149SRC = _T149[0]["trace"]["web"]["sources"]
+def _no_web149(q, **kw):
+    raise AssertionError("the web was coined without a designation")
+_web.research = _no_web149
+_T149PLAIN = stages.door({"question": "May fasting purge?"}, live=False,
+                         draft=[{"node": "The tradition may read it so.",
+                                 "cites": ["F2"], "verbs": ["CLAIM"]}])
+expect("T149 THE IDENTITY RIDES THE WHOLE ROAD (auditable end to end, and the A4/A5 laws stand): at the door the web lane stamps the corroboration WORDS (two READ publishers here: candidate) beside the sources-list, where EVERY source says its PUBLISHER and HOW IT WAS SEEN (read / the failure-class / the skipped-word / bytes-not-read - the compact audit, no page-body dumped); the window's evidence row carries the publisher through the shelf into the WHY (the identity survives to the review-output), the COMMANDING page (Read me well) stays level DOCUMENTED provenance web (remote bytes never give orders), the shelf is left UNMOVED after the call, and the no-web road never coins the web at all (the spy stands ready)",
+       {"t": _T149, "ev": _T149EV, "src": _T149SRC,
+        "plain": _T149PLAIN[0]["trace"].get("lane")},
+       why=lambda tr: ([] if (tr["t"][0]["trace"]["lane"] == "web"
+                            and tr["t"][0]["trace"]["web"]["corroboration"]
+                                ["independence"] == "candidate"
+                            and [s.get("publisher") for s in tr["src"]] ==
+                                ["wikipedia.org", "britannica.org",
+                                 "duckduckgo.com"]
+                            and [s.get("seen") for s in tr["src"]] ==
+                                ["read", "read", "skipped:dup-publisher"]
+                            and tr["ev"][0].get("publisher") == "wikipedia.org"
+                            and tr["ev"][0]["level"] == "DOCUMENTED"
+                            and tr["ev"][0]["provenance"] == "web"
+                            and "Read me well" in tr["ev"][0]["claim"]
+                            and "W1" not in stages.BY_ID
+                            and tr["plain"] is None)
+                       else ["the identity or the audit-word fell off the road"]))
 
 
 

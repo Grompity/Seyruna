@@ -1,0 +1,225 @@
+{
+ "smoke": "A7 live smoke - SIX frozen EA questions, SEARCH ROAD ONLY (zero mouthfuls), the provider's day-shape recorded, no verdicts",
+ "date": "2026-10-19T12:55",
+ "provider": "ddg-ia",
+ "attempts-law": "one call per question, no retries",
+ "questions": [
+  {
+   "id": "EA1",
+   "question": "Ashoka rock edict",
+   "ok": true,
+   "results": 5,
+   "gaps": [],
+   "independence": "none",
+   "conflict": "insufficient",
+   "publishers_seen": 1,
+   "origin_publishers": 1,
+   "attribution": 4,
+   "duplication": 3,
+   "syndicated-possible": false,
+   "rows": [
+    [
+     "W1",
+     "page",
+     "wikipedia.org",
+     "http 200 (capped)"
+    ],
+    [
+     "W2",
+     "snippet",
+     "duckduckgo.com",
+     "http 202"
+    ],
+    [
+     "W3",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ],
+    [
+     "W4",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ],
+    [
+     "W5",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ]
+   ],
+   "secs": 2.4
+  },
+  {
+   "id": "EA2",
+   "question": "Magna Carta",
+   "ok": true,
+   "results": 3,
+   "gaps": [],
+   "independence": "unknown",
+   "conflict": "insufficient",
+   "publishers_seen": 0,
+   "origin_publishers": 0,
+   "attribution": 3,
+   "duplication": 2,
+   "syndicated-possible": false,
+   "rows": [
+    [
+     "W1",
+     "snippet",
+     "duckduckgo.com",
+     "http 202"
+    ],
+    [
+     "W2",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ],
+    [
+     "W3",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ]
+   ],
+   "secs": 1.2
+  },
+  {
+   "id": "EA3",
+   "question": "Krishna",
+   "ok": true,
+   "results": 3,
+   "gaps": [],
+   "independence": "unknown",
+   "conflict": "insufficient",
+   "publishers_seen": 0,
+   "origin_publishers": 0,
+   "attribution": 3,
+   "duplication": 2,
+   "syndicated-possible": false,
+   "rows": [
+    [
+     "W1",
+     "snippet",
+     "duckduckgo.com",
+     "http 202"
+    ],
+    [
+     "W2",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ],
+    [
+     "W3",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ]
+   ],
+   "secs": 1.2
+  },
+  {
+   "id": "EA4",
+   "question": "Zzzyx plingworth",
+   "ok": false,
+   "results": 0,
+   "gaps": [
+    "search-empty"
+   ],
+   "independence": "unknown",
+   "conflict": "insufficient",
+   "publishers_seen": 0,
+   "origin_publishers": 0,
+   "attribution": 0,
+   "duplication": 0,
+   "syndicated-possible": false,
+   "rows": [],
+   "secs": 0.4
+  },
+  {
+   "id": "EA5",
+   "question": "Upanishad",
+   "ok": true,
+   "results": 5,
+   "gaps": [],
+   "independence": "none",
+   "conflict": "insufficient",
+   "publishers_seen": 1,
+   "origin_publishers": 1,
+   "attribution": 4,
+   "duplication": 3,
+   "syndicated-possible": false,
+   "rows": [
+    [
+     "W1",
+     "page",
+     "wikipedia.org",
+     "http 200 (capped)"
+    ],
+    [
+     "W2",
+     "snippet",
+     "duckduckgo.com",
+     "http 202"
+    ],
+    [
+     "W3",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ],
+    [
+     "W4",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ],
+    [
+     "W5",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ]
+   ],
+   "secs": 2.0
+  },
+  {
+   "id": "EA6",
+   "question": "Kalama Sutta",
+   "ok": true,
+   "results": 3,
+   "gaps": [],
+   "independence": "none",
+   "conflict": "insufficient",
+   "publishers_seen": 1,
+   "origin_publishers": 1,
+   "attribution": 2,
+   "duplication": 1,
+   "syndicated-possible": false,
+   "rows": [
+    [
+     "W1",
+     "page",
+     "wikipedia.org",
+     "http 200 (capped)"
+    ],
+    [
+     "W2",
+     "snippet",
+     "duckduckgo.com",
+     "http 202"
+    ],
+    [
+     "W3",
+     "snippet",
+     "duckduckgo.com",
+     "not-fetched:dup-publisher"
+    ]
+   ],
+   "secs": 1.6
+  }
+ ]
+}
