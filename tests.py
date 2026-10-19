@@ -2432,6 +2432,120 @@ expect("T152 THE DOOR RIDES THE NAMED WORD WITHOUT DISTURBING ANY OTHER ROAD: we
                             and tr["plain"] is None)
                        else ["the named word moved a road it should have left alone"]))
 
+# ---------- A12: the LEVEL-word TRACKS the KIND-word (a URL is provenance,
+# not a passage; the RP-07 law was always the hazard's word - the silent row
+# just over-stamped past it). Deterministic only; no network was touched.
+_PK153 = {"query": "q", "provider": "named", "ok": True, "gaps": [],
+          "spent": {}, "results": [
+    {"url": "https://one.org/a", "text": "words words of the page that was "
+        "read here at length enough to pass the bar of a page and stand.",
+     "status": 200, "publisher": "one.org"},
+    {"url": "https://two.org/b", "snippet": "a thin line of the index",
+     "lane": "result", "publisher": "two.org", "status": 200},
+    {"url": "https://three.org/c", "lane": "named", "publisher": "three.org",
+     "error": "blocked-or-rate:403"},
+    {"url": "https://four.org/d", "text": "", "status": 200,
+     "publisher": "four.org", "lane": "named"},
+    {"url": "https://five.org/e", "title": "A label only of the index",
+     "status": 200, "publisher": "five.org", "lane": "result"}]}
+_R153, _ = _web.to_rows(_PK153)
+expect("T153 THE LEVEL-WORD NOW TRACKS THE KIND-WORD (A12's one-branch fix, "
+       "the direction A5's P4 law whole - it UNDER-counts support, never "
+       "OVER-counts it): a READ passage keeps DOCUMENTED (what the text "
+       "VERIFIABLY SAYS - unchanged); a SNIPPET keeps DOCUMENTED with its "
+       "own kind-word (the index's short true words - the A5 law unchanged); "
+       "and the three PROVENANCE-ONLY shapes - the HTTP-FAILED row (1), the "
+       "FETCHED-BUT-EMPTY row whose bytes were all furniture (2), the "
+       "TITLE-ONLY row (K2's own silence) - ride the enum's own UNKNOWN, never "
+       "a borrowed DOCUMENTED: a URL alone is provenance METADATA, never a "
+       "passage examined. The honest distinctions STAND: the failed row keeps "
+       "its NONE-FOR word and its lane-word note (blocked-or-rate:403); the "
+       "empty-200 row keeps its http 200 note and NO evidence word at all "
+       "(bytes without passage - silence is the truth); the read row keeps "
+       "PRESENT; and the claims ride the real bytes (the failed row's claim "
+       "IS its URL through the same thin=0 law; the title row's its label)",
+       {"levels": [r["level"] for r in _R153],
+        "kinds": [r.get("kind") for r in _R153],
+        "evidence": [r.get("evidence") for r in _R153],
+        "notes": [_R153[2]["note"], _R153[3]["note"]],
+        "claims": (_R153[2]["claim"], _R153[4]["claim"])},
+       why=lambda tr: ([] if (
+            tr["levels"] == ["DOCUMENTED", "DOCUMENTED", "UNKNOWN",
+                             "UNKNOWN", "UNKNOWN"]
+            and tr["kinds"] == ["page", "snippet", None, None, None]
+            and tr["evidence"] == ["PRESENT", None, "NONE-FOR", None, None]
+            and tr["notes"] == ["blocked-or-rate:403", "http 200"]
+            and tr["claims"][0] == _web.extract("https://three.org/c",
+                                                _web.MAX_CHARS, 0)
+            and tr["claims"][1] == _web.extract("A label only of the index",
+                                                _web.MAX_CHARS, 0))
+       else ["the level-word tracked something other than the kind-word"]))
+
+_PK154 = {"query": "q", "provider": "named", "ok": True,
+          "gaps": ["blocked-or-rate:403"],
+          "results": [
+    {"url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka", "lane": "named",
+     "publisher": "wikipedia.org", "status": 200,
+     "text": "Rock-carved records of the Mauryan emperor of the 3rd century "
+             "BCE, his dharma and policy set in stone across the realm."},
+    {"url": "https://www.britannica.com/biography/Ashoka-Indian-emperor",
+     "lane": "named", "publisher": "britannica.com",
+     "error": "blocked-or-rate:403"}],
+          "spent": {"search": 0, "fetch": 1, "calls": 2, "ms": 1072.0}}
+_web.reads = lambda q, urls, **kw: _PK154
+def _no_research154(q, **kw):
+    raise AssertionError("the searched road was ridden at A12's door")
+_web.research = _no_research154
+_D154A = stages.door({"question": "Q?", "web": True, "reads": ["a", "b"]},
+                     live=False,
+                     draft=[{"node": "The failed address stands cited alone.",
+                              "cites": ["W2"], "verbs": ["CLAIM"]}])
+_D154B = stages.door({"question": "Q?", "web": True, "reads": ["a", "b"]},
+                     live=False,
+                     draft=[{"node": "The read passage speaks the point.",
+                              "cites": ["W1"], "verbs": ["CLAIM"]}])
+_D154C = stages.door({"question": "Q?", "web": True, "reads": ["a", "b"]},
+                     live=False,
+                     draft=[{"node": "The edicts stand in stone at Ashoka.",
+                             "cites": ["W1", "W2"], "verbs": ["CLAIM"]}])
+_D154PLAIN = stages.door({"question": "May fasting purge?"}, live=False,
+                         draft=[{"node": "Plain words.", "cites": ["F2"],
+                                 "verbs": ["CLAIM"]}])
+_W154 = _web.corroboration(_PK154, name="named")
+_LEV154 = _D154A[0]["why"]["distinction"]["levels"]
+expect("T154 AT THE DOOR THE ARCHITECTURE'S OWN WORD CATCHES THE HAZARD (no "
+       "new word was coined): a flat node citing ONLY the failed address "
+       "draws RP-07:PROMOTION - the promotion law always spoke this hazard, "
+       "the silent row simply over-stamped past it; the same node citing "
+       "ONLY the read passage stands at DOCUMENTED with NO promotion fire "
+       "(the A1-A11 roads byte-unchanged, and the searched road is NOT "
+       "ridden - the raising spy guards it); and A11's REAL draft-shape (both "
+       "cited, flat) now TOO draws the fire - the weakest-governs law was A3's "
+       "and stands, disclosed: citing an unexamined address flat means "
+       "claiming its bytes were read (the dodge: do not cite it, or hedge); "
+       "the window's distinction table counts the rows' true words "
+       "(DOCUMENTED one, UNKNOWN one); the failed source counts NOTHING "
+       "toward corroboration (read 1, origin_publishers 1 - A7's law, now "
+       "witnessed against A11's frozen bytes); and the plain no-web road "
+       "coins neither spy",
+       {"fireA": any(f.startswith("RP-07:promotion")
+                     for f in _D154A[0]["trace"]["fires"]),
+        "fireB": any(f.startswith("RP-07:promotion")
+                     for f in _D154B[0]["trace"]["fires"]),
+        "fireC": any(f.startswith("RP-07:promotion")
+                     for f in _D154C[0]["trace"]["fires"]),
+        "levels": _LEV154,
+        "w": (_W154["read"], _W154["origin_publishers"],
+              _W154["independence"]),
+        "plain": _D154PLAIN[0]["trace"].get("lane")},
+       why=lambda tr: ([] if (tr["fireA"] and not tr["fireB"] and tr["fireC"]
+                            and tr["levels"] == {"DOCUMENTED": 1,
+                                                 "UNKNOWN": 1}
+                            and tr["w"] == (1, 1, "none")
+                            and tr["plain"] is None)
+                       else ["the promotion law did not speak where the "
+                             "over-stamp once stood silent"]))
+
 
 
 for name, tr, kw in T:

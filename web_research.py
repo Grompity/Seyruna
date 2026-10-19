@@ -626,6 +626,16 @@ def to_rows(packet, max_chars=MAX_CHARS):
             row["kind"] = ("abstract" if rec.get("lane") in ("abstract",
                                                              "definition")
                            else "snippet")
+        # A12: the LEVEL-word TRACKS the KIND-word. A row that rode NO kind
+        # word - only a title, only an address (K2's silence) - is PROVENANCE
+        # METADATA, not a passage examined: a URL alone says nothing the node
+        # could cite it FOR. Such a row may not stamp DOCUMENTED (which means
+        # what the text VERIFIABLY SAYS); it rides the enum's own UNKNOWN, so
+        # the RP-07 promotion law speaks at any flat node that cites it. The
+        # direction is A5's P4 law whole: this may UNDER-count a claim's
+        # support, never OVER-count it.
+        if "kind" not in row:
+            row["level"] = "UNKNOWN"
         if rec.get("text"):
             row["evidence"] = "PRESENT"
         elif rec.get("error") or rec.get("skipped"):
