@@ -2546,6 +2546,138 @@ expect("T154 AT THE DOOR THE ARCHITECTURE'S OWN WORD CATCHES THE HAZARD (no "
                        else ["the promotion law did not speak where the "
                              "over-stamp once stood silent"]))
 
+# ---------- A15: the EVIDENCE-STATUS WORD rides the shown record, and the
+# optional query rides the search WITHOUT touching the question. No network;
+# canned packets are canned (no fake claims about the real world's lanes).
+def _pkA15(*rows, **kw):
+    d = {"query": kw.get("query", "Q?"), "provider": kw.get("prov", "ddg-ia"),
+         "ok": kw.get("ok", True), "results": list(rows),
+         "gaps": kw.get("gaps", []), "spent": {"search": 1, "fetch": 0}}
+    return d
+_A15PAGE = {"url": "https://one.org/a", "text": "a read passage of length "
+            "enough at the page bar to stand as a passage."}
+_A15STUB = [{"url": "https://duckduckgo.com/x", "snippet": "index words"},
+            {"url": "https://duckduckgo.com/y", "snippet": "more words"}]
+_A15ERR = {"url": "https://three.org/c", "error": "blocked-or-rate:403"}
+_A15EMPTY = {"url": "https://none.org/n", "text": "", "status": 200}
+_A15DRAFT = [{"node": "The point stands.", "cites": ["W1"], "verbs": ["CLAIM"]}]
+_A15SEEN = []
+def _spy15(pk):
+    def _s(q, **k):
+        _A15SEEN.append(q)
+        return pk
+    return _s
+_web.research = _spy15(_pkA15(_A15PAGE, **{"query": "Q?"}))
+_D15R = stages.door({"question": "Q?", "web": True}, live=False, draft=_A15DRAFT)
+_D15R2 = stages.door({"question": "Q?", "web": True}, live=False, draft=_A15DRAFT)
+_web.research = _spy15(_pkA15(_A15ERR, ok=True))
+_D15INC = stages.door({"question": "Q?", "web": True}, live=False,
+                      draft=[{"node": "n.", "cites": ["W1"], "verbs": ["CLAIM"]}])
+_web.research = _spy15(_pkA15(*_A15STUB))
+_D15ATTR = stages.door({"question": "Q?", "web": True}, live=False,
+                       draft=[{"node": "n.", "cites": ["W1"], "verbs": ["CLAIM"]}])
+_web.research = _spy15(_pkA15(_A15EMPTY, ok=False, gaps=["search-http-503"]))
+_D15FAIL = stages.door({"question": "Q?", "web": True}, live=False,
+                       draft=_A15DRAFT)
+_web.research = _spy15(_pkA15(_A15EMPTY, ok=False, gaps=["search-empty"]))
+_D15FOLD = stages.door({"question": "Q?", "web": True}, live=False,
+                       draft=_A15DRAFT)
+# the general-road shape needs the lineage stamp: a canned trace rides the
+# pipeline seam (the A-era seam idiom; the shape is the A13.4 record's)
+_real_pipeline = stages.run_pipeline
+def _canon_pipe(q, facts, live=True, **kw):
+    return {"response": "R.", "lane": "general", "lineage": "UNSOURCED",
+            "retrieval": [], "fires": ["GENERAL:UNSOURCED"]}
+_web.research = _spy15(_pkA15(_A15EMPTY, ok=False, gaps=["search-empty"]))
+stages.run_pipeline = _canon_pipe
+_D15GEN = stages.door({"question": "Q?", "web": True}, live=False,
+                      draft=_A15DRAFT)
+stages.run_pipeline = _real_pipeline
+_D15PLAIN = stages.door({"question": "May fasting purge?"}, live=False,
+                        draft=[{"node": "The tradition may read it so.",
+                                "cites": ["F2"], "verbs": ["CLAIM"]}])
+expect("T159 THE EVIDENCE-STATUS WORD SPEAKS THE TURN'S TRUTH BESIDE THE "
+       "SPEECH, NEVER INSIDE IT: a READ origin names its carriers (carried "
+       "BY - a carrier, not a warrant that every claim rode it); results "
+       "that ALL failed their fetches are named INCONCLUSIVE (a failed "
+       "fetch is never silent-success); provider-only index-words are named "
+       "PROVIDER WORDS ONLY, NO ORIGIN READ (attribution is not an origin - "
+       "A7's law at last DISPLAYED); a SEARCH FAILURE at a laned word is "
+       "rides the FOLD PHRASE with its failure word inside the "
+       "parentheses (search-http-503), an emptiness its own "
+       "(search-empty) (the house's fold phrase, SHOWN at last, not folded away); the "
+       "A13.4 shape - the fold plus the general road's OWN lineage stamp - "
+       "speaks the compound word (general knowledge, not verified this turn); "
+       "and a plain turn says RESEARCH NOT ASKED. Determinism and the speech: "
+       "the same packet twice speaks the same word and the SAME bytes of "
+       "response (the word rides the trace and the shown why, never the "
+       "mouth's text)",
+       {"r": _D15R[0]["why"]["evidence_status"],
+        "r-trace": _D15R[0]["trace"]["evidence_status"],
+        "r2": _D15R2[0]["why"]["evidence_status"],
+        "r-resp": _D15R[0]["response"] == _D15R2[0]["response"],
+        "inc": _D15INC[0]["why"]["evidence_status"],
+        "attr": _D15ATTR[0]["why"]["evidence_status"],
+        "fail": _D15FAIL[0]["why"]["evidence_status"],
+        "fold": _D15FOLD[0]["why"]["evidence_status"],
+        "gen": _D15GEN[0]["why"]["evidence_status"],
+        "plain": _D15PLAIN[0]["why"]["evidence_status"]},
+       why=lambda tr: ([] if (
+            tr["r"] == "carried by: one.org (read)" == tr["r-trace"]
+            and tr["r"] == tr["r2"] and tr["r-resp"]
+            and tr["inc"] == "research inconclusive (fetches failed)"
+            and tr["attr"] == "provider words only; no origin read"
+            and tr["fail"] == "the web brought nothing (search-http-503)"
+            and tr["fold"] == "the web brought nothing (search-empty)"
+            and tr["gen"] == ("general knowledge, not verified this turn "
+                              "(the web brought nothing (search-empty))")
+            and tr["plain"] == "research not asked")
+       else ["the status word guessed where the fields spoke, or spoke "
+             "inside the speech"]))
+
+_Q15 = "What do Ashoka's rock edicts say about dhamma?"
+_A15SEEN2 = []
+def _spy15b(q, **k):
+    _A15SEEN2.append(q)
+    return _pkA15(_A15PAGE, query=q)
+_web.research = _spy15b
+_Q_PLAIN15 = stages.door({"question": _Q15, "web": True}, live=False,
+                         draft=_A15DRAFT)
+_Q_SEP15 = stages.door({"question": _Q15, "web": True,
+                        "query": "Ashoka rock edict"}, live=False,
+                       draft=_A15DRAFT)
+_REAL15 = stages.run_pipeline
+_Q_SEEN15 = []
+def _spy_pipe15(q, facts, live=True, **kw):
+    _Q_SEEN15.append(q)
+    return {"response": "R.", "retrieval": []}
+stages.run_pipeline = _spy_pipe15
+_Q_FALLBACK15 = stages.door({"question": _Q15, "web": True}, live=False,
+                            draft=_A15DRAFT)
+stages.run_pipeline = _REAL15
+expect("T160 THE QUERY RIDES THE SEARCH; THE QUESTION RIDES EVERYTHING "
+       "ELSE: no query word coins today's road EXACTLY (the spy sees the "
+       "question, the fallback recorded at the trace as the question "
+       "itself - inspectable, not assumed); an explicit body query goes to "
+       "the search and NOT the question (the pipeline seam RECEIVES the "
+       "question untouched - the user's words are never overwritten), and "
+       "the trace records the query ACTUALLY USED (the packet's own word, "
+       "via the stamp - the A14 requirement at bytes). No name-core "
+       "heuristic was needed or added (the §'s grace): generation stays "
+       "the caller's or the coin's; the door only accepts, uses, and "
+       "RECORDS",
+       {"plain-spy": _A15SEEN2[0], "sep-spy": _A15SEEN2[1],
+        "plain-trace": _Q_PLAIN15[0]["trace"]["web"]["query"],
+        "sep-trace": _Q_SEP15[0]["trace"]["web"]["query"],
+        "pipe-saw": _Q_SEEN15[0]},
+       why=lambda tr: ([] if (
+            tr["plain-spy"] == _Q15 == tr["plain-trace"]
+            and tr["sep-spy"] == "Ashoka rock edict"
+            and tr["sep-trace"] == "Ashoka rock edict"
+            and tr["pipe-saw"] == _Q15)
+       else ["the query touched the question's road, or the trace does not "
+             "tell the truth about what was used"]))
+
 
 
 for name, tr, kw in T:

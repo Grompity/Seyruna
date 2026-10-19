@@ -99,6 +99,7 @@ def why_lane(trace, by_id=None):
                         % len(trace["audit_findings"]))
 
     return {"lane": trace.get("lane", "retrieval"),
+            "evidence_status": trace.get("evidence_status"),
             "relevance": relevance,
             "evidence": evidence,
             "distinction": {"levels": levels, "kinds": kinds},

@@ -880,28 +880,70 @@ def door(body, live=True, **kw):
     # a road-law - and the suite's door-runs with a web word all inject one.
     web = body.get("web")
     pkt = None
+    fold = None                              # A15: the fold's word,
+                                             # remembered for the status
+                                             # law (the fold rides the
+                                             # facts either way)
     if web == "auto" and retrieve(q + " " + facts):
         web = None
     if web:
         import web_research
         named = body.get("reads")
         pkt = (web_research.reads(q, named) if named
-               else web_research.research(q))
+               else web_research.research(body.get("query") or q))
         if pkt["ok"]:
             rows, ids = web_research.to_rows(pkt)
             old_shelf = SHELF[:]
             set_shelf(old_shelf + rows)
             kw = dict(kw, packet=ids)
         else:
-            facts = (facts + " " if facts else "") + \
-                "the web brought nothing (" + \
-                (pkt["gaps"][0] if pkt["gaps"] else "empty") + ")"
+            fold = ("the web brought nothing (" +
+                    (pkt["gaps"][0] if pkt["gaps"] else "empty") + ")")
+            facts = (facts + " " if facts else "") + fold
             pkt = None
     tr = run_pipeline(q, facts, live=live, **kw)
     import window
+    # A15: the EVIDENCE-STATUS WORD. Deterministic, spoken from the turn's
+    # OWN already-computed words (the packet's rows, the A7 corroboration
+    # law, the fold's phrase, the general road's lineage stamp), and it
+    # rides BESIDE the answer (the answer's bytes are never touched: no
+    # re-voicing, no refusal, no new mouth). It names READ origins by name
+    # as carriers (carried-BY - a read origin is a carrier, not a warrant
+    # that every claim rode it); a turn whose bytes were only the
+    # provider's own index-words is named so (A7's attribution law, now
+    # DISPLAYED); results that all failed their fetches are named
+    # INCONCLUSIVE, never silent; a search that FAILED at a laned failure
+    # word is named so (an emptiness says otherwise); a turn that asked
+    # no research says so. Where a distinction has no field behind it the
+    # word stays un-spoken rather than guessed (A14's rule, honored).
+    if web and pkt is not None:
+        _st_c = web_research.corroboration(pkt)
+        _st_r = sorted({(r.get("publisher")
+                          or web_research.publisher(r["url"]))
+                        for r in pkt["results"] if r.get("text")})
+        if _st_r:
+            tr["evidence_status"] = "carried by: %s (read)" % ", ".join(_st_r)
+        elif any("error" in r for r in pkt["results"]):
+            tr["evidence_status"] = "research inconclusive (fetches failed)"
+        elif _st_c["attribution"]:
+            tr["evidence_status"] = "provider words only; no origin read"
+        else:
+            tr["evidence_status"] = "no origin read (rows unweighed)"
+    elif web:
+        if fold and tr.get("lineage") == "UNSOURCED":
+            tr["evidence_status"] = ("general knowledge, not verified this"
+                                     " turn (" + fold + ")")
+        elif fold:
+            tr["evidence_status"] = fold
+    else:
+        tr["evidence_status"] = "research not asked"
     if pkt is not None:
         tr["lane"] = "web"
         tr["web"] = {"provider": pkt["provider"],
+                     "query": pkt.get("query"),   # A15: the query ACTUALLY
+                                                  # used, recorded at the
+                                                  # trace (fallback = the
+                                                  # question, inspectable)
                      "fetched": pkt["spent"]["fetch"],
                      "gaps": pkt["gaps"],
                      "corroboration": web_research.corroboration(
