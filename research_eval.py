@@ -64,15 +64,33 @@ def run_one(qtext, live, caps):
             payload, code = stages.door({"question": qtext, "web": True},
                                         live=True)
             tr = payload["trace"]
+            # A18: the runner's record now carries the door's OWN status
+            # word VERBATIM (a tr.get, never a reconstruction from prose):
+            # a missing word rides as ABSENCE (null), never as an invented
+            # stronger claim; the over-budget lane stays sparse as built.
             out["door"] = {"code": code, "lane": tr.get("lane"),
                            "retrieval": tr.get("retrieval"),
                            "response": tr.get("response"),
                            "model_calls": tr.get("model_calls"),
+                           "evidence_status": tr.get("evidence_status"),
                            "web_stamped": tr.get("web") is not None}
         else:
             out["door"] = {"lane": "over-budget"}    # the word, not a shrug
     out["secs"] = round(time.time() - t0, 1)
     return out
+
+
+def status_word(rec):
+    # A19: main's readable line SELECTS the word the RECORD already
+    # carries (never the answer's prose, never the trace). A run whose
+    # door never rode (the search-only mode) says so; a door record whose
+    # trace left the word un-spoken (a pre-A15 shape, the over-budget
+    # lane) says so; neither ever leans toward VERIFIED.
+    d = rec.get("door")
+    if d is None:
+        return "no-door (search-only)"
+    s = d.get("evidence_status")
+    return s if s else "status-unspoken"
 
 
 def main(argv):
@@ -98,6 +116,7 @@ def main(argv):
                r["web"]["corroboration"]["independence"],
                "| lane:", (d or {}).get("lane"),
                "| calls:", (d or {}).get("model_calls"),
+               "| status:", status_word(r),
                "| %.1fs" % r["secs"])
     out = os.path.join(HERE, "research-hold",
                        "a5-eval-live.json" if live else "a5-eval-search.json")

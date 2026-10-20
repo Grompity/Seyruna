@@ -2602,10 +2602,11 @@ expect("T159 THE EVIDENCE-STATUS WORD SPEAKS THE TURN'S TRUTH BESIDE THE "
        "that ALL failed their fetches are named INCONCLUSIVE (a failed "
        "fetch is never silent-success); provider-only index-words are named "
        "PROVIDER WORDS ONLY, NO ORIGIN READ (attribution is not an origin - "
-       "A7's law at last DISPLAYED); a SEARCH FAILURE at a laned word is "
-       "rides the FOLD PHRASE with its failure word inside the "
-       "parentheses (search-http-503), an emptiness its own "
-       "(search-empty) (the house's fold phrase, SHOWN at last, not folded away); the "
+       "A7's law at last DISPLAYED); a SEARCH FAILURE at a lane-word now "
+       "rides ITS OWN WORD (research failed (search-http-503)) - the "
+       "A15 coin SPENT at A19: the lane-word, never an empty "
+       "results-list, decides - and an emptiness its fold phrase "
+       "(search-empty); the "
        "A13.4 shape - the fold plus the general road's OWN lineage stamp - "
        "speaks the compound word (general knowledge, not verified this turn); "
        "and a plain turn says RESEARCH NOT ASKED. Determinism and the speech: "
@@ -2627,7 +2628,7 @@ expect("T159 THE EVIDENCE-STATUS WORD SPEAKS THE TURN'S TRUTH BESIDE THE "
             and tr["r"] == tr["r2"] and tr["r-resp"]
             and tr["inc"] == "research inconclusive (fetches failed)"
             and tr["attr"] == "provider words only; no origin read"
-            and tr["fail"] == "the web brought nothing (search-http-503)"
+            and tr["fail"] == "research failed (search-http-503)"
             and tr["fold"] == "the web brought nothing (search-empty)"
             and tr["gen"] == ("general knowledge, not verified this turn "
                               "(the web brought nothing (search-empty))")
@@ -2677,6 +2678,186 @@ expect("T160 THE QUERY RIDES THE SEARCH; THE QUESTION RIDES EVERYTHING "
             and tr["pipe-saw"] == _Q15)
        else ["the query touched the question's road, or the trace does not "
              "tell the truth about what was used"]))
+
+# ---------- A18: the runner's record carries the door's OWN status word.
+# No network, no mouth: canned packets canned, the door a recorded spy.
+import research_eval as _re18
+_real_door18 = stages.door
+_A18SAW = []
+def _door18(payload):
+    def _d(body, **k):
+        _A18SAW.append(body)
+        return payload, 200
+    return _d
+def _pl18(**over):
+    tr = {"response": "R.", "lane": "web", "retrieval": ["W1"],
+          "model_calls": 3, "web": {"provider": "ddg-ia"}}
+    tr.update(over)
+    return {"response": "R.", "trace": tr}
+_web.research = lambda q, **k: _pkA15(_A15PAGE)
+_Q18 = "Q?"
+# (1) a real status rides VERBATIM; (3) a legacy trace without the word
+# rides it as ABSENCE (None), never as a stronger claim:
+stages.door = _door18(_pl18(evidence_status="carried by: one.org (read)"))
+_O18 = _re18.run_one(_Q18, True, {})
+stages.door = _door18(_pl18())                      # no word on the trace
+_O18MISS = _re18.run_one(_Q18, True, {})
+# (2) the fold's shape: no web stamp, the compound word present (A13.4's):
+_O18FOLD = _re18.run_one(_Q18, True, {})             # (set below, before use)
+stages.door = _door18(_pl18(evidence_status=(
+    "general knowledge, not verified this turn (the web brought nothing "
+    "(search-empty))"), web=None, lane="general", retrieval=[]))
+_O18FOLD = _re18.run_one(_Q18, True, {})
+# (4) the over-budget lane stays SPARSE (no door word-class was invented):
+_O18OB = _re18.run_one(_Q18, True, {"max_secs_per_question": -5})
+# (5) the search-only mode grows no door record at all (today, exactly):
+_O18SOLO = _re18.run_one(_Q18, False, {})
+_O18JSON = json.loads(json.dumps(_O18))
+stages.door = _real_door18
+def _boom18(*a, **k):
+    raise RuntimeError("A18 seam left standing - net-free past T161")
+_web.research = _boom18
+expect("T161 THE RUNNER CARRIES THE DOOR'S WORD AND ADDS NOTHING OF ITS "
+       "OWN: a real evidence_status rides run_one's door-record VERBATIM "
+       "(tr.get - never a reconstruction from the answer's prose, and the "
+       "full six-plus-one-key projection is exactly the built set, the old "
+       "keys byte-undisturbed); the A13.4 fold-shape keeps its compound "
+       "word even though no web stamp rides the record (web_stamped False "
+       "and the word STILL there - emptiness and unverified are spoken "
+       "apart, at last, in the EVAL record itself); a trace with NO word "
+       "(a pre-A15 shape) rides it as ABSENCE - the key present, the value "
+       "None - never silently promoted to anything verified; the "
+       "over-budget lane stays sparse exactly as built (no status key, no "
+       "raise - the house's own precedent that an absent word rides as "
+       "absence); the search-only mode still grows no door record at all; "
+       "the question rides byte-identical; and json.loads(json.dumps(rec)) "
+       "round-trips (main's own idiom at bytes - an additive key needs no "
+       "version bump, nothing in the file or tests.py pins the door's key "
+       "set); STATUS PROPAGATED IS NOT CLAIMS VERIFIED - the word says the "
+       "turn's evidence state, not the truth of the answer",
+       {"s1": _O18["door"]["evidence_status"],
+        "keys": sorted(_O18["door"]),
+        "s3-miss": _O18MISS["door"]["evidence_status"],
+        "s3-key": "evidence_status" in _O18MISS["door"],
+        "fold-s": _O18FOLD["door"]["evidence_status"],
+        "fold-stamped": _O18FOLD["door"]["web_stamped"],
+        "ob-lane": _O18OB["door"].get("lane"),
+        "ob-key": "evidence_status" in _O18OB["door"],
+        "solo-door": "door" in _O18SOLO,
+        "q": _O18["question"], "body-saw": _A18SAW[0],
+        "json-ok": _O18JSON["door"]["evidence_status"] ==
+                   _O18["door"]["evidence_status"]},
+       why=lambda tr: ([] if (
+            tr["s1"] == "carried by: one.org (read)"
+            and tr["keys"] == ["code", "evidence_status", "lane",
+                               "model_calls", "response", "retrieval",
+                               "web_stamped"]
+            and tr["s3-miss"] is None and tr["s3-key"]
+            and tr["fold-s"] == ("general knowledge, not verified this "
+                                "turn (the web brought nothing "
+                                "(search-empty))")
+            and tr["fold-stamped"] is False
+            and tr["ob-lane"] == "over-budget" and not tr["ob-key"]
+            and not tr["solo-door"] and tr["q"] == _Q18
+            and tr["body-saw"] == {"question": _Q18, "web": True}
+            and tr["json-ok"])
+       else ["the runner reconstructed, invented, or dropped the word"]))
+
+# ---------- A19: the runner SAYS the word it already carries, and a
+# FAILED search gets its OWN word. No network, no mouth: the selector is
+# pure; the door-words ride the dry road with canned packets and an
+# injected draft (the A-era idiom; the shapes are A13.4's, disclosed).
+_A19DRAFT = [{"node": "n.", "cites": ["F2"], "verbs": ["CLAIM"]}]
+def _pk19(**kw):
+    return {"query": "Q?", "provider": "ddg-ia", "ok": kw.get("ok", True),
+            "results": [], "gaps": kw.get("gaps", []),
+            "spent": {"search": 1, "fetch": 0}}
+def _dry19():
+    return stages.door({"question": "Q?", "web": True}, live=False,
+                       draft=_A19DRAFT)
+_web.research = lambda q, **k: _pk19(ok=False, gaps=["search-empty"])
+_E19E = _dry19()
+_web.research = lambda q, **k: _pk19(ok=False, gaps=["search-http-503"])
+_E19F = _dry19()
+_web.research = lambda q, **k: _pk19(ok=False, gaps=[])
+_E19M = _dry19()
+_real_pipe19 = stages.run_pipeline
+def _gen_pipe19(q, facts, live=True, **kw):
+    return {"response": "R.", "lane": "general", "lineage": "UNSOURCED",
+            "retrieval": [], "fires": ["GENERAL:UNSOURCED"]}
+stages.run_pipeline = _gen_pipe19
+_web.research = lambda q, **k: _pk19(ok=False, gaps=["search-http-503"])
+_E19GF = _dry19()
+_web.research = lambda q, **k: _pk19(ok=False, gaps=["search-empty"])
+_E19GE = _dry19()
+stages.run_pipeline = _real_pipe19
+_R19P = {"door": {"evidence_status": "carried by: one.org (read)"}}
+_R19N = {"door": {"evidence_status": None}}
+_R19OB = {"door": {"lane": "over-budget"}}
+_R19SO = {"web": {}}
+expect("T162 THE RUNNER SAYS WHAT THE RECORD CARRIES AND NOTHING MORE: "
+       "main's readable line SELECTS the already-propagated word through "
+       "status_word (the RECORD's own bytes - never the prose, never the "
+       "trace); a present word rides VERBATIM; a record whose door grew "
+       "no word (a pre-A15 shape, the over-budget lane's sparse record) "
+       "says STATUS-UNSPOKEN; a run whose door never rode (search-only) "
+       "says NO-DOOR (SEARCH-ONLY); a missing word NEVER leans toward "
+       "verified; and the selector touches no serialization (the word "
+       "rides the RECORD, the print merely READS it - main's json.dumps "
+       "of the record byte-undisturbed)",
+       {"present": _re18.status_word(_R19P),
+        "none": _re18.status_word(_R19N),
+        "overbudget": _re18.status_word(_R19OB),
+        "solo": _re18.status_word(_R19SO)},
+       why=lambda tr: ([] if (
+            tr["present"] == "carried by: one.org (read)"
+            and tr["none"] == "status-unspoken"
+            and tr["overbudget"] == "status-unspoken"
+            and tr["solo"] == "no-door (search-only)")
+       else ["the selector reconstructed, promoted, or leaned"]))
+expect("T163 A FAILED SEARCH AND AN EMPTY ONE SAY DIFFERENT THINGS, AT "
+       "BYTES, FROM EXISTING LANED WORDS ALONE: the emptiness keeps the "
+       "house's fold phrase (the web brought nothing (search-empty)) - "
+       "T159's bytes UNMOVED; a search that FAILED at a lane-word rides "
+       "ITS OWN WORD (research failed (search-http-503)), the reason "
+       "VERBATIM from the packet, the distinction read from the LANED "
+       "WORD and never from an empty results-list (which failed and "
+       "empty searches share) - the two words DISTINCT, asserted by the "
+       "fixture's own eyes; MISSING failure metadata (gaps bare) rides "
+       "the (empty) fold arm - no failure invented where no reason rode; "
+       "the A13.4 compound at a failure NESTS the new word (general "
+       "knowledge, not verified this turn (research failed (search-"
+       "http-503))); neither the failed nor the empty turn grows a "
+       "WEB row for the shelf to promote (no url-bearing row in the "
+       "shown evidence - no failed or empty evidence reaches DOCUMENTED "
+       "by a promotion it never earned); and the facts' fold phrase "
+       "rides its SAME bytes (the mouth's input unmoved by the status "
+       "law's refit)",
+       {"e": _E19E[0]["why"]["evidence_status"],
+        "f": _E19F[0]["why"]["evidence_status"],
+        "m": _E19M[0]["why"]["evidence_status"],
+        "gf": _E19GF[0]["why"]["evidence_status"],
+        "ge": _E19GE[0]["why"]["evidence_status"],
+        "distinct": _E19E[0]["why"]["evidence_status"] !=
+                    _E19F[0]["why"]["evidence_status"],
+        "rows-e": _E19E[0]["why"]["evidence"],
+        "rows-f": _E19F[0]["why"]["evidence"]},
+       why=lambda tr: ([] if (
+            tr["e"] == "the web brought nothing (search-empty)"
+            and tr["f"] == "research failed (search-http-503)"
+            and tr["m"] == "the web brought nothing (empty)"
+            and tr["gf"] == ("general knowledge, not verified this turn "
+                             "(research failed (search-http-503))")
+            and tr["ge"] == ("general knowledge, not verified this turn "
+                             "(the web brought nothing (search-empty))")
+            and tr["distinct"]
+            and all("url" not in r for r in tr["rows-e"])
+            and all("url" not in r for r in tr["rows-f"]))
+       else ["the failure and the emptiness still wore one word, or a "
+             "missing reason was guessed past"]))
+def _boom19(*a, **k):
+    raise RuntimeError("A19 seam left standing - net-free past T163")
+_web.research = _boom19
 
 
 

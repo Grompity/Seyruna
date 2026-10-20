@@ -881,8 +881,11 @@ def door(body, live=True, **kw):
     web = body.get("web")
     pkt = None
     fold = None                              # A15: the fold's word,
-                                             # remembered for the status
-                                             # law (the fold rides the
+    fold_why = None                          # remembered for the status
+                                             # law; A19: the LANE-WORD
+                                             # beside it (the REASON the
+                                             # failure arm reads - the
+                                             # phrase still rides the
                                              # facts either way)
     if web == "auto" and retrieve(q + " " + facts):
         web = None
@@ -897,8 +900,8 @@ def door(body, live=True, **kw):
             set_shelf(old_shelf + rows)
             kw = dict(kw, packet=ids)
         else:
-            fold = ("the web brought nothing (" +
-                    (pkt["gaps"][0] if pkt["gaps"] else "empty") + ")")
+            fold_why = pkt["gaps"][0] if pkt["gaps"] else "empty"
+            fold = "the web brought nothing (" + fold_why + ")"
             facts = (facts + " " if facts else "") + fold
             pkt = None
     tr = run_pipeline(q, facts, live=live, **kw)
@@ -913,7 +916,9 @@ def door(body, live=True, **kw):
     # provider's own index-words is named so (A7's attribution law, now
     # DISPLAYED); results that all failed their fetches are named
     # INCONCLUSIVE, never silent; a search that FAILED at a laned failure
-    # word is named so (an emptiness says otherwise); a turn that asked
+    # word is named so AT ITS OWN WORD at last (an emptiness says
+    # otherwise; the lane-word, never an empty results-list, decides -
+    # A19 spent the A15 one-conditional); a turn that asked
     # no research says so. Where a distinction has no field behind it the
     # word stays un-spoken rather than guessed (A14's rule, honored).
     if web and pkt is not None:
@@ -930,11 +935,20 @@ def door(body, live=True, **kw):
         else:
             tr["evidence_status"] = "no origin read (rows unweighed)"
     elif web:
-        if fold and tr.get("lineage") == "UNSOURCED":
-            tr["evidence_status"] = ("general knowledge, not verified this"
-                                     " turn (" + fold + ")")
-        elif fold:
-            tr["evidence_status"] = fold
+        if fold:
+            # A19: a FAILED search rides ITS OWN word - the lane-word
+            # decides (never an empty results-list, which every failed
+            # and every empty search shares), the reason verbatim from
+            # the packet; the emptiness keeps the house's phrase; a bare
+            # gaps rides the (empty) arm - no failure invented where no
+            # reason rode.
+            _fw = (fold if fold_why in ("search-empty", "empty")
+                   else "research failed (" + fold_why + ")")
+            if tr.get("lineage") == "UNSOURCED":
+                tr["evidence_status"] = ("general knowledge, not verified"
+                                         " this turn (" + _fw + ")")
+            else:
+                tr["evidence_status"] = _fw
     else:
         tr["evidence_status"] = "research not asked"
     if pkt is not None:
