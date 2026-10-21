@@ -743,6 +743,13 @@ def general_exit(trace, frame, live, sim=None):
         row = sim
     else:
         _tg = _PC()
+        # A33: the seam SPEAKS the word the road RIDES - the value the
+        # call is GIVEN, read at the seam (the same or-fallback the call
+        # itself computes; the same law loop.effective_word reads), and
+        # the trace carries it so the LAP can PROVE what rode, not
+        # infer it. A31's gap hid for want of this word; A32's hid in
+        # tokens that COULD have been the road's own nature.
+        _cap33 = CONFIG.get("GENERAL_MAXTOK") or CONFIG["MAXTOK"]
         out = call(GENERAL_SYS,
                    # A30: the same priced word at the road the shelf left
                    # silent (a30-ab.json, the general ledger: OFF at the
@@ -760,10 +767,9 @@ def general_exit(trace, frame, live, sim=None):
                    "\"verbs\": [CLAIM|RECOMMEND|PERMIT]}",
                    # A31's lap found the gap the A30 ledger named: the
                    # charter word needed a READER at the seam or the
-                   # change rode nothing. One line, the A30 idiom; the
-                   # fallback (absent = the global word) is loop.py's
-                   # effective_word read of the SAME law.
-                   CONFIG.get("GENERAL_MAXTOK"),
+                   # change rode nothing. A33 made the word the road
+                   # RIDES (above) and SPEAKS it at the trace below.
+                   _cap33,
                    thinking=CONFIG.get("GENERAL_THINKING", True))
         trace["stages_ms"]["general"] = (_PC() - _tg) * 1000
         trace["model_calls"] = CALLS[0]                # the ledger keeps
@@ -775,6 +781,7 @@ def general_exit(trace, frame, live, sim=None):
         trace["general_finish"] = out.get("finish_reason")
         trace["general_finish_src"] = out.get("finish_src", "absent")
         trace["general_tokens_src"] = out.get("tokens_src", "absent")
+        trace["general_max_tokens"] = _cap33   # the road's OWN word
         for _k in ("completion_tokens", "prompt_tokens", "total_tokens"):
             if out.get(_k) is not None:
                 trace["general_" + _k] = out[_k]

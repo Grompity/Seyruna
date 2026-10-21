@@ -83,7 +83,11 @@ def measure_door(n, question, measure=None):
                         "finish_src": tr.get("general_finish_src",
                                              "absent"),
                         "completion_tokens":
-                            tr.get("general_completion_tokens")})
+                            tr.get("general_completion_tokens"),
+                        # A33: the word the ROAD rode (the trace's own
+                        # word, not a reconstruction) - the application's
+                        # sharpest eye lives here.
+                        "max_tokens": tr.get("general_max_tokens")})
         except Exception as e:
             out.append({"label": "live", "raised": type(e).__name__,
                         "wall_ms": round((time.time() - t0) * 1000)})
@@ -149,6 +153,110 @@ def decide(before, after, crit):
             "medians_ms": {"before": bmed, "after": amed}}
 
 
+def propose(rule, effective_cap, control):
+    """A33-1, PURE: the same bytes in speak the same candidate out. Trust
+    FIRST (a truthy word is not a count), arithmetic SECOND, and
+    insufficiency answers at a WORD (a structured no-change), never a
+    raise and never a silent zero. No clock, no char-count, no inferred
+    seat - the candidate rides the count ALONE."""
+    def _no(reason, cand=None, floor_hit=False, clamped=False):
+        return {"proposal": "NO-PROPOSAL", "candidate": cand,
+                 "inputs": {"completion_tokens":
+                            control.get("completion_tokens"),
+                            "effective_cap": effective_cap},
+                 "floor_hit": floor_hit, "clamped": clamped,
+                 "why": reason}
+    if control.get("label") not in rule["trust_labels"]:
+        return _no("the control word is not TRUSTED (label "
+                   + repr(control.get("label")) + ")")
+    if control.get("finish_src") != "reported":
+        return _no("the control spoke no REPORTED finish word")
+    t = control.get("completion_tokens")
+    if t is None:
+        return _no("the control carries no completion-token word")
+    if isinstance(t, bool) or not isinstance(t, int) or t <= 0:
+        return _no("the token word is not a count (got " + repr(t) + ")")
+    raw = t // rule["divisor"]
+    floor_hit = raw < rule["floor"]
+    cand = min(effective_cap, max(rule["floor"], raw))
+    if cand >= effective_cap:
+        return _no("the found candidate is not STRICTLY below the word it "
+                   "found (a bound, never a wish)", cand, floor_hit,
+                   cand == effective_cap)
+    return {"proposal": "PROPOSED", "candidate": cand,
+            "inputs": {"completion_tokens": t,
+                       "effective_cap": effective_cap,
+                       "floor": rule["floor"], "divisor": rule["divisor"]},
+            "floor_hit": floor_hit,
+            "clamped": cand == effective_cap, "why": ""}
+
+
+def _lap_auto(art, doc, crit, key, n, cfgp, before_word, measure,
+              hold_name, hold_to):
+    """A33 at the ONE entry: the before-leg IS the control-leg (its first
+    record is the control at bytes); the PROPOSAL precedes every
+    application; the application then stands on THREE proofs - the FILE,
+    the MIRROR (where the mirror rides), and the ROAD's OWN spoken word
+    at every after-trial. Acceptance keeps the A32 eyes whole. Nothing
+    re-rolls, nothing chases."""
+    art["before"] = measure_door(n, doc["question"], measure)
+    control = art["before"][0] if art["before"] else {}
+    prop = propose(doc["auto_rule"], before_word, control)
+    art["proposal"] = prop
+    if prop["proposal"] != "PROPOSED":
+        art["outcome"] = ("NO-CHANGE (the PROPOSAL could not PROPOSE: "
+                          + prop["why"] + ")")
+        art["word_effective_after"] = before_word
+        research.hold(art, hold_name, to=hold_to)
+        return art
+    cand = prop["candidate"]
+    art["candidate"] = cand
+    old, prior_text = apply_word(cfgp, key, cand)
+    art["applied"] = {key: cand, "was_present": old is not None}
+    if cfgp == CFG_PATH:
+        stages.reload_config()
+    art["after"] = measure_door(n, doc["question"], measure)
+    _ride = [r for r in art["after"] if "raised" not in r]
+    art["application"] = {
+        "file": read_cfg(cfgp).get(key) == cand,
+        "mirror": (cfgp != CFG_PATH)
+                  or (stages.CONFIG.get(key) == cand),
+        "road": bool(_ride) and all(r.get("max_tokens") == cand
+                                     for r in _ride)}
+    art["application_verified"] = all(art["application"].values())
+    art["decision"] = decide(art["before"], art["after"], crit)
+    if not art["application_verified"]:
+        # the A33 named class: a word that did not RIDE is no result -
+        # the lap rolls back SAFELY and the reason rides the rationale
+        art["decision"] = dict(art["decision"], decision="ROLLBACK",
+                               rationale=(art["decision"]["rationale"]
+                                          + ["the word did not RIDE the "
+                                             "file/mirror/road"]))
+    if art["decision"]["decision"] == "ROLLBACK":
+        restore_bytes(cfgp, prior_text)
+        if cfgp == CFG_PATH:
+            stages.reload_config()
+        art["rolled_back"] = True
+        art["restoration_verified"] = (
+            effective_word(read_cfg(cfgp), key) == before_word)
+        if cfgp == CFG_PATH:
+            art["restoration_verified"] = (
+                art["restoration_verified"]
+                and effective_word(stages.CONFIG, key) == before_word)
+        art["outcome"] = ("APPLIED then ROLLED BACK (the lap answered "
+                          "honestly)"
+                          if art["application_verified"]
+                          else "APPLIED then ROLLED BACK (the road rode "
+                               "no such word)")
+    else:
+        art["outcome"] = ("APPLIED (the verdict rode - the candidate is "
+                          "the kept word)")
+    art["word_effective_after"] = effective_word(read_cfg(cfgp), key)
+    research.hold(art, hold_name, to=hold_to)
+    art["held_as"] = hold_name + " (research.hold - the one pen)"
+    return art
+
+
 def run_lap(contract_path=None, cfg_path=None, measure=None,
             hold_name="a31-lap-state.json", hold_to=None):
     """the ONE lap, end to end, at one entry. Returns the artifact (the
@@ -165,6 +273,9 @@ def run_lap(contract_path=None, cfg_path=None, measure=None,
     before_word = effective_word(cfg0, key)
     art["word_effective_before"] = before_word
     art["candidate"] = cand
+    if cand == "AUTO":
+        return _lap_auto(art, doc, crit, key, n, cfgp, before_word,
+                         measure, hold_name, hold_to)
     if cand == before_word:
         art["outcome"] = ("NO-CHANGE (the word ALREADY RIDES the candidate "
                           "value)")

@@ -114,3 +114,19 @@ at a candidate the loop PROPOSES itself from the control's token counts
 with the grade/audit seams' words surfaced when a later lap needs THEM -
 the loop's third measurement up the stack, each one auditable, none of
 them autonomous.
+
+
+---
+
+> **A33 CORRECTION (a fact recorded imprecisely, corrected at bytes, the
+> correction named):** the FIRST A32 lap's non-bite was told as only
+> *"the word had not ridden"* (the mirror). The held bytes tell MORE: that
+> lap's road carried **no cap word at all** - the candidate 22 was written
+> to the charter AFTER the first measurement leg had already spoken. The
+> gap was TWO-fold: (1) a word applied mid-run cannot bite its OWN
+> measurement leg, and (2) the mirror never refreshed. A33's shape fixes
+> BOTH at once (the proposal precedes every apply; the reload rides the
+> apply), and A33's live road now SPEAKS its cap word at every trial
+> (`general_max_tokens`) so the question cannot hide again. No verdict of
+> A32 moves; the A32 EVIDENCE BYTES ride untouched (the first lap left no
+> witness to rewrite).
