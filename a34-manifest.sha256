@@ -1,0 +1,14 @@
+# a34 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-10-21T15:50:59 - raw evidence immutable after this point
+c7c4ab6e3943ca24805ec242684d7711c82d22a175aef6f69217a0cdefae2f6d  a34-contract.md
+c1f247e7f4b58fec2265c8ec59b6fd0d800c1f1e8ff880ae989f2cf5d07c5502  a34-policy-A.json
+9026037bb2e3f9a3bab54106a2a5ba4e88a6e0fef9a2751624b0499462a3a59b  a34-policy-B.json
+0b23f30ae0c89f61080796ef7fcf04196ca384f2855efb07826ee6fb27a931d0  config.json
+bec83b9b0276393585cfc4ce18b62a9fb215ca4712876f27c66015b5006de3ef  loop.py
+bfeb15399d69d22b84c7e0cfbd0091b3293d14a7e1996c8eff738fe42ef60e85  research_eval.py
+fcf71e39c72fdf3048605e06499eda8d018ff67db0981daf928b67f95312df74  tests.py
+68048bcdc7b155c01962cc175e3fd94771b5d1b698513ca3ac50f2ee98b83077  research-hold/a34-lap-A.json
+3b907658b7cb946469a4cdaf7c369dc3be1617927549d4aa87d760697303f5b4  research-hold/a34-lap-B.json
+c936ec5ff3cdd6e149afab511e4c7754cbeef2aad7eddc96402555986beb1921  research-hold/a34-compare.json
+be5a9c4515528bc3fef3e45330f2137c9dd1cc04d42f1d26bdc5d81d0f2ab982  research-hold/a34-cycle-live.json
+3851ddce960ab31d52366be988e18630d2a0387f9731b0e4bee4154ed169e678  a34-sprint-report.md
