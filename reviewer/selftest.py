@@ -68,8 +68,23 @@ check("search hits with paths", ":" in t and "no matches" not in t, t[:60])
 check("bad regex answered", "bad regex" in text_of(call(10, "reviewer_search_repo", {"pattern": "[unclosed"})))
 check("git status shows the branch", text_of(call(11, "reviewer_git_status", {})).startswith("##"))
 t = text_of(call(12, "reviewer_git_diff", {}))
-check("git diff witnesses the bridge's own edit", "opencode.json" in t, t[:60])
-check("git log knows the baseline", "baseline" in text_of(call(13, "reviewer_git_log", {"n": 3})))
+# A29: the check was PINNED to an era - an uncommitted opencode.json rode
+# the A-era working diff and the check read that file's name as the proof
+# the bridge sees the tree. The tree commits; the era ends; the real
+# invariant is the bridge speaks the tree's TRUTH: a dirty tree shows real
+# hunks, a clean tree speaks the honest nothing-word. No file churn was
+# added to satisfy a word (the mission's own law).
+check("git diff speaks the tree's truth (a real hunk or the nothing-word)",
+      t == "(nothing to report)" or "diff --git a/" in t, t[:60])
+# A29, same disease: the check wanted the WORD "baseline" inside the last
+# three one-liners - true only while the sprint commit sat within three
+# lines of HEAD. The permanent contract is the plumbing's shape: ask for
+# N, get N lines of real history (the repo outgrows any word; it cannot
+# outgrow its own line count). The baseline bytes are the code's now, not
+# the log window's.
+_t13 = text_of(call(13, "reviewer_git_log", {"n": 3}))
+check("git log speaks the tree's history (three asks, three lines)",
+      len([ln for ln in _t13.splitlines() if ln.strip()]) == 3)
 check("harness gate rides through", "HARNESS GREEN" in text_of(call(14, "reviewer_run_tests", {})))
 check("batteries run (integrity count seen)", "integrity battery" in text_of(call(15, "reviewer_run_batteries", {})))
 check("project map names its sections", "SPINE" in text_of(call(16, "reviewer_get_project_map", {})))
