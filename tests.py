@@ -1099,7 +1099,7 @@ import task as _task
 class _Mouth:
     def __init__(self, replies):
         self.q, self.n = list(replies), 0
-    def __call__(self, system, user, maxtok=None):
+    def __call__(self, system, user, maxtok=None, thinking=True):
         self.n += 1
         return {"content": (self.q.pop(0) if self.q else '{"designated": []}')}
 
@@ -3144,6 +3144,206 @@ expect("T167 THE READ TIMEOUT SPEAKS AS ITSELF AT BOTH TRANSPORT MOUTHS, "
            and tr["server-hang-search"] == "search-timeout"
            and tr["server-zero-search"] == "search-empty")
        else ["a transport shape spoke the wrong word or no word"]))
+
+# ---------- A29: the seam caps, the thinking word, the mumble lanes -------
+import urllib.request as _ur29
+
+class _Resp29:
+    "canned endpoint bytes: the SAME shape stages.call reads (context"
+    def __enter__(self):
+        return self
+    def __exit__(self, *a):
+        return False
+    def read(self):
+        return b'{"choices":[{"message":{"content":"hi","reasoning_content":""}}],"usage":{}}'
+
+def _wire29(fn):
+    "run the REAL stages.call through a captured request; hand back the"
+    box = {}
+    def spy(req, *a, **kw):
+        box["req"] = req
+        return _Resp29()
+    saved = _ur29.urlopen
+    _ur29.urlopen = spy
+    try:
+        fn()
+    finally:
+        _ur29.urlopen = saved
+    return json.loads(box["req"].data.decode()) if "req" in box else {}
+
+_W29 = {}
+_W29["default"] = _wire29(lambda: stages.call("S", "U"))
+_W29["nothink"] = _wire29(lambda: stages.call("S", "U", None, False))
+_W29["capped"] = _wire29(lambda: stages.call("S", "U", 900, True))
+_CFG29 = json.loads(open(os.path.join(stages.BASE_DIR, "config.json")).read())
+_W29["keys"] = sorted(k for k in _CFG29 if k.endswith("_MAXTOK"))
+_W29["bounds"] = all(_CFG29[k] <= _CFG29["MAXTOK"] for k in _W29["keys"])
+
+def _spy29(content, seen):
+    def f(system, user, maxtok=None, thinking=True):
+        seen.append((maxtok, thinking))
+        return {"content": content, "truncated": False}
+    return f
+
+stages.CALLS[0] = 0                       # the wire legs spent REAL mouthfuls
+                                        # of ledger; the dry witnesses read
+                                        # a clean counter (T77's law)
+_SC29 = stages.call
+_F29 = stages.intent("What does the Tao say about wu wei?", "")
+_ids29 = ["2", "17"]
+seen = []
+stages.call = _spy29('[{"id": "2", "grade": "ANSWER"}, {"id": "17", "grade": "CONTEXT"}]', seen)
+stages.grade(_ids29, _F29, live=True)
+_W29["grade-seam"] = seen[-1]
+stages.call = _spy29('[{"node": "The strip is the way.", "cites": ["2"], "verbs": ["CLAIM"]}]', seen)
+stages.synthesize(_F29, _ids29, None, True, {"2": "ANSWER", "17": "CONTEXT"})
+_W29["synth-seam"] = seen[-1]
+stages.call = _spy29("[]", seen)
+stages.audit("The strip is the way.", [{"node": "x", "cites": ["2"], "level": 3}],
+             {"fires": [], "observations": []}, True)
+_W29["audit-seam"] = seen[-1]
+stages.call = _SC29
+
+expect("T168 THE SEAMS CAP THEMSELVES AND THE THINKING WORD RIDES WHEN SPOKEN: "
+       "the default call still carries the GLOBAL MAXTOK word and speaks NO "
+       "chat-template word at all (a silent seam changes no bytes on the "
+       "wire - the production road byte-identical); a seam that says "
+       "thinking=False puts the endpoint's OWN word (enable_thinking off) on "
+       "the wire and the per-seam cap when it names one (the cap's fall-back "
+       "is the global word); the config carries the three seam words and "
+       "EVERY one of them sits under the global cap (a seam cap is a bound, "
+       "never a widening); and the three seams actually SPEAK their own "
+       "words: the grade seam rides (the grade cap, thinking off), the synth "
+       "seam rides (the synth cap, thinking ON - the voice keeps its "
+       "thinking), the audit seam rides (the audit cap, thinking off) - read "
+       "off calls that ran, never off comments (the vacuity law)",
+       _W29,
+       why=lambda tr: ([] if (
+           tr["default"]["max_tokens"] == stages.CONFIG["MAXTOK"]
+           and "chat_template_kwargs" not in tr["default"]
+           and tr["nothink"]["max_tokens"] == stages.CONFIG["MAXTOK"]
+           and tr["nothink"].get("chat_template_kwargs")
+               == {"enable_thinking": False}
+           and tr["capped"]["max_tokens"] == 900
+           and "chat_template_kwargs" not in tr["capped"]
+           and set(tr["keys"]) == {"GRADE_MAXTOK", "AUDIT_MAXTOK", "SYNTH_MAXTOK"}
+           and tr["bounds"]
+           and tr["grade-seam"] == (stages.CONFIG["GRADE_MAXTOK"], False)
+           and tr["synth-seam"] == (stages.CONFIG["SYNTH_MAXTOK"], True)
+           and tr["audit-seam"] == (stages.CONFIG["AUDIT_MAXTOK"], False))
+       else ["a seam spoke today's single word, widened a cap, or only "
+             "promised it"]))
+
+# --- the mumble family, at bytes, zero network: the SAME bytes A28's live
+#     door spoke ride as the deterministic replay
+_MM29 = stages.call
+_SH29 = list(stages.SHELF)               # the file's shelf state is a premise
+stages.set_shelf(stages._load_shelf())   # the road legs ride the PRODUCTION
+                                         # shelf (T34's re-load idiom): the
+                                         # road's premise is the shelf's
+                                         # bytes, so the witness owns them
+_F29M = stages.intent("What does the Tao say about wu wei?", "")
+def _mouth29(content, truncated=False):
+    def f(system, user, maxtok=None, thinking=True):
+        return {"content": content, "truncated": truncated}
+    return f
+_L29 = {}
+stages.call = _mouth29("What I have here is related, not an answer. The records show a slice.")
+f = dict(_F29M)
+_L29["prose"] = (stages.synthesize(f, ["2"], None, True), f.get("synth_note"))
+stages.call = _mouth29('[{"node": "The way strips away.", "cites": ["2"], "verbs": ["CLAIM"]}]')
+f = dict(_F29M)
+_L29["valid"] = (stages.synthesize(f, ["2"], None, True), f.get("synth_note"))
+stages.call = _mouth29("")
+f = dict(_F29M)
+_L29["empty"] = (stages.synthesize(f, ["2"], None, True), f.get("synth_note"))
+stages.call = _mouth29("", True)
+f = dict(_F29M)
+_L29["truncated"] = (stages.synthesize(f, ["2"], None, True), f.get("synth_note"))
+stages.call = _mouth29("[MOUTH ERROR: boom]")
+f = dict(_F29M)
+try:
+    _L29["error"] = (stages.synthesize(f, ["2"], None, True), "NO-LANE")
+except ValueError as e:
+    _L29["error"] = ("RAISED", str(e)[:40])
+stages.call = _mouth29('["no column at all"]')
+f = dict(_F29M)
+_L29["badshape"] = (stages.synthesize(f, ["2"], None, True), f.get("synth_note"))
+stages.call = _MM29
+
+_SC29B = stages.call
+stages.call = _mouth29("What I have here is related, not an answer. The records show a slice.")
+tr29 = stages.run_pipeline("What does the Tao say about wu wei?", "",
+                           live=True, sim_grades={"2": "ANSWER"})
+stages.call = _SC29B
+expect("T169 THE MUMBLE LANES, THE ERROR RAISES, AND NOTHING INVENTS: the "
+       "prose A28 witnessed live (the Tao-Te-Ching sentence, deterministic "
+       "REPLAY of those bytes) rides NO nodes and speaks synth-mumble with "
+       "its head (the bounded witness), never a fabricated synthesis; a "
+       "VALID array rides unchanged and speaks NO word (the word rides the "
+       "lanes, not the road); the genuine blank says synth-empty and the "
+       "cap-cut blank says synth-truncated (the two shapes named apart at "
+       "last); an array of NO-COLUMN bytes is a malformed CONTRACT too (a "
+       "list of strings would crash the downstream boundary raw - today it "
+       "lanes); the dead mouth's own word ([MOUTH ERROR...) still RAISES "
+       "(T125's law UNMOVED at the seam - the eval road's catch rides, the "
+       "class UNCHANGED); and the road the mumble leaves is the "
+       "EMPTY-COMPLETION's own: the trace arrives BLOCKED with the shelf's "
+       "PLAIN words (byte-equal to stages.plain_render) and the note rides "
+       "the trace - a raise never travels the door's road by accident",
+       {**{k: (len(v[0]) if isinstance(v[0], list) else v[0],
+               (v[1] or "")[:40]) for k, v in _L29.items()},
+        "road": (tr29.get("blocked") is True,
+                 (tr29.get("response") or "") == stages.plain_render(tr29.get("retrieval") or []),
+                 (tr29.get("synth_note") or "").startswith("synth-"))},
+       why=lambda tr: ([] if (
+           tr["prose"][0] == 0
+           and tr["valid"] == (1, "")
+           and tr["empty"] == (0, "synth-empty")
+           and tr["truncated"] == (0, "synth-truncated")
+           and tr["error"][0] == "RAISED"
+           and tr["error"][1].startswith("synth:mouth-error [MOUTH ERROR")
+           and tr["badshape"][0] == 0
+           and tr["badshape"][1].startswith("synth-mumble: ")
+           and tr["prose"][1].startswith("synth-mumble: What I have here is")
+           and tr["road"][0] is True and tr["road"][1] and tr["road"][2])
+       else ["a malformed completion was swallowed, invented past, or "
+             "crashed raw"]))
+
+_SC29C = stages.call
+stages.call = _mouth29("What I have here is related, not an answer. The records show a slice.")
+_D29 = stages.door({"question": "What does the Tao say about wu wei?"}, live=True)
+stages.call = _SC29C
+_PR29 = stages.plain_render((_D29[0].get("trace") or {}).get("retrieval") or [])
+stages.set_shelf(_SH29)               # the file's own state rides back
+stages.CALLS[0] = 0                   # the mumble roads spent no real mouth
+                                      # (the doubles stand in for it), and
+                                      # the dry witnesses below read zero
+expect("T170 THE DOOR LANES THE MUMBLE, IT DOES NOT LEAK IT (the application-"
+       "level outcome at the ONE door): through the door the mumble road "
+       "answers TWENTY-HUNDRED with the shelf's plain words, a trace marked "
+       "blocked and the bounded note riding beside it - no raw parser "
+       "exception reaches the door's caller (A28's witness caught ValueError "
+       "in the caller's hands twice running); the response word-for-word is "
+       "the plain render, no synthesized sentence minted for a mouth that "
+       "mumbled; and the trace stays the house's shape with the new word "
+       "beside the old keys (the A18 idiom honored - the door's road speaks "
+       "the word where the seam spoke, never a guess past it)",
+       {"code": _D29[1],
+        "trace-keys": sorted((_D29[0].get("trace") or {}).keys()),
+        "blocked": (_D29[0].get("trace") or {}).get("blocked"),
+        "note": ((_D29[0].get("trace") or {}).get("synth_note") or "")[:40],
+        "resp": (_D29[0].get("trace") or {}).get("response"),
+        "pr": _PR29},
+       why=lambda tr: ([] if (tr["code"] == 200
+                             and "synth_note" in tr["trace-keys"]
+                             and "stages_ms" in tr["trace-keys"]
+                             and tr["blocked"] is True
+                             and tr["note"].startswith("synth-")
+                             and tr["resp"] == tr["pr"])
+       else ["the door's mumble road spoke a shape the pipeline did not"]))
+stages.set_shelf(_SH29)               # the file's own shelf state rides back
+
 for name, tr, kw in T:
     bad = []
     txt = tr.get("response", "")

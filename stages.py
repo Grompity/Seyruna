@@ -41,14 +41,24 @@ CTX = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 CTX.check_hostname = False
 CTX.verify_mode = ssl.CERT_NONE
 
-def call(system, user, maxtok=None):
-    """One mouthful. Returns {content, reasoning, truncated}."""
+def call(system, user, maxtok=None, thinking=True):
+    """One mouthful. Returns {content, reasoning, truncated}.
+    (A29: the cap and the THINKING word are SEAM words, spoken from the
+    config - measured at bytes on this endpoint: the grade seam lands a
+    VALID array at ~2.4s with thinking off where its thinking road costs
+    19-25s, and the content rides BEHIND the reasoning bytes (a cap
+    inside the thinking truncates the content away: finish=length, an
+    empty content). The chat-template word rides the body ONLY where a
+    seam says thinking=False (a silent seam changes no bytes on the
+    wire); the cap falls back to the global MAXTOK word.)"""
     CALLS[0] += 1
     body = {"model": CONFIG["MODEL"],
             "messages": [{"role": "system", "content": system},
                          {"role": "user", "content": user}],
             "max_tokens": maxtok or CONFIG["MAXTOK"],
             "temperature": CONFIG["TEMP"]}
+    if not thinking:
+        body["chat_template_kwargs"] = {"enable_thinking": False}
     req = urllib.request.Request(
         CONFIG["BASE"] + "/chat/completions",
         data=json.dumps(body).encode(),
@@ -225,7 +235,8 @@ def grade(ids, frame, live=False, sim=None):
             "being unfamiliar.",
             "Question: " + frame["question"] + "\nRECORDS:\n" + packet_text(ids)
             + "\nReturn JSON array, every id exactly once: "
-              '[{"id": "...", "grade": "ANSWER|CONTEXT|ANALOGY|NOT_RELEVANT"}]')
+              '[{"id": "...", "grade": "ANSWER|CONTEXT|ANALOGY|NOT_RELEVANT"}]',
+              CONFIG.get("GRADE_MAXTOK"), False)
         try:
             rows = grab_json((out.get("content") or ""), "[")
             g = {}
@@ -310,16 +321,47 @@ def synthesize(frame, ids, draft=None, live=False, grades=None):
                     "[{\"node\": \"rendered sentence\", \"cites\": [ids], "
                     "\"verbs\": [CLAIM|RECOMMEND|PERMIT], "
                     "\"uncertainty\": \"string or null\"}]")
-        out = call(SYNTH_SYS, contract)
-        if (out.get("content") or "").strip():
-            nodes = grab_json(out["content"], "[")
+        out = call(SYNTH_SYS, contract, CONFIG.get("SYNTH_MAXTOK"))
+        content = (out.get("content") or "").strip()
+        if content.startswith("[MOUTH ERROR"):
+            # THE TRANSPORT WORD IS NOT A SENTENCE (A29; T125's law
+            # PRESERVED AT BYTES): the dead-mouth shape still RAISES at
+            # this seam - the eval road catches the raise as
+            # REQUEST-FAILED and mints no verdict on bytes that never
+            # arrived. (The word rides ValueError, the SAME class the
+            # grab_json raised before - the roads' catches ride.)
+            raise ValueError("synth:mouth-error " + content[:200])
+        if content:
+            try:
+                got = grab_json(content, "[")
+                if (not isinstance(got, list)
+                        or any(not isinstance(r, dict) for r in got)):
+                    raise ValueError("no contract shape in: %r" % content[:200])
+                nodes = got
+            except ValueError:
+                # THE PROSE-MUMBLE LANE (A29): the mouth spoke a SENTENCE
+                # where the contract asked an ARRAY (witnessed twice
+                # running at the live door, A28's close) - or an array of
+                # NO-COLUMN bytes. The road is the EMPTY-COMPLETION's own
+                # (no nodes, so the all-uncited plain lane - the machinery
+                # is never weaker than it was found), and the raw head
+                # rides the trace as the ONE bounded witness. A mumble is
+                # NEVER read as an answer: no synthesized invention.
+                nodes = []
+                frame["synth_note"] = "synth-mumble: " + content[:200]
         else:
             # THE EMPTY-COMPLETION LANE (the two blips, laned at last:
             # the MODEL event stays the model's; the uncaught raise was
             # the MACHINERY frailty; the lane is the EXISTING
             # plain/fallback — no nodes, so the all-uncited print —
-            # not a new invention).
+            # not a new invention). A29 names the two shapes APART: a
+            # completion CUT BY THE CAP says synth-truncated (the bytes
+            # ran out inside the thinking, the content never arrived); a
+            # genuine blank says synth-empty - the distinction the capped
+            # seams make possible and the trace now SPEAKS.
             nodes = []
+            frame["synth_note"] = ("synth-truncated" if out.get("truncated")
+                                   else "synth-empty")
     else:
         return None
     shown = set(ids)
@@ -496,7 +538,8 @@ def audit(text, nodes, c, live, added="", sim=None):
                    "TEXT: " + text + "\nNODES: " + json.dumps(authorized)
                    + "\nFind: promotion | extra_claim | minting. Entries "
                      "marked REQUIRED are authorized content, never "
-                     "extras. Return JSON array of {kind,span} or [].")
+                     "extras. Return JSON array of {kind,span} or [].",
+                     CONFIG.get("AUDIT_MAXTOK"), False)
         try:
             raw = grab_json(out["content"], "[")
         except ValueError:
@@ -817,6 +860,7 @@ def run_pipeline(question, facts="", draft=None, live=False,
                         "survives_to_speech": (added in text)}
                         if added else None),
                   "stages_ms": _M,
+                  "synth_note": frame.get("synth_note"),
                   "model_calls": CALLS[0], "retrieval_count": len(ids),
                   "context_size": len(frame["facts"]),
                   "response": text})

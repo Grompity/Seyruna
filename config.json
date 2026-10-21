@@ -3,6 +3,9 @@
   "KEY": "apexus123",
   "MODEL": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
   "MAXTOK": 4096,
+  "GRADE_MAXTOK": 1200,
+  "AUDIT_MAXTOK": 1200,
+  "SYNTH_MAXTOK": 3000,
   "TEMP": 0.2,
   "TOPK": 4,
   "versions": {

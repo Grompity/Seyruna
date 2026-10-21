@@ -220,9 +220,9 @@ class _Counted:
     witness's mouth counts itself the same way (the instrument convention)."""
     def __init__(self, fn):
         self.fn, self.n = fn, 0
-    def __call__(self, system, user, maxtok=None):
+    def __call__(self, system, user, maxtok=None, thinking=True):
         self.n += 1
-        return self.fn(system, user, maxtok)
+        return self.fn(system, user, maxtok, thinking)
 
 
 def run(path=FIXTURE, mode="live", only=None, max_calls=None, max_secs=None,
