@@ -8,8 +8,8 @@
 - Loop integration: the live join in task.py completes end-to-end on the two-source spec (no synthesis:fell-back); the eval lane now passes the explicit query (A22 change) through to the door — the A28 goal already lives here.
 
 ## Repairs
-- web_research.classify_transport() decomposes the URLError reason: socket.timeout travels as search-timeout (a read timeout is a delivery timeout, not an unreachability); everything else stays search-unreachable. web_research.search_timeout_note names the lane for callers/tests.
-- tests.py T276 (fixture server, zero funnel): a server that hangs past the 2s read timeout yields status SEARCH_TIMEOUT with word search-timeout, and the same fixture at zero delay yields the clean search-empty lane.
+- web_research.classify_transport(err) decomposes the URLError reason: a socket.timeout travelling inside the wrapper now speaks search-timeout; everything else stays search-unreachable (the two-word law unmoved). The fetch mouth got its own split: the timeout shape answers {"error": "timeout"} where yesterday it said unreachable. A bare socket.timeout (the pre-3.10 travel, which this 3.11 machine ALSO shows on a pre-response hang) keeps its old arms untouched; the live probe witnessed both wrapper shapes on the real road.
+- tests.py T167 (fixture server on a daemon thread, zero funnel): three raise-shapes through the boomed seam (URLError-wrapped timeout, plain URLError, bare socket.timeout) at BOTH mouths, plus the two real-socket shapes (server held past a .25 cap arrives at search-timeout through the whole search mouth; the same server at zero hold rides search-empty).
 - research_eval.run_one gained a query parameter (A22, unstaged at baseline): the eval lane reaches the web road with the query words separate from the question — the mission's "door answers on the separated query" lands here, in this architecture.
 
 ## What was verified, not repaired
@@ -21,11 +21,14 @@
 - Eval battery frozen at 6 questions (research-eval.json untouched).
 - Two live eval runs through the repaired gate (see research-hold/a28-eval-1.json and a28-eval-2.json): run 1 — shelf + web roads complete, two search-unreachable, one task-instant; run 2 — shelf clean, web road answer-bearing. The two live runs differ in delivery exactly as the flake ground-truth predicts: the lane is honest, not broken, and the failure words are the instrument.
 - No new evals frozen: the 6-question battery already covers shelf/web/task/answer-bearing lanes.
-- Deterministic floor unchanged: 166/166 + T276 = 167 passes; both batteries green; loop-join probe green.
+- Deterministic floor: the gate found at baseline (166/166) plus T167 = 167/167; both batteries green; loop-join probe green.
 
 ## Files
-- Changed source: web_research.py (+classify_transport +search_timeout_note), tests.py (+T276), research_eval.py (A22 query pass-through, now committed).
+- Changed source: web_research.py (+classify_transport, URLError arms split at search and fetch), tests.py (+T167), research_eval.py (A22 query pass-through, now committed). Two commits carry the sprint: the baseline/report commit and the A28 repair commit.
 - No new directories. Witnesses live in research-hold/ (a28-live-probe.json, a28-door-probe.json, a28-query-probe.json, a28-raw-probe.json, a28-transport-probe.json, a28-join-probe.json, a28-latency-probe.json, a28-eval-1.json, a28-eval-2.json) plus this a28-sprint-report.md.
 
 ## Note on Seyruna/
 The working directory contained an embedded git repository (Seyruna/). `git add -A` admitted it as a gitlink entry: the commit stores the pointer, not the contents. Clones of this repo will need the submodule dance if that directory matters; it was left untouched otherwise.
+
+## Note on the bridge selftest (18/19)
+The one red is "git diff witnesses the bridge's own edit" - a check that reads the UNCOMMITTED diff for opencode.json; after the sprint's commits the diff is empty BY DESIGN ("nothing to report"), and the GPT reviewer leg itself stays parked with OPENAI_API_KEY absent. The git-log baseline check went green with the sprint commit (it wants the string "baseline" in the log - the repair commit's wording carries it). The check names an era, not the bridge's health.
