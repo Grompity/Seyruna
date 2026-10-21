@@ -12,6 +12,17 @@ import urllib.request
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG = json.load(open(os.path.join(BASE_DIR, "config.json")))
+
+
+# A32's lap caught the SISTER of A31's reader gap: the charter's bytes are
+# authority, but CONFIG is the IMPORT-TIME MIRROR of them - a process that
+# WRITES the charter mid-flight (loop.run_lap) must REFRESH its own mirror
+# or it measures the yesterday it rode. File-first always; the mirror
+# follows the file, never the reverse.
+def reload_config():
+    global CONFIG
+    CONFIG = json.load(open(os.path.join(BASE_DIR, "config.json")))
+    return CONFIG
 RP = json.load(open(os.path.join(BASE_DIR, "rule_pack.json")))
 P = RP["params"]
 VB = open(os.path.join(BASE_DIR, "voice_brief.md")).read()
@@ -70,13 +81,32 @@ def call(system, user, maxtok=None, thinking=True):
                 data = json.loads(r.read().decode())
             ch = data["choices"][0]
             msg = ch["message"]
-            return {"content": (msg.get("content") or "").strip(),
-                    "reasoning": (msg.get("reasoning_content") or "").strip(),
-                    "truncated": ch.get("finish_reason") == "length"}
+            # A32: the ENDPOINT'S OWN WORDS ride out, not a reconstruction.
+            # finish_reason is the raw word or None (ABSENT is UNKNOWN -
+            # never inferred from a short answer, a count, or the cap);
+            # usage's trio rides ONLY where reported; the *_src words say
+            # reported-or-absent so no later reader mistakes a held field
+            # for a mouth that spoke. The A30 docstring above stands:
+            # `truncated` stays the one admitted inference (A29's law).
+            _fr = ch.get("finish_reason")
+            _us = data.get("usage") or {}
+            out = {"content": (msg.get("content") or "").strip(),
+                   "reasoning": (msg.get("reasoning_content") or "").strip(),
+                   "truncated": _fr == "length",
+                   "finish_reason": _fr,
+                   "finish_src": ("reported" if "finish_reason" in ch
+                                  else "absent"),
+                   "tokens_src": ("reported" if _us else "absent")}
+            for _k in ("completion_tokens", "prompt_tokens", "total_tokens"):
+                if _us.get(_k) is not None:
+                    out[_k] = _us[_k]
+            return out
         except Exception as exc:
             if attempt == 3:
                 return {"content": "[MOUTH ERROR: %s]" % exc,
-                        "reasoning": "", "truncated": False}
+                        "reasoning": "", "truncated": False,
+                        "finish_reason": None, "finish_src": "absent",
+                        "tokens_src": "absent"}
             time.sleep(4)
 
 def grab_json(text, opener):
@@ -327,6 +357,12 @@ def synthesize(frame, ids, draft=None, live=False, grades=None):
         # says false - the decision, its evidence, both on the record.
         out = call(SYNTH_SYS, contract, CONFIG.get("SYNTH_MAXTOK"),
                    CONFIG.get("SYNTH_THINKING", True))
+        # A32 at the synth seam (the road under TEST is general's; the
+        # note-lanes keep their A29 words - these are the METADATA words
+        # beside them, the source-words making "reported vs absent" say
+        # which, through the SAME frame->trace whitelist below).
+        frame["synth_finish"] = out.get("finish_reason")
+        frame["synth_finish_src"] = out.get("finish_src", "absent")
         content = (out.get("content") or "").strip()
         if content.startswith("[MOUTH ERROR"):
             # THE TRANSPORT WORD IS NOT A SENTENCE (A29; T125's law
@@ -731,6 +767,17 @@ def general_exit(trace, frame, live, sim=None):
                    thinking=CONFIG.get("GENERAL_THINKING", True))
         trace["stages_ms"]["general"] = (_PC() - _tg) * 1000
         trace["model_calls"] = CALLS[0]                # the ledger keeps
+        # A32: the finish words ride BEFORE the parse - the lane-lost
+        # road must still SPEAK what bit it (a cut cap is the very case
+        # where the words matter AND the parse can fail). The doubles'
+        # dicts speak no such words: absent keys read "absent" (the
+        # word for what did not ride), never a guess.
+        trace["general_finish"] = out.get("finish_reason")
+        trace["general_finish_src"] = out.get("finish_src", "absent")
+        trace["general_tokens_src"] = out.get("tokens_src", "absent")
+        for _k in ("completion_tokens", "prompt_tokens", "total_tokens"):
+            if out.get(_k) is not None:
+                trace["general_" + _k] = out[_k]
         try:                                           # the truth of it
             row = grab_json(out.get("content") or "", "{")
         except ValueError:
@@ -880,6 +927,8 @@ def run_pipeline(question, facts="", draft=None, live=False,
                         if added else None),
                   "stages_ms": _M,
                   "synth_note": frame.get("synth_note"),
+                  "synth_finish": frame.get("synth_finish"),
+                  "synth_finish_src": frame.get("synth_finish_src"),
                   "model_calls": CALLS[0], "retrieval_count": len(ids),
                   "context_size": len(frame["facts"]),
                   "response": text})

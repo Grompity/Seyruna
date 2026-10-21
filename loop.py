@@ -73,7 +73,17 @@ def measure_door(n, question, measure=None):
                                          .get("general", 0)),
                         "fires": list(tr.get("fires", [])),
                         "model_calls": tr.get("model_calls"),
-                        "answer_len": len(tr.get("response") or "")})
+                        "answer_len": len(tr.get("response") or ""),
+                        # A32: the endpoint's words at the RECORD level
+                        # (A31-era held records carry neither key - the
+                        # reject-clause below CANNOT fire on them, which
+                        # is what keeps the replay honest for bytes that
+                        # predate the fields).
+                        "finish": tr.get("general_finish"),
+                        "finish_src": tr.get("general_finish_src",
+                                             "absent"),
+                        "completion_tokens":
+                            tr.get("general_completion_tokens")})
         except Exception as e:
             out.append({"label": "live", "raised": type(e).__name__,
                         "wall_ms": round((time.time() - t0) * 1000)})
@@ -113,6 +123,18 @@ def decide(before, after, crit):
             ok = False
             why.append("the road's own word (" + crit["required_fire"] +
                        ") did not ride")
+    if crit.get("reject_reported_length"):
+        # A32's ONE new clause: a REPORTED length is NOT an ordinary
+        # success - a cut that still PARSES is the shape the old table
+        # would have passed as fast-and-fine. A lane-loss CAUSED by the
+        # cut may speak two words (wound and cause, read together, not
+        # double-toll). Absent words (A31's bytes) cannot fire it.
+        for r in after:
+            if (r.get("finish_src") == "reported"
+                    and r.get("finish") == "length"):
+                ok = False
+                why.append("the cap cut the road's mouth "
+                           "(finish=length, REPORTED)")
     b = [r["wall_ms"] for r in before if "wall_ms" in r and "raised" not in r]
     a = [r["wall_ms"] for r in after if "wall_ms" in r and "raised" not in r]
     bmed, amed = _median(b), _median(a)
@@ -157,6 +179,15 @@ def run_lap(contract_path=None, cfg_path=None, measure=None,
         return art
     art["before"] = measure_door(n, doc["question"], measure)
     old, prior_text = apply_word(cfgp, key, cand)
+    if cfgp == CFG_PATH:
+        # A32: the charter's bytes are the LAW; stages.CONFIG is their
+        # import-time MIRROR. A mid-flight writer must refresh the
+        # mirror or its own after-trials ride the yesterday (the first
+        # A32 lap proved it live: a 22-token cap, completion 50-67,
+        # finish=stop - the word had not RIDDEN). A TEST's temp charter
+        # is not the mirror's file - no refresh there, the injected
+        # measure reads nothing.
+        stages.reload_config()
     art["applied"] = {key: cand, "was_present": old is not None}
     art["after"] = measure_door(n, doc["question"], measure)
     art["decision"] = decide(art["before"], art["after"], crit)
@@ -166,9 +197,18 @@ def run_lap(contract_path=None, cfg_path=None, measure=None,
                            "honestly)")
     if art["decision"]["decision"] == "ROLLBACK":
         restore_bytes(cfgp, prior_text)
+        if cfgp == CFG_PATH:
+            stages.reload_config()      # the mirror rides the restore too
         art["rolled_back"] = True
         art["restoration_verified"] = (effective_word(read_cfg(cfgp), key)
-                                       == before_word)
+                                        == before_word)
+        if cfgp == CFG_PATH:
+            # the MIRROR's proof belongs where the mirror rides: the real
+            # charter's read must agree too (a temp-charter lap has no
+            # mirror, and the pipeline's words are the REAL file's truth)
+            art["restoration_verified"] = (
+                art["restoration_verified"]
+                and effective_word(stages.CONFIG, key) == before_word)
     art["word_effective_after"] = effective_word(read_cfg(cfgp), key)
     research.hold(art, hold_name, to=hold_to)
     art["held_as"] = hold_name + " (research.hold - the one pen)"

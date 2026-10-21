@@ -134,3 +134,17 @@ deliberately capped leg (a word UNDER the road's own bytes) and watch the
 cut show at the door: the bound earning its keep at a MEASURED tail, the
 loop's second lap with a harder question to answer. (The variety question
 at temp 0.2 rides on unchanged.)
+
+
+---
+
+> **A32 CORRECTION (a fact recorded wrong, corrected at bytes, the
+> correction named):** *"After (GENERAL_MAXTOK 1024 at the wire)"*
+> overstated the held truth. The applied lap's after-trials rode the
+> **GLOBAL** word: `stages.CONFIG` is the import-time MIRROR of the
+> charter and the lap wrote only the FILE — A32's first lap proved it
+> live (a 22-token charter word, completions 50–67, `finish=stop`: the
+> word had not ridden). The DECISION itself stands untouched (the bound
+> was satisfied at either word); the *record sentence* is corrected here;
+> `loop.py` now refreshes the mirror at apply and at restore, and the
+> restoration proof reads the mirror too (`reload_config`, stages.py).
