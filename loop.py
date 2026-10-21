@@ -191,6 +191,55 @@ def propose(rule, effective_cap, control):
             "clamped": cand == effective_cap, "why": ""}
 
 
+def compare(chain_a, chain_b):
+    """A34's PURE verdict on the two held chains (the same replay law as
+    decide: bytes in, words out, zero live). Reads ONLY what the laps
+    already spoke (proposal/application/decision); the classification is
+    the contract's table, word for word."""
+    def _support(art):
+        if art.get("proposal", {}).get("proposal") != "PROPOSED":
+            return ("NO-PROPOSAL",
+                    art.get("proposal", {}).get("why", "no word"))
+        if not art.get("application_verified", True):
+            return ("APP-FAIL",
+                    "the word did not ride all three places")
+        d = art["decision"]["decision"]
+        if d == "APPLIES-HOLDS":
+            return ("KEPT", "the road completed at the bound")
+        if any("length" in w for w in art["decision"]["rationale"]):
+            return ("ROLLED-CUT", "the bound cut the road (REPORTED length)")
+        return ("ROLLED-UNCUT",
+                "rolled at a non-length word (a correctness failure)")
+    a, wa = _support(chain_a)
+    b, wb = _support(chain_b)
+    if a == "KEPT" and b == "ROLLED-CUT":
+        verdict, why = "A33-1-HELD", ("A completed where B cut")
+    elif b == "KEPT" and a == "ROLLED-CUT":
+        verdict, why = "A34-B-HELD", ("B completed where A cut")
+    elif a == "KEPT" and b == "KEPT":
+        verdict, why = ("A33-1-SAFER-SUPPORTED",
+                        "both complete - the tighter bound is the safer")
+    elif a == "ROLLED-CUT" and b == "ROLLED-CUT":
+        verdict, why = ("A33-1-SAFER-SUPPORTED",
+                        "equal correctness (both cut); the tighter bound "
+                        "bounds the tail harder; the safe production word "
+                        "rides UNTOUCHED")
+    else:
+        verdict, why = ("NEITHER-JUSTIFIED",
+                        "insufficient evidence or unclear correctness")
+    return {"decision": verdict, "why": why,
+            "support": {"A": [a, wa], "B": [b, wb]},
+            "evidence": {k: {
+                "candidate": c.get("proposal", {}).get("candidate"),
+                "after_finishes": [r.get("finish") for r in c.get("after", [])],
+                "after_tokens": [r.get("completion_tokens")
+                                 for r in c.get("after", [])],
+                "after_walls": [r.get("wall_ms") for r in c.get("after", [])],
+                "road_words": [r.get("max_tokens")
+                               for r in c.get("after", [])]}
+                for k, c in (("A", chain_a), ("B", chain_b))}}
+
+
 def _lap_auto(art, doc, crit, key, n, cfgp, before_word, measure,
               hold_name, hold_to):
     """A33 at the ONE entry: the before-leg IS the control-leg (its first
