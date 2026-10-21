@@ -1,0 +1,20 @@
+{
+ "contract": "A31",
+ "written_before_outcome": true,
+ "road": "general (the shelf-silent arm), through stages.door live",
+ "question": "Does fasting help adults lose weight?",
+ "seam_key": "GENERAL_MAXTOK",
+ "found_state": "absent - the road rides MAXTOK (4096) by stages.call's fallback",
+ "candidate": 1024,
+ "candidate_why": "A30's live bytes: general completions 267-430 content bytes no-thinking; doubled for a legitimate longer node, a quarter of the global bound, room for the observed thinking-ON sizes without promising them",
+ "trials_per_side": 3,
+ "criteria": {
+   "required_lane": "general",
+   "forbid_note": true,
+   "required_fire": "GENERAL:UNSOURCED",
+   "max_median_factor": 2.0
+ },
+ "decision_words": ["APPLIES-HOLDS", "ROLLBACK"],
+ "no_change_if": "the candidate would WIDEN the bound, or the word already rides it",
+ "noise_disclosure": "A29 measured ~30% endpoint noise at identical bytes; medians and the clause table decide, never one trial"
+}
