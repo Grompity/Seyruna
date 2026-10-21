@@ -1,0 +1,6 @@
+# a30 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-10-21T12:44:27 - raw evidence immutable after this point
+3668387bf2e9e8b962a78f6561ad0fa69f9081d5090f229f0058d88866f3c88e  a30-sprint-report.md
+8c61acd1ad72a90d5676bc16bcce43f170368ef5061073eacaabfd6db334107e  research-hold/a30-ab.json
+432a5c45a52008b754ca0bddb725323c3c2b12f38331b515182776af4fe03733  research-hold/a30-post.json
+4d749edabb15783ed308c1ecd8c7d7dca999df6ada2fb0b6b30ebac22ba3246c  research-hold/_a30_ab.py

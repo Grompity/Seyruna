@@ -1,0 +1,20 @@
+{
+ "synth-road": {
+  "wall_ms": 7024,
+  "seam_ms": 3983,
+  "blocked": false,
+  "note": null,
+  "dropped": [
+   null
+  ],
+  "answer_head": "Chapter 48 contrasts ordinary learning, which increases knowledge, with following the Dao,"
+ },
+ "general-road": {
+  "wall_ms": 2993,
+  "seam_ms": 2991,
+  "lane": "general",
+  "note": null,
+  "answer_head": "Yes, fasting can help adults lose weight, primarily by creating a calorie deficit."
+ },
+ "label": "live, post-flip integration (the decision riding its own wire)"
+}

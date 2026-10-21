@@ -1,0 +1,408 @@
+{
+ "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+ "trials_per_condition": 3,
+ "synth": [
+  {
+   "road": "synth",
+   "thinking": true,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 16670,
+   "lane": null,
+   "model_calls": 2,
+   "seam_stage_ms": 15096,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [],
+   "answer": "What I have here is one chapter's take, not the whole conversation \u2014 the Tao Te Ching speaks of wu wei in more places than this. But here is what this one says: Chapter 48 sets ordinary learning, which piles up knowledge, against following the Dao, which strips away 'doing' step by step, until you arrive at wu wei \u2014 non-forcing \u2014 and find that nothing is left undone.",
+   "calls": [
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 32,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "synth",
+     "thinking": true,
+     "content_len": 462,
+     "reasoning_len": 1441,
+     "truncated": false
+    }
+   ],
+   "contract_valid": true,
+   "cite_dropped": [],
+   "lineages": [
+    "SOURCE"
+   ]
+  },
+  {
+   "road": "synth",
+   "thinking": false,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 5382,
+   "lane": null,
+   "model_calls": 3,
+   "seam_stage_ms": 2731,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [],
+   "answer": "Chapter 48 contrasts ordinary learning, which increases knowledge, with following the Dao, which progressively diminishes one's 'doing,' eventually describing wu wei / non-forcing as a state in which 'nothing is left undone.'",
+   "calls": [
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 32,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "synth",
+     "thinking": false,
+     "content_len": 294,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 2,
+     "reasoning_len": 0,
+     "truncated": false
+    }
+   ],
+   "contract_valid": true,
+   "cite_dropped": [],
+   "lineages": [
+    "SOURCE"
+   ]
+  },
+  {
+   "road": "synth",
+   "thinking": true,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 23605,
+   "lane": null,
+   "model_calls": 3,
+   "seam_stage_ms": 18688,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [],
+   "answer": "The question is wider than one chapter can meet \u2014 the Tao Te Ching speaks of wu wei in several places, and I have only one in front of me. What I have is Chapter 48. It sets ordinary learning against following the Dao: learning adds, the Dao subtracts. You keep letting go of forcing, and what's left is wu wei, non-forcing \u2014 and in that state, nothing is left undone. That's one voice in the book; the rest of the record isn't here.",
+   "calls": [
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 32,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "synth",
+     "thinking": true,
+     "content_len": 502,
+     "reasoning_len": 1944,
+     "truncated": false
+    },
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 468,
+     "reasoning_len": 0,
+     "truncated": false
+    }
+   ],
+   "contract_valid": true,
+   "cite_dropped": [],
+   "lineages": [
+    "SOURCE"
+   ]
+  },
+  {
+   "road": "synth",
+   "thinking": false,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 5163,
+   "lane": null,
+   "model_calls": 3,
+   "seam_stage_ms": 2692,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [],
+   "answer": "Chapter 48 contrasts ordinary learning, which increases knowledge, with following the Dao, which progressively diminishes one's 'doing,' eventually describing wu wei / non-forcing as a state in which 'nothing is left undone.'",
+   "calls": [
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 32,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "synth",
+     "thinking": false,
+     "content_len": 294,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 2,
+     "reasoning_len": 0,
+     "truncated": false
+    }
+   ],
+   "contract_valid": true,
+   "cite_dropped": [],
+   "lineages": [
+    "SOURCE"
+   ]
+  },
+  {
+   "road": "synth",
+   "thinking": true,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 14660,
+   "lane": null,
+   "model_calls": 2,
+   "seam_stage_ms": 13436,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [],
+   "answer": "Chapter 48 draws a line. Ordinary learning adds \u2014 more knowledge, more doing. Following the Dao subtracts. You shed effort, layer by layer, until you arrive at wu wei: non-forcing. And in that state, the chapter says, nothing is left undone.",
+   "calls": [
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 32,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "synth",
+     "thinking": true,
+     "content_len": 310,
+     "reasoning_len": 1516,
+     "truncated": false
+    }
+   ],
+   "contract_valid": true,
+   "cite_dropped": [],
+   "lineages": [
+    "SOURCE"
+   ]
+  },
+  {
+   "road": "synth",
+   "thinking": false,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 4899,
+   "lane": null,
+   "model_calls": 3,
+   "seam_stage_ms": 2581,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [],
+   "answer": "Chapter 48 contrasts ordinary learning, which increases knowledge, with following the Dao, which progressively diminishes one's 'doing,' eventually describing wu wei / non-forcing as a state in which 'nothing is left undone.'",
+   "calls": [
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 32,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "synth",
+     "thinking": false,
+     "content_len": 294,
+     "reasoning_len": 0,
+     "truncated": false
+    },
+    {
+     "seam": "other",
+     "thinking": false,
+     "content_len": 2,
+     "reasoning_len": 0,
+     "truncated": false
+    }
+   ],
+   "contract_valid": true,
+   "cite_dropped": [],
+   "lineages": [
+    "SOURCE"
+   ]
+  }
+ ],
+ "general": [
+  {
+   "road": "general",
+   "thinking": true,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 14551,
+   "lane": "general",
+   "model_calls": 1,
+   "seam_stage_ms": 14550,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [
+    "GENERAL:UNSOURCED"
+   ],
+   "answer": "It can, but mostly by shrinking the eating window, which tends to shrink total calories. Head-to-head trials against ordinary caloric restriction show little extra benefit from the fasting pattern itself. Some adults find the structure easier to stick with than counting calories, and that adherence is where the weight actually comes off. A useful tool, not a special mechanism.",
+   "calls": [
+    {
+     "seam": "general",
+     "thinking": true,
+     "content_len": 439,
+     "reasoning_len": 1673,
+     "truncated": false
+    }
+   ]
+  },
+  {
+   "road": "general",
+   "thinking": false,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 2602,
+   "lane": "general",
+   "model_calls": 1,
+   "seam_stage_ms": 2602,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [
+    "GENERAL:UNSOURCED"
+   ],
+   "answer": "Yes, fasting can help adults lose weight, primarily by creating a calorie deficit. It works for some people because it simplifies meal timing, but it is not more effective than other diets if total calories are the same.",
+   "calls": [
+    {
+     "seam": "general",
+     "thinking": false,
+     "content_len": 267,
+     "reasoning_len": 0,
+     "truncated": false
+    }
+   ]
+  },
+  {
+   "road": "general",
+   "thinking": true,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 12527,
+   "lane": "general",
+   "model_calls": 1,
+   "seam_stage_ms": 12526,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [
+    "GENERAL:UNSOURCED"
+   ],
+   "answer": "It can, but mostly by shrinking the window you eat in, which tends to shrink what you eat. Studies show modest loss, about the same as just cutting calories. Some people find the structure easier than counting. It's a tool, not a shortcut.",
+   "calls": [
+    {
+     "seam": "general",
+     "thinking": true,
+     "content_len": 286,
+     "reasoning_len": 1535,
+     "truncated": false
+    }
+   ]
+  },
+  {
+   "road": "general",
+   "thinking": false,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 3254,
+   "lane": "general",
+   "model_calls": 1,
+   "seam_stage_ms": 3253,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [
+    "GENERAL:UNSOURCED"
+   ],
+   "answer": "Yes, fasting can help adults lose weight, primarily by creating a calorie deficit. It works for some people because it simplifies eating windows, but it is not more effective than other calorie-restricted diets if the total intake is the same.",
+   "calls": [
+    {
+     "seam": "general",
+     "thinking": false,
+     "content_len": 306,
+     "reasoning_len": 0,
+     "truncated": false
+    }
+   ]
+  },
+  {
+   "road": "general",
+   "thinking": true,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 10829,
+   "lane": "general",
+   "model_calls": 1,
+   "seam_stage_ms": 10828,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [
+    "GENERAL:UNSOURCED"
+   ],
+   "answer": "It can, mostly by making it easier to eat less. The structure of a fasting window does the work; the metabolism itself isn't dramatically different from any other way of trimming calories. Some adults find the schedule makes the deficit simple to hold. Others find it makes them ravenous and the deficit slips. The evidence puts it roughly on par with other caloric-restriction methods \u2014 not a shortcut, just a shape that fits some people's days better than others.",
+   "calls": [
+    {
+     "seam": "general",
+     "thinking": true,
+     "content_len": 512,
+     "reasoning_len": 959,
+     "truncated": false
+    }
+   ]
+  },
+  {
+   "road": "general",
+   "thinking": false,
+   "label": "live",
+   "code": 200,
+   "wall_ms": 3151,
+   "lane": "general",
+   "model_calls": 1,
+   "seam_stage_ms": 3150,
+   "blocked": false,
+   "synth_note": null,
+   "general_note": null,
+   "fires": [
+    "GENERAL:UNSOURCED"
+   ],
+   "answer": "Yes, fasting can help adults lose weight, primarily by creating a calorie deficit. It works for some people because it simplifies eating windows, but it is not more effective than other diets if calories are equal.",
+   "calls": [
+    {
+     "seam": "general",
+     "thinking": false,
+     "content_len": 277,
+     "reasoning_len": 0,
+     "truncated": false
+    }
+   ]
+  }
+ ]
+}
