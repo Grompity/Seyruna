@@ -1,0 +1,12 @@
+# a32 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-10-21T14:07:47 - raw evidence immutable after this point
+25e90c61d0f11f467542ddead050c01c302a5f3a18766f16aa5ffd11d52b3b7f  a32-contract.md
+ccb57ad8c326c6ff6dcc9c9d6e82fe91e809cc198c479896c2298fc66a6748ed  a32-contract.json
+e2770ed7dc0a16d567eef06236e4499ee9c08ecc912129058e621ba5ec968c88  stages.py
+9b547e8cb81190567bc0db0743fbe8ea867437fb993765f0cd9e8de4fac05bf7  loop.py
+29ddadbb1e75b630ab544f5be127b5293cb9c005c03165d74fc05a2566677e10  tests.py
+441b5980f4d411116e202dbf9db2606a84e4c63c06cc8daf1dd0ba3041044d85  a31-sprint-report.md
+6060ca5ac997d834cc876a28ca3e775bba400faea9f55774907f47ebe50cf449  research-hold/a32-control.json
+26c1bfe6cc42ad7c2e860e7269b3cef5fd4467b84b29174a8dc5fe75a097d230  research-hold/a32-lap-state.json
+26c1bfe6cc42ad7c2e860e7269b3cef5fd4467b84b29174a8dc5fe75a097d230  research-hold/a32-evidence.json
+3a4af75b8176d205730ad640e66e4231757896197becf2c77e97202572925403  a32-sprint-report.md
