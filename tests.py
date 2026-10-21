@@ -3053,7 +3053,97 @@ def _boom22(*a, **k):
     raise RuntimeError("A22 seam left standing - net-free past T166")
 _web.research = _boom22
 
+# ---------- A28: the transport mouth, decomposed (the on-disk repair) -------
+# the observed fact this sprint (a28-raw-probe, a28-door-probe, reproduced
+# in-repo): a read that outlasts the timeout raises URLError whose reason IS
+# a socket.timeout - the URLError arm sees the wrapper, so the timeout
+# answered the unreachability word at both the search and the fetch mouth.
+import socket as _so28
+import urllib.error as _ue28
+import threading as _th28
+from http.server import BaseHTTPRequestHandler as _H28, ThreadingHTTPServer as _S28
+import time as _ti28
 
+# the search road is a GET (the A4 code sends no body): the hold rides
+# BEFORE the response bytes; the end_headers/flush idiom is the one proven
+# to deliver on this harness (3.11) without a reader deadlock
+class _Hang28(_H28):
+    def do_GET(self):
+        if getattr(self.server, "HOLD", 0):
+            _ti28.sleep(self.server.HOLD)
+        self.send_response(200, "application/json")
+        self.end_headers()
+        self.wfile.write(b'{"result":[]}')
+        self.wfile.flush()
+    def log_message(self, *a):
+        pass
+
+class _Srv28(_S28):
+    daemon_threads = True
+    def handle_error(self, *a):    # the abandoned hang-writer speaks after
+        pass                       # the client is gone; the lane already
+                                   # spoke, the noise would only print
+_srv28 = _Srv28(("127.0.0.1", 0), _Hang28)
+_srv28.HOLD = 0
+_PORT28 = _srv28.server_address[1]
+_th28.Thread(target=_srv28.serve_forever, daemon=True).start()
+_PRISTINE28 = _web.urlopen
+_real_search_url28 = _web.search_url
+
+def _boom28_1(*a, **kw):                       # URLError(reason=socket.timeout)
+    raise _ue28.URLError(_so28.timeout("the read timed out"))
+def _boom28_2(*a, **kw):                       # plain URLError (DNS-dead shape)
+    raise _ue28.URLError("the server answered nothing")
+def _boom28_3(*a, **kw):                       # bare socket.timeout (pre-3.10)
+    raise _so28.timeout("the read timed out")
+
+_W28 = {}
+for _lab28, _fn28 in (("timeout-in-urlerror", _boom28_1),
+                      ("plain-urlerror", _boom28_2),
+                      ("bare-timeout", _boom28_3)):
+    _web.urlopen = _fn28
+    _W28[_lab28 + "-search"] = _web.search("alpha")[1]
+    _W28[_lab28 + "-fetch"] = _web.fetch("http://example.test/a").get("error")
+
+# the two REAL delivery shapes through the whole search mouth, zero network:
+# the socket held past a short cap answers its own word; at zero hold the
+# same server's empty doc rides the empty lane (the A13.1 law unmoved)
+_web.urlopen = _PRISTINE28                    # the booms are off; the
+                                              # socket rides real now
+_web.search_url = (lambda name, query, n:
+                   "http://127.0.0.1:%d/" % _PORT28)
+_srv28.HOLD = 1.0
+_W28["server-hang-search"] = _web.search("alpha", timeout=.25)[1]
+_srv28.HOLD = 0
+_W28["server-zero-search"] = _web.search("alpha", timeout=2)[1]
+_srv28.shutdown()
+_web.urlopen = _PRISTINE28
+_web.search_url = _real_search_url28
+
+expect("T167 THE READ TIMEOUT SPEAKS AS ITSELF AT BOTH TRANSPORT MOUTHS, "
+       "EVEN WEARING THE URERROR COAT: the A28 observed shape - URLError "
+       "whose reason IS a socket.timeout - answers the search lane with "
+       "search-timeout (yesterday the wrapper arm answered search-unreachable) "
+       "and the fetch lane with the timeout error word (yesterday "
+       "unreachable); a plain URLError (the DNS-dead road) STILL answers "
+       "search-unreachable and unreachable (the two-word law UNMOVED - the "
+       "split is ONLY for the timeout shape); a bare socket.timeout (the "
+       "pre-3.10 travel) rides its own old arm byte-undisturbed; a REAL "
+       "server held past a short read cap arrives at the timeout word "
+       "through the whole search mouth (the wrapper decomposed, the socket "
+       "real) and at zero hold the same server rides the EMPTY lane - the "
+       "repair touches only the timeout shape; a raise never travels",
+       _W28,
+       why=lambda tr: ([] if (
+           tr["timeout-in-urlerror-search"] == "search-timeout"
+           and tr["timeout-in-urlerror-fetch"] == "timeout"
+           and tr["plain-urlerror-search"] == "search-unreachable"
+           and tr["plain-urlerror-fetch"] == "unreachable"
+           and tr["bare-timeout-search"] == "search-timeout"
+           and tr["bare-timeout-fetch"] == "timeout"
+           and tr["server-hang-search"] == "search-timeout"
+           and tr["server-zero-search"] == "search-empty")
+       else ["a transport shape spoke the wrong word or no word"]))
 for name, tr, kw in T:
     bad = []
     txt = tr.get("response", "")

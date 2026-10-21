@@ -193,6 +193,20 @@ def safe_target(url, allow_local=False):
     return True, None
 
 
+# ---------- A28: the transport word names the CONDITION, not the wrapper -----
+def classify_transport(err):
+    """the transport-word classifier (A17.1's law: one word per mouth; the
+    A28 split: a read timeout's COMMON travel is URLError(reason=socket.timeout)
+    - the URLError arm sees the WRAPPER and yesterday answered the
+    unreachability word for a delivery that merely outlasted the read timeout;
+    the reason is decomposed so the word names the condition; a bare
+    socket.timeout (the pre-3.10 shape) still rides its own arm in search/
+    fetch; a raise never travels)."""
+    if isinstance(getattr(err, "reason", None), socket.timeout):
+        return "search-timeout"
+    return "search-unreachable"
+
+
 # ---------- the search (ONE request; the failure is a LANED word) ----------
 def search(query, n=RESULTS_N, timeout=TIMEOUT):
     """-> (results, gap): results normalized; gap None or the failure's
@@ -208,8 +222,8 @@ def search(query, n=RESULTS_N, timeout=TIMEOUT):
             body = r.read(MAX_BYTES + 1)
     except urllib.error.HTTPError as e:
         return [], "search-http-" + str(e.code).split()[0]
-    except urllib.error.URLError:
-        return [], "search-unreachable"
+    except urllib.error.URLError as e:
+        return [], classify_transport(e)
     except socket.timeout:
         return [], "search-timeout"
     except Exception:
@@ -244,8 +258,11 @@ def fetch(url, max_bytes=MAX_BYTES, timeout=TIMEOUT, allow_local=False):
             return {"error": "blocked-or-rate:" + code,
                     "rate": code == "429"}
         return {"error": "http-" + code}
-    except urllib.error.URLError:
-        return {"error": "unreachable"}
+    except urllib.error.URLError as e:
+        return {"error": ("timeout"
+                           if isinstance(getattr(e, "reason", None),
+                                         socket.timeout)
+                           else "unreachable")}
     except socket.timeout:
         return {"error": "timeout"}
     except Exception:
