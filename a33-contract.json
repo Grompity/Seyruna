@@ -1,0 +1,26 @@
+{
+ "contract": "A33",
+ "candidate": "AUTO",
+ "auto_rule": {
+   "policy": "A33-1",
+   "floor": 8,
+   "divisor": 3,
+   "trust_labels": ["live"]
+ },
+ "seam_key": "GENERAL_MAXTOK",
+ "question": "Does fasting help adults lose weight?",
+ "trials_per_side": 3,
+ "criteria": {
+   "required_lane": "general",
+   "forbid_note": true,
+   "required_fire": "GENERAL:UNSOURCED",
+   "max_median_factor": 2.0,
+   "reject_reported_length": true
+ },
+ "found_state": "1024 rides the charter (A31's kept word, A32's restored one)",
+ "law": "trust FIRST (label, reported src, INT > 0, not bool/str); candidate = min(effective, max(8, T//3)); PROPOSE only when STRICTLY below; insufficiency answers NO-PROPOSAL at a WORD, the charter UNTOUCHED; no clock, no char-count, no inferred seat",
+ "application_eye": "the ROAD ITSELF speaks general_max_tokens (the value the call was GIVEN, read back at the seam); every after-trial's record must carry the candidate - a file can lie about an effective word, a spoken word at the road cannot",
+ "expected": "PROPOSED -> APPLIED -> ROLLED BACK at REPORTED length, 1024 restored at file AND mirror; alternatives named IN ADVANCE: a KEEP at all-stop, or a NO-PROPOSAL if the found candidate is not below the found word, or the application word if the road did not ride",
+ "budget": "six live door-runs (the A32 trial law UNCHANGED); no re-rolls, no cap-chasing",
+ "label_law": "live inside the witnesses; the tests are replay/synthetic; no performance claim beyond the disclosed noise"
+}
