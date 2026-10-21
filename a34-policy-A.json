@@ -1,0 +1,23 @@
+{
+ "contract": "A34-A",
+ "policy_note": "the standing third-bound",
+ "candidate": "AUTO",
+ "auto_rule": {
+  "policy": "A33-1 (re-endorsed at A34's bytes)",
+  "floor": 8,
+  "divisor": 3,
+  "trust_labels": [
+   "live"
+  ]
+ },
+ "seam_key": "GENERAL_MAXTOK",
+ "question": "Does fasting help adults lose weight?",
+ "trials_per_side": 3,
+ "criteria": {
+  "required_lane": "general",
+  "forbid_note": true,
+  "required_fire": "GENERAL:UNSOURCED",
+  "max_median_factor": 2.0,
+  "reject_reported_length": true
+ }
+}
