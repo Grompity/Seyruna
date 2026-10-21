@@ -1,0 +1,54 @@
+{
+ "label": "live",
+ "date": "2026-10-21T13:48:33",
+ "role": "CONTROL (the current charter: GENERAL_MAXTOK 1024)",
+ "wall_ms": 3266,
+ "code": 200,
+ "lane": "general",
+ "general_finish": "stop",
+ "general_finish_src": "reported",
+ "general_tokens_src": "reported",
+ "general_completion_tokens": 66,
+ "general_prompt_tokens": 816,
+ "general_total_tokens": 882,
+ "answer_len": 183,
+ "model_calls": 1,
+ "fires": [
+  "GENERAL:UNSOURCED"
+ ],
+ "full_trace": {
+  "versions": {
+   "constitution": "D4-rev-a",
+   "rule_pack": "RP-0.4",
+   "voice_brief": "VB-0.3",
+   "knowledge_schema": "KS-0.1",
+   "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+   "build": "proto-0.1"
+  },
+  "retrieval": [],
+  "stages_ms": {
+   "intent": 0.02541701542213559,
+   "retrieve": 0.357957964297384,
+   "total": 0.4615830257534981,
+   "general": 3264.293332991656
+  },
+  "model_calls": 1,
+  "retrieval_count": 0,
+  "context_size": 0,
+  "general_finish": "stop",
+  "general_finish_src": "reported",
+  "general_tokens_src": "reported",
+  "general_completion_tokens": 66,
+  "general_prompt_tokens": 816,
+  "general_total_tokens": 882,
+  "lane": "general",
+  "response": "Yes, fasting can help adults lose weight by creating a calorie deficit and improving metabolic health, though it works best as part of a sustainable lifestyle rather than a quick fix.",
+  "lineage": "UNSOURCED",
+  "unknown": true,
+  "fires": [
+   "GENERAL:UNSOURCED"
+  ],
+  "observations": [],
+  "evidence_status": "research not asked"
+ }
+}
