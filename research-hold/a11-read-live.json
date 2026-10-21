@@ -1,0 +1,60 @@
+{
+ "gets": [
+  [
+   "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+   "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+   200
+  ],
+  [
+   "https://www.britannica.com/biography/Ashoka-Indian-emperor",
+   null,
+   "blocked-or-rate:403"
+  ]
+ ],
+ "spent": {
+  "search": 0,
+  "fetch": 1,
+  "calls": 2,
+  "ms": 1072.0
+ },
+ "gaps": [
+  "blocked-or-rate:403"
+ ],
+ "corroboration": {
+  "urls": 2,
+  "read": 1,
+  "attribution": 0,
+  "origin_publishers": 1,
+  "independence": "none",
+  "conflict": "insufficient",
+  "publishers_seen": 2,
+  "duplication": 0,
+  "syndicated-possible": false
+ },
+ "sources": [
+  {
+   "publisher": "wikipedia.org",
+   "seen": "read"
+  },
+  {
+   "publisher": "britannica.com",
+   "seen": "blocked-or-rate:403"
+  }
+ ],
+ "rows": [
+  {
+   "publisher": "wikipedia.org",
+   "canon": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+   "status-or-error": 200,
+   "text-len": 1200,
+   "excerpt": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location The Edicts of Ashoka are a collection o"
+  },
+  {
+   "publisher": "britannica.com",
+   "canon": "https://www.britannica.com/biography/Ashoka-Indian-emperor",
+   "status-or-error": "blocked-or-rate:403",
+   "text-len": 0,
+   "excerpt": ""
+  }
+ ]
+}

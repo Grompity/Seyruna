@@ -1,0 +1,68 @@
+{
+  "a27": "results",
+  "status": "AWAITING FOUNDER ADMINISTRATION",
+  "instrument_validation_status_inherited_from_a26": "INSTRUMENT-ONLY (unchanged — A27 did not re-validate the instrument; it inherited it)",
+  "human_result": "NOT YET AVAILABLE — no real human administration has occurred as of the open of A27",
+  "participants": 0,
+  "completed_administrations": 0,
+  "incomplete_administrations": 0,
+  "no_human_responses_exist_yet": true,
+  "no_fake_response_rows": true,
+  "preregistered_criteria": {
+    "source": "a26-comprehension-preregistration.md",
+    "sha256": "258154ffc713abe63c5015db9238fbd83c83924191d9b4b157dcc7e146377bfe",
+    "follow_up_criterion": "if the human shows the D1 A-trap-to-B-correct pattern without regression, A27 may weigh coining",
+    "criterion_met_by_actual_human_responses": "NOT ASSESSABLE — no real responses yet",
+    "criterion_status_on_single_participant": "a single reader cannot establish the pattern statistically; report the observation, do not claim significance"
+  },
+  "response_pattern_per_probe": {
+    "Q-C1-KIND": null,
+    "Q-C1-PROVES": null,
+    "Q-C2-VERDICT": null,
+    "Q-C2-WHO": null,
+    "Q-C3-MARKED": null,
+    "Q-C4-ESTABLISHED": null,
+    "Q-SHARED-MAP": null,
+    "Q-SHARED-WORDS": null,
+    "note": "null = no real participant response exists yet; the synthetic matrix in a26-results.json is NOT human data and is not copied here"
+  },
+  "d1_a_trap_to_b_correct_pattern_occurred": null,
+  "regression_on_d1": null,
+  "misconceptions_persisted_or_new": null,
+  "mc8_status": "INDETERMINATE-BY-SYNTHETIC (unchanged) — the synthetic matrix cannot settle whether A25's own terminology confuses a real reader; only actual human misunderstandings, in the reader's own words, can move MC8",
+  "mc8_classification_rules_preregistered": {
+    "covered_by_mc1_mc7": "a reader misunderstanding that maps to a preregistered tag",
+    "genuinely_new_interpretation": "not covered by the frozen rubric — record, do not force a tag",
+    "ambiguous": "the answer does not match the key under the frozen rubric — record ambiguous",
+    "apparent_terminology_problem_not_attributable_to_caption": "record as such; do not attribute to the caption"
+  },
+  "procedural_deviations": [
+    "no administration has occurred, so no deviations of an administration exist yet; when it runs, every clarification, interruption, and deviation is recorded (the frozen synthetic order was a declared deviation a human run must fix by counterbalancing — with one reader counterbalancing is limited to a single recorded order)"
+  ],
+  "findings_remain_indeterminate": [
+    "whether readers interpret A25's captions more accurately than the comparison condition",
+    "MC8 (whether A25's own terminology confuses a real reader)",
+    "the D1 A-trap-to-B-correct pattern on a real reader"
+  ],
+  "scoring_method": "follows the frozen answer key (a26-answer-key.md, sha256 aa2e94e0e08e3fa039f432cf7aa7310e2fabca219ae9c2d66a4ca1ef70a176a1) and the frozen criteria unchanged; no rule changed after seeing an answer",
+  "scoring_uses_existing_frozen_answer_key": true,
+  "limits": [
+    "no statistical significance is claimed from a single participant",
+    "a convenience pilot cannot support population-level claims",
+    "an ambiguous answer stays ambiguous; a favorable result is not permission to tune the instrument and re-test for independent confirmation",
+    "even a pass is a pilot result, not proof of general comprehension improvement"
+  ],
+  "provenance": {
+    "branch": "main",
+    "head": "1c7a74c",
+    "git_index_moved_by_this_milestone": false,
+    "seven_staged_entries_byte_identical_at_open": true,
+    "a22_work_files_still_M": true,
+    "a26_manifest_mechanically_verified": true,
+    "a26_artifacts_untouched": true,
+    "nested_repositories_untouched": ["Seyruna/", "Paper Website/"],
+    "coral_out_of_scope": true,
+    "batteries_and_harness_run_without_funnel_at_open": "integrity 18/18; retrieval/content-blindness exit 0; harness tests.py 166/166 HARNESS GREEN (no code moved)"
+  },
+  "note": "this file must not be filled with invented, simulated, AI-generated, or inferred responses; if a real participant completes the instrument, the arrays and nulls above are filled with their actual, verbatim responses and scored against the frozen key; a partial administration remains partial"
+}

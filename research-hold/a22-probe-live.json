@@ -1,0 +1,17 @@
+{
+ "word": "dhamma",
+ "ok": false,
+ "results": 0,
+ "gaps": [
+  "search-empty"
+ ],
+ "spent": {
+  "search": 1,
+  "fetch": 0,
+  "calls": 1,
+  "ms": 550.8
+ },
+ "secs": 0.6,
+ "date": "20261020",
+ "provider": "ddg-ia"
+}

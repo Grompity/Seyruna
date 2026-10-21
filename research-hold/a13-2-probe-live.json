@@ -1,0 +1,84 @@
+{
+ "probe": "A13.2 - one search, the exact A5 word, no retries",
+ "query": "Ashoka rock edict",
+ "provider": "ddg-ia",
+ "config": {
+  "provider_word": "ddg-ia",
+  "RESULTS_N": 5
+ },
+ "ok": true,
+ "gaps": [],
+ "spent": {
+  "search": 1,
+  "fetch": 2,
+  "calls": 3,
+  "ms": 2447.9
+ },
+ "secs_wall": 2.4,
+ "results": 5,
+ "rows": [
+  {
+   "id": "W1",
+   "kind": "page",
+   "level": "DOCUMENTED",
+   "evidence": "PRESENT",
+   "publisher": "wikipedia.org",
+   "lane_word_or_status": "http 200 (capped)",
+   "has_text": true,
+   "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka"
+  },
+  {
+   "id": "W2",
+   "kind": "snippet",
+   "level": "DOCUMENTED",
+   "evidence": null,
+   "publisher": "duckduckgo.com",
+   "lane_word_or_status": "http 202",
+   "has_text": false,
+   "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1"
+  },
+  {
+   "id": "W3",
+   "kind": "snippet",
+   "level": "DOCUMENTED",
+   "evidence": "NONE-FOR",
+   "publisher": "duckduckgo.com",
+   "lane_word_or_status": "not-fetched:dup-publisher",
+   "has_text": false,
+   "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1"
+  },
+  {
+   "id": "W4",
+   "kind": "snippet",
+   "level": "DOCUMENTED",
+   "evidence": "NONE-FOR",
+   "publisher": "duckduckgo.com",
+   "lane_word_or_status": "not-fetched:dup-publisher",
+   "has_text": false,
+   "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1"
+  },
+  {
+   "id": "W5",
+   "kind": "snippet",
+   "level": "DOCUMENTED",
+   "evidence": "NONE-FOR",
+   "publisher": "duckduckgo.com",
+   "lane_word_or_status": "not-fetched:dup-publisher",
+   "has_text": false,
+   "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1"
+  }
+ ],
+ "corroboration": {
+  "urls": 5,
+  "read": 1,
+  "attribution": 4,
+  "origin_publishers": 1,
+  "independence": "none",
+  "conflict": "insufficient",
+  "publishers_seen": 1,
+  "duplication": 3,
+  "syndicated-possible": false
+ },
+ "gpt_key": false,
+ "transport_exposed": "lane words + spent + ms only; per-row note carries fetch status; research() exposes no raw status/content-type"
+}

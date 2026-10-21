@@ -1,0 +1,100 @@
+{
+ "question": "What do Ashoka's rock edicts say about dhamma?",
+ "web": {
+  "provider": "ddg-ia",
+  "ok": true,
+  "query": "Ashoka rock edict",
+  "results": 5,
+  "gaps": [],
+  "spent": {
+   "search": 1,
+   "fetch": 2,
+   "calls": 3,
+   "ms": 1725.7
+  },
+  "corroboration": {
+   "urls": 5,
+   "read": 1,
+   "attribution": 4,
+   "origin_publishers": 1,
+   "independence": "none",
+   "conflict": "insufficient",
+   "publishers_seen": 1,
+   "duplication": 3,
+   "syndicated-possible": false
+  },
+  "rows": [
+   {
+    "id": "W1",
+    "kind": "page",
+    "evidence": "PRESENT",
+    "note": "http 200 (capped)",
+    "work": "en.wikipedia.org",
+    "publisher": "wikipedia.org",
+    "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+    "claim": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location The Edicts of Ashoka are a collection of more than thirty inscriptions on the Pillars of Ashoka , as well as boulders and cave walls, attributed to Emperor Ashoka of the Mauryan Empire who ruled most of the Indian subcontinent from 268 BCE to 232 BCE."
+   },
+   {
+    "id": "W2",
+    "kind": "snippet",
+    "evidence": null,
+    "note": "http 202",
+    "work": "duckduckgo.com",
+    "publisher": "duckduckgo.com",
+    "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+    "claim": "Edicts of Ashoka Category"
+   },
+   {
+    "id": "W3",
+    "kind": "snippet",
+    "evidence": "NONE-FOR",
+    "note": "not-fetched:dup-publisher",
+    "work": "duckduckgo.com",
+    "publisher": "duckduckgo.com",
+    "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+    "claim": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c."
+   },
+   {
+    "id": "W4",
+    "kind": "snippet",
+    "evidence": "NONE-FOR",
+    "note": "not-fetched:dup-publisher",
+    "work": "duckduckgo.com",
+    "publisher": "duckduckgo.com",
+    "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+    "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire..."
+   },
+   {
+    "id": "W5",
+    "kind": "snippet",
+    "evidence": "NONE-FOR",
+    "note": "not-fetched:dup-publisher",
+    "work": "duckduckgo.com",
+    "publisher": "duckduckgo.com",
+    "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+    "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts."
+   }
+  ]
+ },
+ "door": {
+  "code": 200,
+  "lane": "web",
+  "retrieval": [
+   "W1",
+   "W2",
+   "W3",
+   "W4",
+   "W5"
+  ],
+  "response": "What I have here is related, not an answer: the records describe the edicts' form and number, but none of them quote what the edicts actually say about dhamma. What the records do say: the rock edicts are a set of fourteen major inscriptions, carved on in-situ rocks and cave walls across the subcontinent, attributed to Ashoka of the Mauryan Empire (c. 268\u2013232 BCE). One snippet comes closest to content: it calls the Delhi edicts 'a series of edicts on the teachings of Buddha,' but that's a one-line summary, not a quotation of the dhamma language itself. So: the shelf here tells you where the words are carved and who carved them, but not what the words say about dhamma. If you want the content, I'd need a different shelf.",
+  "model_calls": 3,
+  "evidence_status": "carried by: wikipedia.org (read)",
+  "web_stamped": true,
+  "query": "Ashoka rock edict"
+ },
+ "secs": 61.2,
+ "id": "C2",
+ "kind": "known-empty-question-with-known-green-query",
+ "expect": "THE POINT OF THE MILESTONE: the empty-thrice SENTENCE rides the pipeline UNTOUCHED while the green two-word NAME rides the search; if the lane goes green, the status names a read origin AS CARRIER (it does not vouch the mouth's bytes); if the provider is empty AGAIN today, the fold phrase and the compound word speak - BOTH outcomes are truth at the word, NEITHER is a score",
+ "query-spoken": "Ashoka rock edict"
+}

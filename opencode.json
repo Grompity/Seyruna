@@ -17,6 +17,36 @@
           }
         }
       }
+    },
+    "apexus-nz": {
+      "name": "Friend SGLang NZ-1 (Tailscale)",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "https://apexus-nz-1.tail386c62.ts.net/v1",
+        "apiKey": "apexus123"
+      },
+      "models": {
+        "qwen3.8-flash-next": {
+          "name": "Qwen3.8 Flash Next Uncensored (200k)",
+          "modelID": "qwen3.8-flash-next-swift-uncen-iq1-332",
+          "limit": {
+            "context": 204800
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "servers": {
+      "ascended-reviewer": {
+        "type": "local",
+        "command": [
+          ".venv/bin/python3",
+          "reviewer/reviewer_mcp.py"
+        ],
+        "cwd": ".",
+        "codemode": false
+      }
     }
   }
 }

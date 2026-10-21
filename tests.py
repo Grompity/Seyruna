@@ -2859,6 +2859,199 @@ def _boom19(*a, **k):
     raise RuntimeError("A19 seam left standing - net-free past T163")
 _web.research = _boom19
 
+# ---------- A22: the QUERY SEPARATION rides the RUNNER (the A15 door word
+# spent at the eval road - the coin the A20 report left unspent). No
+# network, no mouth: canned packets canned (no fake claims about the real
+# world's lanes), the door a recorded spy, the real to_rows/corroboration
+# on the canned bytes - the A18/A19 fixtures' idiom.
+_re22 = _re18                                    # the same module, the A22 eyes
+_REAL22 = stages.door
+_A22SAW = []                                     # what each door-call SAW
+_A22SEEN = []                                    # what each search-call HEARD
+def _door22(**over):
+    tr = {"response": "R.", "lane": "web", "retrieval": ["W1"],
+          "model_calls": 3}
+    tr.update(over)
+    def _d(body, **k):
+        _A22SAW.append(dict(body))
+        return {"response": "R.", "trace": tr}, 200
+    return _d
+def _spy22(q, **k):
+    _A22SEEN.append(q)
+    return _pkA15(_A15PAGE, query=q)             # the packet speaks the
+_web.research = _spy22                           # spy's bytes as its OWN
+_Q22 = "What do Ashoka's rock edicts say about dhamma?"   # A20's case B
+_QQ22 = "Ashoka rock edict"                                  # A20's case A
+# (1) today's road, byte-exact: no query word spoken = no query word ANY-
+# WHERE (the door-body stays the two-key body T161 pins, the door-record
+# stays T161's seven keys, and the record still says the truth - the
+# fallback rode, at the packet's own word):
+stages.door = _door22(evidence_status="carried by: one.org (read)",
+                      web={"provider": "ddg-ia", "query": _Q22})
+_O22 = _re22.run_one(_Q22, True, {})
+_BODY22, _SEEN22 = _A22SAW[-1], _A22SEEN[-1]
+# (2) the explicit query rides the SEARCH and rides the door's body as its
+# OWN word beside the UNTOUCHED question; the eval record speaks the
+# packet's word and the door-record the trace's stamp (both tr.get/PKT.get,
+# verbatim - never reconstructed):
+stages.door = _door22(evidence_status="carried by: one.org (read)",
+                      web={"provider": "ddg-ia", "query": _QQ22})
+_O22Q = _re22.run_one(_Q22, True, {}, _QQ22)
+_BODY22Q, _SEEN22Q = _A22SAW[-1], _A22SEEN[-1]
+_RT22 = json.loads(json.dumps(_O22Q))
+# (3) the fold's shape at the query road (A13.4's): no web stamp rides the
+# trace, so the door-record's query rides as ABSENCE (None), never a
+# promotion, while the compound word rides verbatim (A18/A19 UNMOVED):
+stages.door = _door22(lane="general", retrieval=[], web=None,
+                      evidence_status="general knowledge, not verified "
+                                      "this turn (the web brought nothing "
+                                      "(search-empty))")
+_O22FOLD = _re22.run_one(_Q22, True, {}, _QQ22)
+# (4) the search-only mode still grows no door record AT ALL under a
+# query, and the over-budget lane stays sparse (the door is never called):
+_NSAW22 = len(_A22SAW)
+_O22SOLO = _re22.run_one(_Q22, False, {}, _QQ22)
+_O22OB = _re22.run_one(_Q22, True, {"max_secs_per_question": -5}, _QQ22)
+_OBSAW22 = len(_A22SAW)
+# (5) empty, all-space, and malformed (not a string): each rides the
+# question's bytes CONSERVATIVELY - the fallback, no query key spoken, and
+# no raise anywhere (the door never sees the garbage):
+stages.door = _door22(evidence_status="carried by: one.org (read)",
+                      web={"provider": "ddg-ia"})
+_O22EMPTY = _re22.run_one(_Q22, True, {}, "")
+_SEEN22E = _A22SAW[-1], _A22SEEN[-1]
+_O22BLANK = _re22.run_one(_Q22, True, {}, "   ")
+_O22NUM = _re22.run_one(_Q22, True, {}, 5)
+_SEEN22N = _A22SAW[-1], _A22SEEN[-1]
+stages.door = _REAL22
+# the frozen A5 fixture read through the runner's OWN loader (the bytes
+# main rides; A22's field rides absent there, so main's road is today's):
+_FX22 = [q.get("query") for q in _re22.load_doc().get("questions") or []]
+expect("T164 THE RUNNER SEPARATES THE QUERY FROM THE QUESTION AND TELLS THE "
+       "TRUTH ABOUT IT: no query word coins today's road EXACTLY (the "
+       "search spy hears the question's bytes, the door-body stays T161's "
+       "two-key bytes, the door-record stays T161's seven keys - the "
+       "fallback rides the record as the PACKET'S OWN WORD, inspectable, "
+       "not assumed); an explicit query rides the SEARCH (the spy hears "
+       "the QUERY) and the door's body as its OWN key BESIDE the question "
+       "(the question's bytes ride the body UNTOUCHED); the eval record "
+       "records the query ACTUALLY RIDDEN from the packet's word and the "
+       "door-record from the trace's A15 stamp VERBATIM (a projection, not "
+       "a reconstruction - the door-record grows exactly the one additive "
+       "key, the seven standing byte-undisturbed); the record's question "
+       "key rides the question BYTE-FOR-BYTE; the A19 selector still says "
+       "the record's word at the query road; and "
+       "json.loads(json.dumps(rec)) round-trips the new key (main's own "
+       "idiom - SEPARATION IS NOT SUPPORT: the word says what rode the "
+       "search, not that the bytes it found can support the answer)",
+       {"plain-body": _BODY22, "plain-spy": _SEEN22,
+        "plain-keys": sorted(_O22["door"]),
+        "plain-web-q": _O22["web"]["query"],
+        "sep-spy": _SEEN22Q, "sep-body": _BODY22Q,
+        "sep-web-q": _O22Q["web"]["query"], "sep-door-q": _O22Q["door"]["query"],
+        "sep-keys": sorted(_O22Q["door"]), "sep-q": _O22Q["question"],
+        "sep-status": _re22.status_word(_O22Q),
+        "rt": _RT22["door"]["query"] == _O22Q["door"]["query"]},
+       why=lambda tr: ([] if (
+           tr["plain-body"] == {"question": _Q22, "web": True}
+           and tr["plain-spy"] == _Q22
+           and tr["plain-keys"] == ["code", "evidence_status", "lane",
+                                    "model_calls", "response", "retrieval",
+                                    "web_stamped"]
+           and tr["plain-web-q"] == _Q22
+           and tr["sep-spy"] == _QQ22
+           and tr["sep-body"] == {"question": _Q22, "query": _QQ22,
+                                 "web": True}
+           and tr["sep-web-q"] == _QQ22 and tr["sep-door-q"] == _QQ22
+           and tr["sep-keys"] == ["code", "evidence_status", "lane",
+                                 "model_calls", "query", "response",
+                                 "retrieval", "web_stamped"]
+           and tr["sep-q"] == _Q22
+           and tr["sep-status"] == "carried by: one.org (read)"
+           and tr["rt"])
+       else ["the query touched the question's road, or the record does not "
+             "tell the truth about what was used"]))
+expect("T165 THE QUERY WORD MOVES NEITHER THE STATUS LAW NOR THE OLD SHAPES: "
+       "at the FOLD's shape (A13.4's - the door stamped no web word) the "
+       "door-record's query rides as ABSENCE (the key present, the value "
+       "None - the A18 idiom, never promoted to the caller's bytes), the "
+       "compound word rides VERBATIM, the selector says it UNMOVED, and "
+       "web_stamped still says False (separation speaks, it does not "
+       "verify); the SEARCH-ONLY mode still grows no door record at all "
+       "even under a query, the record's web block still names the query "
+       "ACTUALLY RIDDEN, and the selector says NO-DOOR (SEARCH-ONLY); the "
+       "OVER-BUDGET lane stays sparse as built (the door CALLED ZERO TIMES "
+       "at the query road, the record no more than the one lane-word - no "
+       "query key and no status key where the door never spoke); the "
+       "evidence-status propagation and its selection are byte-UNMOVED by "
+       "the A22 word",
+       {"fold-q-is-none": _O22FOLD["door"]["query"] is None,
+        "fold-q-key": "query" in _O22FOLD["door"],
+        "fold-stamped": _O22FOLD["door"]["web_stamped"],
+        "fold-status": _re22.status_word(_O22FOLD),
+        "solo-door": "door" in _O22SOLO,
+        "solo-web-q": _O22SOLO["web"]["query"],
+        "solo-status": _re22.status_word(_O22SOLO),
+        "ob-door": _O22OB["door"],
+        "ob-no-call": _OBSAW22 == _NSAW22,
+        "fold-keys-count": len(_O22FOLD["door"])},
+       why=lambda tr: ([] if (
+           tr["fold-q-is-none"] and tr["fold-q-key"]
+           and tr["fold-stamped"] is False
+           and tr["fold-status"] == ("general knowledge, not verified this "
+                                     "turn (the web brought nothing "
+                                     "(search-empty))")
+           and not tr["solo-door"] and tr["solo-web-q"] == _QQ22
+           and tr["solo-status"] == "no-door (search-only)"
+           and tr["ob-door"] == {"lane": "over-budget"}
+           and tr["ob-no-call"]
+           and tr["fold-keys-count"] == 8)
+       else ["the query word leaned the status law, the fold, the solo, or "
+             "the over-budget lane"]))
+expect("T166 AN EMPTY, ALL-SPACE, OR MALFORMED QUERY RIDES THE FALLBACK, NOT "
+       "A CRASH: an empty string, an all-space string, and a not-a-string "
+       "word each ride the question's bytes to the search (the spy hears "
+       "the QUESTION - the house's own `or q` shape, conservative, no "
+       "garbage sent looking), the door-body stays the two-key bytes (no "
+       "query key spoken - the garbage never reaches the door), the "
+       "door-record keeps the SEVEN keys (no query key where no usable "
+       "word rode), the record's web block names the question's bytes as "
+       "what rode, and NOTHING raised (a malformed word rides as absence, "
+       "never a crash, never a guess past it); the FROZEN A5 fixture (read "
+       "through the runner's own loader) carries no query word at all at "
+       "any question, so main's six ride today's road byte-exact (a22's own "
+       "queries ride a22's fixture, the frozen words UNTOUCHED - the A20 "
+       "artifacts included), and a three-positional call remains exactly "
+       "today's call (the existing callers, A20's driver idiom, "
+       "byte-compatible)",
+       {"empty-seen": _SEEN22E[1], "empty-body": _SEEN22E[0],
+        "empty-keys": sorted(_O22EMPTY["door"]),
+        "empty-web-q": _O22EMPTY["web"]["query"],
+        "blank-seen": _O22BLANK["web"]["query"] == _Q22,
+        "num-seen": _SEEN22N[1], "num-body": _SEEN22N[0],
+        "num-keys": sorted(_O22NUM["door"]) == ["code", "evidence_status",
+                                                "lane", "model_calls",
+                                                "response", "retrieval",
+                                                "web_stamped"],
+        "fx-absent": all(q is None for q in _FX22),
+        "fx-len": len(_FX22) == 6},
+       why=lambda tr: ([] if (
+           tr["empty-seen"] == _Q22
+           and tr["empty-body"] == {"question": _Q22, "web": True}
+           and tr["empty-keys"] == ["code", "evidence_status", "lane",
+                                    "model_calls", "response", "retrieval",
+                                    "web_stamped"]
+           and tr["empty-web-q"] == _Q22
+           and tr["blank-seen"]
+           and tr["num-seen"] == _Q22
+           and tr["num-body"] == {"question": _Q22, "web": True}
+           and tr["num-keys"]
+           and tr["fx-absent"] and tr["fx-len"])
+       else ["a degenerate query word crashed, guessed, or rode where the "
+             "question's bytes belong"]))
+def _boom22(*a, **k):
+    raise RuntimeError("A22 seam left standing - net-free past T166")
+_web.research = _boom22
 
 
 for name, tr, kw in T:

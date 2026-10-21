@@ -1,0 +1,47 @@
+{
+ "question": "What do Ashoka's rock edicts say about dhamma?",
+ "web": {
+  "provider": "ddg-ia",
+  "ok": false,
+  "query": "What do Ashoka's rock edicts say about dhamma?",
+  "results": 0,
+  "gaps": [
+   "search-empty"
+  ],
+  "spent": {
+   "search": 1,
+   "fetch": 0,
+   "calls": 1,
+   "ms": 490.9
+  },
+  "corroboration": {
+   "urls": 0,
+   "read": 0,
+   "attribution": 0,
+   "origin_publishers": 0,
+   "independence": "unknown",
+   "conflict": "insufficient",
+   "publishers_seen": 0,
+   "duplication": 0,
+   "syndicated-possible": false
+  },
+  "rows": []
+ },
+ "door": {
+  "code": 200,
+  "lane": "general",
+  "retrieval": [
+   "19",
+   "2"
+  ],
+  "response": "No record stands behind this; I speak from general knowledge. Ashoka's rock edicts treat dhamma as a practical moral code, not a sectarian creed. The edicts stress non-violence toward all living beings, truthfulness, compassion, respect for parents, teachers, and elders, generosity to friends and to those of every sect, and restraint in speech and appetite. The major rock edicts speak of a 'victory of dhamma' won by moral persuasion rather than by arms, and appoint dhamma-officers to see that the practice reaches everyone, not only monks. One edict urges honouring all sects, ascetic and householder, so that dhamma is lived, not merely believed. The edicts promise fruits of dhamma in this world and the next, but the emphasis stays on conduct here and now. That is the plain shape of what the edicts say about dhamma.",
+  "model_calls": 2,
+  "evidence_status": "general knowledge, not verified this turn (the web brought nothing (search-empty))",
+  "web_stamped": false
+ },
+ "secs": 30.2,
+ "id": "C4",
+ "kind": "control-same-question-no-query",
+ "expect": "no query word spoken: the question RODE AS THE QUERY at the packet's OWN word (inspectable, not assumed), the door-record carries NO query key, and the run is byte-comparable to A20's case-B record save the provider's day; this is the CONTROL that separates SEPARATION from provider drift",
+ "query-spoken": null
+}

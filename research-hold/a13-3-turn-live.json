@@ -1,0 +1,122 @@
+{
+ "turn": "A13.3 - the first end-to-end at the known-green word",
+ "question_and_query": "Ashoka rock edict",
+ "deviation": "question == query: the door's supported shape searches body['question'] - the green WORD is the question (the A5-era idiom); no separate query field exists at the door",
+ "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+ "provider": "ddg-ia",
+ "code": 200,
+ "lane": "web",
+ "model_calls": 3,
+ "secs": 66.9,
+ "web": {
+  "provider": "ddg-ia",
+  "fetched": 2,
+  "gaps": [],
+  "corroboration": {
+   "urls": 5,
+   "read": 1,
+   "attribution": 4,
+   "origin_publishers": 1,
+   "independence": "none",
+   "conflict": "insufficient",
+   "publishers_seen": 1,
+   "duplication": 3,
+   "syndicated-possible": false
+  },
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+    "title": "Wikipedia",
+    "publisher": "wikipedia.org",
+    "lane": "abstract",
+    "seen": "read"
+   },
+   {
+    "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+    "title": "Edicts of Ashoka Category",
+    "publisher": "duckduckgo.com",
+    "lane": "related",
+    "seen": "bytes-not-read"
+   },
+   {
+    "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+    "title": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c.",
+    "publisher": "duckduckgo.com",
+    "lane": "related",
+    "seen": "skipped:dup-publisher"
+   },
+   {
+    "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+    "title": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire...",
+    "publisher": "duckduckgo.com",
+    "lane": "related",
+    "seen": "skipped:dup-publisher"
+   },
+   {
+    "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+    "title": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts.",
+    "publisher": "duckduckgo.com",
+    "lane": "related",
+    "seen": "skipped:dup-publisher"
+   }
+  ]
+ },
+ "evidence": [
+  {
+   "id": "W1",
+   "claim": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location The Edicts of Ashoka are a collection of more than thirty inscriptions on the Pillars of Ashoka , as well as boulders and cave walls, attributed to Emperor Ashoka of the Mauryan Empire who ruled most of the Indian subcontinent from 268 BCE to 232 BCE.",
+   "level": "DOCUMENTED",
+   "kind": "page",
+   "provenance": "web",
+   "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+   "publisher": "wikipedia.org"
+  },
+  {
+   "id": "W2",
+   "claim": "Edicts of Ashoka Category",
+   "level": "DOCUMENTED",
+   "kind": "snippet",
+   "provenance": "web",
+   "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+   "publisher": "duckduckgo.com"
+  },
+  {
+   "id": "W3",
+   "claim": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c.",
+   "level": "DOCUMENTED",
+   "kind": "snippet",
+   "provenance": "web",
+   "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+   "publisher": "duckduckgo.com"
+  },
+  {
+   "id": "W4",
+   "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire...",
+   "level": "DOCUMENTED",
+   "kind": "snippet",
+   "provenance": "web",
+   "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+   "publisher": "duckduckgo.com"
+  },
+  {
+   "id": "W5",
+   "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts.",
+   "level": "DOCUMENTED",
+   "kind": "snippet",
+   "provenance": "web",
+   "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+   "publisher": "duckduckgo.com"
+  }
+ ],
+ "response": "The Major Rock Edicts of Ashoka are 14 separate, significantly detailed inscriptions \u2014 among the earliest dated rock inscriptions of any Indian monarch. They are preceded chronologically by the Minor Rock Edicts. They belong to a larger collection of more than thirty inscriptions attributed to Emperor Ashoka of the Mauryan Empire, who ruled most of the Indian subcontinent from 268 to 232 BCE. The edicts were carved on in-situ rocks or engraved on pillars erected throughout the empire, and they carry teachings of the Buddha.",
+ "fires": [],
+ "retrieval": [
+  "W1",
+  "W2",
+  "W3",
+  "W4",
+  "W5"
+ ],
+ "shelf_fresh_note": "fresh process: the shelf could carry only this turn's rows",
+ "gpt_key": false
+}

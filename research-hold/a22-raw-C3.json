@@ -1,0 +1,48 @@
+{
+ "question": "Zzzyx plingworth",
+ "web": {
+  "provider": "ddg-ia",
+  "ok": false,
+  "query": "Zzzyx plingworth",
+  "results": 0,
+  "gaps": [
+   "search-empty"
+  ],
+  "spent": {
+   "search": 1,
+   "fetch": 0,
+   "calls": 1,
+   "ms": 384.8
+  },
+  "corroboration": {
+   "urls": 0,
+   "read": 0,
+   "attribution": 0,
+   "origin_publishers": 0,
+   "independence": "unknown",
+   "conflict": "insufficient",
+   "publishers_seen": 0,
+   "duplication": 0,
+   "syndicated-possible": false
+  },
+  "rows": []
+ },
+ "door": {
+  "code": 200,
+  "lane": "general",
+  "retrieval": [
+   "19",
+   "2"
+  ],
+  "response": "Hello, Zzzyx plingworth.",
+  "model_calls": 2,
+  "evidence_status": "general knowledge, not verified this turn (the web brought nothing (search-empty))",
+  "web_stamped": false,
+  "query": null
+ },
+ "secs": 30.0,
+ "id": "C3",
+ "kind": "empty-lane-explicit-same-bytes",
+ "expect": "the honest emptiness lane (A5's EA4): the house's fold phrase, the general road's OWN compound word, NO citation minted, no promotion; the query's bytes ride the record IDENTICAL to the question's (an explicit same-bytes query - the no-op SPEAKS, it does not ride the fallback)",
+ "query-spoken": "Zzzyx plingworth"
+}

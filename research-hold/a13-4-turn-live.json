@@ -1,0 +1,39 @@
+{
+ "turn": "A13.4 - the sentence-shaped end-to-end, one bounded attempt",
+ "question": "What do Ashoka's rock edicts say about dhamma?",
+ "query_actually_sent": "What do Ashoka's rock edicts say about dhamma?",
+ "search_url": "http://api.duckduckgo.com/?q=What+do+Ashoka%27s+rock+edicts+say+about+dhamma%3F&format=json&nohtml&kl=in-en&k1=in&k7=1",
+ "deviation": "NONE - the exact sentence rode; no keyword substitution, no retry",
+ "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+ "provider": "ddg-ia",
+ "code": 200,
+ "lane": "general",
+ "web_stamp": false,
+ "model_calls": 2,
+ "secs": 50.4,
+ "retrieval": [
+  "19",
+  "2"
+ ],
+ "fires": [
+  "GENERAL:UNSOURCED"
+ ],
+ "evidence": [
+  {
+   "id": "19",
+   "claim": "That consciousness has no agreed definition is an observation about our own present state of the asking; that 'the hard problem' states a problem is a position inside the philosophy of mind, not a finding the instruments brought in: the instruments have not spoken either way.",
+   "level": "INFERENTIAL",
+   "kind": "METHODOLOGY",
+   "provenance": "ours-synthesis"
+  },
+  {
+   "id": "2",
+   "claim": "Chapter 48 contrasts ordinary learning, which increases knowledge, with following the Dao, which progressively diminishes one's 'doing,' eventually describing wu wei / non-forcing as a state in which 'nothing is left undone.'",
+   "level": "DOCUMENTED",
+   "provenance": "primary"
+  }
+ ],
+ "response": "Ashoka's rock edicts treat dhamma as a public moral order, not a sect's private possession. The king says he appointed officers of dhamma to look after every community, monks and householders alike. The edicts spell dhamma out in plain conduct: non-violence, truthfulness, generosity, restraint in speech, kindness to parents, teachers, guests, servants, and ascetics. He stresses that dhamma grows through good deeds, not through ritual display or sectarian pride, and that a ruler's job is to spread it across the land so that people of every belief can live by it. The edicts also warn that quarreling between sects harms dhamma itself, so the king urges listening to one another rather than magnifying one's own tradition.",
+ "shelf_fresh_note": "fresh process - only this turn's bytes could reach the mouth",
+ "gpt_key": false
+}

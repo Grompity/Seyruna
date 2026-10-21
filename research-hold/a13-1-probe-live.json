@@ -1,0 +1,108 @@
+{
+ "probe": "A13.1 - the query-shape isolate, two searches, no retries",
+ "hypothesis-under-test": "the ddg-ia lane answers keyword-shaped words but not full NL questions",
+ "config": {
+  "provider": "ddg-ia",
+  "base": "(config.json default)",
+  "RESULTS_N": 5
+ },
+ "attempts": [
+  {
+   "label": "natural-language",
+   "query": "What do Ashoka's surviving edicts tell us about his rule and his concept of dhamma?",
+   "search_url": "http://api.duckduckgo.com/?q=What+do+Ashoka%27s+surviving+edicts+tell+us+about+his+rule+and+his+concept+of+dhamma%3F&format=json&nohtml&kl=in-en&k1=in&k7=1",
+   "ok": false,
+   "gaps": [
+    "search-empty"
+   ],
+   "spent": {
+    "search": 1,
+    "fetch": 0,
+    "calls": 1,
+    "ms": 478.7
+   },
+   "provider_word": "ddg-ia",
+   "secs": 0.5,
+   "results": []
+  },
+  {
+   "label": "keyword-twin",
+   "query": "Ashoka rock edicts inscriptions dhamma Maurya",
+   "search_url": "http://api.duckduckgo.com/?q=Ashoka+rock+edicts+inscriptions+dhamma+Maurya&format=json&nohtml&kl=in-en&k1=in&k7=1",
+   "ok": false,
+   "gaps": [
+    "search-empty"
+   ],
+   "spent": {
+    "search": 1,
+    "fetch": 0,
+    "calls": 1,
+    "ms": 426.9
+   },
+   "provider_word": "ddg-ia",
+   "secs": 0.4,
+   "results": []
+  },
+  {
+   "label": "minimal-keyword (the A7/A13-era shape)",
+   "query": "Ashoka",
+   "ok": true,
+   "gaps": [],
+   "spent": {
+    "search": 1,
+    "fetch": 1,
+    "calls": 2,
+    "ms": 1129.2
+   },
+   "provider_word": "ddg-ia",
+   "secs": 1.1,
+   "results": [
+    {
+     "lane": "related",
+     "title": "Ashoka Ashoka, also known as Asoka or A\u015boka, most commonly known as Ashoka the Great, was Emperor of...",
+     "url": "https://duckduckgo.com/Ashoka?kl=in%2Den&k1=in&k7=1"
+    },
+    {
+     "lane": "related",
+     "title": "Ashoka (2008 film) A 2008 Indian Tamil-language action thriller film written and directed by NRI, Prem Menon, who...",
+     "url": "https://duckduckgo.com/Ashoka_(2008_film)?kl=in%2Den&k1=in&k7=1"
+    }
+   ]
+  },
+  {
+   "label": "control (a plain known topic)",
+   "query": "Magna Carta",
+   "ok": true,
+   "gaps": [],
+   "spent": {
+    "search": 1,
+    "fetch": 1,
+    "calls": 2,
+    "ms": 987.1
+   },
+   "provider_word": "ddg-ia",
+   "secs": 1.0,
+   "results": [
+    {
+     "lane": "related",
+     "title": "Magna Carta A royal charter of rights agreed to by King John of England at Runnymede, near Windsor, on 15...",
+     "url": "https://duckduckgo.com/Magna_Carta?kl=in%2Den&k1=in&k7=1"
+    },
+    {
+     "lane": "related",
+     "title": "Magna Carta... Holy Grail The twelfth studio album by American rapper Jay-Z. It was made available at first for free...",
+     "url": "https://duckduckgo.com/Magna_Carta_Holy_Grail?kl=in%2Den&k1=in&k7=1"
+    },
+    {
+     "lane": "related",
+     "title": "MagnaCarta 2 A role-playing video game developed by South Korean developer Softmax and published by Namco...",
+     "url": "https://duckduckgo.com/MagnaCarta_2?kl=in%2Den&k1=in&k7=1"
+    }
+   ]
+  }
+ ],
+ "door_note": "research() is the runner's own web-phase call; the door itself was NOT re-ridden (this probe isolates the search lane, not the mouths); extra work performed = the picker's fetch coins where results existed - see spent",
+ "gpt_key": false,
+ "finding": "the keyword twin AND the controls (Ashoka - the exact word the A7 smoke got a result on; Magna Carta - an EA-fixture word) all lane search-empty: the lane's silence is TIME-LOCAL, not query-shape; the A13.1 hypothesis is FALSIFIED by its own test",
+ "unknowns": "HTTP status/content-type not exposed at the research lane - the '[] RelatedTopics on a 200 json' reading is inferred from the fast clean search-empty lane word (no exception class), not observed at bytes; whether the lane serves non-english kl, and whether it answers at all this hour, stay open"
+}

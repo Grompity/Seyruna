@@ -1,0 +1,23 @@
+{
+ "eval": "EA-A22.0.1",
+ "note": "A22's controlled comparison on the query-separation road. The CASES, the QUERIES, and the CRITERIA are FROZEN before the run (written from the A-series evidence bytes - the A5 EA file, the A13 file, the A20 diagnostic - never from a peek at the run's own results; an expectation is not a score). The original QUESTIONS ride BYTE-FOR-BYTE from the prior records; the retrieval QUERIES ride SEPARATE (the absent query word at the control is the tested fact itself). The live road rides the runner's own per-case unit run_one(qtext, live, caps, query) exactly as A20 drove it - main is NOT ridden (its fixed a5-eval-* names would re-write the A5 bytes); the artifacts ride fresh names.",
+ "caps": {"max_calls_per_question": 8, "max_secs_per_question": 240},
+ "attempts": "one attempt per case (4 total of the 8 allowed); a RETRIDE only at a runtime/provider error (max 2 per case); a lane-word (an emptiness, a failure) is DATA, never a retried error; no unbounded retries",
+ "questions": [
+  {"id": "C1", "kind": "known-green-retitled",
+   "question": "Ashoka rock edict",
+   "query": "Edicts of Ashoka",
+   "expect": "retrieval ok with results (the prior witness at these very bytes: A5's EA1 and A20's case A); the query's bytes ride the packet and the trace as spoken, the two-word question rides the record UNTOUCHED; a read origin names its carriers (carried-by), or the word rides honestly WEAKER - never promoted"},
+  {"id": "C2", "kind": "known-empty-question-with-known-green-query",
+   "question": "What do Ashoka's rock edicts say about dhamma?",
+   "query": "Ashoka rock edict",
+   "expect": "THE POINT OF THE MILESTONE: the empty-thrice SENTENCE rides the pipeline UNTOUCHED while the green two-word NAME rides the search; if the lane goes green, the status names a read origin AS CARRIER (it does not vouch the mouth's bytes); if the provider is empty AGAIN today, the fold phrase and the compound word speak - BOTH outcomes are truth at the word, NEITHER is a score"},
+  {"id": "C3", "kind": "empty-lane-explicit-same-bytes",
+   "question": "Zzzyx plingworth",
+   "query": "Zzzyx plingworth",
+   "expect": "the honest emptiness lane (A5's EA4): the house's fold phrase, the general road's OWN compound word, NO citation minted, no promotion; the query's bytes ride the record IDENTICAL to the question's (an explicit same-bytes query - the no-op SPEAKS, it does not ride the fallback)"},
+  {"id": "C4", "kind": "control-same-question-no-query",
+   "question": "What do Ashoka's rock edicts say about dhamma?",
+   "expect": "no query word spoken: the question RODE AS THE QUERY at the packet's OWN word (inspectable, not assumed), the door-record carries NO query key, and the run is byte-comparable to A20's case-B record save the provider's day; this is the CONTROL that separates SEPARATION from provider drift"}
+ ]
+}

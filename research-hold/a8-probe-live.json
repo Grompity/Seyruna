@@ -1,0 +1,46 @@
+{
+ "probe": "A8 bounded provider probe (ONE request per instance, no retries, no fan-out)",
+ "at": "2026-10-19",
+ "directory": {
+  "url": "https://searx.space/",
+  "inspections": 3,
+  "note": "first read tripped a too-small probe cap (the too-big word rode, no retry); the page lists exactly TWO instance URLs (baresearch.org, libresearch.space) beside a 69-online-instance health table - the selection, done from the directory's own bytes, was thus FORCED to two and both were probed",
+  "health-read": "instance-URLs found in the table; per-row health columns sat beyond the readable extract - disclosed"
+ },
+ "query": "Ashoka rock edicts",
+ "instances": [
+  {
+   "base": "https://baresearch.org",
+   "ts": "13:16:22",
+   "request": "https://baresearch.org/search?q=Ashoka+rock+edicts&format=json",
+   "http": 200,
+   "content-type": "text/html (JSON was requested)",
+   "body-head": "<!doctype html>... <title>Making sure you're not a bot!</title>",
+   "secs": 0.3,
+   "results": 0,
+   "publishers": [],
+   "at-house-lane": "search-malformed (json.loads over the challenge page)",
+   "verdict": "CHALLENGE (bot-wall) - recorded, probed no further"
+  },
+  {
+   "base": "https://libresearch.space",
+   "ts": "13:16:23",
+   "request": "https://libresearch.space/search?q=Ashoka+rock+edicts&format=json",
+   "http": 200,
+   "content-type": "text/html (JSON was requested)",
+   "body-head": "<!doctype html>... <title>Making sure you're not a bot!</title>",
+   "secs": 0.3,
+   "results": 0,
+   "publishers": [],
+   "at-house-lane": "search-malformed (same challenge)",
+   "verdict": "CHALLENGE (same wall, same instant - shared middleware, disclosed)"
+  }
+ ],
+ "law-kept": [
+  "one bounded request per instance, strict 10s timeout, house MAX_BYTES, house UA/headers, CTTYPE context",
+  "no retry, no UA swap (a UA swap WOULD be a retry in disguise - declared for the NEXT experiment, not this one)",
+  "no fallback to ddg-ia reported as searxng success",
+  "no instance fan-out, no rotating pool"
+ ],
+ "failing-stage": "search()'s network boundary: request ACCEPTED (HTTP 200), response DECLINED to be JSON (bot-challenge HTML at the JSON lane) - upstream of results_from, upstream of the picker, upstream of fetch, upstream of every A7 accounting word. The house handled it EXACTLY as designed: a laned class, zero fabricated sources."
+}

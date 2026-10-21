@@ -1,0 +1,28 @@
+{
+ "probe": "A9 declared-UA probe - ONE experiment, TWO HTTP calls (a body-capture slip cost the first; the slip is disclosed, it was not a retry of a refusal)",
+ "at": "2026-10-19 13:26",
+ "instance": "libresearch.space (chosen from the two A8-walled instances; the choice declared ARBITRARY - the identity-law is not instance-specific)",
+ "query": "Ashoka rock edicts",
+ "url": "https://libresearch.space/search?q=Ashoka+rock+edicts&format=json",
+ "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (like Gecko) AscendedProbe/0.9 Safari/537.36",
+ "headers-moved": "User-Agent ONLY (Accept unchanged: application/json;q=1, */*;q=.5); no cookies, no rotation, no challenge-solving",
+ "guard": "safe_target BEFORE the road: (True, None) - the house road-gate, untouched",
+ "call-1": {
+  "status": 200,
+  "content-type": "text/html",
+  "bytes": 7170,
+  "secs": 0.4,
+  "slip": "response bytes were read then dropped (a capture slip in the probe script); bytes lost"
+ },
+ "call-2": {
+  "status": 200,
+  "content-type": "text/html",
+  "bytes": 7170,
+  "secs": 0.3,
+  "head": "<!doctype html><html lang=\"en\"><head><title>Making sure you're not a bot!</title>",
+  "classification": "CHALLENGE (bot-wall) - identical page, identical size to A8's challenge"
+ },
+ "results": 0,
+ "publishers": [],
+ "verdict": "THE CHALLENGE REMAINED under a conventional browser-shaped UA (A8's bot-shaped UA got the SAME wall). OBSERVED FACT: the failure is NOT explained by the house's request identity alone. WHAT MAY NOT BE CONCLUDED (n=2 instances, same-second walls): that every SearXNG instance walls, that the whole provider market is down, or WHICH request property the wall keys at (cookies, TLS fingerprint, HTTP version, JS-challenge posture - none touched, per the no-evasion law)."
+}

@@ -1,0 +1,225 @@
+{
+  "a26": "instrument",
+  "frozen_preregistration": {
+    "path": "a26-comprehension-preregistration.md",
+    "sha256": "258154ffc713abe63c5015db9238fbd83c83924191d9b4b157dcc7e146377bfe"
+  },
+  "run_shape": {
+    "participants": 0,
+    "human_result": "NOT TESTED",
+    "run_type": "instrument validation with synthetic answer profiles",
+    "status_planned": "INSTRUMENT-ONLY"
+  },
+  "materials": {
+    "C1": {
+      "aggregate_words_as_recorded_by_A25": "the reviewer's C-line 'CLEANS of absent signatures' + the sentence words 'tokens-present'; A19's status word (verbatim, all three homes) 'carried by: wikipedia.org (read)'",
+      "role": "the deliberately misleading aggregate: present/CLEAN words over a count whose ONLY byte rode a SNIPPET",
+      "condition_a_material": {
+        "the_answer_words_verbatim_A25_claim_bytes": [
+          "\"fourteen separate inscriptions\" (C1)",
+          "\"attributed to Emperor Ashoka of the Mauryan Empire (r. c. 268–232 BCE)\" (C1)"
+        ],
+        "door_evidence_status_verbatim": "carried by: wikipedia.org (read)",
+        "gaps_verbatim": [],
+        "the_records_own_corroboration_words_verbatim": {
+          "independence": "none",
+          "conflict": "insufficient"
+        },
+        "reviewer_recorded_C_line_word": "CLEANS of absent signatures",
+        "reviewer_machine_findings_verbatim": [],
+        "reviewer_per_sentence_status_words_verbatim": {
+          "token-free": 2,
+          "tokens-present": 3
+        }
+      },
+      "condition_b_adds_exactly": [
+        "C1 · claim 1 — token 14 seen ONLY in SNIPPET words at W5 (kind snippet; lane 'not-fetched:dup-publisher'); the READ window (W1, kind page) saw no such byte. The machine's words here (tokens-present, CLEANS) speak that the BYTES REACHED the mouth — NOT that any row ENTAILS the count.",
+        "C1 · claim 3 — tokens Ashoka/Mauryan/Empire/268/232 seen in the READ window's OWN bytes at W1 (kind page; note 'http 200 (capped)'). A token match is the POSSIBILITY of support, not the PROOF of it — entailment stays the reader's (A23's J-flag open)."
+      ],
+      "a25_new_ambiguity_field": "A23's claim units vs the machine's sentence units: the house splitter cut the mouth's one sentence into 5 bytes (A24 verbatim), so the caption spans two sentences — the claim-to-bytes mapping is A23's/A24's RECORDED hand mapping, disclosed"
+    },
+    "C2": {
+      "aggregate_words_as_recorded_by_A25": "the reviewer's C-line 'CLEANS of absent signatures'; A19's status word 'carried by: wikipedia.org (read)' (all three homes, verbatim) — which names only the one READ row",
+      "role": "the token-free case: the mouth's claim ABOUT THE RECORD — absence of a token, not absence of support",
+      "condition_a_material": {
+        "the_answer_words_verbatim_A25_claim_bytes": [
+          "\"the records … describe the edicts' form and number … none quote what they say about dhamma\" (C2)",
+          "\"One snippet … 'a series of edicts on the teachings of Buddha' … a one-line summary\" (C2)"
+        ],
+        "door_evidence_status_verbatim": "carried by: wikipedia.org (read)",
+        "gaps_verbatim": [],
+        "the_records_own_corroboration_words_verbatim": {
+          "independence": "none",
+          "conflict": "insufficient"
+        },
+        "reviewer_recorded_C_line_word": "CLEANS of absent signatures",
+        "reviewer_machine_findings_verbatim": [],
+        "reviewer_per_sentence_status_words_verbatim": {
+          "token-free": 3,
+          "tokens-present": 3
+        }
+      },
+      "condition_b_adds_exactly": [
+        "C2 · claim 6 — the machine STANDS ASIDE: token-free (the claim carries NO reviewable token), which is NEITHER pass NOR fail. The claim speaks ABOUT the RECORD, and A23's byte-scan (a human reading, marked so) found the word 'dhamma' in NONE of the five rows' bytes. The claim-about-the-record is thus VERIFIED BY BYTES, NOT by the token-law.",
+        "C2 · claim 8 — the quote's tokens (Delhi, Buddha) seen ONLY in the SNIPPET W4 (kind snippet; lane 'not-fetched:dup-publisher'), never in the READ window — AND the mouth's OWN words already named the kind ('One snippet…'). The token-law adds the KIND-WORD to what the mouth said; it weighs the REACH, never the truth."
+      ],
+      "a25_new_ambiguity_field": "two different 'absences' now ride near each other — token-free (no token exists) vs the byte-scan's absence (a word looked for and NOT found in every row) — the caption labels which is which"
+    },
+    "C3": {
+      "aggregate_words_as_recorded_by_A25": "the reviewer's C-line 'ABSENT SIGNATURES: e:Hello, e:Zzzyx'; A19's compound word (verbatim, all three homes) 'general knowledge, not verified this turn (the web brought nothing (search-empty))' — plus A19's own truth-words 'web_stamped: False', 'NOT a claim of corroboration'",
+      "role": "the vacuous case: an absence-flag over a NON-claim — absence must not be read as disproof",
+      "condition_a_material": {
+        "the_answer_words_verbatim_A25_claim_bytes": [
+          "door.response verbatim: \"Hello, Zzzyx plingworth.\" (A22 raw C3)"
+        ],
+        "door_evidence_status_verbatim": "general knowledge, not verified this turn (the web brought nothing (search-empty))",
+        "gaps_verbatim": [
+          "search-empty"
+        ],
+        "the_records_own_corroboration_words_verbatim": {
+          "independence": "unknown",
+          "conflict": "insufficient"
+        },
+        "reviewer_recorded_C_line_word": "ABSENT SIGNATURES: e:Hello, e:Zzzyx",
+        "reviewer_machine_findings_verbatim": [
+          "e:Hello",
+          "e:Zzzyx"
+        ]
+      },
+      "condition_b_adds_exactly": [
+        "C3 — the greeting asserts NOTHING, yet the law flags its two proper forms: token-absent (e:Hello, e:Zzzyx) over NO BYTES GIVEN (rows [], the record's own word 'the web brought nothing'). Absence of a byte is NOT a mark against the claim — for a phatic word it can be NO MARK AT ALL (a disclosed vacuity of the instrument: 'Hello' is no stop-cap, A24 pinned)."
+      ],
+      "a25_new_ambiguity_field": "one short word now carries a DOUBLE absence — the greeting's (a non-claim; possibly no mark at all) and the turn's (no bytes) — the caption's own words separate them, at the cost of length"
+    },
+    "C4": {
+      "aggregate_words_as_recorded_by_A25": "the reviewer's C-line 'ABSENT SIGNATURES: e:Ashoka's, n:1'; A19's compound word (verbatim, C3's byte-shape; A23's C4 line verbatim: 'the mouth said \"No record stands behind this\" and the compound word said it too')",
+      "role": "the insufficient-and-blocked case: zero rows, the mouth's OWN denial, and TWO independence words saying not-established",
+      "condition_a_material": {
+        "the_answer_words_verbatim_A25_claim_bytes": [
+          "the whole dhamma-content answer (C4); door.response verbatim opener: \"No record stands behind this; I speak from general knowledge.\""
+        ],
+        "door_evidence_status_verbatim": "general knowledge, not verified this turn (the web brought nothing (search-empty))",
+        "gaps_verbatim": [
+          "search-empty"
+        ],
+        "the_records_own_corroboration_words_verbatim": {
+          "independence": "unknown",
+          "conflict": "insufficient"
+        },
+        "reviewer_recorded_C_line_word": "ABSENT SIGNATURES: e:Ashoka's, n:1",
+        "reviewer_machine_findings_verbatim": [
+          "e:Ashoka's",
+          "n:1"
+        ]
+      },
+      "condition_b_adds_exactly": [
+        "C4 · claim 9 — this turn INSUFFICIENT BY ITS OWN BYTES: no row was given (the record: 'web brought no search this turn' — A23's words — and gaps ['search-empty']); the mouth OPENED by saying 'No record stands behind this; I speak from general knowledge'; the machine weighed NOTHING (5 token-free) and flagged 2 token-absent (e:Ashoka's — a possessive form; n:1 — the folded phatic 'one'). The corroboration's OWN words: independence unknown, conflict insufficient. The reviewer-side independence: BLOCKED (DESIGNED, not proven). NOTHING here is verified, and NOTHING is contradicted."
+      ],
+      "a25_new_ambiguity_field": "TWO independence words could read as ONE; the caption must keep them APART (record-side unknown vs reviewer-side BLOCKED), and A19's own law ('unknown unless two independent publishers read'; one-origin 'insufficient') supplies their meaning"
+    }
+  },
+  "questions": [
+    {
+      "id": "Q-C1-KIND",
+      "fixture": "C1",
+      "dimensions": [
+        "D1",
+        "D5"
+      ],
+      "text": "For the answer's count (fourteen inscriptions): WHICH kind of source's bytes carried it - a read web page's full text, a search result's short words, both, or is this not said?",
+      "accepted_B": "SNIPPET (W5); the read window (W1) saw no such byte",
+      "accepted_A": "not said",
+      "trap": "the read page (MC2)"
+    },
+    {
+      "id": "Q-C1-PROVES",
+      "fixture": "C1",
+      "dimensions": [
+        "D2",
+        "D5"
+      ],
+      "text": "Does anything shown PROVE the web page establishes the count (the claim settled by what is shown)?",
+      "accepted_B": "no - the shown words speak of bytes REACHING the mouth; whether the page MEANS the count is not weighed here",
+      "accepted_A": "the shown words do not say (accepted)",
+      "trap": "yes, it is proved (MC1)"
+    },
+    {
+      "id": "Q-C2-VERDICT",
+      "fixture": "C2",
+      "dimensions": [
+        "D3"
+      ],
+      "text": "On the claim 'the presented records describe form and number and say nothing of dhamma' - did the token-law PASS it, FAIL it, or DECLINE to speak of it?",
+      "accepted_B": "DECLINE (token-free - the stand-aside; neither pass nor fail)",
+      "accepted_A": "a stand-aside word sits among the shown words but is not attached to this claim",
+      "trap": "FAIL (MC4); the conflationist's PASS is the same word-as-verdict error, wrong direction"
+    },
+    {
+      "id": "Q-C2-WHO",
+      "fixture": "C2",
+      "dimensions": [
+        "D6"
+      ],
+      "text": "Who checked that the word dhamma rides NONE of the record's row bytes - the frozen token-law, a human byte-scan, or is this not said?",
+      "accepted_B": "the human byte-scan (A23, marked so)",
+      "accepted_A": "not said",
+      "trap": "the token-law did it (tag-extension MC6)"
+    },
+    {
+      "id": "Q-C3-MARKED",
+      "fixture": "C3",
+      "dimensions": [
+        "D3"
+      ],
+      "text": "The law flagged the greeting's two proper forms ABSENT SIGNATURES. Is the greeting therefore WRONG?",
+      "accepted_B": "no - the flag marks bytes NOT PRESENT; for a phatic word the flag can be NO MARK AT ALL",
+      "accepted_A": "no - absence of bytes is no mark of error",
+      "trap": "wrong / refuted (MC3)"
+    },
+    {
+      "id": "Q-C4-ESTABLISHED",
+      "fixture": "C4",
+      "dimensions": [
+        "D4"
+      ],
+      "text": "Has this turn's answer been ESTABLISHED (corroborated) by the bytes, REFUTED by them, or NEITHER?",
+      "accepted_B": "NEITHER - insufficient by its own bytes (no row given; record-side independence unknown + conflict insufficient; reviewer-side BLOCKED)",
+      "accepted_A": "NEITHER (the compound word and the record's own words say so)",
+      "trap": "corroborated (MC5); refuted (MC3)"
+    },
+    {
+      "id": "Q-SHARED-MAP",
+      "fixture": "C1",
+      "dimensions": [
+        "D6"
+      ],
+      "text": "The bridge claim-to-row - a reviewer output of the frozen token-law, or a RECORDED HUMAN mapping (A23) that A24's ride re-derived at the machine's own words?",
+      "accepted_B": "the recorded human mapping",
+      "accepted_A": "not said (not-presentable)",
+      "trap": "the token-law minted it (MC7)"
+    },
+    {
+      "id": "Q-SHARED-WORDS",
+      "fixture": "C1",
+      "dimensions": [
+        "D6"
+      ],
+      "text": "The second presentation displays the words READ-WINDOW and SNIPPET - are those the law's FOURTH and FIFTH words?",
+      "accepted_B": "no - presentation words standing over the bytes' OWN kind-words (page/snippet); the law's words are exactly three",
+      "accepted_A": "the words are not shown (not-presentable)",
+      "trap": "yes (MC6)"
+    }
+  ],
+  "profiles": {
+    "S1_careful_reader": "answers only from what is shown; no inferences; a missing fact yields 'not said'; expected to fire no trap",
+    "S2_token_truth_conflationist": "reads every status/law word as a verdict about the subject's truth; reports shown kind-words correctly; UNDERWEIGHTS the humility tail and the stand-aside word; reads A25's words as law words",
+    "S3_absence_as_disproof_reader": "reads 'absent' as disproof and 'token-free' as a failed claim, unless the shown words themselves negate it (the B captions say so verbatim)"
+  },
+  "fairness_declarations": [
+    "the shared factual context (claim bytes + the verbatim record/lane/corroboration/reviewer words + A24's BLOCKED word) is IDENTICAL in both conditions",
+    "condition B differs from condition A by NOTHING but A25's exact caption strings (extracted, not retyped)",
+    "no explanatory language was added to condition A that was not in the recorded bytes",
+    "order: fixed A-then-B per fixture; profiles stateless between fixtures (declared deviation of a counterbalanced human design)",
+    "conditions carry the SAME facts; B hands the reader the kind-SPLIT already present in the record's own bytes - the test measures whether the presentation makes the split LAND, not whether new facts were added"
+  ]
+}

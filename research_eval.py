@@ -43,12 +43,29 @@ def load_doc():
     return json.loads(open(os.path.join(HERE, "research-eval.json")).read())
 
 
-def run_one(qtext, live, caps):
+def run_one(qtext, live, caps, query=None):
+    # A22: the OPTIONAL explicit retrieval query, kept SEPARATE from the
+    # question. The question rides byte-for-byte everywhere (the record's
+    # "question" key, the door's body, the pipeline's road); the query
+    # rides the SEARCH ALONE - the door's own A15 word (body["query"],
+    # used by web_research.research and recorded at the packet), spent
+    # here at the runner. Absent or malformed (not a string, empty, all
+    # space) it IS the question's bytes: today's road byte-exact. No
+    # rewriting, no extra model call, no new provider behavior - the
+    # runner accepts, uses, and RECORDS, and the actual query is recorded
+    # from the PACKET'S OWN WORD and the door's OWN trace, never
+    # reconstructed.
     t0 = time.time()
     out = {"question": qtext}
-    pk = web_research.research(qtext)              # its own MAX_SECS bounds it
+    rquery = query.strip() if isinstance(query, str) else ""
+    pk = web_research.research(rquery or qtext)   # its own MAX_SECS bounds it
     rows, ids = web_research.to_rows(pk)
     out["web"] = {"provider": pk["provider"], "ok": pk["ok"],
+                  "query": pk.get("query"),       # A22: the query ACTUALLY
+                                                  # ridden, the packet's
+                                                  # own word (the A15
+                                                  # trace-stamp idiom, at
+                                                  # the record as well)
                   "results": len(pk["results"]), "gaps": pk["gaps"],
                   "spent": pk["spent"],
                   "corroboration": web_research.corroboration(pk),
@@ -61,8 +78,10 @@ def run_one(qtext, live, caps):
     left = caps.get("max_secs_per_question", 240) - (time.time() - t0)
     if live:
         if left > 0:
-            payload, code = stages.door({"question": qtext, "web": True},
-                                        live=True)
+            body = {"question": qtext, "web": True}
+            if rquery:
+                body["query"] = rquery            # the A15 door word, spent
+            payload, code = stages.door(body, live=True)
             tr = payload["trace"]
             # A18: the runner's record now carries the door's OWN status
             # word VERBATIM (a tr.get, never a reconstruction from prose):
@@ -74,6 +93,13 @@ def run_one(qtext, live, caps):
                            "model_calls": tr.get("model_calls"),
                            "evidence_status": tr.get("evidence_status"),
                            "web_stamped": tr.get("web") is not None}
+            if rquery:
+                # A22: and beside it the door's OWN query word (a tr.get of
+                # the A15 trace stamp, verbatim). A fold leaves no web
+                # stamp, so the word rides as ABSENCE (None) - never a
+                # promotion; the key rides only where a query was spoken,
+                # and the over-budget branch (no door call) stays sparse.
+                out["door"]["query"] = (tr.get("web") or {}).get("query")
         else:
             out["door"] = {"lane": "over-budget"}    # the word, not a shrug
     out["secs"] = round(time.time() - t0, 1)
@@ -105,7 +131,10 @@ def main(argv):
                      "code - disclosed, not independent)",
            "questions": []}
     for q in doc.get("questions") or []:
-        r = run_one(q["question"], live, caps)
+        # A22: a question may carry its own FROZEN retrieval query; the
+        # A5 fixture carries none, so every question rides the old road
+        # byte-exact (run_one's fallback = the question's own bytes).
+        r = run_one(q["question"], live, caps, q.get("query"))
         r["id"] = q.get("id")
         r["kind"] = q.get("kind")
         r["expect"] = q.get("expect")
@@ -117,6 +146,7 @@ def main(argv):
                "| lane:", (d or {}).get("lane"),
                "| calls:", (d or {}).get("model_calls"),
                "| status:", status_word(r),
+               "| query:", r["web"].get("query"),
                "| %.1fs" % r["secs"])
     out = os.path.join(HERE, "research-hold",
                        "a5-eval-live.json" if live else "a5-eval-search.json")

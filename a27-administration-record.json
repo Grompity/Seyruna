@@ -1,0 +1,52 @@
+{
+  "a27": "administration-record",
+  "purpose": "the record of the A27 human-participant procedure built on the frozen A26 instrument",
+  "frozen_preregistration_sha256": "258154ffc713abe63c5015db9238fbd83c83924191d9b4b157dcc7e146377bfe",
+  "frozen_instrument_sha256": "2f8e0fe7fba5a54b4d92c776a1149885124be1320399c5233f867e7e43988580",
+  "frozen_answer_key_sha256": "aa2e94e0e08e3fa039f432cf7aa7310e2fabca219ae9c2d66a4ca1ef70a176a1",
+  "frozen_results_sha256": "a39baeb6ef429b8ef6364b71ff67b857556f336efe09fd5a5926ea45a0178db3",
+  "generated_guide_sha256": "1118a13f08647e1194c96e7d31e0c55b4008ef4f24dd4adb3569ad28722e0ae7",
+  "status": "AWAITING FOUNDER ADMINISTRATION",
+  "instrument_frozen_at_open": true,
+  "no_instrument_wording_rubric_criterion_or_caption_changed": true,
+  "administration_gate": {
+    "a_real_human_participant_is_available_to_the_founder": "NOT YET DETERMINED — the gate (report §4) must be answered by the founder before any response row is filled",
+    "determined_on_the_open_of_a27": false,
+    "rule": "no simulated, AI-generated, inferred, or executor reading may stand as a participant response; no fake response row"
+  },
+  "participants": [],
+  "consent_events": [],
+  "responses": [],
+  "administrator_observations": [],
+  "interpretation_and_limitations": {
+    "no_human_data_yet": true,
+    "note": "the arrays above are intentionally empty — no real administration has occurred at the time this record was written; this file records the procedure, not a fabricated event",
+    "this_is_a_small_exploratory_usability_pilot_not_a_representative_scientific_study": true,
+    "no_institutional_ethics_approval_or_formal_oversight_claimed": true,
+    "n_1_limitation": "with one reader no population effect can be established and no statistical significance may be claimed",
+    "counterbalancing": "a single reader cannot be counterbalanced; the order is recorded as a limitation"
+  },
+  "data_collection": {
+    "anonymous_participant_ids_preferred": true,
+    "no_names_contact_sensitive_or_demographic_data": true,
+    "answers_preserved_verbatim": true
+  },
+  "provenance": {
+    "branch": "main",
+    "head": "1c7a74c",
+    "git_index_moved_by_this_milestone": false,
+    "seven_staged_entries_byte_identical_at_open": true,
+    "a22_work_files_research_eval_py_tests_py_still_M": true,
+    "a26_manifest_mechanically_verified": true,
+    "batteries_and_harness_run_without_funnel_at_open": "integrity 18/18; retrieval/content-blindness exit 0; harness tests.py 166/166 HARNESS GREEN (no code moved)",
+    "nested_repositories_untouched": ["Seyruna/", "Paper Website/"],
+    "coral_out_of_scope": true
+  },
+  "deliverables": [
+    "a27-administration-guide.md",
+    "a27-administration-record.json",
+    "a27-results.json",
+    "a27-report.md",
+    "a27-manifest.sha256"
+  ]
+}

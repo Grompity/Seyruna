@@ -1,0 +1,471 @@
+{
+  "a26": "results",
+  "status": "INSTRUMENT-ONLY",
+  "human_result": "NOT TESTED",
+  "participants": 0,
+  "completed_responses": "n/a (no humans administered)",
+  "status_scope": "This run establishes ONLY that the A26 instrument and rubric DETECT each preregistered misconception (MC1-MC7) somewhere in the synthetic matrix and that condition B (the exact A25 captions) answers every probe where the fact is recorded, with ZERO regressions among the profiles. It establishes NO human-comprehension improvement: no human was administered (A26 sec 5/9). The conflationist's persistence at B is a profile rule (by construction), not a human finding.",
+  "matrix_note": "statuses per the frozen preregistration table; S2's wrong-direction PASS at Q-C2-VERDICT scored under MC4 (preregistered reading)",
+  "matrix": {
+    "Q-C1-KIND": {
+      "A": {
+        "S1": "not-said",
+        "S2": "MC2",
+        "S3": "not-said"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "correct",
+        "S3": "correct"
+      }
+    },
+    "Q-C1-PROVES": {
+      "A": {
+        "S1": "correct",
+        "S2": "MC1",
+        "S3": "correct"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "MC1-persists",
+        "S3": "correct"
+      }
+    },
+    "Q-C2-VERDICT": {
+      "A": {
+        "S1": "accepted-A",
+        "S2": "MC4",
+        "S3": "MC4"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "correct",
+        "S3": "correct"
+      }
+    },
+    "Q-C2-WHO": {
+      "A": {
+        "S1": "not-said",
+        "S2": "not-said",
+        "S3": "not-said"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "MC6",
+        "S3": "correct"
+      }
+    },
+    "Q-C3-MARKED": {
+      "A": {
+        "S1": "correct",
+        "S2": "MC3",
+        "S3": "MC3"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "MC3-persists",
+        "S3": "correct"
+      }
+    },
+    "Q-C4-ESTABLISHED": {
+      "A": {
+        "S1": "correct",
+        "S2": "MC5",
+        "S3": "MC3"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "MC5-persists",
+        "S3": "correct"
+      }
+    },
+    "Q-SHARED-MAP": {
+      "A": {
+        "S1": "not-said",
+        "S2": "MC7",
+        "S3": "not-said"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "MC7-persists",
+        "S3": "correct"
+      }
+    },
+    "Q-SHARED-WORDS": {
+      "A": {
+        "S1": "not-shown",
+        "S2": "not-shown",
+        "S3": "not-shown"
+      },
+      "B": {
+        "S1": "correct",
+        "S2": "MC6",
+        "S3": "correct"
+      }
+    }
+  },
+  "pair_outcomes": [
+    {
+      "probe": "Q-C1-KIND",
+      "fixture": "C1",
+      "profile": "S1",
+      "A": "not-said",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    },
+    {
+      "probe": "Q-C1-KIND",
+      "fixture": "C1",
+      "profile": "S2",
+      "A": "MC2",
+      "B": "correct",
+      "pair": "A-trap-to-B-correct"
+    },
+    {
+      "probe": "Q-C1-KIND",
+      "fixture": "C1",
+      "profile": "S3",
+      "A": "not-said",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    },
+    {
+      "probe": "Q-C1-PROVES",
+      "fixture": "C1",
+      "profile": "S1",
+      "A": "correct",
+      "B": "correct",
+      "pair": "both-correct"
+    },
+    {
+      "probe": "Q-C1-PROVES",
+      "fixture": "C1",
+      "profile": "S2",
+      "A": "MC1",
+      "B": "MC1-persists",
+      "pair": "trap-persists-at-B"
+    },
+    {
+      "probe": "Q-C1-PROVES",
+      "fixture": "C1",
+      "profile": "S3",
+      "A": "correct",
+      "B": "correct",
+      "pair": "both-correct"
+    },
+    {
+      "probe": "Q-C2-VERDICT",
+      "fixture": "C2",
+      "profile": "S1",
+      "A": "accepted-A",
+      "B": "correct",
+      "pair": "A-accepted-to-B-correct"
+    },
+    {
+      "probe": "Q-C2-VERDICT",
+      "fixture": "C2",
+      "profile": "S2",
+      "A": "MC4",
+      "B": "correct",
+      "pair": "A-trap-to-B-correct"
+    },
+    {
+      "probe": "Q-C2-VERDICT",
+      "fixture": "C2",
+      "profile": "S3",
+      "A": "MC4",
+      "B": "correct",
+      "pair": "A-trap-to-B-correct"
+    },
+    {
+      "probe": "Q-C2-WHO",
+      "fixture": "C2",
+      "profile": "S1",
+      "A": "not-said",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    },
+    {
+      "probe": "Q-C2-WHO",
+      "fixture": "C2",
+      "profile": "S2",
+      "A": "not-said",
+      "B": "MC6",
+      "pair": "B-only-fires (A silent)"
+    },
+    {
+      "probe": "Q-C2-WHO",
+      "fixture": "C2",
+      "profile": "S3",
+      "A": "not-said",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    },
+    {
+      "probe": "Q-C3-MARKED",
+      "fixture": "C3",
+      "profile": "S1",
+      "A": "correct",
+      "B": "correct",
+      "pair": "both-correct"
+    },
+    {
+      "probe": "Q-C3-MARKED",
+      "fixture": "C3",
+      "profile": "S2",
+      "A": "MC3",
+      "B": "MC3-persists",
+      "pair": "trap-persists-at-B"
+    },
+    {
+      "probe": "Q-C3-MARKED",
+      "fixture": "C3",
+      "profile": "S3",
+      "A": "MC3",
+      "B": "correct",
+      "pair": "A-trap-to-B-correct"
+    },
+    {
+      "probe": "Q-C4-ESTABLISHED",
+      "fixture": "C4",
+      "profile": "S1",
+      "A": "correct",
+      "B": "correct",
+      "pair": "both-correct"
+    },
+    {
+      "probe": "Q-C4-ESTABLISHED",
+      "fixture": "C4",
+      "profile": "S2",
+      "A": "MC5",
+      "B": "MC5-persists",
+      "pair": "trap-persists-at-B"
+    },
+    {
+      "probe": "Q-C4-ESTABLISHED",
+      "fixture": "C4",
+      "profile": "S3",
+      "A": "MC3",
+      "B": "correct",
+      "pair": "A-trap-to-B-correct"
+    },
+    {
+      "probe": "Q-SHARED-MAP",
+      "fixture": "C1",
+      "profile": "S1",
+      "A": "not-said",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    },
+    {
+      "probe": "Q-SHARED-MAP",
+      "fixture": "C1",
+      "profile": "S2",
+      "A": "MC7",
+      "B": "MC7-persists",
+      "pair": "trap-persists-at-B"
+    },
+    {
+      "probe": "Q-SHARED-MAP",
+      "fixture": "C1",
+      "profile": "S3",
+      "A": "not-said",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    },
+    {
+      "probe": "Q-SHARED-WORDS",
+      "fixture": "C1",
+      "profile": "S1",
+      "A": "not-shown",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    },
+    {
+      "probe": "Q-SHARED-WORDS",
+      "fixture": "C1",
+      "profile": "S2",
+      "A": "not-shown",
+      "B": "MC6",
+      "pair": "B-only-fires (A silent)"
+    },
+    {
+      "probe": "Q-SHARED-WORDS",
+      "fixture": "C1",
+      "profile": "S3",
+      "A": "not-shown",
+      "B": "correct",
+      "pair": "B-only-cure (A silent)"
+    }
+  ],
+  "pair_summary": {
+    "B-only-cure (A silent)": 8,
+    "A-trap-to-B-correct": 5,
+    "both-correct": 4,
+    "trap-persists-at-B": 4,
+    "A-accepted-to-B-correct": 1,
+    "B-only-fires (A silent)": 2
+  },
+  "dimension_rollups": {
+    "D1": {
+      "traps_at_A": [
+        "S2:MC2"
+      ],
+      "traps_at_B": [],
+      "cure_pairs": 1,
+      "regressions": 0
+    },
+    "D2": {
+      "traps_at_A": [
+        "S2:MC1"
+      ],
+      "traps_at_B": [
+        "S2:MC1"
+      ],
+      "cure_pairs": 0,
+      "regressions": 0
+    },
+    "D3": {
+      "traps_at_A": [
+        "S2:MC4",
+        "S3:MC4",
+        "S2:MC3",
+        "S3:MC3"
+      ],
+      "traps_at_B": [
+        "S2:MC3"
+      ],
+      "cure_pairs": 3,
+      "regressions": 0
+    },
+    "D4": {
+      "traps_at_A": [
+        "S2:MC5",
+        "S3:MC3"
+      ],
+      "traps_at_B": [
+        "S2:MC5"
+      ],
+      "cure_pairs": 1,
+      "regressions": 0
+    },
+    "D5": {
+      "traps_at_A": [
+        "S2:MC2",
+        "S2:MC1"
+      ],
+      "traps_at_B": [
+        "S2:MC1"
+      ],
+      "cure_pairs": 1,
+      "regressions": 0
+    },
+    "D6": {
+      "traps_at_A": [
+        "S2:MC7"
+      ],
+      "traps_at_B": [
+        "S2:MC6",
+        "S2:MC7",
+        "S2:MC6"
+      ],
+      "cure_pairs": 0,
+      "regressions": 0
+    }
+  },
+  "failure_mode_coverage": {
+    "MC1": "FIRES at A; FIRES at B (persistence or B-only-by-nature)",
+    "MC2": "FIRES at A; does not fire at B",
+    "MC3": "FIRES at A; FIRES at B (persistence or B-only-by-nature)",
+    "MC4": "FIRES at A; does not fire at B",
+    "MC5": "FIRES at A; FIRES at B (persistence or B-only-by-nature)",
+    "MC6": "does not fire at A; FIRES at B (persistence or B-only-by-nature) - the words exist only in B, so B-only firing IS the designed detection",
+    "MC7": "FIRES at A; FIRES at B (persistence or B-only-by-nature)",
+    "MC8": "INDETERMINATE-BY-SYNTHETIC (profiles accept their own words by construction; humans-only observable)"
+  },
+  "per_fixture_results": {
+    "C1": {
+      "probes": [
+        "Q-C1-KIND",
+        "Q-C1-PROVES"
+      ],
+      "A_fires": [
+        "MC2 (kind-blind, via (read) + CLEANS + tokens-present)"
+      ],
+      "B_status": "kind question answered correctly by ALL profiles (shown kind-words); PROVES trap persists for the conflationist by rule",
+      "note": "the aggregate-trap demonstration (D5) fires exactly as preregistered"
+    },
+    "C2": {
+      "probes": [
+        "Q-C2-VERDICT",
+        "Q-C2-WHO"
+      ],
+      "A_fires": [
+        "MC4 twice (absence-reader AND wrong-direction conflationist)"
+      ],
+      "B_status": "STANDS ASIDE / NEITHER-pass-nor-fail cures the verdict question for all profiles; the WHO question's human-scan fact lands (S2 still attributes to the law: MC6)",
+      "note": "A's per-sentence words appear as UNATTACHED COUNTS (3+3) - the accepted A-form was preregistered"
+    },
+    "C3": {
+      "probes": [
+        "Q-C3-MARKED"
+      ],
+      "A_fires": [
+        "MC3 twice"
+      ],
+      "B_status": "the NO-MARK-AT-ALL word cures the absence-reader (S3); persists for the conflationist (S2) by rule"
+    },
+    "C4": {
+      "probes": [
+        "Q-C4-ESTABLISHED"
+      ],
+      "A_fires": [
+        "MC5 (BLOCKED read as corroboration)",
+        "MC3 (flag read as refuted)"
+      ],
+      "B_status": "NEITHER stands for S1/S3; MC5 persists for the conflationist by rule",
+      "note": "A25's C4 caption attributes 'web brought no search this turn' to A23 - grep of a23-report.md: ZERO hits (the phrase's home is the A22 design); preserved verbatim, recorded as a presentation-layer attribution wobble, NOT corrected"
+    }
+  },
+  "key_entries_ambiguity_flags": {
+    "Q-C2-WHO": "MEDIUM: MC6 carried by declared extension (human fact attributed to the machine)",
+    "Q-C2-VERDICT": "LOW: A shows unattached counts; accepted A-form fixed in the preregistration",
+    "Q-C4-ESTABLISHED": "LOW: two verbatim homes recorded (raw record words; A25 paraphrase); A25's A23-attribution wobble preserved",
+    "others": "NONE at bytes"
+  },
+  "verbatim_checks": {
+    "caption_verbatim_in_a25_json": true,
+    "caption_count": 6,
+    "claim_bytes_verbatim_in_a22_report": false,
+    "c_line_absent_words_verbatim_home_a24": true,
+    "c_line_clean_word_home_a24": true,
+    "a24_blocked_word_in_results": true,
+    "findings_equality_a24": {
+      "C1": [],
+      "C2": [],
+      "C3": [
+        "e:Hello",
+        "e:Zzzyx"
+      ],
+      "C4": [
+        "e:Ashoka's",
+        "n:1"
+      ]
+    }
+  },
+  "hash_verification": {
+    "inputs_checked": 2,
+    "start_record_source": "A25 md digest table (14 files) + A26-start full digests for the two A25 files themselves",
+    "changed": "NONE - every input identical to its start digest (first 16 hex) at end of run"
+  },
+  "deviations": [
+    "fixed A-then-B order, no counterbalancing (synthetic run; humans must counterbalance)",
+    "profiles stateless between fixtures; S1 fires no trap BY CONSTRUCTION (an instrument property, not a human finding)",
+    "A26 ran no tests (read-only run); A24's close battery (166/16 pass, HARNESS GREEN) still stands - no code moved",
+    "no raw anonymous responses file: no humans; responses exist only as the synthetic matrix",
+    "A25's own self-digest absence (its files carry no own-bytes digest) re-noted; A26's preregistration was hashed AT CLOSING before key/scores; A26's own manifest carries all digests (manifest cannot hash itself)"
+  ],
+  "proposed_follow_up": "founder administers the frozen instrument to >=1 consenting human reader (counterbalanced A/B, never the same case back-to-back); if humans show the A-trap-to-B-correct pattern on D1 with no regression, A27 may weigh coining; MC8 remains a human-only observable",
+  "pair_outcome_law": "REGRESSION reserved for A-correct-to-B-trap; A-silent cells that fire only at B (MC6's by nature: the words exist only in B) are 'B-only-fires'",
+  "true_regressions": 0
+}

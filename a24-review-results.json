@@ -1,0 +1,683 @@
+{
+ "milestone": "A24 \u2014 the frozen claim-level reviewer ridden at the A22 bytes",
+ "at": "20261020",
+ "head": "1c7a74c",
+ "reviewer": {
+  "file": "review.py",
+  "status": "tracked, byte-clean at HEAD (git diff empty)",
+  "last-commit": {
+   "review.py": "b3a7ecf A6: the second brain - deterministic token-law audit of EA1..EA6 (RRV-0.1, the GPT leg waits for its key), the one clause the review justified (escaped markup), all six answers clean of absent signatures",
+   "note": "commit ids recomputed from git at this run; review.py byte-clean at HEAD 1c7a74c",
+   "review-protocol.json": "b3a7ecf A6: the second brain - deterministic token-law audit of EA1..EA6 (RRV-0.1, the GPT leg waits for its key), the one clause the review justified (escaped markup), all six answers clean of absent signatures"
+  },
+  "sha256": "bd253e2b64b5066a862f91c1c6e729882220247b32aecb6d0956c58b99b44035",
+  "protocol": {
+   "file": "review-protocol.json",
+   "sha256": "bb038e92f8a94beb028d3731ddc12667a11776decdaa1d883933e6714d201c8f",
+   "problems": []
+  },
+  "pins": "T141 (protocol schema), T142 (the four token-law legs), T143 (the independence word)"
+ },
+ "inputs": {
+  "exact": [
+   "research-hold/a22-eval-live.json",
+   "research-hold/a22-raw-C1.json",
+   "research-hold/a22-raw-C2.json",
+   "research-hold/a22-raw-C3.json",
+   "research-hold/a22-raw-C4.json"
+  ],
+  "adapter": {
+   "file": "research-hold/a24-review-input.json",
+   "why": "pass_eval walks rec[\"questions\"]; the A22 envelope names its list \"cases\" \u2014 resolved at the invocation/adapter level; the four case blocks byte-equal to the raw files (re-verified at this run)",
+   "sha256": "6caf07249273f05076cfc3717e51f787f61daf7ef2f3df71bd81637f61d80cb4"
+  },
+  "direct-envelope-pass": {
+   "questions-seen": 0
+  },
+  "shas256": {
+   "a22-eval-live.json": "70f1e96105aaf1aa00bf087c908a81f0077eb51e855f57720decba11813fb730",
+   "a22-raw-C1.json": "7b5063546527ca9c99337387e56c2c78d6b760bfa5e8bbe47677783ddb25cdab",
+   "a22-raw-C2.json": "4f68c494da77ca8f25bf97bc4223ab38be71111859eedf1915760e023a5aa9d3",
+   "a22-raw-C3.json": "f0963be185e2211e43dbc72c66c8f4f1575975388ef0ca4677bd29ae086bdcc6",
+   "a22-raw-C4.json": "8d658154c83abf8d67c1d9eafb7b2263a2db9969afcf2a5fd86f7b723b9aae4f"
+  }
+ },
+ "invocation": ".venv/bin/python3 -B (heredoc) with OPENAI_API_KEY unset (matching T143's BLOCKED-by-named-var 'now' word and A6's bytes); review.pass_eval(\"research-hold/a24-review-input.json\"); NO --write (the fixed a6-machine.json name was never written)",
+ "exit-status": 0,
+ "a6-integrity-echo": true,
+ "pass": {
+  "machine-pass": "A6 token-law",
+  "source": "a24-review-input.json",
+  "at": "20261020",
+  "independence": {
+   "answering-family": "RadixArk/Qwen3.8-Flash (config's MODEL)",
+   "reviewer-family": "gpt (the bridge's leg)",
+   "key-present": false,
+   "status": "BLOCKED: OPENAI_API_KEY absent - independence is DESIGNED, not proven; the deterministic audit and the DISCLOSED OPERATOR carry the review"
+  },
+  "questions": [
+   {
+    "id": "C1",
+    "question": "Ashoka rock edict",
+    "answer": "The Major Rock Edicts are fourteen separate inscriptions carved into in-situ rocks, attributed to Emperor Ashoka of the Mauryan Empire (r. c. 268\u2013232 BCE). They are significantly detailed and among the earliest dated rock inscriptions of any Indian monarch, preceded chronologically by the Minor Rock Edicts. They sit within a larger collection of more than thirty inscriptions spread across pillars, boulders, and cave walls throughout the subcontinent.",
+    "sentences": [
+     {
+      "sig": {
+       "numbers": [
+        "14"
+       ],
+       "entities": [
+        "Ashoka",
+        "Edicts",
+        "Emperor",
+        "Empire",
+        "Major",
+        "Mauryan",
+        "Rock"
+       ]
+      },
+      "missing": [],
+      "evidence": [
+       {
+        "token": "14",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W2",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Edicts",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Edicts",
+        "row": "W2",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Edicts",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Edicts",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Edicts",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Emperor",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Emperor",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Emperor",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Emperor",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Empire",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Empire",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Major",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Major",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Mauryan",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Mauryan",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Mauryan",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Rock",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Rock",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       }
+      ],
+      "status-machine": "tokens-present",
+      "sentence": "The Major Rock Edicts are fourteen separate inscriptions carved into in-situ rocks, attributed to Emperor Ashoka of the Mauryan Empire (r."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "c."
+     },
+     {
+      "sig": {
+       "numbers": [
+        "232",
+        "268"
+       ],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [
+       {
+        "token": "232",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "268",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       }
+      ],
+      "status-machine": "tokens-present",
+      "sentence": "268\u2013232 BCE)."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": [
+        "Edicts",
+        "Indian",
+        "Minor",
+        "Rock"
+       ]
+      },
+      "missing": [],
+      "evidence": [
+       {
+        "token": "Edicts",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Edicts",
+        "row": "W2",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Edicts",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Edicts",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Edicts",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Indian",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Indian",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Indian",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Indian",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Minor",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Rock",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Rock",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       }
+      ],
+      "status-machine": "tokens-present",
+      "sentence": "They are significantly detailed and among the earliest dated rock inscriptions of any Indian monarch, preceded chronologically by the Minor Rock Edicts."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "They sit within a larger collection of more than thirty inscriptions spread across pillars, boulders, and cave walls throughout the subcontinent."
+     }
+    ],
+    "machine-findings": []
+   },
+   {
+    "id": "C2",
+    "question": "What do Ashoka's rock edicts say about dhamma?",
+    "answer": "What I have here is related, not an answer: the records describe the edicts' form and number, but none of them quote what the edicts actually say about dhamma. What the records do say: the rock edicts are a set of fourteen major inscriptions, carved on in-situ rocks and cave walls across the subcontinent, attributed to Ashoka of the Mauryan Empire (c. 268\u2013232 BCE). One snippet comes closest to content: it calls the Delhi edicts 'a series of edicts on the teachings of Buddha,' but that's a one-line summary, not a quotation of the dhamma language itself. So: the shelf here tells you where the words are carved and who carved them, but not what the words say about dhamma. If you want the content, I'd need a different shelf.",
+    "sentences": [
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "What I have here is related, not an answer: the records describe the edicts' form and number, but none of them quote what the edicts actually say about dhamma."
+     },
+     {
+      "sig": {
+       "numbers": [
+        "14"
+       ],
+       "entities": [
+        "Ashoka",
+        "Empire",
+        "Mauryan"
+       ]
+      },
+      "missing": [],
+      "evidence": [
+       {
+        "token": "14",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W2",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Ashoka",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Empire",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Empire",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Mauryan",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "Mauryan",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Mauryan",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       }
+      ],
+      "status-machine": "tokens-present",
+      "sentence": "What the records do say: the rock edicts are a set of fourteen major inscriptions, carved on in-situ rocks and cave walls across the subcontinent, attributed to Ashoka of the Mauryan Empire (c."
+     },
+     {
+      "sig": {
+       "numbers": [
+        "232",
+        "268"
+       ],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [
+       {
+        "token": "232",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       },
+       {
+        "token": "268",
+        "row": "W1",
+        "kind": "page",
+        "work": "en.wikipedia.org"
+       }
+      ],
+      "status-machine": "tokens-present",
+      "sentence": "268\u2013232 BCE)."
+     },
+     {
+      "sig": {
+       "numbers": [
+        "1"
+       ],
+       "entities": [
+        "Buddha",
+        "Delhi"
+       ]
+      },
+      "missing": [],
+      "evidence": [
+       {
+        "token": "1",
+        "row": "W2",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "1",
+        "row": "W3",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "1",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "1",
+        "row": "W5",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Buddha",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       },
+       {
+        "token": "Delhi",
+        "row": "W4",
+        "kind": "snippet",
+        "work": "duckduckgo.com"
+       }
+      ],
+      "status-machine": "tokens-present",
+      "sentence": "One snippet comes closest to content: it calls the Delhi edicts 'a series of edicts on the teachings of Buddha,' but that's a one-line summary, not a quotation of the dhamma language itself."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "So: the shelf here tells you where the words are carved and who carved them, but not what the words say about dhamma."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "If you want the content, I'd need a different shelf."
+     }
+    ],
+    "machine-findings": []
+   },
+   {
+    "id": "C3",
+    "question": "Zzzyx plingworth",
+    "answer": "Hello, Zzzyx plingworth.",
+    "sentences": [
+     {
+      "sig": {
+       "numbers": [],
+       "entities": [
+        "Hello",
+        "Zzzyx"
+       ]
+      },
+      "missing": [
+       "e:Hello",
+       "e:Zzzyx"
+      ],
+      "evidence": [],
+      "status-machine": "token-absent",
+      "sentence": "Hello, Zzzyx plingworth."
+     }
+    ],
+    "machine-findings": [
+     "e:Hello",
+     "e:Zzzyx"
+    ]
+   },
+   {
+    "id": "C4",
+    "question": "What do Ashoka's rock edicts say about dhamma?",
+    "answer": "No record stands behind this; I speak from general knowledge. Ashoka's rock edicts treat dhamma as a practical moral code, not a sectarian creed. The edicts stress non-violence toward all living beings, truthfulness, compassion, respect for parents, teachers, and elders, generosity to friends and to those of every sect, and restraint in speech and appetite. The major rock edicts speak of a 'victory of dhamma' won by moral persuasion rather than by arms, and appoint dhamma-officers to see that the practice reaches everyone, not only monks. One edict urges honouring all sects, ascetic and householder, so that dhamma is lived, not merely believed. The edicts promise fruits of dhamma in this world and the next, but the emphasis stays on conduct here and now. That is the plain shape of what the edicts say about dhamma.",
+    "sentences": [
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "No record stands behind this; I speak from general knowledge."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": [
+        "Ashoka's"
+       ]
+      },
+      "missing": [
+       "e:Ashoka's"
+      ],
+      "evidence": [],
+      "status-machine": "token-absent",
+      "sentence": "Ashoka's rock edicts treat dhamma as a practical moral code, not a sectarian creed."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "The edicts stress non-violence toward all living beings, truthfulness, compassion, respect for parents, teachers, and elders, generosity to friends and to those of every sect, and restraint in speech and appetite."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "The major rock edicts speak of a 'victory of dhamma' won by moral persuasion rather than by arms, and appoint dhamma-officers to see that the practice reaches everyone, not only monks."
+     },
+     {
+      "sig": {
+       "numbers": [
+        "1"
+       ],
+       "entities": []
+      },
+      "missing": [
+       "n:1"
+      ],
+      "evidence": [],
+      "status-machine": "token-absent",
+      "sentence": "One edict urges honouring all sects, ascetic and householder, so that dhamma is lived, not merely believed."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "The edicts promise fruits of dhamma in this world and the next, but the emphasis stays on conduct here and now."
+     },
+     {
+      "sig": {
+       "numbers": [],
+       "entities": []
+      },
+      "missing": [],
+      "evidence": [],
+      "status-machine": "token-free",
+      "sentence": "That is the plain shape of what the edicts say about dhamma."
+     }
+    ],
+    "machine-findings": [
+     "e:Ashoka's",
+     "n:1"
+    ]
+   }
+  ]
+ }
+}

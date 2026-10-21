@@ -1,0 +1,154 @@
+{
+ "eval": "a20-diagnostic",
+ "date": "20261019",
+ "provider": "ddg-ia",
+ "caps": {
+  "max_calls_per_question": 8,
+  "max_secs_per_question": 240
+ },
+ "mode": "live (the door's mouths, existing config; no key words printed)",
+ "questions": [
+  {
+   "question": "Ashoka rock edict",
+   "run": {
+    "question": "Ashoka rock edict",
+    "web": {
+     "provider": "ddg-ia",
+     "ok": true,
+     "results": 5,
+     "gaps": [],
+     "spent": {
+      "search": 1,
+      "fetch": 2,
+      "calls": 3,
+      "ms": 2340.6
+     },
+     "corroboration": {
+      "urls": 5,
+      "read": 1,
+      "attribution": 4,
+      "origin_publishers": 1,
+      "independence": "none",
+      "conflict": "insufficient",
+      "publishers_seen": 1,
+      "duplication": 3,
+      "syndicated-possible": false
+     },
+     "rows": [
+      {
+       "id": "W1",
+       "kind": "page",
+       "evidence": "PRESENT",
+       "note": "http 200 (capped)",
+       "work": "en.wikipedia.org",
+       "publisher": "wikipedia.org",
+       "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+       "claim": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location The Edicts of Ashoka are a collection of more than thirty inscriptions on the Pillars of Ashoka , as well as boulders and cave walls, attributed to Emperor Ashoka of the Mauryan Empire who ruled most of the Indian subcontinent from 268 BCE to 232 BCE."
+      },
+      {
+       "id": "W2",
+       "kind": "snippet",
+       "evidence": null,
+       "note": "http 202",
+       "work": "duckduckgo.com",
+       "publisher": "duckduckgo.com",
+       "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+       "claim": "Edicts of Ashoka Category"
+      },
+      {
+       "id": "W3",
+       "kind": "snippet",
+       "evidence": "NONE-FOR",
+       "note": "not-fetched:dup-publisher",
+       "work": "duckduckgo.com",
+       "publisher": "duckduckgo.com",
+       "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
+       "claim": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c."
+      },
+      {
+       "id": "W4",
+       "kind": "snippet",
+       "evidence": "NONE-FOR",
+       "note": "not-fetched:dup-publisher",
+       "work": "duckduckgo.com",
+       "publisher": "duckduckgo.com",
+       "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
+       "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire..."
+      },
+      {
+       "id": "W5",
+       "kind": "snippet",
+       "evidence": "NONE-FOR",
+       "note": "not-fetched:dup-publisher",
+       "work": "duckduckgo.com",
+       "publisher": "duckduckgo.com",
+       "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
+       "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts."
+      }
+     ]
+    },
+    "door": {
+     "code": 200,
+     "lane": "web",
+     "retrieval": [
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5"
+     ],
+     "response": "Nothing here rises above a caution and the plain record. Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location The Edicts of Ashoka are a collection of more than thirty inscriptions on the Pillars of Ashoka , as well as boulders and cave walls, attributed to Emperor Ashoka of the Mauryan Empire who ruled most of the Indian subcontinent from 268 BCE to 232 BCE. Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire... Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts.",
+     "model_calls": 3,
+     "evidence_status": "carried by: wikipedia.org (read)",
+     "web_stamped": true
+    },
+    "secs": 69.9
+   }
+  },
+  {
+   "question": "What do Ashoka's rock edicts say about dhamma?",
+   "run": {
+    "question": "What do Ashoka's rock edicts say about dhamma?",
+    "web": {
+     "provider": "ddg-ia",
+     "ok": false,
+     "results": 0,
+     "gaps": [
+      "search-empty"
+     ],
+     "spent": {
+      "search": 1,
+      "fetch": 0,
+      "calls": 1,
+      "ms": 347.8
+     },
+     "corroboration": {
+      "urls": 0,
+      "read": 0,
+      "attribution": 0,
+      "origin_publishers": 0,
+      "independence": "unknown",
+      "conflict": "insufficient",
+      "publishers_seen": 0,
+      "duplication": 0,
+      "syndicated-possible": false
+     },
+     "rows": []
+    },
+    "door": {
+     "code": 200,
+     "lane": "general",
+     "retrieval": [
+      "19",
+      "2"
+     ],
+     "response": "They speak of dhamma as a lived ethic, not a doctrine. The edicts lay out what dhamma looks like in practice: non-violence, truthfulness, compassion for living things, respect for parents and teachers, generosity toward friends and ascetics. Ashoka frames his own turn from war to dhamma as a conquest by dhamma replacing the sword. He appoints officers of dhamma to carry the message outward. He urges respect across all sects and orders. And he insists dhamma is for everyone in the household, not only for monks. The edicts also cut back animal slaughter and reduce the animals killed in the royal kitchen, as concrete acts of dhamma.",
+     "model_calls": 2,
+     "evidence_status": "general knowledge, not verified this turn (the web brought nothing (search-empty))",
+     "web_stamped": false
+    },
+    "secs": 31.9
+   }
+  }
+ ]
+}

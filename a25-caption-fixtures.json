@@ -1,0 +1,133 @@
+{
+  "a25": "the evidence-kind caption prototype — a PRESENTATION experiment at recorded bytes",
+  "head": "1c7a74c",
+  "at": "2026-10-20",
+  "status_authority": "every word below rides bytes already recorded by A22/A23/A24; NOTHING here is a new machine word or a new fact",
+  "inputs": [
+    {"path": "a24-review-results.json",               "sha256": "58733b19350e363c5f9b63f0eb226b06b71b186267a9d4b4dda883522eaf08ce"},
+    {"path": "a24-review-comparison.md",              "sha256": "3e1458f1c5d75277aeb0673846b74260404bbc227809e0eb2d32740b723c42fc"},
+    {"path": "a24-report.md",                        "sha256": "8fc7ee3f630a6b267d8ab19bbf7a3507744748b0007c175debf9eb65e706071f"},
+    {"path": "research-hold/a24-review-input.json",  "sha256": "6caf07249273f05076cfc3717e51f787f61daf7ef2f3df71bd81637f61d80cb4"},
+    {"path": "a23-report.md",                        "sha256": "465ac207c6b0e20089cef106c1d74911aecd1a43790dcd4528fbcf9d9c808278"},
+    {"path": "a22-report.md",                        "sha256": "b94a3cc78f02ec0d88ae9c8152c00a47e7472d373e9eb82e8baac92332e31c32"},
+    {"path": "a22-eval-design.md",                   "sha256": "ddc2d631025364a9b2427bd9c911f6d4c1e4bb77fc0e27a577ef899e82beabee"},
+    {"path": "research-eval-a22.json",               "sha256": "2b522e31fc8113e26eed371c3926eaee14128e99f76e997166b730a18a3b9144"},
+    {"path": "research-hold/a22-eval-live.json",     "sha256": "70f1e96105aaf1aa00bf087c908a81f0077eb51e855f57720decba11813fb730"},
+    {"path": "research-hold/a22-raw-C1.json",        "sha256": "7b5063546527ca9c99337387e56c2c78d6b760bfa5e8bbe47677783ddb25cdab"},
+    {"path": "research-hold/a22-raw-C2.json",        "sha256": "4f68c494da77ca8f25bf97bc4223ab38be71111859eedf1915760e023a5aa9d3"},
+    {"path": "research-hold/a22-raw-C3.json",        "sha256": "f0963be185e2211e43dbc72c66c8f4f1575975388ef0ca4677bd29ae086bdcc6"},
+    {"path": "research-hold/a22-raw-C4.json",        "sha256": "8d658154c83abf8d67c1d9eafb7b2263a2db9969afcf2a5fd86f7b723b9aae4f"},
+    {"path": "shelf.jsonl",                          "sha256": "02669d548ac9f55c3f6b68e22039d8e981f9df9e07b5717d48a576e79ed3c6e4"}
+  ],
+  "independence_check_blocked": true,
+  "independence_word_verbatim": "BLOCKED: OPENAI_API_KEY absent - independence is DESIGNED, not proven; the deterministic audit and the DISCLOSED OPERATOR carry the review",
+  "record_independence_words_verbatim": {"C1/C2 corroboration.independence": "none (one origin publisher; duplication 3; conflict 'insufficient')", "C3/C4 corroboration.independence": "unknown (conflict 'insufficient')"},
+  "caption_grammar": {
+    "form": "<case> · <claim id, quoted bytes> — <WHERE-slot: token@row(kind) or NO BYTES GIVEN> — <lane-notes verbatim, where present> — <WHAT-SLOT: the humility words>",
+    "labels_used": {
+      "READ-WINDOW": "the A25 PRESENTATION word for the bytes' own kind-word 'page' (W1 verbatim; A19's status word 'carried by: wikipedia.org (read)' is the record's own)",
+      "SNIPPET": "the bytes' own kind-word 'snippet' verbatim (W2..W5)",
+      "NOT-FETCHED": "represented in the bytes: rows W3/W4/W5 carry the lane-note verbatim 'not-fetched:dup-publisher'; W2 carries lane 'http 202' (the fetched-empty shape, its bytes are the words 'Edicts of Ashoka Category')",
+      "TOKEN-ABSENT": "the machine's own word (T142-pinned three-word law)",
+      "TOKEN-FREE": "the machine's own word (T142-pinned three-word law)",
+      "NO BYTES GIVEN": "the A25 PRESENTATION word for rows=[] at C3/C4 (the record's lane-words verbatim: gaps ['search-empty']; door.evidence_status verbatim per the raw files)"
+    },
+    "what_it_never_says": "never 'verified', never 'proven', never 'fact-checked' unqualified; a token match is a TRACE of reach, never a claim of ENTAILMENT"
+  },
+  "fixtures": [
+    {
+      "case": "C1",
+      "role": "the deliberately misleading aggregate: present/CLEAN words over a count whose ONLY byte rode a SNIPPET",
+      "claims": [
+        {
+          "id": "C1 · claim 1 (A23 Phase 2 verbatim)",
+          "claim_bytes_verbatim": "\"fourteen separate inscriptions\" (C1)",
+          "decisive_token": "14 (the PINNED fold fourteen→14)",
+          "where": "SNIPPET-ONLY: 14@W5 (kind snippet verbatim; lane-note verbatim 'not-fetched:dup-publisher'); the READ window W1 (kind page) carries NO such digit",
+          "reviewer_status_verbatim": {"sentence-status-machine": "tokens-present", "machine-findings": "CLEANS of absent signatures"},
+          "caption": "C1 · claim 1 — token 14 seen ONLY in SNIPPET words at W5 (kind snippet; lane 'not-fetched:dup-publisher'); the READ window (W1, kind page) saw no such byte. The machine's words here (tokens-present, CLEANS) speak that the BYTES REACHED the mouth — NOT that any row ENTAILS the count."
+        },
+        {
+          "id": "C1 · claim 3 (A23 Phase 2 verbatim)",
+          "claim_bytes_verbatim": "\"attributed to Emperor Ashoka of the Mauryan Empire (r. c. 268–232 BCE)\" (C1)",
+          "decisive_tokens": "Ashoka/Mauryan/Empire/268/232 — @W1(page) first-or-only (A24's evidence verbatim)",
+          "where": "READ-WINDOW: all five ride W1's OWN bytes verbatim ('attributed to Emperor Ashoka of the Mauryan Empire who ruled most of the Indian subcontinent from 268 BCE to 232 BCE')",
+          "lane_note_verbatim": "W1 note verbatim: 'http 200 (capped)' — the window's bytes END at 'from 268 BCE' (A23: the mouth's 'c.' rides NO byte)",
+          "reviewer_status_verbatim": {"sentences-status-machine": "tokens-present (the attribution) + tokens-present (the dates)", "machine-findings": "CLEANS of absent signatures"},
+          "caption": "C1 · claim 3 — tokens Ashoka/Mauryan/Empire/268/232 seen in the READ window's OWN bytes at W1 (kind page; note 'http 200 (capped)'). A token match is the POSSIBILITY of support, not the PROOF of it — entailment stays the reader's (A23's J-flag open)."
+        }
+      ],
+      "aggregate_today_verbatim": "the reviewer's C-line 'CLEANS of absent signatures' + the sentence words 'tokens-present'; A19's status word (verbatim, all three homes) 'carried by: wikipedia.org (read)'",
+      "prevents": "reading the headline as READ-BACKED whole — the count byte lives at a never-fetched snippit; the (read) word rides on the attribution, not the count",
+      "new_ambiguity": "A23's claim units vs the machine's sentence units: the house splitter cut the mouth's one sentence into 5 bytes (A24 verbatim), so the caption spans two sentences — the claim-to-bytes mapping is A23's/A24's RECORDED hand mapping, disclosed",
+      "unknown": "whether any of this is TRUE of the edicts (A23's human fact-check, standing)"
+    },
+    {
+      "case": "C2",
+      "role": "the token-free case: the mouth's claim ABOUT THE RECORD — absence of a token, not absence of support",
+      "claims": [
+        {
+          "id": "C2 · claim 6 (A23 Phase 2 verbatim)",
+          "claim_bytes_verbatim": "\"the records … describe the edicts' form and number … none quote what they say about dhamma\" (C2)",
+          "where": "NO REVIEWABLE TOKEN in the claim-about-the-record (A24 verbatim: sig 0 numbers/0 entities); the claim's OWN support is A23's byte-scan (human, marked): the word dhamma in NONE of the five rows' bytes; form/number bytes ARE in the read window",
+          "reviewer_status_verbatim": {"sentence-status-machine": "token-free"},
+          "caption": "C2 · claim 6 — the machine STANDS ASIDE: token-free (the claim carries NO reviewable token), which is NEITHER pass NOR fail. The claim speaks ABOUT the RECORD, and A23's byte-scan (a human reading, marked so) found the word 'dhamma' in NONE of the five rows' bytes. The claim-about-the-record is thus VERIFIED BY BYTES, NOT by the token-law."
+        },
+        {
+          "id": "C2 · claim 8 (A23 Phase 2 verbatim, the companion that names its own kind)",
+          "claim_bytes_verbatim": "\"One snippet … 'a series of edicts on the teachings of Buddha' … a one-line summary\" (C2)",
+          "where": "SNIPPET-only: Delhi@W4 and Buddha@W4 (A24's evidence verbatim; W4 lane-note verbatim 'not-fetched:dup-publisher'); the quote's provider BYTES verbatim at W4: 'a series of edicts on the teachings of Buddha'",
+          "reviewer_status_verbatim": {"sentence-status-machine": "tokens-present (incl. the phatic fold 1@W2..W5 — snippets only, never W1)"},
+          "caption": "C2 · claim 8 — the quote's tokens (Delhi, Buddha) seen ONLY in the SNIPPET W4 (kind snippet; lane 'not-fetched:dup-publisher'), never in the READ window — AND the mouth's OWN words already named the kind ('One snippet…'). The token-law adds the KIND-WORD to what the mouth said; it weighs the REACH, never the truth."
+        }
+      ],
+      "aggregate_today_verbatim": "the reviewer's C-line 'CLEANS of absent signatures'; A19's status word 'carried by: wikipedia.org (read)' (all three homes, verbatim) — which names only the one READ row",
+      "prevents": "reading 'token-free' as 'no support found' — and reading the (read) status word as if it covered the dhamma claim (the claim is that NO row BYTES it)",
+      "new_ambiguity": "two different 'absences' now ride near each other — token-free (no token exists) vs the byte-scan's absence (a word looked for and NOT found in every row) — the caption labels which is which",
+      "unknown": "whether the edicts SAY what the mouth would quote (the same standing human fact-check)"
+    },
+    {
+      "case": "C3",
+      "role": "the vacuous case: an absence-flag over a NON-claim — absence must not be read as disproof",
+      "claims": [
+        {
+          "id": "C3 · the greeting (A23 Phase 2's phatic row; A22 raw verbatim)",
+          "claim_bytes_verbatim": "door.response verbatim: \"Hello, Zzzyx plingworth.\" (A22 raw C3)",
+          "where": "NO BYTES GIVEN (web.rows verbatim [] — 'the web brought nothing'; gaps verbatim ['search-empty']) — the shelf carryover (19,2) rode BOOKKEEPING (A23's retrieval words), the mouth was GIVEN no rows",
+          "reviewer_status_verbatim": {"sentence-status-machine": "token-absent", "machine-findings": "['e:Hello', 'e:Zzzyx']"},
+          "caption": "C3 — the greeting asserts NOTHING, yet the law flags its two proper forms: token-absent (e:Hello, e:Zzzyx) over NO BYTES GIVEN (rows [], the record's own word 'the web brought nothing'). Absence of a byte is NOT a mark against the claim — for a phatic word it can be NO MARK AT ALL (a disclosed vacuity of the instrument: 'Hello' is no stop-cap, A24 pinned)."
+        }
+      ],
+      "aggregate_today_verbatim": "the reviewer's C-line 'ABSENT SIGNATURES: e:Hello, e:Zzzyx'; A19's compound word (verbatim, all three homes) 'general knowledge, not verified this turn (the web brought nothing (search-empty))' — plus A19's own truth-words 'web_stamped: False', 'NOT a claim of corroboration'",
+      "prevents": "reading 'ABSENT SIGNATURES' as 'the greeting was DISPROVEN' (the C3 record: A23's claim-2-line words 'the greeting asserts NOTHING') — and reading (read) as present where NO BYTES were given",
+      "new_ambiguity": "one short word now carries a DOUBLE absence — the greeting's (a non-claim; possibly no mark at all) and the turn's (no bytes) — the caption's own words separate them, at the cost of length",
+      "unknown": "nothing about this sentence is UNKNOWN from bytes; what STAYS out of the caption is whether a greeting NEEDS corroboration at all (a human reading, marked)"
+    },
+    {
+      "case": "C4",
+      "role": "the insufficient-and-blocked case: zero rows, the mouth's OWN denial, and TWO independence words saying not-established",
+      "claims": [
+        {
+          "id": "C4 · claim 9 (A23 Phase 2 verbatim)",
+          "claim_bytes_verbatim": "the whole dhamma-content answer (C4); door.response verbatim opener: \"No record stands behind this; I speak from general knowledge.\"",
+          "where": "NO BYTES GIVEN (web.rows verbatim []; gaps verbatim ['search-empty']) — the carried shelf rows 19/2 speak THE DAO and THE HARD-PROBLEM (A25 read shelf.jsonl: NEITHER carries an 'ashoka' or 'dhamma' byte — A23's same finding)",
+          "reviewer_status_verbatim": {"sentences-status-machine": "2 token-absent + 5 token-free", "machine-findings": "['e:Ashoka's', 'n:1'] (the latter the phatic 'One' fold, UNMATCHED at rows=[])"},
+          "independence_verbatim": {"record-side corroboration.independence (C4)": "unknown", "record-side corroboration.conflict (C4)": "insufficient", "reviewer-side (A24's record)": "BLOCKED: OPENAI_API_KEY absent - independence is DESIGNED, not proven; the deterministic audit and the DISCLOSED OPERATOR carry the review"},
+          "caption": "C4 · claim 9 — this turn INSUFFICIENT BY ITS OWN BYTES: no row was given (the record: 'web brought no search this turn' — A23's words — and gaps ['search-empty']); the mouth OPENED by saying 'No record stands behind this; I speak from general knowledge'; the machine weighed NOTHING (5 token-free) and flagged 2 token-absent (e:Ashoka's — a possessive form; n:1 — the folded phatic 'one'). The corroboration's OWN words: independence unknown, conflict insufficient. The reviewer-side independence: BLOCKED (DESIGNED, not proven). NOTHING here is verified, and NOTHING is contradicted."
+        }
+      ],
+      "aggregate_today_verbatim": "the reviewer's C-line 'ABSENT SIGNATURES: e:Ashoka's, n:1'; A19's compound word (verbatim, C3's byte-shape; A23's C4 line verbatim: 'the mouth said \"No record stands behind this\" and the compound word said it too')",
+      "prevents": "reading token-absent as REFUTATION, and — the acceptance point — reading 'the reviewer ran' as corroboration when BOTH words say not-established (unknown / BLOCKED)",
+      "new_ambiguity": "TWO independence words could read as ONE; the caption must keep them APART (record-side unknown vs reviewer-side BLOCKED), and A19's own law ('unknown unless two independent publishers read'; one-origin 'insufficient') supplies their meaning",
+      "unknown": "the truth of the dhamma clauses THEMSELVES (A23's standing J-flag); the shelf carryover's RELEVANCE (A23: at a fold turn the shelf carryover CANNOT enter; A25's byte check: rows 19/2 carry no ashoka/dhamma byte)"
+    }
+  ],
+  "acceptance": {
+    "1 read-vs-snippit distinguishable": "PASS at bytes — the row kind-words ('page'/'snippet') + the lane-notes are A22's OWN bytes; A25's caption PROJECTS them",
+    "2 token-match-vs-semantic-support distinguishable": "PASS — every WHAT-slot names the match a REACH-trace and leaves entailment the reader's (the module's own docstring already decreed it)",
+    "3 absence-vs-disproof distinguishable": "PASS — C3's caption says so; C2's separates the two absences (no-token vs word-not-found)",
+    "4 blocked-independence-vs-corroboration distinguishable": "PASS — C4 carries BOTH words verbatim (record-side 'unknown'; reviewer-side 'BLOCKED'), never fused"
+  },
+  "decision": "PASS",
+  "decision_basis": "all four fixtures grounded at bytes; no mapping invented (the claim-to-bytes bridge is A23's Phase-2 table, re-verified byte-for-byte by A24 §3); the declared UNKNOWNs are the RECORD's own (independence unknown; carryover inert by construction at a fold turn — A23's bytes)"
+}

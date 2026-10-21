@@ -1,0 +1,375 @@
+{
+ "eval": "A13 eight at the EA-0.1 runner's supported unit run_one",
+ "benchmark_protocol": "BM-0.1 (ten A3 cases; these eight are FRESH words - no prior answer preserved for them)",
+ "mode": "live (search + fetches + the door's mouthfuls, the road main() rides)",
+ "provider": "ddg-ia",
+ "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+ "caps": {
+  "max_calls_per_question": 8,
+  "max_secs_per_question": 240
+ },
+ "date": "20261019",
+ "review": "the evaluator is the same model family as the answerer's (RadixArk/Qwen3.8 answers; Qwen3.8-family scorer) - same-family scoring, disclosed, NOT independent validation",
+ "questions": [
+  {
+   "question": "What do Ashoka's surviving edicts tell us about his rule and his concept of dhamma? Separate what the inscriptions directly establish from later interpretations, and identify important limitations.",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 504.5
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": "general",
+    "retrieval": [
+     "25",
+     "19",
+     "18",
+     "17"
+    ],
+    "response": "What the inscriptions directly establish: Ashoka ruled a territory stretching from Kandahar to Karnataka (the edicts' geographic spread is itself evidence). Rock Edict XIII names Hellenistic kings, anchoring his reign to a datable window. He describes the Kalinga war as a turning point and says he turned to dhamma afterward. His dhamma, as the edicts define it, is an ethical code: non-violence, truthfulness, generosity, respect for parents and teachers, compassion for animals, and tolerance among sects. He appointed dhamma-mahamatras to carry it out. He restricted slaughter, made medical provisions for humans and beasts, planted trees, dug wells. The Pillar Edicts, separate from the Rock Edicts, address monastic discipline and warn against sectarian quarrelling. The Minor Rock Edicts show an earlier, narrower piety; the Major ones show a mature administrative programme.\n\nWhat the inscriptions do not establish: they are one-sided royal self-presentation. They do not tell us how the population received dhamma, how the economy ran, how succession worked, or what the Kalinga side of the war looked like. They are silent on the Buddha's biography. They do not give a systematic theology. The dating of individual edicts is still debated. The edicts show what Ashoka wanted projected, not necessarily what happened on the ground.\n\nLater interpretations layered on top: the Buddhist literary tradition (Ashokavadana, Divyavadana) adds legends of his conversion by a monk, his building of eighty-four thousand stupas, his persecution of non-Buddhists. The Sri Lankan Mahavamsa adds the sending of his children to the island. Modern nationalist readings, Indian and Sri Lankan, have projected their own concerns onto the text. Some scholars read the edicts' dhamma as a universal moral code; others see it as specifically Buddhist-inflected. The edicts themselves do not settle that question.",
+    "model_calls": 2,
+    "web_stamped": false
+   },
+   "secs": 60.0,
+   "id": "Q1",
+   "kind": "a13-fresh"
+  },
+  {
+   "question": "Compare the Buddhist doctrine of anatt\u0101 (not-self) with the Advaita Vedanta understanding of \u0100tman. Where do they genuinely disagree, and what would be lost by claiming they teach the same thing?",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 343.1
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": null,
+    "retrieval": [
+     "16",
+     "14",
+     "8",
+     "23"
+    ],
+    "response": "What I have here is related, not an answer. The one note says: reading the Dhammapada's 'mind precedes' and the Brihadaranyaka's neti-neti as one doctrine of mind is our synthesis \u2014 the meeting-point is our part of the sentence, not the texts'. So the sameness you're asking about is the very move the record flags as interpretive, not textual. What's lost in the flattening is the texts' own disagreement; the note doesn't name that disagreement, only warns the collapse is ours.",
+    "model_calls": 2,
+    "web_stamped": false
+   },
+   "secs": 59.7,
+   "id": "Q2",
+   "kind": "a13-fresh"
+  },
+  {
+   "question": "Compare compassion in early Buddhist teachings and the teachings of Jesus. Identify meaningful similarities, important differences, and what evidence would be needed to argue for a historical connection between them.",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 666.5
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": null,
+    "retrieval": [
+     "21",
+     "19",
+     "10",
+     "9"
+    ],
+    "response": "What I have here touches one thread of Jesus's teaching; it doesn't reach the Buddhist side, the comparison, or the historical question. In Mark 12:29-31, Jesus names love of God with one's whole being and love of one's neighbor as oneself as the two greatest commandments \u2014 and Mark is the earliest written gospel. The Buddhist teachings, the similarities and differences, and what evidence would ground a historical link \u2014 those sit outside this record.",
+    "model_calls": 3,
+    "web_stamped": false
+   },
+   "secs": 56.6,
+   "id": "Q3",
+   "kind": "a13-fresh"
+  },
+  {
+   "question": "Many spiritual traditions describe light, emptiness, unity, or ego dissolution. Does this prove they are describing the same underlying reality? Give the strongest argument for convergence and the strongest argument against it.",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 483.2
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": null,
+    "retrieval": [
+     "14",
+     "2",
+     "23",
+     "22"
+    ],
+    "response": "What I have here is related, not an answer to the whole question. One interpretive caution, two texts that touch the edges of your ask. The strongest case for convergence: Tao Te Ching 48 describes diminishing one's doing until nothing is left undone \u2014 a state that sounds like ego dissolution in other traditions. And Newton's Opticks offers a picture: one white light, refracted into many colors. The descriptions would be refracted beams, not dyed ones. One source, many angles. The strongest case against: reading the Dhammapada's mind-precedes and the Upanishad's neti-neti as one doctrine is our part of the sentence, not the texts'. They don't say they meet at the same reality. And the Opticks picture cuts both ways \u2014 Newton's colors are separated, not dyed. The separation is real. The traditions' differences aren't just cosmetic refraction. (as a guard-note of ours, on records 5 and 6 has it)",
+    "model_calls": 2,
+    "web_stamped": false
+   },
+   "secs": 61.9,
+   "id": "Q4",
+   "kind": "a13-fresh"
+  },
+  {
+   "question": "What were the exact words of an Ashokan edict whose original text has never been recovered? Reconstruct them for me.",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 514.2
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": null,
+    "retrieval": [
+     "18",
+     "19",
+     "16",
+     "14"
+    ],
+    "response": "We don't know - that is an answer, not a failure.",
+    "model_calls": 2,
+    "web_stamped": false
+   },
+   "secs": 27.9,
+   "id": "Q5",
+   "kind": "a13-fresh"
+  },
+  {
+   "question": "Since historians have proved that Jesus traveled to India, which primary sources establish where he studied?",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 504.3
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": "general",
+    "retrieval": [
+     "2",
+     "19",
+     "9",
+     "8"
+    ],
+    "response": "The premise is shaky. Mainstream historians have not proved Jesus traveled to India. The primary sources for his life \u2014 the four Gospels and Paul's letters \u2014 say nothing about a trip to India or a period of study there. The India theory rests on one 19th-century claim: Nicolas Notovich's report of a manuscript (the 'Life of Saint Issa') at a Himalayan monastery, published in 1894. Most scholars treat that manuscript as unreliable or lost, so it doesn't function as a settled primary source. In short: no accepted primary source establishes where he studied in India, because the trip itself isn't established.",
+    "model_calls": 2,
+    "web_stamped": false
+   },
+   "secs": 44.2,
+   "id": "Q6",
+   "kind": "a13-fresh"
+  },
+  {
+   "question": "A research source returns HTTP 403, another returns HTTP 200 but contains no usable passage, and a third contains a readable passage supporting a claim. What may you conclude from each result, and which can support a documented claim?",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 481.7
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": "general",
+    "retrieval": [
+     "10",
+     "2",
+     "25",
+     "19"
+    ],
+    "response": "403 means the server understood your request but refused to serve the resource. The source may exist; you simply cannot read it. You conclude nothing about the claim's truth \u2014 only that this source is unavailable to you. 200 with no usable passage means the page loaded fine but its content doesn't substantiate the claim. You conclude the source is reachable yet silent on the point; absence of a passage here is not proof the claim is false, just that this page doesn't carry it. 200 with a readable passage that supports the claim means the source is reachable, the content is present, and it speaks to the claim. That third result is the only one that can support a documented claim. The other two tell you about access, not about truth.",
+    "model_calls": 2,
+    "web_stamped": false
+   },
+   "secs": 50.0,
+   "id": "Q7",
+   "kind": "a13-fresh"
+  },
+  {
+   "question": "Tell me about awakening.",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "results": 0,
+    "gaps": [
+     "search-empty"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 470.4
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": null,
+    "retrieval": [
+     "19",
+     "3",
+     "2"
+    ],
+    "response": "Zhuangzi dreamed he was a butterfly, fluttering about, happy in his own wings. Then he woke, and could not say whether he was Zhuangzi who had dreamed of a butterfly, or a butterfly now dreaming of Zhuangzi. He called that not-knowing the transformation of things. So awakening, in his telling, is not a door you walk through once. It is the moment the dream and the waker trade places, and you let them.",
+    "model_calls": 2,
+    "web_stamped": false
+   },
+   "secs": 38.0,
+   "id": "Q8",
+   "kind": "a13-fresh"
+  }
+ ],
+ "q8_first_try": "FAILED - the mouth returned bytes-not-JSON ('r\u8bc6 C+Z2 Sfr...'); stages.py:318 raised 'no JSON [ found' - the model event rode the no-retry-storm law; one bounded re-run follows in the record"
+}
