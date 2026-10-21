@@ -20,12 +20,12 @@ source-section > section { text-align: center; }
   text-transform: uppercase;
   color: var(--veil-14);
   cursor: default;
-  opacity: 0; transform: translateY(10px);
+  opacity: 0; transform: translate3d(18px, 0, 0);
   transition:
     color .8s var(--ease-drift),
     letter-spacing .8s var(--ease-threshold),
     opacity 1.6s var(--ease-threshold) var(--d, 0ms),
-    transform 1.6s var(--ease-threshold) var(--d, 0ms);
+    transform 1.6s var(--ease-slide) var(--d, 0ms);
 }
 .source-words li.is-listen { opacity: 1; transform: none; }
 /* Hover warms and lifts — no width change, so the gathered row never

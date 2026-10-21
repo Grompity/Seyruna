@@ -80,9 +80,13 @@ h2 {
   color: var(--veil-60);
 }
 
-/* — Threshold buttons: crossing, not submitting. — */
+/* — Threshold buttons: crossing, not submitting. Two states now: rest, and
+   a woken state that lifts; the press answers in under 300ms and marks
+   itself with the smallest vesica the site owns. The magnetic pull (--mx/
+   --my, set by lib/magnetic.js) rides the same transform. — */
 .btn {
   appearance: none;
+  position: relative;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -95,13 +99,28 @@ h2 {
   font-size: .7rem; font-weight: 500;
   letter-spacing: .34em; text-transform: uppercase; text-indent: .34em;
   cursor: pointer;
+  transform: translate3d(var(--mx, 0), var(--my, 0), 0);
   transition:
     color var(--dur-warm) var(--ease-threshold),
     border-color var(--dur-warm) var(--ease-threshold),
     letter-spacing var(--dur-warm) var(--ease-threshold),
-    box-shadow .8s var(--ease-drift);
+    box-shadow .8s var(--ease-drift),
+    transform var(--dur-micro) var(--ease-land);
 }
-.btn:hover, .btn:focus-visible { letter-spacing: .44em; }
+.btn:hover, .btn:focus-visible { letter-spacing: .44em; transform: translate3d(var(--mx, 0), calc(var(--my, 0) - 2px), 0); }
+.btn:active { transform: scale(.955) translate3d(var(--mx, 0), var(--my, 0), 0); transition-duration: .11s; }
+
+.btn::after { /* the press mark: two circles that meet, at the smallest scale the site keeps */
+  content: "";
+  position: absolute; left: 50%; top: 50%;
+  width: 20px; height: 26px;
+  transform: translate(-50%, -50%) scale(0);
+  background:
+    radial-gradient(circle at 35% 50%, transparent 8.4px, var(--gold-30) 8.4px 9.2px, transparent 9.2px),
+    radial-gradient(circle at 65% 50%, transparent 8.4px, var(--gold-30) 8.4px 9.2px, transparent 9.2px);
+  opacity: 0;
+  pointer-events: none;
+}
 
 .btn--threshold {
   color: var(--gold);
@@ -113,8 +132,11 @@ h2 {
   border-color: var(--gold-68);
 }
 .btn--ghost:hover, .btn--ghost:focus-visible { color: var(--veil); border-color: var(--hairline-strong); }
+.btn:active::after { opacity: .5; transform: translate(-50%, -50%) scale(1); }
 
-/* — Scroll reveals: hidden only when scripting is live. — */
+/* — Scroll reveals: hidden only when scripting is live. Mode one rides up
+   (the original); mode two is the line-mask wipe, declared as
+   data-reveal="mask" and driven by the same reveal system. — */
 html.js [data-reveal] {
   opacity: 0;
   transform: translate3d(0, 18px, 0);
@@ -123,6 +145,13 @@ html.js [data-reveal] {
     transform var(--dur-reveal) var(--ease-threshold) var(--d, 0ms);
 }
 html.js [data-reveal].is-revealed { opacity: 1; transform: none; }
+
+html.js [data-reveal="mask"] {
+  clip-path: inset(0 0 100% 0);
+  transform: none;
+  transition: clip-path 1.3s var(--ease-slide) var(--d, 0ms);
+}
+html.js [data-reveal="mask"].is-revealed { clip-path: inset(-.12em 0 .3rem 0); }
 
 /* — Page furniture: grain, veil, the typed secret. — */
 .grain {
@@ -154,6 +183,18 @@ html.js [data-reveal].is-revealed { opacity: 1; transform: none; }
   pointer-events: none;
 }
 .secret.is-said { opacity: 1; }
+
+/* — The wordmark rides the journey: same-document view transitions morph
+   it through each threshold. Feature-detected; browsers without the at-rule
+   get today's plain arrival. — */
+@supports at-rule(@viewtransition) {
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition { navigation: auto; }
+    .nav-mark { view-transition-name: the-wordmark; }
+    ::view-transition-old(root) { animation-duration: .38s; animation-delay: 0s; }
+    ::view-transition-new(root) { animation-duration: .38s; animation-delay: 0s; }
+  }
+}
 
 .site-foot {
   display: flex; align-items: baseline; justify-content: space-between; gap: 2rem;

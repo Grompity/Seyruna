@@ -38,8 +38,10 @@ js/
     marginalia.js          the margin whispers
     copy.js                the two discoveries
   lib/                     shared behaviour
-    motion.js              reduced-motion guard, threshold glide
+    motion.js              reduced-motion guard, threshold glide, the morph
     reveal.js              scroll reveals (opt-in; visible without JS)
+    kinetic.js             grapheme split for the one kinetic heading
+    magnetic.js            the cursor's pull on the two threshold buttons
     dust.js                canvas motes + pointer field
     sequence.js            the typed door
     marginalia.js          mounts the margin marks
@@ -88,8 +90,21 @@ js/
 ## Design rules for future editors
 
 - Gold is sacred: never larger or more frequent than it is today.
-- Motion vocabulary is *breathe, orbit, drift, awaken* — never bounce, slide,
-  pop. All timings live in `tokens.css`.
+- The ambient vocabulary is *breathe, orbit, drift, awaken* — it never bounces.
+  The interactive vocabulary is *slide, land, zoom, wipe*, and the spring
+  (`--ease-land`) is reserved for interaction feedback only. All timings and
+  curves live in `tokens.css`.
+- Reveal modes, documented: (1) rise — the general `data-reveal`; (2) the
+  line-mask wipe — `data-reveal="mask"`; (3) kinetic landing — graphemes landing
+  per ring outward from the centre, the mark beating first (`--kinetic-beat`),
+  on one heading per page (the hero); (4) scroll-driven convergence — the seam
+  section from the 880px fold up, feature-detected; (5) the typed door. A
+  reader may never have to wait for words.
+- Exactly one material effect per page: the frosted glass on the woken
+  navigation. Press feedback on buttons stays under 300ms, and the press
+  marks itself with the smallest vesica the site keeps.
+- Same-document journeys morph the wordmark via view transitions where the
+  at-rule ships; the same feature detection gates both sides.
 - `prefers-reduced-motion` is honoured site-wide (CSS kills animation,
   components render static geometry and a single dust frame).
 - Sound architecture is intentionally absent; add it behind an explicit,

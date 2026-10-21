@@ -21,6 +21,27 @@ hero-threshold > section {
   text-shadow: 0 0 70px hsl(40 30% 88% / .06);
 }
 
+/* Kinetic mode — the one heading per page allowed to ride letter by letter
+   (the brand-film vocabulary, translated for the browser). lib/kinetic.js
+   splits the characters and stamps --d per ring, outward from the centre —
+   the word arrives from the middle. CSS owns the motion: land on a heavier
+   axis, then relax. The mark beats first (--kinetic-beat); the word answers
+   on the tail of the beat. Reduced motion and no-JS render the plain title. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .hero-title[data-kinetic] > span {
+    display: inline-block;
+    font-weight: 300;
+    opacity: 0;
+    transform: translateY(26px);
+    animation: kinetic-land 1.15s var(--ease-threshold) calc(var(--kinetic-beat) + var(--d, 0ms)) both;
+  }
+  @keyframes kinetic-land {
+    from { font-weight: 300; opacity: 0; transform: translateY(26px); }
+    42%  { font-weight: 600; }
+    to   { font-weight: 500; opacity: 1; transform: translateY(0); }
+  }
+}
+
 .hero-intent {
   max-width: 32rem;
   margin: calc(var(--step) * 1.6) 0 calc(var(--step) * 2.6);

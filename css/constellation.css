@@ -32,6 +32,15 @@ knowledge-constellation .section-lede { margin-inline: auto; }
   container-type: inline-size;
 }
 
+/* Click-to-zoom: the field leans toward the node you chose — the interactive
+   vocabulary's spring, used only on interaction. The origin arrives from
+   knowledge-constellation.js as --origin-x/--origin-y. */
+.kc-stage.is-active {
+  transform: translate3d(calc(var(--px, 0) * -10px), calc(var(--py, 0) * -10px), 0) scale(1.06);
+  transform-origin: var(--origin-x, 50%) var(--origin-y, 50%);
+  transition: transform 1s var(--ease-land);
+}
+
 .kc-links { position: absolute; inset: 0; }
 .kc-svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .kc-wires line {

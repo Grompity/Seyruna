@@ -99,6 +99,50 @@ ancient-future .section-lede { margin-inline: auto; }
 
 .af-close { max-width: 30em; margin-inline: auto; color: var(--veil-60); }
 
+/* ——— Scroll-driven convergence (mode four) ———
+   On rooms at or above the fold (880px — the line where the seam stops being
+   hidden), where scroll-driven animation ships and motion is welcomed: the
+   two planes slide toward each other as the scroll drives — the hand
+   arriving from the left, the machine from the right — and the seam draws
+   itself between them. Travel is vw-based, so it scales with the room. A
+   registered custom property is the only thing the timeline touches;
+   everything downstream is transform/opacity/clip. Narrow rooms, reduced
+   motion, and browsers without the feature get the static meeting this
+   page already showed. */
+@property --af-k { initial-value: 0; inherits: true; animation-value: number; }
+
+@media (min-width: 880px) {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      ancient-future > section {
+        min-height: 172svh;
+        animation: af-converge 1s linear both;
+        animation-timeline: view();
+        animation-range: entry 10% exit 92%;
+      }
+      .af-ancient {
+        transform: translateX(calc((var(--af-k) - 1) * 40vw));
+        opacity: calc(.22 + var(--af-k) * .78);
+      }
+      .af-future {
+        transform: translateX(calc((1 - var(--af-k)) * 40vw));
+        opacity: calc(.22 + var(--af-k) * .78);
+      }
+      /* The seam answers late — the two languages cross it on the way in. */
+      .af-seam svg {
+        opacity: calc(.2 + var(--af-k) * .8);
+        transform: scale(calc(.9 + var(--af-k) * .1));
+      }
+      /* Headings wipe open from their own baseline, mirrored per plane. */
+      .af-ancient h3 { clip-path: inset(0 0 calc((1 - var(--af-k)) * 104%) 0); }
+      .af-future h3 { clip-path: inset(calc((1 - var(--af-k)) * 104%) 0 0 0); }
+      .af-readout { clip-path: inset(calc((1 - var(--af-k)) * 104%) 0 0 0); }
+    }
+  }
+}
+
+@keyframes af-converge { from { --af-k: 0 } to { --af-k: 1 } }
+
 @media (max-width: 880px) {
   .af-planes { grid-template-columns: 1fr; gap: 0; }
   .af-seam { display: none; }

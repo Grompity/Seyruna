@@ -4,9 +4,10 @@ insight-section > section { text-align: left; }
 
 .philo-thesis {
   max-width: 30em;
+  margin-top: calc(var(--step) * 1.4);
   font-weight: 400;
-  font-size: clamp(2rem, 5.4vw, 3.9rem);
-  line-height: 1.16;
+  font-size: var(--fs-thesis);
+  line-height: 1.14;
   color: var(--veil);
 }
 .wide-break { display: none; }

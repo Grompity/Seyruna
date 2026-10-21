@@ -22,13 +22,13 @@
   padding: 1.1rem;
   color: var(--veil-14);
   cursor: pointer;
-  transition: color 1s var(--ease-drift), transform 1s var(--ease-drift);
+  transition: color 1s var(--ease-drift), transform 1s var(--ease-land);
 }
 .marginalia__mark svg { display: block; }
 .marginalia__mark:hover,
 .marginalia__mark:focus-visible {
   color: var(--gold-68);
-  transform: rotate(6deg);
+  transform: rotate(6deg) scale(1.22); /* zoom on attention — interactive vocabulary */
 }
 
 .marginalia__whisper {

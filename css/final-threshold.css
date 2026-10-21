@@ -19,7 +19,7 @@ final-threshold::before {
 .final-title {
   font-weight: 400;
   letter-spacing: .05em;
-  font-size: clamp(1.9rem, 5vw, 3.2rem);
+  font-size: var(--fs-thesis);
   color: var(--veil);
 }
 

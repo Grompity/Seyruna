@@ -9,7 +9,14 @@ navigation-frame {
 }
 navigation-frame.is-awake,
 navigation-frame:hover,
-navigation-frame:focus-within { opacity: 1; }
+navigation-frame:focus-within {
+  opacity: 1;
+  /* The page's one material effect, and its durable form: content travelling
+     under the woken header blurs beneath it. */
+  background: color-mix(in oklab, var(--ink-0) 78%, transparent);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
 
 .nav-mark {
   font-family: var(--font-display);

@@ -48,11 +48,15 @@ export class KnowledgeConstellation extends HTMLElement{
     const highlight = (id, pinned) => {
       const active = Boolean(id)
       stage.classList.toggle('is-active', active)
+      if (active && byId[id]) { /* zoom origin: the field leans toward your node */
+        stage.style.setProperty('--origin-x', `${((byId[id].x / STAGE.width) * 100).toFixed(1)}%`)
+        stage.style.setProperty('--origin-y', `${((byId[id].y / STAGE.height) * 100).toFixed(1)}%`)
+      }
       const near = active ? neighborsOf[id] : null
       for (const line of wireEls)
         line.classList.toggle('is-on', active && (line.dataset.a === id || line.dataset.b === id))
       for (const li of list.children) {
-        const btn = li.firstchild
+        const btn = li.firstChild
         const on = btn.dataset.node === id
         btn.classList.toggle('is-on', on)
         btn.classList.toggle('is-near', Boolean(near?.has(btn.dataset.node)))
