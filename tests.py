@@ -3210,7 +3210,9 @@ expect("T168 THE SEAMS CAP THEMSELVES AND THE THINKING WORD RIDES WHEN SPOKEN: "
        "wire - the production road byte-identical); a seam that says "
        "thinking=False puts the endpoint's OWN word (enable_thinking off) on "
        "the wire and the per-seam cap when it names one (the cap's fall-back "
-       "is the global word); the config carries the three seam words and "
+       "is the global word); the charter carries the seam-cap family (three A29 "
+       "words; A31's lap added a fourth to the family - the bound-law "
+       "weighs ALL of them, never one era's count) and "
        "EVERY one of them sits under the global cap (a seam cap is a bound, "
        "never a widening); and the three seams actually SPEAK their own "
        "words: the grade seam rides (the grade cap, thinking off), the synth "
@@ -3227,7 +3229,9 @@ expect("T168 THE SEAMS CAP THEMSELVES AND THE THINKING WORD RIDES WHEN SPOKEN: "
                == {"enable_thinking": False}
            and tr["capped"]["max_tokens"] == 900
            and "chat_template_kwargs" not in tr["capped"]
-           and set(tr["keys"]) == {"GRADE_MAXTOK", "AUDIT_MAXTOK", "SYNTH_MAXTOK"}
+           and {"GRADE_MAXTOK", "AUDIT_MAXTOK",
+                   "SYNTH_MAXTOK"} <= set(tr["keys"])
+           and all(k.endswith("_MAXTOK") for k in tr["keys"])
            and tr["bounds"]
            and tr["grade-seam"] == (stages.CONFIG["GRADE_MAXTOK"], False)
            and tr["synth-seam"] == (stages.CONFIG["SYNTH_MAXTOK"],
@@ -3371,21 +3375,232 @@ expect("T171 THE VOICE SPEAKS THE CHARTER'S WORD, BOTH PLACES IT RIDES: the "
        "cap of its own and the test records that, it does not invent one); "
        "the road's lane rode clean (a mouth that speaks its object draws no "
        "mouth-fell-back); and on the WIRE the road's real body carries the "
-       "endpoint's own thinking word and the GLOBAL cap byte (no seam cap "
-       "rides - the open list names that question, this witness does not "
-       "invent its answer); T168's synth clause reads the same charter (the "
+       "endpoint's own thinking word AND THE CHARTER'S cap word (A31's lap "
+       "answered A30's open list - at the charter, reader at the seam; the clause "
+       "reads the charter BOTH ways it can speak, never one era's value); T168's synth "
+       "clause reads the same charter (the "
        "era-pin retired the day A29 priced it, the SHAPE still pinned)",
        _T71,
        why=lambda tr: ([] if (
            set(tr["charter"]) == {"SYNTH_THINKING", "GENERAL_THINKING"}
            and tr["types"]
-           and tr["general-seam"] == (None, stages.CONFIG["GENERAL_THINKING"])
+           and tr["general-seam"] == (
+               stages.CONFIG.get("GENERAL_MAXTOK"),
+               stages.CONFIG["GENERAL_THINKING"])
            and tr["general-note"] is None
-           and tr["general-wire"].get("max_tokens") == stages.CONFIG["MAXTOK"]
+           and tr["general-wire"].get("max_tokens") == stages.CONFIG.get(
+               "GENERAL_MAXTOK", stages.CONFIG["MAXTOK"])
            and tr["general-wire"].get("chat_template_kwargs")
                == {"enable_thinking": stages.CONFIG["GENERAL_THINKING"]})
        else ["a voice seam spoke an unpriced word, the charter spoke no "
              "boolean, or the lane drew a word it should not"]))
+
+
+# ---------------- A31: one lap of the loop, on purpose (adds) --------------
+# The LAP (measure -> decide -> one bounded word -> re-measure -> verdict),
+# run at ONE system entry in loop.py. T172 pins the charter MECHANICS,
+# T173 pins the pre-declared EYES on synthetic records, T174 REPLAYS the
+# preserved live bytes (a replay never wears the label of a live
+# observation; zero live calls happen here), T175 rides a WHOLE SYNTHETIC
+# lap through the one entry with the door INJECTED (the door's own laws are
+# T101+'s; A31's claim is the lap). The module's earlier `loop = []` list
+# dies right here - reborn as the module (no later reader of the list).
+import loop
+import tempfile
+
+_T172 = {}
+with tempfile.TemporaryDirectory() as _td31:
+    import os as _os31
+    _p31 = _os31.path.join(_td31, "config.json")
+    with open(_p31, "w") as _fh:
+        _fh.write(json.dumps({"BASE": "x", "MAXTOK": 4096}, indent=2))
+    _cfg31 = loop.read_cfg(_p31)
+    _old31, _prior31 = loop.apply_word(_p31, "GENERAL_MAXTOK", 1024)
+    _mid31 = loop.read_cfg(_p31)          # the word WHILE applied
+    _back31 = loop.restore_bytes(_p31, _prior31)
+    with open(_p31) as _fh:
+        _exact = (_fh.read() == _prior31)
+_T172 = {
+    "effective-absent": loop.effective_word(_cfg31, "GENERAL_MAXTOK"),
+    "effective-present": loop.effective_word(
+        {"GENERAL_MAXTOK": 1024, "MAXTOK": 4096}, "GENERAL_MAXTOK"),
+    "apply": (_old31, _mid31.get("GENERAL_MAXTOK"),
+              _back31.get("GENERAL_MAXTOK")),
+    "restored-exact": _exact,
+}
+
+expect("T172 THE LAP'S CHARTER MECHANICS ARE REVERSIBLE: an absent seam "
+       "word rides the GLOBAL word by the SAME fallback the road rides "
+       "(read off both, never assumed); a present word rides itself; the "
+       "one-key write hands back the old word (None when it was absent), "
+       "the APPLIED charter carries the new one, the RESTORED charter has "
+       "it GONE again (both moments read - the restore's absence IS the "
+       "restore WORKING), and a RESTORE returns the EXACT prior bytes (a rollback that "
+       "re-flowed the file would lie in a diff); a temp charter wears the "
+       "test - the founder's real bytes are the LAP's to change, not a "
+       "test's to rearrange at will",
+       _T172,
+       why=lambda tr: ([] if (
+           tr["effective-absent"] == 4096
+           and tr["effective-present"] == 1024
+           and tr["apply"][0] is None and tr["apply"][1] == 1024
+           and tr["apply"][2] is None
+           and tr["restored-exact"])
+       else ["the charter write is not the reversible one-key thing the "
+             "lap's right to self-modify was made out to be"]))
+
+_CRIT31 = json.loads(open("a31-contract.json").read())["criteria"]
+
+
+def _rec31(**kw):
+    r = {"label": "synthetic", "code": 200, "wall_ms": 3000,
+         "lane": "general", "general_note": None,
+         "fires": ["INTENT:shelf-silent", "GENERAL:UNSOURCED"]}
+    r.update(kw)
+    return r
+
+
+_T173 = {"clean": loop.decide([_rec31(wall_ms=w) for w in (2900, 3100, 3300)],
+                              [_rec31(wall_ms=w) for w in (3000, 3100, 3200)],
+                              _CRIT31)}
+_T173["lane-gone"] = loop.decide(
+    _T173["before"] if False else [_rec31(wall_ms=3100)],
+    [_rec31(lane=None, general_note="mouth-fell-back")], _CRIT31)
+_T173["note-drawn"] = loop.decide([_rec31()],
+    [_rec31(general_note="mouth-fell-back")], _CRIT31)["decision"]
+_T173["word-missing"] = loop.decide([_rec31()],
+    [_rec31(fires=["INTENT:shelf-silent"])], _CRIT31)["decision"]
+_T173["new-floor"] = loop.decide([_rec31()], [_rec31(wall_ms=9000)],
+                                _CRIT31)["decision"]
+_T173["did-not-arrive"] = loop.decide(
+    [_rec31()], [{"label": "synthetic", "raised": "ConnectionReset",
+                  "wall_ms": 4000}], _CRIT31)["decision"]
+_T173["medians"] = _T173["clean"]["medians_ms"]
+_T173["clean"] = _T173["clean"]["decision"]
+_T173["lane-gone"] = _T173["lane-gone"]["decision"]
+_T173["rationale-empty-when-clean"] = (
+    loop.decide([_rec31()], [_rec31()], _CRIT31)["rationale"] == [])
+
+expect("T173 THE PRE-DECLARED EYES ARE PURE CODE (synthetic): the clean "
+       "after-table speaks APPLIES-HOLDS with an EMPTY rationale; each of "
+       "five wounds speaks ROLLBACK - the lane gone (a cap that empties "
+       "the completion lands at the shelf's exit), a fall-back word drawn "
+       "(the cap ate the answer), the road's own word missing, a new "
+       "floor over the declared band, a trial that did not arrive; the "
+       "medians ride the verdict; the eyes read the REAL contract's bytes "
+       "(the criteria are the contract's, not a test-side copy)",
+       _T173,
+       why=lambda tr: ([] if (
+           tr["clean"] == "APPLIES-HOLDS" and tr["lane-gone"] == "ROLLBACK"
+           and all(tr[k] == "ROLLBACK" for k in ("note-drawn",
+               "word-missing", "new-floor", "did-not-arrive"))
+           and tr["medians"] == {"before": 3100, "after": 3100}
+           and tr["rationale-empty-when-clean"])
+       else ["the pre-declared eyes are not the pure table the contract "
+             "promised - or the medians did not ride"]))
+
+_T174 = json.loads(open("research-hold/a31-evidence.json").read())
+_V31 = loop.decide(_T174["before"], _T174["after"], _CRIT31)
+_T174 = {
+    "replay": _V31["decision"],
+    "recorded": _T174["decision"]["decision"],
+    "medians-match": _V31["medians_ms"] == _T174["decision"]["medians_ms"],
+    "all-live": all(r.get("label") == "live"
+                    for r in _T174["before"] + _T174["after"]),
+    "lanes-held": all(r.get("lane") == "general" for r in _T174["after"]),
+    "words": (_T174["word_effective_before"],
+              _T174["word_effective_after"]),
+    "outcome-consistent": (
+        (stages.CONFIG.get("GENERAL_MAXTOK") == _T174["candidate"])
+        if _V31["decision"] == "APPLIES-HOLDS"
+        else stages.CONFIG.get("GENERAL_MAXTOK") != _T174["candidate"]),
+}
+
+expect("T174 THE REPLAY IS REAL AND SAYS ITS LABEL (replay, zero live "
+       "calls): the held live bytes (every record labelled LIVE inside - "
+       "the held truth stays the held truth) re-decided through the same "
+       "pure eyes speak the SAME verdict word and the SAME medians the "
+       "lap recorded; the held words ride 4096 -> 1024 (the real road's "
+       "own fallback read, not an assumption); and the CHARTER AS IT "
+       "STANDS today agrees with the verdict (APPLIES-HOLDS kept the "
+       "word, ROLLBACK would have restored the absence) - the decision "
+       "path reproduces from bytes, and a replay is not reported as a "
+       "fresh observation",
+       _T174,
+       why=lambda tr: ([] if (
+           tr["replay"] == tr["recorded"]
+           and tr["replay"] in ("APPLIES-HOLDS", "ROLLBACK")
+           and tr["medians-match"] and tr["all-live"]
+           and tr["lanes-held"] is True
+           and tr["words"] == (4096, 1024)
+           and tr["outcome-consistent"] is True)
+       else ["the replay did not reproduce the lap, the labels lied, or "
+             "the charter and the verdict stopped agreeing"]))
+
+
+def _lap31(pile, cfg_text, hold_name, n=3):
+    import os as _os31
+    p = _os31.path.join(pile, "config.json")
+    with open(p, "w") as fh:
+        fh.write(cfg_text)
+    seen = []
+    def fake(m, q):
+        seen.append((m, q))
+        return [{"label": "injected", "code": 200, "wall_ms": 3000,
+                 "lane": "general", "general_note": None,
+                 "fires": ["INTENT:shelf-silent",
+                           "GENERAL:UNSOURCED"]} for _ in range(m)]
+    return loop.run_lap(cfg_path=p, measure=fake, hold_name=hold_name,
+                        hold_to=pile), seen
+
+
+_T175 = {}
+with tempfile.TemporaryDirectory() as _td31b:
+    _a, _s = _lap31(_td31b, json.dumps({"MAXTOK": 512}, indent=2),
+                    "t175-widen.json")
+    _T175["widen"] = _a["outcome"]
+    _T175["widen-bytes"] = (json.loads(
+        open(_os31.path.join(_td31b, "config.json")).read())
+        == {"MAXTOK": 512})
+    _T175["widen-no-measure"] = (_s == [])
+    _b, _ = _lap31(_td31b, json.dumps({"MAXTOK": 4096,
+                                       "GENERAL_MAXTOK": 1024},
+                                      indent=2), "t175-ridden.json")
+    _T175["ridden"] = _b["outcome"]
+    _T175["ridden-word"] = _b["word_effective_after"]
+    _c, _seen = _lap31(_td31b, json.dumps({"MAXTOK": 4096}, indent=2),
+                       "t175-full.json")
+    _T175["full"] = _c["outcome"]
+    _T175["full-decision"] = _c["decision"]["decision"]
+    _T175["full-holds-word"] = loop.read_cfg(
+        _os31.path.join(_td31b, "config.json")).get("GENERAL_MAXTOK")
+    _T175["full-held-to-pile"] = _os31.path.exists(
+        _os31.path.join(_td31b, "t175-full.json"))
+    _T175["measured-twice"] = ([m for m, _q in _seen] == [3, 3])
+
+expect("T175 A WHOLE SYNTHETIC LAP RIDES THE ONE ENTRY (injected measure, "
+       "zero live calls): MAXTOK-below-the-candidate comes home "
+       "NO-CHANGE-with-a-WIDEN at its word and the charter bytes UNTOUCHED "
+       "and NO measure run at all (the no-change law stands BEFORE the "
+       "gate); a word already riding the candidate comes home "
+       "NO-CHANGE-at-that-own-word (two honest no-change words, not one "
+       "fudge); a clean full lap APPLIES, the verdict rides "
+       "APPLIES-HOLDS, the temp charter ends carrying the candidate, the "
+       "measure ran BOTH sides (before and after), and the provenance "
+       "held to the TEST's pile - never onto the evidence file",
+       _T175,
+       why=lambda tr: ([] if (
+           tr["widen"].startswith("NO-CHANGE") and "WIDEN" in tr["widen"]
+           and tr["widen-bytes"] and tr["widen-no-measure"]
+           and tr["ridden"].startswith("NO-CHANGE") and "ALREADY" in
+           tr["ridden"]
+           and tr["ridden-word"] == 1024
+           and tr["full"] == "APPLIED (the verdict rode)"
+           and tr["full-decision"] == "APPLIES-HOLDS"
+           and tr["full-holds-word"] == 1024
+           and tr["full-held-to-pile"] and tr["measured-twice"])
+       else ["the one entry is not the whole lap, or a no-change leg "
+             "touched bytes or the door it does not need"]))
 
 
 for name, tr, kw in T:

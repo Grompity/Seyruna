@@ -15,5 +15,6 @@
     "rule_pack": "RP-0.4",
     "voice_brief": "VB-0.3",
     "knowledge_schema": "KS-0.1"
-  }
+  },
+  "GENERAL_MAXTOK": 1024
 }

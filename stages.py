@@ -722,6 +722,12 @@ def general_exit(trace, frame, live, sim=None):
                    + "\nRespond ONLY with JSON: {\"knows\": true|false, "
                    "\"node\": \"plain speech or empty\", "
                    "\"verbs\": [CLAIM|RECOMMEND|PERMIT]}",
+                   # A31's lap found the gap the A30 ledger named: the
+                   # charter word needed a READER at the seam or the
+                   # change rode nothing. One line, the A30 idiom; the
+                   # fallback (absent = the global word) is loop.py's
+                   # effective_word read of the SAME law.
+                   CONFIG.get("GENERAL_MAXTOK"),
                    thinking=CONFIG.get("GENERAL_THINKING", True))
         trace["stages_ms"]["general"] = (_PC() - _tg) * 1000
         trace["model_calls"] = CALLS[0]                # the ledger keeps
