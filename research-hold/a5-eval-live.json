@@ -6,277 +6,24 @@
   "max_calls_per_question": 8,
   "max_secs_per_question": 240
  },
- "date": "20261019",
+ "date": "20261021",
  "review": "operator (the A5 hand; same brain that wrote the code - disclosed, not independent)",
  "questions": [
   {
    "question": "Ashoka rock edict",
    "web": {
     "provider": "ddg-ia",
-    "ok": true,
-    "results": 5,
-    "gaps": [],
-    "spent": {
-     "search": 1,
-     "fetch": 3,
-     "calls": 4,
-     "ms": 2304.7
-    },
-    "corroboration": {
-     "urls": 5,
-     "read": 1,
-     "attribution": 4,
-     "origin_publishers": 1,
-     "independence": "none",
-     "conflict": "unknown"
-    },
-    "rows": [
-     {
-      "id": "W1",
-      "kind": "page",
-      "evidence": "PRESENT",
-      "note": "http 200 (capped)",
-      "work": "en.wikipedia.org",
-      "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
-      "claim": "Edicts of Ashoka A Major Pillar Edict of Ashoka , in Lauriya Araraj , Bihar, India Material Sandstone Created 3rd century BCE Present location Nepal , India, Pakistan, Afghanistan, Bangladesh Location &lt;b id=\\\"mwCw\\\">Bahapur&lt;/b>&lt;/a>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Saru_Maru\\\" title=\\\"Saru Maru\\\" id=\\\"mwDw\\\">Saru Maru&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Maski\\\" title=\\\"Maski\\\" id=\\\"mwEw\\\">Maski&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Yerragudi?action=edit&amp;amp;redlink=1\\\" title=\\\"Yerragudi\\\" class=\\\"new\\\" typeof=\\\"mw:LocalizedAttrs\\\" id=\\\"mwGw\\\" data-mw-i18n=&apos;{\\\"title\\\":{\\\"lang\\\":\\\"x-page\\\",\\\"key\\\":\\\"red-link-title\\\",\\\"params\\\":[\\\"Yerragudi\\\"]}}&apos;>Yerragudi&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Bairat\\\" title=\\\"Bairat\\\" class=\\\"mw-redirect\\\" id=\\\"mwIA\\\">Bairat&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Ahraura\\\" title=\\\"Ahraura\\\" id=\\\"mwJA\\\">Ahraura&lt;/a>&lt;/b>\"}'> &lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Barabar_Caves\\\" title=\\\"Barabar Caves\\\" id=\\\"mwJg\\\">Barabar&lt;/a>&lt;/b>\"}'> &lt;b id=\\\"mwKA\\\">Taxila&lt;/b>&lt;/a>&lt;br id=\\\"mwKQ\\\"/>&lt;b id=\\\"mwKg\\\">(&lt;a rel=\\\"mw:WikiLink\\\" href=\\\"./Aramaic\\\" tit\u2026"
-     },
-     {
-      "id": "W2",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/c/Edicts_of_Ashoka?kl=in%2Den&k1=in&k7=1",
-      "claim": "Edicts of Ashoka Category"
-     },
-     {
-      "id": "W3",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Pillars_of_Ashoka?kl=in%2Den&k1=in&k7=1",
-      "claim": "Pillars of Ashoka - The pillars of Ashoka are a series of monolithic columns dispersed throughout the Indian subcontinent, erected\u2014or at least inscribed with edicts\u2014by the 3rd Mauryan Emperor Ashoka the Great, who reigned from c."
-     },
-     {
-      "id": "W4",
-      "kind": "snippet",
-      "evidence": null,
-      "note": null,
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Ashokan_Edicts_in_Delhi?kl=in%2Den&k1=in&k7=1",
-      "claim": "Ashokan Edicts in Delhi - The Ashokan edicts in Delhi are a series of edicts on the teachings of Buddha created by Ashoka, the Mauryan Emperor who ruled in the Indian subcontinent during the 3rd century BC. The Edicts of Ashoka were either carved on in-situ rocks or engraved on pillars erected throughout the empire..."
-     },
-     {
-      "id": "W5",
-      "kind": "snippet",
-      "evidence": null,
-      "note": null,
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Major_Rock_Edicts?kl=in%2Den&k1=in&k7=1",
-      "claim": "Major Rock Edicts - The Major Rock Edicts of Indian emperor Ashoka refer to 14 separate major Edicts of Ashoka which are significantly detailed and represent some of the earliest dated rock inscriptions of any Indian monarch. These edicts are preceded chronologically by the Minor Rock Edicts."
-     }
-    ]
-   },
-   "door": {
-    "code": 200,
-    "lane": "web",
-    "retrieval": [
-     "W1",
-     "W2",
-     "W3",
-     "W4",
-     "W5"
-    ],
-    "response": "The Major Rock Edicts of Ashoka are fourteen detailed inscriptions carved into in-situ rock, among the earliest dated rock inscriptions of any Indian monarch. They were created in the 3rd century BCE under the Mauryan Emperor Ashoka, and their content centers on the teachings of Buddha. They are preceded chronologically by the Minor Rock Edicts. The broader Edicts of Ashoka \u2014 rock and pillar alike \u2014 are found across Nepal, India, Pakistan, Afghanistan, and Bangladesh.",
-    "model_calls": 3,
-    "web_stamped": true
-   },
-   "secs": 116.3,
-   "id": "EA1",
-   "kind": "stable-fact",
-   "expect": "an origin abstract + a read origin page; ONE origin voice (independence none by law); this question IS the A4 bytes (web-run-1) - the A4-to-A5 comparison rides here",
-   "axes": {
-    "reviewed_by": "operator (A5 hand; same brain as the code)",
-    "retrieval": "ok - origin + 4 house rows, gaps none",
-    "traceability": "5 rows, kinds stamped (page/snippet), urls and notes ride",
-    "factual_correctness": "consistent with the bytes that reached the mouth (fourteen; 3rd c. BCE; Buddha's teachings)",
-    "citation_support": "the spoken claims trace to W5's snippet and W1's page bytes",
-    "appropriate_uncertainty": "single origin voice - the independence word says NONE and the answer does not pretend otherwise",
-    "evasiveness": "none",
-    "independence": "none (machine word)"
-   }
-  },
-  {
-   "question": "Magna Carta",
-   "web": {
-    "provider": "ddg-ia",
-    "ok": true,
-    "results": 3,
-    "gaps": [],
-    "spent": {
-     "search": 1,
-     "fetch": 3,
-     "calls": 4,
-     "ms": 1917.3
-    },
-    "corroboration": {
-     "urls": 3,
-     "read": 0,
-     "attribution": 3,
-     "origin_publishers": 0,
-     "independence": "unknown",
-     "conflict": "unknown"
-    },
-    "rows": [
-     {
-      "id": "W1",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Magna_Carta?kl=in%2Den&k1=in&k7=1",
-      "claim": "Magna Carta A royal charter of rights agreed to by King John of England at Runnymede, near Windsor, on 15..."
-     },
-     {
-      "id": "W2",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Magna_Carta_Holy_Grail?kl=in%2Den&k1=in&k7=1",
-      "claim": "Magna Carta... Holy Grail The twelfth studio album by American rapper Jay-Z. It was made available at first for free..."
-     },
-     {
-      "id": "W3",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/MagnaCarta_2?kl=in%2Den&k1=in&k7=1",
-      "claim": "MagnaCarta 2 A role-playing video game developed by South Korean developer Softmax and published by Namco..."
-     }
-    ]
-   },
-   "door": {
-    "code": 200,
-    "lane": "web",
-    "retrieval": [
-     "W1",
-     "W2",
-     "W3"
-    ],
-    "response": "Magna Carta was a royal charter of rights, agreed to by King John of England at Runnymede, near Windsor, on the 15th \u2014 the record cuts off there, so I can't tell you the month.",
-    "model_calls": 3,
-    "web_stamped": true
-   },
-   "secs": 50.6,
-   "id": "EA2",
-   "kind": "exact-date-or-number",
-   "expect": "the provider may answer by ITS OWN house stubs alone (attribution-only shape); an exact 1215 is then NOT in the bytes that reached the mouth - an unsourced date must show on the citation-support axis, not acquire false DOCUMENTED airs",
-   "axes": {
-    "reviewed_by": "operator",
-    "retrieval": "ok - attribution-only shape (no origin read)",
-    "traceability": "3 snippet rows; exact-date bytes: the DAY rode, the month/year did NOT",
-    "factual_correctness": "PARTIAL AND HONEST - the mouth said the record cuts off instead of finishing from its own head",
-    "citation_support": "strong: what it could not see in the bytes, it did not claim",
-    "appropriate_uncertainty": "exemplary (the A5 law in one sentence)",
-    "evasiveness": "none",
-    "independence": "unknown (machine word: no origin read)"
-   }
-  },
-  {
-   "question": "Krishna",
-   "web": {
-    "provider": "ddg-ia",
-    "ok": true,
-    "results": 3,
-    "gaps": [],
-    "spent": {
-     "search": 1,
-     "fetch": 3,
-     "calls": 4,
-     "ms": 1939.9
-    },
-    "corroboration": {
-     "urls": 3,
-     "read": 0,
-     "attribution": 3,
-     "origin_publishers": 0,
-     "independence": "unknown",
-     "conflict": "unknown"
-    },
-    "rows": [
-     {
-      "id": "W1",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Krishna?kl=in%2Den&k1=in&k7=1",
-      "claim": "Krishna A major deity in Hinduism."
-     },
-     {
-      "id": "W2",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Krishnadevaraya?kl=in%2Den&k1=in&k7=1",
-      "claim": "Krishna Deva Raya Krishnadevaraya was emperor of the Vijayanagara Empire from 1509 to 1529 and the third ruler of..."
-     },
-     {
-      "id": "W3",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Hare_Krishna_(mantra)?kl=in%2Den&k1=in&k7=1",
-      "claim": "Hare Krishna (mantra) A 16-word Vaishnava mantra mentioned in the Kali-Sa\u1e47\u1e6d\u0101ra\u1e47a Upani\u1e63ad."
-     }
-    ]
-   },
-   "door": {
-    "code": 200,
-    "lane": "web",
-    "retrieval": [
-     "W1",
-     "W2",
-     "W3"
-    ],
-    "response": "Krishna is a major deity in Hinduism.",
-    "model_calls": 3,
-    "web_stamped": true
-   },
-   "secs": 38.2,
-   "id": "EA3",
-   "kind": "possible-conflict",
-   "expect": "a disambiguation-shaped answer (many referents): conflict rides UNRESOLVED at the packet (the provider's bytes carry no edges); the answer must not pick a referent and call it fact",
-   "axes": {
-    "reviewed_by": "operator",
-    "retrieval": "ok - attribution-only; disambiguation-shaped",
-    "traceability": "3 snippet rows, three DIFFERENT referents visible in the rows",
-    "factual_correctness": "one referent stated clean (the major-deity reading)",
-    "citation_support": "W1 verbatim",
-    "appropriate_uncertainty": "PARTIAL - the ambiguity itself was not spoken (the conflict word at the packet stands UNRESOLVED and the answer did not say so)",
-    "evasiveness": "none",
-    "independence": "unknown (machine word)"
-   }
-  },
-  {
-   "question": "Zzzyx plingworth",
-   "web": {
-    "provider": "ddg-ia",
     "ok": false,
+    "query": "Ashoka rock edict",
     "results": 0,
     "gaps": [
-     "search-empty"
+     "search-timeout"
     ],
     "spent": {
      "search": 1,
      "fetch": 0,
      "calls": 1,
-     "ms": 343.6
+     "ms": 12079.4
     },
     "corroboration": {
      "urls": 0,
@@ -284,7 +31,194 @@
      "attribution": 0,
      "origin_publishers": 0,
      "independence": "unknown",
-     "conflict": "unknown"
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": "general",
+    "retrieval": [
+     "19",
+     "2"
+    ],
+    "response": "Ashoka's rock edicts \u2014 the inscriptions carved into boulders and cliff-faces across the subcontinent, roughly 268\u2013232 BCE. They carry the emperor's own voice: dhamma, restraint, welfare, a quiet administrative conscience. The Major Rock Edicts run in a handful of long texts; the Minor and Separate ones are shorter, more local. The script is Brahmi, mostly, with a few Greek and Aramaic versions at the edges. A plain thing, plainly named.",
+    "model_calls": 2,
+    "evidence_status": "general knowledge, not verified this turn (research failed (search-timeout))",
+    "web_stamped": false
+   },
+   "secs": 44.0,
+   "id": "EA1",
+   "kind": "stable-fact",
+   "expect": "an origin abstract + a read origin page; ONE origin voice (independence none by law); this question IS the A4 bytes (web-run-1) - the A4-to-A5 comparison rides here"
+  },
+  {
+   "question": "Magna Carta",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "query": "Magna Carta",
+    "results": 0,
+    "gaps": [
+     "search-timeout"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 12005.2
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": "general",
+    "retrieval": [
+     "19",
+     "2"
+    ],
+    "response": "Magna Carta. I hear you.",
+    "model_calls": 2,
+    "evidence_status": "general knowledge, not verified this turn (research failed (search-timeout))",
+    "web_stamped": false
+   },
+   "secs": 45.9,
+   "id": "EA2",
+   "kind": "exact-date-or-number",
+   "expect": "the provider may answer by ITS OWN house stubs alone (attribution-only shape); an exact 1215 is then NOT in the bytes that reached the mouth - an unsourced date must show on the citation-support axis, not acquire false DOCUMENTED airs"
+  },
+  {
+   "question": "Krishna",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "query": "Krishna",
+    "results": 0,
+    "gaps": [
+     "search-timeout"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 12007.8
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": "general",
+    "retrieval": [
+     "19",
+     "2"
+    ],
+    "response": "Krishna. I hear you.",
+    "model_calls": 2,
+    "evidence_status": "general knowledge, not verified this turn (research failed (search-timeout))",
+    "web_stamped": false
+   },
+   "secs": 45.4,
+   "id": "EA3",
+   "kind": "possible-conflict",
+   "expect": "a disambiguation-shaped answer (many referents): conflict rides UNRESOLVED at the packet (the provider's bytes carry no edges); the answer must not pick a referent and call it fact"
+  },
+  {
+   "question": "Zzzyx plingworth",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "query": "Zzzyx plingworth",
+    "results": 0,
+    "gaps": [
+     "search-timeout"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 12003.4
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
+    },
+    "rows": []
+   },
+   "door": {
+    "code": 200,
+    "lane": "general",
+    "retrieval": [
+     "19",
+     "2"
+    ],
+    "response": "Hello, Zzzyx plingworth.",
+    "model_calls": 2,
+    "evidence_status": "general knowledge, not verified this turn (research failed (search-timeout))",
+    "web_stamped": false
+   },
+   "secs": 52.2,
+   "id": "EA4",
+   "kind": "evidence-insufficient",
+   "expect": "search-empty: the honest lane - the web says it brought nothing, NO citation minted, the existing roads answer with their plain bytes"
+  },
+  {
+   "question": "Upanishad",
+   "web": {
+    "provider": "ddg-ia",
+    "ok": false,
+    "query": "Upanishad",
+    "results": 0,
+    "gaps": [
+     "search-timeout"
+    ],
+    "spent": {
+     "search": 1,
+     "fetch": 0,
+     "calls": 1,
+     "ms": 12022.8
+    },
+    "corroboration": {
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
     },
     "rows": []
    },
@@ -293,203 +227,65 @@
     "lane": null,
     "retrieval": [
      "19",
+     "6",
      "2"
     ],
-    "response": "We don't know - that is an answer, not a failure.",
-    "model_calls": 2,
+    "response": "In the Brihadaranyaka Upanishad, 2.3.6, Brahman is approached through 'neti, neti' \u2014 'not this, not this' \u2014 rather than being fully captured by ordinary descriptive predicates. That's one thread from one text; the Upanishads are many and wide. Which Upanishad, or which thread, are you reaching for?",
+    "model_calls": 3,
+    "evidence_status": "research failed (search-timeout)",
     "web_stamped": false
    },
-   "secs": 33.1,
-   "id": "EA4",
-   "kind": "evidence-insufficient",
-   "expect": "search-empty: the honest lane - the web says it brought nothing, NO citation minted, the existing roads answer with their plain bytes",
-   "axes": {
-    "reviewed_by": "operator",
-    "retrieval": "HONESTLY EMPTY (search-empty) - the point of the case",
-    "traceability": "no rows at all - and NO row was minted",
-    "factual_correctness": "n/a (nothing claimed)",
-    "citation_support": "no citation minted for a look that failed",
-    "appropriate_uncertainty": "the shelf's plain UNKNOWN rides the road's own words",
-    "evasiveness": "none - an explicit unknown, not a dodge",
-    "independence": "unknown (machine word; nothing read)"
-   }
-  },
-  {
-   "question": "Upanishad",
-   "web": {
-    "provider": "ddg-ia",
-    "ok": true,
-    "results": 5,
-    "gaps": [],
-    "spent": {
-     "search": 1,
-     "fetch": 3,
-     "calls": 4,
-     "ms": 2239.4
-    },
-    "corroboration": {
-     "urls": 5,
-     "read": 1,
-     "attribution": 4,
-     "origin_publishers": 1,
-     "independence": "none",
-     "conflict": "unknown"
-    },
-    "rows": [
-     {
-      "id": "W1",
-      "kind": "page",
-      "evidence": "PRESENT",
-      "note": "http 200 (capped)",
-      "work": "en.wikipedia.org",
-      "url": "https://en.wikipedia.org/wiki/Upanishads",
-      "claim": "Ancient Sanskrit religious and philosophical texts of Hinduism The encounter of a teacher and a disciple , giving rise to the etymology of the term \"Upanishad\" The Upanishadic phrase \"Tat Tvam Asi\" displayed at the Sabarimala temple in Kerala This article contains Indic text ."
-     },
-     {
-      "id": "W2",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/c/Upanishads?kl=in%2Den&k1=in&k7=1",
-      "claim": "Upanishads Category"
-     },
-     {
-      "id": "W3",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/The_100_Most_Influential_Books_Ever_Written?kl=in%2Den&k1=in&k7=1",
-      "claim": "The 100 Most Influential Books Ever Written - The 100 Most Influential Books Ever Written: The History of Thought from Ancient Times to Today is a book of intellectual history written by Martin Seymour-Smith, a British poet, critic, and biographer."
-     },
-     {
-      "id": "W4",
-      "kind": "snippet",
-      "evidence": null,
-      "note": null,
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Bhagavad_Gita?kl=in%2Den&k1=in&k7=1",
-      "claim": "Bhagavad Gita - The Bhagavad Gita, often referred to as the Gita, is a Hindu scripture, likely composed in the second or first century BCE, which forms part of the epic poem Mahabharata."
-     },
-     {
-      "id": "W5",
-      "kind": "snippet",
-      "evidence": null,
-      "note": null,
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/Hinduism?kl=in%2Den&k1=in&k7=1",
-      "claim": "Hinduism - Hinduism is an umbrella term for a range of Indian religious and spiritual traditions that are unified by adherence to Dharma, a cosmic order maintained by its followers through rituals and righteous living, as expounded in the Vedas."
-     }
-    ]
-   },
-   "door": {
-    "code": 200,
-    "lane": "web",
-    "retrieval": [
-     "W1",
-     "W2",
-     "W3",
-     "W4",
-     "W5"
-    ],
-    "response": "The Upanishads are ancient Sanskrit religious and philosophical texts of Hinduism. The name itself comes from the encounter of a teacher and a disciple.",
-    "model_calls": 3,
-    "web_stamped": true
-   },
-   "secs": 69.4,
+   "secs": 72.3,
    "id": "EA5",
    "kind": "fact-vs-interpretation",
-   "expect": "an origin definitional sentence (documented: what the texts verifiably are) while any READING of them rides the mouth's own voice (interpretation); the answer must keep the two apart",
-   "axes": {
-    "reviewed_by": "operator",
-    "retrieval": "ok - origin read (page kind)",
-    "traceability": "5 rows; the definitional sentence IS the page's own lead line",
-    "factual_correctness": "the definition rides the page bytes; NO reading was invented",
-    "citation_support": "W1's own words verbatim",
-    "appropriate_uncertainty": "restrained - interpretation stayed out of the mouth's mouth",
-    "evasiveness": "none",
-    "independence": "none (machine word)"
-   }
+   "expect": "an origin definitional sentence (documented: what the texts verifiably are) while any READING of them rides the mouth's own voice (interpretation); the answer must keep the two apart"
   },
   {
    "question": "Kalama Sutta",
    "web": {
     "provider": "ddg-ia",
-    "ok": true,
-    "results": 3,
-    "gaps": [],
+    "ok": false,
+    "query": "Kalama Sutta",
+    "results": 0,
+    "gaps": [
+     "search-timeout"
+    ],
     "spent": {
      "search": 1,
-     "fetch": 3,
-     "calls": 4,
-     "ms": 3088.8
+     "fetch": 0,
+     "calls": 1,
+     "ms": 12004.3
     },
     "corroboration": {
-     "urls": 3,
-     "read": 1,
-     "attribution": 2,
-     "origin_publishers": 1,
-     "independence": "none",
-     "conflict": "unknown"
+     "urls": 0,
+     "read": 0,
+     "attribution": 0,
+     "origin_publishers": 0,
+     "independence": "unknown",
+     "conflict": "insufficient",
+     "publishers_seen": 0,
+     "duplication": 0,
+     "syndicated-possible": false
     },
-    "rows": [
-     {
-      "id": "W1",
-      "kind": "page",
-      "evidence": "PRESENT",
-      "note": "http 200 (capped)",
-      "work": "en.wikipedia.org",
-      "url": "https://en.wikipedia.org/wiki/Kalama_Sutta",
-      "claim": "Kesamutti Sutta Pali Kesamuttisutta\u1e43, K\u0101l\u0101masutta\u1e43 Bengali \u0995\u09be\u09b2\u09be\u09ae \u09b8\u09c2\u09a4\u09cd\u09b0 Burmese Kalama thoke, \u1000\u102c\u101c\u102c\u1019 \u101e\u102f\u1010\u103a Thai \u0e01\u0e32\u0e25\u0e32\u0e21\u0e2a\u0e39\u0e15\u0e23 Glossary of Buddhism Based on the Sixth Buddhist Council P\u0101li Canon 19th-century Burmese palm-leaf manuscript containing the Bhikkhun\u012bp\u0101timokkha The Kesamutti Sutta , popularly known in the West as the K\u0101l\u0101ma Sutta , is a discourse of the Buddha contained in the A\u1e45guttara Nikaya (3.65) of the Pali Canon ."
-     },
-     {
-      "id": "W2",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/V%C4%ABma%E1%B9%83saka_Sutta?kl=in%2Den&k1=in&k7=1",
-      "claim": "V\u012bma\u1e43saka Sutta - The V\u012bma\u1e43saka Sutta is a discourse contained within the Pali Canon of Theravada Buddhism and paralleled by \u6c42\u89e3 in the Madhyama Agama of the Chinese Taisho Tripitaka."
-     },
-     {
-      "id": "W3",
-      "kind": "snippet",
-      "evidence": null,
-      "note": "http 202",
-      "work": "duckduckgo.com",
-      "url": "https://duckduckgo.com/c/Anguttara_Nikaya?kl=in%2Den&k1=in&k7=1",
-      "claim": "Anguttara Nikaya"
-     }
-    ]
+    "rows": []
    },
    "door": {
     "code": 200,
-    "lane": "web",
+    "lane": null,
     "retrieval": [
-     "W1",
-     "W2",
-     "W3"
+     "19",
+     "4",
+     "2"
     ],
-    "response": "The Kalama Sutta is a discourse of the Buddha, contained in the A\u1e45guttara Nikaya (3.65) of the Pali Canon. In Pali it's called the Kesamutti Sutta. The A\u1e45guttara Nikaya is the collection it sits in.",
-    "model_calls": 3,
-    "web_stamped": true
+    "response": "The K\u0101l\u0101ma Sutta says: don't take a teaching as true just because it came through a report, a tradition, a scripture, a line of reasoning, a probability, or a teacher you revere. Instead, look at the qualities themselves \u2014 do they lead toward harm or toward welfare? \u2014 and weigh what wise people say about them.",
+    "model_calls": 2,
+    "evidence_status": "research failed (search-timeout)",
+    "web_stamped": false
    },
-   "secs": 65.4,
+   "secs": 55.0,
    "id": "EA6",
    "kind": "cross-perspective",
-   "expect": "the P7 experiment: one text with genuinely different interpretive traditions (Buddhist exegesis, scholarly reading, modern appropriation); an accessible origin source exists; the answer must separate the text's words, a tradition's reading, scholarship, and what the sources cannot settle; convergence is a hypothesis, not a result",
-   "axes": {
-    "reviewed_by": "operator",
-    "retrieval": "ok - origin read",
-    "traceability": "3 rows; the identification (A\u1e45guttara Nikaya 3.65, Pali name) rides the page bytes",
-    "factual_correctness": "the identification is sourced",
-    "citation_support": "W1/W2/W3",
-    "appropriate_uncertainty": "the P7 mark: the sources carried NAMES AND PLACES, not the traditions' readings - the answer stayed where the bytes stood; convergence of readings remains UNTESTED here, not denied",
-    "evasiveness": "none",
-    "independence": "none (machine word)"
-   }
+   "expect": "the P7 experiment: one text with genuinely different interpretive traditions (Buddhist exegesis, scholarly reading, modern appropriation); an accessible origin source exists; the answer must separate the text's words, a tradition's reading, scholarship, and what the sources cannot settle; convergence is a hypothesis, not a result"
   }
- ],
- "a4_to_a5_note": "EA1 IS the A4 question (web-run-1 E2): the road rode the SAME (lane web, sourced words, no regression in the speech); the CLAIM bytes moved the right way - A4's W1 rode page chrome ('Jump to content...'), A5's W1 rides the page's own lines; the answer's quality is the same mouth's, and that is the honest finding: EXTRACTION got more auditable, THE MOUTH DID NOT GET SMARTER."
+ ]
 }

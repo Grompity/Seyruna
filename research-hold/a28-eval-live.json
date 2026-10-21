@@ -1,0 +1,7 @@
+EA1 | ok: False | results: 0 | gaps: ['search-timeout'] | indep: unknown | lane: general | calls: 2 | status: general knowledge, not verified this turn (research failed (search-timeout)) | query: Ashoka rock edict | 44.0s
+EA2 | ok: False | results: 0 | gaps: ['search-timeout'] | indep: unknown | lane: general | calls: 2 | status: general knowledge, not verified this turn (research failed (search-timeout)) | query: Magna Carta | 45.9s
+EA3 | ok: False | results: 0 | gaps: ['search-timeout'] | indep: unknown | lane: general | calls: 2 | status: general knowledge, not verified this turn (research failed (search-timeout)) | query: Krishna | 45.4s
+EA4 | ok: False | results: 0 | gaps: ['search-timeout'] | indep: unknown | lane: general | calls: 2 | status: general knowledge, not verified this turn (research failed (search-timeout)) | query: Zzzyx plingworth | 52.2s
+EA5 | ok: False | results: 0 | gaps: ['search-timeout'] | indep: unknown | lane: None | calls: 3 | status: research failed (search-timeout) | query: Upanishad | 72.3s
+EA6 | ok: False | results: 0 | gaps: ['search-timeout'] | indep: unknown | lane: None | calls: 2 | status: research failed (search-timeout) | query: Kalama Sutta | 55.0s
+wrote /Users/ascendedai/Documents/Default Project/research-hold/a5-eval-live.json

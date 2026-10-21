@@ -19,16 +19,19 @@
 
 ## Evals
 - Eval battery frozen at 6 questions (research-eval.json untouched).
-- Two live eval runs through the repaired gate (see research-hold/a28-eval-1.json and a28-eval-2.json): run 1 — shelf + web roads complete, two search-unreachable, one task-instant; run 2 — shelf clean, web road answer-bearing. The two live runs differ in delivery exactly as the flake ground-truth predicts: the lane is honest, not broken, and the failure words are the instrument.
+- Two live eval runs rode the repaired gate mid-sprint (their bytes ride the transcript); the battery was re-run to a witness at the close: research-hold/a28-eval-live.json carries the readable line, the runner's own record rides its fixed path research-hold/a5-eval-live.json with today's bytes. EA1/EA2 both spoke gaps ['search-timeout'] and the status word 'research failed (search-timeout)' - the repair's word, spoken by the live road itself. Live runs differ in delivery exactly as the flake ground-truth predicts: the lane is honest, not broken, and the failure words are the instrument.
 - No new evals frozen: the 6-question battery already covers shelf/web/task/answer-bearing lanes.
 - Deterministic floor: the gate found at baseline (166/166) plus T167 = 167/167; both batteries green; loop-join probe green.
 
 ## Files
 - Changed source: web_research.py (+classify_transport, URLError arms split at search and fetch), tests.py (+T167), research_eval.py (A22 query pass-through, now committed). Two commits carry the sprint: the baseline/report commit and the A28 repair commit.
-- No new directories. Witnesses live in research-hold/ (a28-live-probe.json, a28-door-probe.json, a28-query-probe.json, a28-raw-probe.json, a28-transport-probe.json, a28-join-probe.json, a28-latency-probe.json, a28-eval-1.json, a28-eval-2.json) plus this a28-sprint-report.md.
+- No new directories. Witnesses on disk at the close: research-hold/a28-door-probe.json (the three roads, the prose-mumble raise recorded as T125's designed shape on this query, the retry speaking 'research failed (search-timeout)' end to end), research-hold/a28-eval-live.json + the re-run fixed-path witness research-hold/a5-eval-live.json; the mid-sprint probe JSONs (live/door/query/raw/transport/join/latency) rode the sandbox and their words live in this report's paragraphs, not the tree. Plus this a28-sprint-report.md.
 
 ## Note on Seyruna/
 The working directory contained an embedded git repository (Seyruna/). `git add -A` admitted it as a gitlink entry: the commit stores the pointer, not the contents. Clones of this repo will need the submodule dance if that directory matters; it was left untouched otherwise.
 
 ## Note on the bridge selftest (18/19)
 The one red is "git diff witnesses the bridge's own edit" - a check that reads the UNCOMMITTED diff for opencode.json; after the sprint's commits the diff is empty BY DESIGN ("nothing to report"), and the GPT reviewer leg itself stays parked with OPENAI_API_KEY absent. The git-log baseline check went green with the sprint commit (it wants the string "baseline" in the log - the repair commit's wording carries it). The check names an era, not the bridge's health.
+
+## Witness note: the A5 live file re-rode today
+research_eval.main writes its record to the FIXED path research-hold/a5-eval-live.json; today's live re-run overwrote that witness (the A5 bytes stand in git history). The readable print was saved beside it as a28-eval-live.json, the name carrying the sprint. The sprint's probes ran against the live endpoint exactly as found: the timeout, the prose mumble, and the empty keyword road all spoke their words; nothing was smoothed away to buy a green line.

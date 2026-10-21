@@ -1,0 +1,28 @@
+{
+ "task-road": {
+  "code": 200,
+  "ms": 2,
+  "lane": null,
+  "model_calls": null,
+  "evidence_status": null
+ },
+ "web-road-keyword": {
+  "raised": "ValueError",
+  "note": "no JSON [ found in: \"What I have here is related, not an answer. The records contend \u2014 one chapter's teaching, not the whole book.\\n\\nThat one passage (Chapter ",
+  "ms": 38053
+ },
+ "web-road-keyword-retry": {
+  "code": 200,
+  "ms": 47980,
+  "lane": null,
+  "model_calls": 3,
+  "evidence_status": "research failed (search-timeout)"
+ },
+ "shelf-road": {
+  "code": 200,
+  "ms": 15302,
+  "lane": "general",
+  "model_calls": 1,
+  "evidence_status": "research not asked"
+ }
+}
