@@ -6,6 +6,8 @@
   "GRADE_MAXTOK": 1200,
   "AUDIT_MAXTOK": 1200,
   "SYNTH_MAXTOK": 3000,
+  "SYNTH_THINKING": false,
+  "GENERAL_THINKING": false,
   "TEMP": 0.2,
   "TOPK": 4,
   "versions": {

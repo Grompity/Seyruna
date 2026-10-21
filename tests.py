@@ -3214,8 +3214,9 @@ expect("T168 THE SEAMS CAP THEMSELVES AND THE THINKING WORD RIDES WHEN SPOKEN: "
        "EVERY one of them sits under the global cap (a seam cap is a bound, "
        "never a widening); and the three seams actually SPEAK their own "
        "words: the grade seam rides (the grade cap, thinking off), the synth "
-       "seam rides (the synth cap, thinking ON - the voice keeps its "
-       "thinking), the audit seam rides (the audit cap, thinking off) - read "
+       "seam rides (the synth cap and the CHARTER's thinking word - A30 "
+       "priced it, the value is the config's to own, read off the call that "
+       "ran), the audit seam rides (the audit cap, thinking off) - read "
        "off calls that ran, never off comments (the vacuity law)",
        _W29,
        why=lambda tr: ([] if (
@@ -3229,7 +3230,8 @@ expect("T168 THE SEAMS CAP THEMSELVES AND THE THINKING WORD RIDES WHEN SPOKEN: "
            and set(tr["keys"]) == {"GRADE_MAXTOK", "AUDIT_MAXTOK", "SYNTH_MAXTOK"}
            and tr["bounds"]
            and tr["grade-seam"] == (stages.CONFIG["GRADE_MAXTOK"], False)
-           and tr["synth-seam"] == (stages.CONFIG["SYNTH_MAXTOK"], True)
+           and tr["synth-seam"] == (stages.CONFIG["SYNTH_MAXTOK"],
+                                    stages.CONFIG.get("SYNTH_THINKING", True))
            and tr["audit-seam"] == (stages.CONFIG["AUDIT_MAXTOK"], False))
        else ["a seam spoke today's single word, widened a cap, or only "
              "promised it"]))
@@ -3343,6 +3345,48 @@ expect("T170 THE DOOR LANES THE MUMBLE, IT DOES NOT LEAK IT (the application-"
                              and tr["resp"] == tr["pr"])
        else ["the door's mumble road spoke a shape the pipeline did not"]))
 stages.set_shelf(_SH29)               # the file's own shelf state rides back
+
+# ---------- A30: the priced word, read off calls that ran ------------------
+_T71 = {}
+_T71["charter"] = sorted(k for k in _CFG29 if k.endswith("_THINKING"))
+_T71["types"] = all(isinstance(_CFG29[k], bool) for k in _T71["charter"])
+seen71 = []
+stages.call = _spy29("{}", seen71)                       # knows absent = humility
+_gtr = {"stages_ms": {}}
+stages.general_exit(_gtr, _F29M, True)
+_T71["general-seam"] = seen71[-1] if seen71 else ("NO-CALL", "NO-CALL")
+_T71["general-note"] = _gtr.get("general_note")
+stages.call = _SC29
+_T71["general-wire"] = _wire29(lambda: stages.general_exit(
+    {"stages_ms": {}}, _F29M, True))
+stages.CALLS[0] = 0                   # the wire leg spent one REAL mouthful
+                                      # of ledger; the dry witnesses below
+                                      # read a clean counter (T77's law)
+
+expect("T171 THE VOICE SPEAKS THE CHARTER'S WORD, BOTH PLACES IT RIDES: the "
+       "charter carries BOTH thinking words and they are BOOLEANS (A30's "
+       "priced decision written at bytes, not hidden in an absent default); "
+       "the shelf-silent road's seam really SPOKE its word (the spy reads "
+       "(no cap word, the charter's general word) - the general seam owns no "
+       "cap of its own and the test records that, it does not invent one); "
+       "the road's lane rode clean (a mouth that speaks its object draws no "
+       "mouth-fell-back); and on the WIRE the road's real body carries the "
+       "endpoint's own thinking word and the GLOBAL cap byte (no seam cap "
+       "rides - the open list names that question, this witness does not "
+       "invent its answer); T168's synth clause reads the same charter (the "
+       "era-pin retired the day A29 priced it, the SHAPE still pinned)",
+       _T71,
+       why=lambda tr: ([] if (
+           set(tr["charter"]) == {"SYNTH_THINKING", "GENERAL_THINKING"}
+           and tr["types"]
+           and tr["general-seam"] == (None, stages.CONFIG["GENERAL_THINKING"])
+           and tr["general-note"] is None
+           and tr["general-wire"].get("max_tokens") == stages.CONFIG["MAXTOK"]
+           and tr["general-wire"].get("chat_template_kwargs")
+               == {"enable_thinking": stages.CONFIG["GENERAL_THINKING"]})
+       else ["a voice seam spoke an unpriced word, the charter spoke no "
+             "boolean, or the lane drew a word it should not"]))
+
 
 for name, tr, kw in T:
     bad = []

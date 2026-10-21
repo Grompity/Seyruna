@@ -321,7 +321,12 @@ def synthesize(frame, ids, draft=None, live=False, grades=None):
                     "[{\"node\": \"rendered sentence\", \"cites\": [ids], "
                     "\"verbs\": [CLAIM|RECOMMEND|PERMIT], "
                     "\"uncertainty\": \"string or null\"}]")
-        out = call(SYNTH_SYS, contract, CONFIG.get("SYNTH_MAXTOK"))
+        # A30 priced the voice's thinking at the live door (a30-ab.json:
+        # three interleaved pairs per seam, every OFF trial valid to the
+        # house's own rubric): the word rides CONFIG now, and the charter
+        # says false - the decision, its evidence, both on the record.
+        out = call(SYNTH_SYS, contract, CONFIG.get("SYNTH_MAXTOK"),
+                   CONFIG.get("SYNTH_THINKING", True))
         content = (out.get("content") or "").strip()
         if content.startswith("[MOUTH ERROR"):
             # THE TRANSPORT WORD IS NOT A SENTENCE (A29; T125's law
@@ -703,13 +708,21 @@ def general_exit(trace, frame, live, sim=None):
     else:
         _tg = _PC()
         out = call(GENERAL_SYS,
+                   # A30: the same priced word at the road the shelf left
+                   # silent (a30-ab.json, the general ledger: OFF at the
+                   # lane's own words, no humility-retreat, no fall-back).
+                   # No cap word rides here yet - the seam's shape asked
+                   # the thinking price, not the tail bound (A29's shape
+                   # showed thinking-off bytes nowhere near the global
+                   # cap; the cap question rides the open list).
                    VB + "\n\nTHE SHELF: nothing relevant was found; you "
                    "speak from general knowledge, not from a record.\n"
                    "THE SEEKER: " + frame["question"]
                    + "\nFACTS: " + frame["facts"]
                    + "\nRespond ONLY with JSON: {\"knows\": true|false, "
                    "\"node\": \"plain speech or empty\", "
-                   "\"verbs\": [CLAIM|RECOMMEND|PERMIT]}")
+                   "\"verbs\": [CLAIM|RECOMMEND|PERMIT]}",
+                   thinking=CONFIG.get("GENERAL_THINKING", True))
         trace["stages_ms"]["general"] = (_PC() - _tg) * 1000
         trace["model_calls"] = CALLS[0]                # the ledger keeps
         try:                                           # the truth of it
