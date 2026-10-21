@@ -1,0 +1,24 @@
+{
+ "contract": "A32",
+ "written_before_lap": true,
+ "chronology": "criteria and the candidate RULE written before any A32 live byte; the candidate VALUE filled at the CONTROL's reported tokens (a32-control.json), before the candidate's run, never retro-fitted",
+ "road": "general (the shelf-silent arm), through stages.door live - the proven A30/A31 question",
+ "question": "Does fasting help adults lose weight?",
+ "seam_key": "GENERAL_MAXTOK",
+ "found_state": "1024 rides the charter (A31's kept word)",
+ "control_reported": {"finish": "stop", "completion_tokens": 66, "prompt_tokens": 816, "total_tokens": 882},
+ "candidate_rule": "at or below one-third of the control's REPORTED completion_tokens, kept >= 8 (the endpoint's floor)",
+ "candidate": 22,
+ "trials_per_side": 3,
+ "criteria": {
+   "required_lane": "general",
+   "forbid_note": true,
+   "required_fire": "GENERAL:UNSOURCED",
+   "max_median_factor": 2.0,
+   "reject_reported_length": true
+ },
+ "expected_outcome": "ROLLBACK with the cut words - this candidate is a DEMONSTRATION bite (a bound proven visible), not a production proposal; the production word 1024 stays, byte-restored and READ BACK",
+ "budget": "at most TWO candidate values; a not-cut result spends the budget once more; no endless lowering, no invented truncation",
+ "decision_words_unchanged": true,
+ "label_law": "live inside the witnesses; this test-run is a REPLAY; no causation claimed from n=3 latencies"
+}
