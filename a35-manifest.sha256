@@ -1,0 +1,17 @@
+# a35 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-10-21T16:31:01 - raw evidence immutable after this point
+2ac4fd814ac82303ed79f1a48eb0da3ab961db64c682591851019d7665d774df  a35-contract.md
+ca1b244ae91b55d17cd325d424ce1d5e6a3f454d4244b71766b2f18d84620cb0  research-hold/a35-cycle-EA1.json
+ae2b19c6fe2caa2c8c16613c483e5c2bb0cefc8c8ebe09de6faae735b25b2682  research-hold/a35-cycle-EA2.json
+36de6b3bd7d0f125d1f5ad246b0740df15fa08c431e1b38a69eceb21775bfe2f  research-hold/a35-cycle-EA3.json
+df5b7aeccf06ea3e5a718516a251167f7875a30346cf93f2adb60d8ff7ee58c6  research-hold/a35-cycle-EA4.json
+36cb3505b5947ef7c049da520e52d07ad043485fd10ce43920bea8d7b3d507aa  research-hold/a35-cycle-EA5.json
+49bcb6ed1287748e25f3b239a8768977de64bceeb2ee043ca4fa66ee6cd97df2  research-hold/a35-cycle-EA6.json
+7c588f594bdb93fba74bc48281cd91066e91498df9ec80acde4ead746f7e3c3a  research-hold/a35-cycle-EA1.rerun.json
+1dbdf42fc1f160d2c51e22fde9083e84cfee08d2f81953f98ebab35dadcf9324  research-hold/a35-cycle-EA5.rerun.json
+8b0dc2788a08855b231980dc54f36d46cf792da9ef24aa22d8d8ebd96560cfe1  research-hold/a35-cycle-EA6.rerun.json
+3c42d7008128bbdd37a4cad8f1c3ed225dae026962706a9b7518cf5b045e701e  research-hold/a35-six.json
+6efc943fad3571e793c0aa6925b97fe770670d74055ab5e45db64adb7935e8d3  research-hold/a35-six-final.json
+e65e1cb883d2a87943e509548ada2240a80076a9db98e9c6b21886f0790a1c2c  research_eval.py
+7d1aefc31d4091274f4f9b408dee5c01139ef051c1a8c3d9853e6bd27c0e688b  tests.py
+9bd410075a17ae7e8adc065fdb606ad416a9422d8f6704a53a9ef2486c5207a5  a35-sprint-report.md
