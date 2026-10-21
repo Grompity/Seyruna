@@ -1,0 +1,61 @@
+{
+ "label": "after",
+ "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+ "MAXTOK": 4096,
+ "sweep": {
+  "4096": {
+   "ms": 32125,
+   "finish": "stop",
+   "completion_tokens": 1254,
+   "reasoning_tokens": null,
+   "content_head": "[{\"id\": \"2\", \"grade\": \"ANSWER\"}, {\"id\": \"17\", \"grade\": \"ANALOGY\"}, {\"id\": \"18\", "
+  },
+  "256": {
+   "ms": 7865,
+   "finish": "length",
+   "completion_tokens": 256,
+   "reasoning_tokens": null,
+   "content_head": ""
+  },
+  "160": {
+   "ms": 4949,
+   "finish": "length",
+   "completion_tokens": 160,
+   "reasoning_tokens": null,
+   "content_head": ""
+  }
+ },
+ "audit": {
+  "ms": 5892,
+  "finish": "length",
+  "completion_tokens": 192,
+  "reasoning_tokens": null,
+  "content_head": ""
+ },
+ "dry_lane": null,
+ "e2e": {
+  "code": 200,
+  "wall_ms": 19972,
+  "lane": null,
+  "model_calls": 3,
+  "stages_ms": {
+   "intent": 0,
+   "retrieve": 0,
+   "grade": 1416,
+   "analyze": 0,
+   "synthesize": 17426,
+   "validate": 0,
+   "check": 0,
+   "compose": 0,
+   "audit": 1131,
+   "repair": 0,
+   "total": 19973
+  },
+  "blocked": false,
+  "synth_note": null,
+  "response_head": "What I have here is one passage, not the whole teaching \u2014 but it's a clear one. Chapter 48 sets ordi"
+ },
+ "dry_retrieval": [
+  "2"
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "label": "before",
+ "model": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+ "MAXTOK": 4096,
+ "sweep": {
+  "4096": {
+   "ms": 24841,
+   "finish": "stop",
+   "completion_tokens": 931,
+   "reasoning_tokens": null,
+   "content_head": "[{\"id\": \"2\", \"grade\": \"ANSWER\"}, {\"id\": \"17\", \"grade\": \"ANALOGY\"}, {\"id\": \"18\", "
+  },
+  "256": {
+   "ms": 7244,
+   "finish": "length",
+   "completion_tokens": 256,
+   "reasoning_tokens": null,
+   "content_head": ""
+  },
+  "160": {
+   "ms": 4809,
+   "finish": "length",
+   "completion_tokens": 160,
+   "reasoning_tokens": null,
+   "content_head": ""
+  }
+ },
+ "audit": {
+  "ms": 5479,
+  "finish": "length",
+  "completion_tokens": 192,
+  "reasoning_tokens": null,
+  "content_head": ""
+ },
+ "dry_lane": null,
+ "e2e": {
+  "code": 200,
+  "wall_ms": 23870,
+  "lane": null,
+  "model_calls": 3,
+  "stages_ms": {
+   "intent": 0,
+   "retrieve": 0,
+   "grade": 4623,
+   "analyze": 0,
+   "synthesize": 10483,
+   "validate": 0,
+   "check": 0,
+   "compose": 0,
+   "audit": 8763,
+   "repair": 0,
+   "total": 23871
+  },
+  "blocked": false,
+  "synth_note": null,
+  "response_head": "Chapter 48 of the Tao Te Ching sets ordinary learning, which adds to what you know, against followin"
+ },
+ "dry_retrieval": [
+  "2"
+ ]
+}

@@ -1,0 +1,6 @@
+# a29 manifest - this sprint's artifacts (digests recomputed by hashlib at write time)
+# generated 2026-10-21T12:24:16
+16cd2e1b0b3b932e1e2190b3a7de9af58355c5643c8546fe3035e87149459ee3  a29-sprint-report.md
+462ce3c6f0c404d7a4511588d692452a3588bd69609e3434960e21aaea91097c  research-hold/a29-before.json
+90eeb8b067c3e1e0e3e268d05eca96dea4572cb0e6ce23163ca988862587b04e  research-hold/a29-after.json
+9a6d53694eff3a3d70d784f4a4bfd7ba48dfbd71b791fd3ac5451d0f720eb23a  research-hold/_a29_probe.py
