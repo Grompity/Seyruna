@@ -34,6 +34,8 @@ import sys
 import time
 
 import stages
+import urllib.parse
+
 import web_research
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -104,6 +106,136 @@ def run_one(qtext, live, caps, query=None):
             out["door"] = {"lane": "over-budget"}    # the word, not a shrug
     out["secs"] = round(time.time() - t0, 1)
     return out
+
+
+# ---------- A34: the CYCLE (two stages, the gap-born query, the words) ----
+# The rail is the FOUNDATION'S OWN (run_one rides the net search, the
+# fetcher's lanes, and the door's web road with the A15/A18/A19 status
+# words at bytes; A22's FROZEN-QUERY rail carries the follow-up). A34 adds
+# the three WORDS the cycle lacks - the gap's CLASS, the follow-up's
+# SHAPE, the COMPARISON - and none of them a framework.
+
+GAPS = ("RETRIEVAL-FAIL", "SEARCH-EMPTY", "NO-ORIGIN", "SINGLE-ORIGIN",
+        "SUFFICIENT")
+
+
+def gap_word(rec):
+    """the RECORD's OWN fields decide (never its prose); first match
+    wins; the lane's own word rides FIRST (A19's law: the lane-word,
+    never an empty results-list, decides a failure)."""
+    web = rec.get("web") or {}
+    c = web.get("corroboration") or {}
+    gaps = web.get("gaps") or []
+    if web.get("ok") is not True or gaps:
+        # A19's law, read CLOSE: the lane-WORD decides, and emptiness IS
+        # a lane ("search-empty" rides gaps, ok False rides emptiness per
+        # the provider's own bool(rows) law at web_research). EA4's frozen
+        # expectation names SEARCH-EMPTY as its OWN honest class; the
+        # failure class is what is NEITHER empty nor well.
+        if "search-empty" in gaps:
+            return "SEARCH-EMPTY"
+        return "RETRIEVAL-FAIL"
+    if not web.get("results"):
+        return "SEARCH-EMPTY"
+    if not c.get("read"):
+        return "NO-ORIGIN"
+    if (c.get("origin_publishers") or 0) < 2:
+        return "SINGLE-ORIGIN"
+    return "SUFFICIENT"
+
+
+def follow_query(gap, rec):
+    """A34-C1: the words come from the RECORD (a publisher the record
+    NAMED, the question's own bytes) - never from a hardcoded second
+    query wearing an autonomy coat."""
+    q = rec.get("question") or ""
+    if gap == "RETRIEVAL-FAIL":
+        return q + " overview"          # the retry idiom, named AS one
+    if gap == "SEARCH-EMPTY":
+        return q + " definition"
+    if gap in ("NO-ORIGIN", "SINGLE-ORIGIN"):
+        rows = (rec.get("web") or {}).get("rows") or []
+        named = next((r.get("publisher") for r in rows if r.get("publisher")),
+                     None)
+        if named is None:
+            url = next((r.get("url") for r in rows if r.get("url")), "")
+            try:
+                named = urllib.parse.urlparse(url).hostname or ""
+            except ValueError:
+                named = ""
+        return (named + " " if named else "") + q
+    if gap == "SUFFICIENT":
+        return q + " in summary"        # BREADTH, declared as such
+    return q                             # the word rode; the bytes ride
+
+
+def compare_stages(one, two, gap):
+    """what CHANGED, what did NOT, and the pre-declared word (bytes
+    only; a NO-improvement is a FINDING, printed as one)."""
+    def _w(rec):
+        web = rec.get("web") or {}
+        c = web.get("corroboration") or {}
+        return {"urls": web.get("results") or 0,
+                "read": c.get("read") or 0,
+                "origins": c.get("origin_publishers") or 0,
+                "independence": c.get("independence"),
+                "status": status_word(rec),
+                "seen": sorted({str(r.get("url") or "")
+                                for r in web.get("rows") or []}),
+                "response": (rec.get("door") or {}).get("response")}
+    a, b = _w(one), _w(two)
+    unread1 = a["status"].startswith(("research inconclusive",
+                                       "provider words only",
+                                       "no origin read", "no-door",
+                                       "status-unspoken"))
+    read2 = b["status"].startswith("carried by")
+    improved = (b["read"] > a["read"] or b["origins"] > a["origins"]
+                or (unread1 and read2))
+    why = []
+    if b["read"] > a["read"]:
+        why.append("read origins rose (%d -> %d)" % (a["read"], b["read"]))
+    if b["origins"] > a["origins"]:
+        why.append("distinct voices rose (%d -> %d)"
+                   % (a["origins"], b["origins"]))
+    if unread1 and read2:
+        why.append("the A15 word moved to a READ origin")
+    if not improved:
+        why.append("no declared leg moved (a VALID finding, printed as one)")
+    return {"gap": gap,
+            "query_ridden": (two.get("web") or {}).get("query"),
+            "improved": improved, "why": why,
+            "changed": {
+                "urls": [a["urls"], b["urls"]],
+                "read": [a["read"], b["read"]],
+                "origins": [a["origins"], b["origins"]],
+                "independence": [a["independence"], b["independence"]],
+                "status": [a["status"], b["status"]],
+                "urls_gained": sorted(set(b["seen"]) - set(a["seen"])),
+                "urls_lost": sorted(set(a["seen"]) - set(b["seen"])),
+                "response_changed": a["response"] != b["response"]}}
+
+
+def run_cycle(qtext, caps=None, hold_name="a34-cycle.json"):
+    """ONE cycle at one entry: stage one (the whole live road), the GAP at
+    the record's own words, the follow-up at the A34-C1 law over the
+    A22 frozen-query rail, stage two, the byte-comparison; persisted
+    through the ONE pen, label LIVE (a cycle rides the net; a replay
+    rides bytes, never this road)."""
+    caps = caps or (load_doc().get("caps") or {})
+    one = run_one(qtext, True, caps)
+    one["label"] = "live"
+    gap = gap_word(one)
+    q2 = follow_query(gap, one)
+    two = run_one(qtext, True, caps, query=q2)
+    two["label"] = "live"
+    cmp = compare_stages(one, two, gap)
+    art = {"cycle": "A34-C1", "label": "live",
+           "date": time.strftime("%Y-%m-%dT%H:%M:%S"),
+           "question": qtext, "gap": gap, "follow_query": q2,
+           "compare": cmp, "stage-1": one, "stage-2": two}
+    import research
+    research.hold(art, hold_name)
+    return art
 
 
 def status_word(rec):
