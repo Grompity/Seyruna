@@ -229,10 +229,29 @@ def run_cycle(qtext, caps=None, hold_name="a34-cycle.json"):
     two = run_one(qtext, True, caps, query=q2)
     two["label"] = "live"
     cmp = compare_stages(one, two, gap)
-    art = {"cycle": "A34-C1", "label": "live",
+    art = {"cycle": "A34-C1", "cycle-law": "A34-C1 + A35-C2",
+           "label": "live",
            "date": time.strftime("%Y-%m-%dT%H:%M:%S"),
            "question": qtext, "gap": gap, "follow_query": q2,
            "compare": cmp, "stage-1": one, "stage-2": two}
+    # A35-C2 (the reserve, EARNED at bytes): the site-scoped SECOND
+    # follow-up rides when the born query came back EMPTY at a gap of
+    # NO-ORIGIN/SINGLE-ORIGIN AND the record holds a READ origin. The
+    # born-empty bytes ride PRESERVED at stage-2b (the demonstration is
+    # never over-written); the final stage-2/compare is the site-scoped
+    # leg; NO read row -> NO site -> the retry does not ride.
+    site = (site_word(one) if gap in ("NO-ORIGIN", "SINGLE-ORIGIN")
+            and gap_word(two) == "SEARCH-EMPTY" else None)
+    if site:
+        q3 = site + " " + qtext
+        three = run_one(qtext, True, caps, query=q3)
+        three["label"] = "live"
+        art["born-empty"] = {"query": q2,
+                             "gaps": (two.get("web") or {}).get("gaps")}
+        art["stage-2b"] = two
+        art["stage-2"] = three
+        art["follow_query"] = q3
+        art["compare"] = compare_stages(one, three, gap)
     import research
     research.hold(art, hold_name)
     return art
@@ -285,6 +304,175 @@ def main(argv):
     open(out, "w").write(json.dumps(rec, indent=1))
     print("wrote", out)
     return 0
+
+# ---------- A35: the six (the disposition TABLE, the cross-words) -----------
+# dispose and cross are PURE (the loop.compare precedent): bytes in, words
+# out. run_six merely rides the ACTUAL entry six times and RECORDS; the
+# retry law (BLOCKED rides ONCE, fresh live, both bytes kept) is the only
+# re-run the sprint allows itself, and NEVER to replace an unfavorable
+# outcome.
+
+
+def site_word(rec):
+    """A35-C2's site word: the SECOND-TO-LAST dot-part of the RECORD's
+    own read-origin url-host (bytes, not a hand; the probe disclosed the
+    provider answers the WORD, not the dotted domain, not the site:
+    operator). A row rides READ when it stands at the READ lane (the
+    'page' word - bytes in hand, A6's law); a record with NO read row
+    lends NO site (the provider's own house word is the ABSENCE of a
+    site - A7's attribution law)."""
+    for r in (rec.get("web") or {}).get("rows") or []:
+        if r.get("kind") == "page" and r.get("url"):
+            host = (urllib.parse.urlparse(r["url"]).hostname or "").lower()
+            parts = [p for p in host.split(".") if p]
+            if len(parts) >= 2:
+                return parts[-2]
+    return None
+
+
+
+
+def dispose(art):
+    """A35's pure disposition of ONE held cycle, at the contract's table
+    (order-decisive, exhaustive); the finding-kind and the answer-word
+    fall from the disposition, never from a taste."""
+    one, two = art["stage-1"], art["stage-2"]
+
+    def _w(rec):
+        return rec.get("web") or {}
+
+    def _blk(rec):
+        w = _w(rec)
+        return (w.get("ok") is not True
+                and "search-empty" not in (w.get("gaps") or []))
+
+    def _rd(rec):
+        return ((_w(rec).get("corroboration") or {}).get("read") or 0)
+
+    c1, c2 = art["gap"], gap_word(two)
+    blocked = _blk(one) or _blk(two)
+    if blocked:
+        cls = "BLOCKED"
+    elif art["compare"]["improved"]:
+        cls = "IMPROVED"
+    elif c2 == "SEARCH-EMPTY":
+        cls = "RETRIEVAL-FAILURE"
+    elif _rd(two) < _rd(one):
+        cls = "DEGRADED"
+    elif c2 == "NO-ORIGIN" and c1 == "NO-ORIGIN":
+        cls = "UNRESOLVED"
+    elif c2 in ("NO-ORIGIN", "SINGLE-ORIGIN"):
+        cls = "EVIDENCE-GAP"
+    else:
+        cls = "EQUIVALENT"
+    if cls == "RETRIEVAL-FAILURE":
+        if "stage-2b" in art:
+            ans = ("fell to the general road (the SITE retry rode and "
+                   "came back EMPTY TOO - the demonstrated blocker)"
+                   if _rd(one) else
+                   "empty both ways, even at the site (blocker named)")
+        elif _rd(one) > 0:
+            ans = "fell to the general road"
+        elif c1 == "NO-ORIGIN":
+            ans = ("equivalent (brought nothing both times; NO SITE to "
+                   "ask - A7's house shape, EA2's predicted form)")
+        else:
+            ans = ("equivalent (brought nothing both times; the web "
+                   "brought nothing AT ALL)")
+    elif cls == "IMPROVED":
+        ans = "improved"
+    elif cls == "DEGRADED":
+        ans = "degraded"
+    elif cls in ("EVIDENCE-GAP", "UNRESOLVED", "EQUIVALENT"):
+        ans = "equivalent"
+    else:
+        ans = "-"
+    if cls == "BLOCKED":
+        kind = "BLOCKED (infra: neither a success nor a failure)"
+    elif cls == "IMPROVED":
+        kind = "RESEARCH FINDING (improvement-backed)"
+    elif cls == "EQUIVALENT":
+        kind = "RESEARCH FINDING (stood at two readings)"
+    elif cls == "EVIDENCE-GAP":
+        kind = "EVIDENCE GAP"
+    elif cls == "UNRESOLVED":
+        kind = "UNRESOLVED"
+    else:
+        kind = "RETRIEVAL FAILURE (the instrument's doing, not a "               "knowledge gap)"
+    return {"disposition": cls, "finding": kind, "answer": ans,
+            "gap-1": c1, "gap-2": c2, "blocked-at-words": blocked,
+            "read": [_rd(one), _rd(two)],
+            "status": [(one.get("door") or {}).get("evidence_status"),
+                       (two.get("door") or {}).get("evidence_status")]}
+
+
+def cross(arts, disps, ids):
+    """the cross-question words, RE-COMPUTED from the held records (the
+    recurrence law: >=2 of the COMPLETED cycles, else a NAMED singleton;
+    emptiness counts by the records' OWN classes; grounded = the A22
+    rail PLUS the packet's read-back matched at every completed cycle)."""
+    done = [i for i in ids if disps[i]["disposition"] != "BLOCKED"]
+    tally, g1, g2, e1, e2 = {}, {}, {}, 0, 0
+    for i in done:
+        d = disps[i]
+        tally[d["disposition"]] = tally.get(d["disposition"], 0) + 1
+        g1[d["gap-1"]] = g1.get(d["gap-1"], 0) + 1
+        g2[d["gap-2"]] = g2.get(d["gap-2"], 0) + 1
+        e1 += (d["gap-1"] == "SEARCH-EMPTY")
+        e2 += (d["gap-2"] == "SEARCH-EMPTY")
+    if e2 > e1 and e2 >= 2:
+        stage = "stage-2 (recurring emptiness is the FOLLOW-UP's search)"
+    elif e1 > e2 and e1 >= 2:
+        stage = "stage-1"
+    else:
+        stage = "no stage recurs emptier than the other (singletons only)"
+    recur = sorted(k for k, v in g1.items() if v >= 2)
+    empty2 = [i for i in done
+              if disps[i]["gap-2"] == "SEARCH-EMPTY"
+              and disps[i]["gap-1"] in ("NO-ORIGIN", "SINGLE-ORIGIN")]
+    return {"tally": tally, "gap-classes": g1, "stage-2-classes": g2,
+            "empty-at": {"stage-1": e1, "stage-2": e2},
+            "emptier-stage": stage,
+            "grounded-all": all(
+                arts[i]["follow_query"] != arts[i]["question"]
+                and arts[i]["compare"]["query_ridden"]
+                == arts[i]["follow_query"] for i in done),
+            "recurring-gap": recur or ["NONE-RECURRING"],
+            "reserve-trigger": (len(empty2) >= 2
+                                and "FIX-TRIGGERED" or "RESERVE-HOLDS"),
+            "empty-born-pair": sorted(empty2),
+            "blocked": sorted(set(ids) - set(done))}
+
+
+def run_six(hold_name="a35-six.json", prefix="a35-cycle-"):
+    """six cycles at the DOC's bytes at the ACTUAL entry, in DOC ORDER
+    (disclosed, never dressed); the aggregate rides every record,
+    disposition, cross-word, and the six A5 expect-words BESIDE (never
+    instead of) the facts."""
+    import research
+    doc = load_doc()
+    caps = doc.get("caps") or {}
+    arts, disps, ids = {}, {}, []
+    for q in doc["questions"]:
+        i = q["id"]
+        ids.append(i)
+        art = run_cycle(q["question"], caps, prefix + i + ".json")
+        d = dispose(art)
+        if d["disposition"] == "BLOCKED":
+            art = run_cycle(q["question"], caps, prefix + i + ".retry.json")
+            d = dispose(art)
+        arts[i], disps[i] = art, d
+    x = cross(arts, disps, ids)
+    research.hold({"sprint": "A35", "label": "live",
+                   "ids": ids, "cycles": arts, "disposed": disps,
+                   "cross": x,
+                   "expect": dict((q["id"], q.get("expect"))
+                                  for q in doc["questions"]),
+                   "question-bytes": dict((q["id"], q["question"])
+                                         for q in doc["questions"])},
+                  hold_name)
+    return arts, disps, x
+
 
 
 if __name__ == "__main__":
