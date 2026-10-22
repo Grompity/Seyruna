@@ -474,6 +474,113 @@ def run_six(hold_name="a35-six.json", prefix="a35-cycle-"):
     return arts, disps, x
 
 
+# ---------- A36: the second voice (the selector, the levels, the one) -----
+
+
+def candidate36(art):
+    """A36-1's selector (pure): the PRIMARY is the row at the READ lane
+    (kind 'page' - A6's word for bytes in hand); eligibility is a url, a
+    publisher that is NEITHER the provider's house (A7's voice-words, not
+    hosts) NOR the primary's (the dup-origin law); the named SECOND leg
+    (the probe) rides the first non-primary row EVEN IF house, disclosed
+    as the zero-by-law shape."""
+    rows = (art.get("stage-1") or {}).get("web", {}).get("rows") or []
+    house = web_research.provider_host()
+    prim = next((r for r in rows if r.get("kind") == "page"), None)
+    if prim is None:
+        return {"why": "NO-PRIMARY-READ (no row at the READ lane)",
+                "url": None, "probe": None, "primary": None}
+    elig = [r for r in rows if r is not prim and r.get("url")
+            and r.get("publisher") not in (house,
+                                           prim.get("publisher"))]
+    if elig:
+        row, probe = elig[0], False
+        why = "eligible non-house row (a TRUE second-voice candidate)"
+    else:
+        row = next((r for r in rows if r is not prim and r.get("url")),
+                   None)
+        probe = row is not None
+        why = ("HOUSE-STUB PROBE (publishers_seen says the monoculture "
+               "sits at DISCOVERY; the stub rides to MEASURE what the "
+               "house page IS, A7's zero-by-law)" if probe else
+               "nothing left to name (every row is the primary)")
+    return {"url": (row or {}).get("url"), "row-id": (row or {}).get("id"),
+            "publisher": (row or {}).get("publisher"), "probe": probe,
+            "why": why, "primary": prim, "house": house}
+
+
+def levels36(primary, pkt):
+    """the three levels and the verdict, PURE over the records (the
+    loop.compare precedent); the ladder rides at A7's OWN function over
+    the two texts (the primary's citable bytes ride at its 'claim' word -
+    truncation DISCLOSED); a lam at an INFRA word is BLOCKED (A35's law),
+    a lam at a RECORDED word is a research fact about THIS address."""
+    r = (pkt.get("results") or [{}])[0]
+    err = r.get("error")
+    pub = r.get("publisher") or web_research.publisher(r.get("url") or "")
+    house = web_research.provider_host()
+    if err:
+        infra = any(w in str(err).lower() for w in
+                    ("timed out", "url error", "urlerror", "connection",
+                     "eof", "reset", "remotedis"))
+        return {"verdict": "BLOCKED" if infra else "MONOCULTURE-PERSISTS",
+                "A": False, "B": "-", "C": "-",
+                "why": "lamed at the road's own word: " + str(err)
+                       + (" (INFRA-class word - BLOCKED, the one lawful "
+                          "retry)" if infra else
+                          " (a RECORDED word - a fact about THIS address, "
+                          "A10: a record, never a fallback)")}
+    if not r.get("text"):
+        return {"verdict": "MONOCULTURE-PERSISTS", "A": False,
+                "B": "-", "C": "-",
+                "why": "the road opened but spoke NO bytes"}
+    if pub in (primary.get("publisher"), house):
+        return {"verdict": "MONOCULTURE-PERSISTS", "A": False,
+                "B": "none (the voice repeats)",
+                "C": "fails-to-address (a repeat cannot corroborate "
+                     "itself)",
+                "why": "bytes came at a REPEATING publisher (%s) - A7: "
+                       "the house is the ABSENCE of a voice, and a "
+                       "repeat is not a second" % pub}
+    merged = web_research.corroboration({"results": [
+        {"url": primary.get("url"), "text": primary.get("claim")},
+        {"url": r.get("url"), "text": r.get("text")}]})
+    b = "%s / %s" % (merged["independence"], merged["conflict"])
+    if merged["independence"] == "candidate" and             merged["conflict"] == "bytes-share":
+        return {"verdict": "CORROBORATED", "A": True, "B": b,
+                "C": "SUPPORT (the bytes SHARE at A7's own ladder)",
+                "why": "a distinct origin stands READ and the two texts"
+                       " SHARE - at the ceiling-word 'candidate', never "
+                       "TRUE"}
+    return {"verdict": "DIVERSITY-ONLY", "A": True, "B": b,
+            "C": "fails-to-address (the ladder speaks %s)"
+                 % merged["conflict"],
+            "why": "a distinct origin stands READ; corroboration needs "
+                    "the SHARE the ladder did not speak (lineage "
+                    "UNKNOWN at A7's ceiling - hostname is not voice)"}
+
+
+def second_voice36(art, hold_name="a36-read-EA1.json"):
+    """ONE bounded live read at the ACTUAL rail: the selector's address
+    (or NOTHING - no candidate, no fetch), web_research.reads ONCE, the
+    levels and the verdict at bytes, held label-live."""
+    import research
+    sel = candidate36(art)
+    out = {"sprint": "A36", "label": "live", "law": "A36-1",
+           "question": art.get("question"), "selection": sel}
+    if sel.get("url"):
+        pkt = web_research.reads(art.get("question"), [sel["url"]])
+        out["read"] = pkt
+        out["read"]["label"] = "live"
+        lv = levels36(sel["primary"], pkt)
+        out["levels"] = lv
+        out["verdict"] = lv["verdict"]
+    else:
+        out["verdict"] = "NO-CANDIDATE (no fetch rode)"
+    research.hold(out, hold_name)
+    return out
+
+
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
