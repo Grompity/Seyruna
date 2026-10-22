@@ -588,6 +588,10 @@ def reads(query, urls, max_bytes=MAX_BYTES, max_chars=MAX_CHARS,
         got = fetch(url, max_bytes, timeout, allow_local)
         if "status" in got:
             rec["status"] = got["status"]
+            if got.get("url") != url:          # A36: the FINAL url, when
+                rec["final"] = got["url"]      # a redirect moved it
+                                               # (the re-weigh's word,
+                                               # RECORDED at last)
             rec["retrieved"] = time.strftime("%Y-%m-%dT%H:%M:%S")
             rec["text"] = extract(got["body"].decode("utf-8", "replace")
                                   if isinstance(got["body"], bytes)
