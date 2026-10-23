@@ -28,6 +28,7 @@ re-check (web lanes only, zero mouthfuls). The deterministic truths of
 this eval's machinery ride the T-series; this runner IS live by nature
 (an eval that never saw the net is a fixture).
 """
+import hashlib
 import json
 import os
 import sys
@@ -577,6 +578,86 @@ def second_voice36(art, hold_name="a36-read-EA1.json"):
         out["verdict"] = lv["verdict"]
     else:
         out["verdict"] = "NO-CANDIDATE (no fetch rode)"
+    research.hold(out, hold_name)
+    return out
+
+
+# ---------- A37: the six-packet measurement (the forms and the run) --------
+
+
+def classify37(art):
+    """A37's form-words over the FROZEN selector's own answer (the A36
+    law UNMOVED - its word HOLDS for both no-primary causes; A37's forms
+    DISTINGUISH them at the records' own rows). Pure; the A36 contract's
+    probe leg RETIRED here by A37's own law - a probe row rides as an
+    UNTESTED column, never a measurement."""
+    rows = (art.get("stage-1") or {}).get("web", {}).get("rows") or []
+    sel = candidate36(art)
+    base = {"why": sel["why"], "rows": len(rows), "eligible": False,
+            "eligible-url": None, "probe-row-url": None}
+    if (sel.get("why") or "").startswith("NO-PRIMARY-READ"):
+        base["form"] = ("NO-ROWS-AT-ALL" if not rows
+                        else "NO-READ-ROW-ROWS-PRESENT")
+    elif sel.get("probe") is False and sel.get("url"):
+        base["form"] = "ELIGIBLE"
+        base["eligible"] = True
+        base["eligible-url"] = sel["url"]
+    elif sel.get("url"):
+        base["form"] = "NO-ELIGIBLE-PROBE-ROW"
+        base["probe-row-url"] = sel["url"]
+    else:
+        base["form"] = "NO-ELIGIBLE-NO-ROW-EITHER"
+    return base
+
+
+def probe_five37(hold_name="a37-probe.json"):
+    """the bounded measurement: the five at the frozen law, EA1's A36
+    record riding AS-IS beside them (one read rode THERE, never here);
+    a read rides the ACTUAL rail ONLY where an eligible row stands -
+    none, one retry-never, no alternate url, no substitution."""
+    import research
+    six = json.loads(open("research-hold/a35-six-final.json").read())
+    out = {"sprint": "A37", "law": "A36-1 FROZEN at A37-1 (eligibility "
+           "only; the probe leg RETIRED for the five)", "label":
+           "frozen-bytes (a surprise read would stamp its entry LIVE)",
+           "budget": {"reads-at-most": 5, "searches-at-most": 0},
+           "reads-used": 0, "searches-used": 0, "packets": {}}
+    for i in six["ids"]:
+        art = six["cycles"][i]
+        s1 = art["stage-1"]
+        c = s1["web"].get("corroboration") or {}
+        cls = classify37(art)
+        ent = {"digest-sha256": hashlib.sha256(json.dumps(
+                    s1, sort_keys=True).encode()).hexdigest(),
+               "spent-historical": s1["web"].get("spent"),
+               "counts": {"results": s1["web"].get("results"),
+                          "read": c.get("read"),
+                          "voices": c.get("origin_publishers"),
+                          "spoke": c.get("publishers_seen"),
+                          "attribution": c.get("attribution")},
+               "classification": cls}
+        if i == "EA1":
+            ea1 = json.loads(open("research-hold/a36-read-EA1.json").read())
+            ent["a36-read-AS-IS"] = {"verdict": ea1.get("verdict"),
+                                     "A": (ea1.get("levels") or {}).get("A"),
+                                     "why": (ea1.get("levels") or {}).get(
+                                         "why"),
+                                     "spent": (ea1.get("read") or {}).get(
+                                         "spent")}
+            ent["a36-file-sha"] = hashlib.sha256(open(
+                "research-hold/a36-read-EA1.json", "rb").read()).hexdigest()
+        elif cls["eligible"]:
+            pkt = web_research.reads(art["question"],
+                                     [cls["eligible-url"]])
+            ent["read"] = pkt
+            ent["levels"] = levels36(
+                candidate36(art)["primary"], pkt)
+            out["reads-used"] += 1
+            out["searches-used"] += pkt["spent"]["search"]
+            ent["label"] = "live"
+        out["packets"][i] = ent
+    out["claim-check"] = (out["reads-used"] == 0 and
+                          out["searches-used"] == 0)
     research.hold(out, hold_name)
     return out
 
