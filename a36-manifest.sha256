@@ -1,0 +1,9 @@
+# a36 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-10-22T16:00:14 - raw evidence immutable after this point
+bd86a0c6015e3b6879b44692f272dee23ffd1971ca6613b1abce5cc056b8db0e  a36-contract.md
+39d587a45a4db3c884a76a566abeee251e5f5195e3159aeca39ab10be5838005  web_research.py
+cf144d469d537389d8ff62f24597a102e306e8eebb083dfe507f934005616906  research_eval.py
+e73913779d410915f6d199889f7077efca54cfb4e76581e89654f4a135cdc0b0  research-hold/a36-read-EA1.json
+030f1b51ba7a1c7e928cf2294e58cb4b3a88575220303ae71ea2862351d67aa6  research-hold/_a36_block.md
+7b6fd315e283110888d2bde9d42adfa65058a2bb72bb579cb64e27ae50e3cee0  tests.py
+0b8e8b3669160dfc6c703e71adb302deff5febdd53def8f81bc067fd36c53b67  a36-sprint-report.md
