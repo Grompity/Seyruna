@@ -1,0 +1,7 @@
+# a38 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-10-23T12:33:25 - raw evidence immutable after this point
+57b85fdd9202ffba166c64bb09f75daf37b6b3bccb0872210f3ff6469b23bd01  a38-contract.md
+56d0fbb30051be8ef55699c317005539dbd1604922464bf65cd200a27d7b8510  research-hold/a38-probe.json
+2873d0825408be4dd6e93ef46cf884eed4c231d0709fde6a18886541f3f39014  research-hold/_a38_block.md
+ed3dfaf9dc0380cfd1546cd65dab181399fe71bc36af4393c1fbcb1e01f7a791  tests.py
+9faeadc4a9f2650343b53264fa61bd4394f93e449d21921f8a09f7e53b19224e  a38-sprint-report.md
