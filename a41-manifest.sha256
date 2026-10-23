@@ -1,0 +1,7 @@
+# a41 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-10-23T15:44:31 - raw evidence immutable after this point
+8e85de20baaf0f15273e1423621bbb1bb444507d18179b8268093bdb386db4e1  a41-contract.md
+c3fe61d99190ec394ea309238ab207f389ade1b3d08bbb8e6c31d1bc5381c43e  research-hold/a41-duel.json
+a03ab64ae93c04a61ff4cf27275beb49e2da016aae257e7528c04adfcc9d0d68  research-hold/_a41_block.md
+ea3c3b2ff2f87b09fe7c7cd9b1bf209fa49fdd39d11ffe06a2de338135179c91  tests.py
+70fbeb5ce188f4243565735201ab56aea35dde865e32ab589de37d6664a85255  a41-sprint-report.md
