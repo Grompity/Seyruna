@@ -1,0 +1,8 @@
+# a43 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-11-03T23:59:40 - raw evidence immutable after this point
+165a1061bdce6686e6ff3e1ccce1a0e95658e32539d9460c57dd3f76cf24d8ae  a43-contract.md
+555043274af127c3499d6607250b5080d8334ed29fe7d0db6db85b92f4b9e931  research-hold/a43-read.json
+d0beb8c86ac9c960c62ea2fdf85ad68a6f9aed0a827f81f728c52c26bb86e0f3  research-hold/_a43_block.md
+d8e1e864442478cbdf266b9489113d95855affd29e3d793c53765fe0c13f89c4  research_eval.py
+24951bf0aebee502da255a9e909e533f7d32775a439efcfd0063ae5051f46a89  tests.py
+b630c55e9a02587d4892dbdcea4a2f7bb480620b2183b4aca3cc31564b3b3ad8  a43-sprint-report.md
