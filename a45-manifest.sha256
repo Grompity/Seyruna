@@ -1,0 +1,7 @@
+# a45 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-11-04T10:51:11 - raw evidence immutable after this point
+949401c69a77e261e2e3479050270405622a0e5df8e8f475b21139ad7d3e02a9  a45-contract.md
+f675eb2e5c1efb38cc47d249fa41a3d01f3c0e064f01e3a8e06d134fc8efcdbe  research-hold/a45-reclass.json
+991412173a4f701c20920cec9b830dfc36efe5efb75837e65a9052581c702cb3  research-hold/_a45_block.md
+ce7119fad708c7919ae5995043fb864f401da8076519729ae5e5f3e964e01992  tests.py
+5a0da8112d14f622353130bef8db09a7f4ec8f55e7107181027c7764733d1b69  a45-sprint-report.md
