@@ -662,6 +662,68 @@ def probe_five37(hold_name="a37-probe.json"):
     return out
 
 
+# ---------- A42: the controlled-endpoint duel's answer-word map ----------
+
+
+def _usable42(row, house, speak):
+    """A40 6's four conditions over ONE read row - pure, no network: the
+    road OPENED (status, no error word), the EXTRACTED bytes >= 60 (the
+    furniture floor), the publisher OUTSIDE the house (A7), and the bytes
+    SPEAK THE QUESTION. A skipped lane never rode: no status, not usable."""
+    url = row.get("url") or ""
+    pub = row.get("publisher") or web_research.publisher(url)
+    if row.get("error"):
+        return {"url": url, "publisher": pub, "usable": False,
+                "why": "the road's own word: " + str(row["error"])}
+    if "status" not in row:
+        return {"url": url, "publisher": pub, "usable": False,
+                "why": ("the road never opened (skipped: %s)"
+                        % (row.get("skipped") or "no status"))}
+    text = row.get("text") or ""
+    if len(text) < 60:
+        return {"url": url, "publisher": pub, "usable": False,
+                "why": "opened but spoke %d bytes (the 60 floor)"
+                       % len(text)}
+    if pub == house:
+        return {"url": url, "publisher": pub, "usable": False,
+                "why": "the house is the ABSENCE of a voice (A7)"}
+    if speak not in text.lower():
+        return {"url": url, "publisher": pub, "usable": False,
+                "why": "the bytes do not SPEAK the question (%r absent)"
+                       % speak}
+    return {"url": url, "publisher": pub, "usable": True,
+            "why": "opened, %d bytes, outside the house, speaks the "
+                   "question" % len(text)}
+
+
+def answer42(gap, eligible, read_rows, house, speak="ashoka"):
+    """A42's declared four-word map (contract 7) over the DUEL's faces;
+    NOT the cycle disposition (dispose() is unmoved and un-run here).
+    The map was frozen BEFORE the duel's bytes: search-face failure ->
+    RETRIEVAL-FAILURE; no eligible row, or no usable read -> EVIDENCE-
+    GAP; some rode reads usable -> PARTIAL; every rode read usable ->
+    EVIDENCE-BACKED. Pure over the records it is given."""
+    if gap:
+        return {"answer": "RETRIEVAL-FAILURE", "reads": [],
+                "why": "the search face spoke its own word: " + str(gap)}
+    if not eligible:
+        return {"answer": "EVIDENCE-GAP", "reads": [],
+                "why": "the search spoke and NO row was eligible (no url, "
+                       "or the house's own) - an ABSENCE rides as ABSENCE"}
+    det = [_usable42(r, house, speak) for r in (read_rows or [])]
+    u = [d for d in det if d["usable"]]
+    if not u:
+        return {"answer": "EVIDENCE-GAP", "reads": det,
+                "why": "eligible rows rode but NO read was usable at "
+                       "A40 6's four conditions"}
+    if len(u) == len(det):
+        return {"answer": "EVIDENCE-BACKED", "reads": det,
+                "why": "every rode read was usable (%d)" % len(u)}
+    return {"answer": "PARTIAL", "reads": det,
+            "why": "%d usable, %d not (including unspent/dup lanes)"
+                   % (len(u), len(det) - len(u))}
+
+
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
