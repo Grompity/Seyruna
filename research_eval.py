@@ -724,6 +724,40 @@ def answer42(gap, eligible, read_rows, house, speak="ashoka"):
                    % (len(u), len(det) - len(u))}
 
 
+# ---------- A43: the publisher-distinct selection (frozen before content) ---
+
+
+def pick_distinct43(rows, represented, house):
+    """A43's frozen selection law (contract 3), PURE over the HELD packet:
+    eligibility UNCHANGED (a url AND publisher(url) != the instance's
+    house); a publisher ALREADY REPRESENTED in the EA1 evidence is
+    EXCLUDED (a repeat is not a new voice, A7); the pick is the FIRST
+    remaining row in the ORIGINAL packet order; every earlier eligible row
+    rides a skipped word 'represented', in order - never a silent skip,
+    never a quality/answer score, never the path or extension, never
+    eventual content (the held packet carries none). Zero candidates
+    spends ZERO reads. No network, no file."""
+    elig = [r for r in rows if r.get("url")
+            and (r.get("publisher")
+                 or web_research.publisher(r["url"])) != house]
+    skipped = []
+    for i, r in enumerate(elig):
+        pub = r.get("publisher") or web_research.publisher(r["url"])
+        if pub in represented:
+            skipped.append({"url": r["url"], "publisher": pub,
+                            "skipped": "represented"})
+            continue
+        return {"pick": {"url": r["url"], "publisher": pub},
+                "position": i, "skipped": skipped,
+                "eligible": len(elig), "rows": len(rows),
+                "note": "the FIRST eligible row, in original order, whose "
+                        "publisher is not represented"}
+    return {"pick": None, "position": None, "skipped": skipped,
+            "eligible": len(elig), "rows": len(rows),
+            "note": "NO-CANDIDATE: every eligible row's publisher is "
+                    "already represented - zero reads spend"}
+
+
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
