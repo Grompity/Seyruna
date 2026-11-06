@@ -1,0 +1,7 @@
+# a49 manifest - this sprint's evidence (digests recomputed by hashlib at write time)
+# generated 2026-11-06T10:52:25 - a ZERO-network replay over A48's preserved body
+aa805c54f164de3112f91a2d8205e292c54f5432e7478d0bcbd80b9883082d4a  a49-contract.md
+8807764a2ba31a8048b11bb1a76d8a87509f148fe28df25d4ce89b0224badc35  research-hold/a49-citation-replay.json
+856afc048c1a1f347aabae14c8caecae041ff9f72013bfed7495a1ff583b6391  research-hold/_a49_block.md
+4c59fc978dba9ed7d60f6f6dd412f12f81055e6a7d99d67efbe95b47bf4c95db  tests.py
+997eb6a96b385894f9b386789d1566aaa9461b4ebe2a5b638e41853632ac2cb7  a49-sprint-report.md
