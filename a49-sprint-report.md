@@ -36,7 +36,7 @@ offline test. The preserved body is the only input.
 | --- | --- | --- | --- | --- | --- | --- |
 | `[ 1 ]` | 453-458 | `cite_ref-FOOTNOTELe201030_1-0` (doc pos 146180) | `#cite_note-FOOTNOTELe201030-1` | `cite_note-FOOTNOTELe201030-1` | `<li>` | 496137-496675 |
 | `[ 2 ]` | 926-931 | `cite_ref-2` (doc pos 147556) | `#cite_note-2` | `cite_note-2` | `<li>` | 496676-497672 |
-| `[ 3 ]` | 1073-1078 | `cite_ref-3` (doc pos 147713) | `#cite_note-3` | `cite_note-3` | `<li>` | 497673-498623 |
+| `[ 3 ]` | 1073-1078 | `cite_ref-3` (doc pos 149033) | `#cite_note-3` | `cite_note-3` | `<li>` | 497673-502705 |
 
 Each marker had **exactly one** candidate superscript - no ambiguity. The
 **numeric-id assumption is proven wrong**: `[1]`'s target is
