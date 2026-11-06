@@ -6399,7 +6399,7 @@ _T511 = {
                                "rb").read()).hexdigest()),
     "charter-untouched": (loop.read_cfg().get("GENERAL_MAXTOK")
                           == stages.CONFIG.get("GENERAL_MAXTOK") == 1024)}
-expect("T511 A48: THE W REFERENCE-WINDOW READ AT ITS BYTES (the ONE live "
+expect("T201 A48: THE W REFERENCE-WINDOW READ AT ITS BYTES (the ONE live "
        "request was spent; the REPLAY spends NONE): the CONTRACT is the "
        "source (digest recomputed from its block) and it was committed "
        "BEFORE the request; EXACTLY ONE call rode (one url, 200, text/html, "
