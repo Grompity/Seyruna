@@ -1,0 +1,490 @@
+{
+ "acceptance": "SUCCESS (3 of 3 markers resolved through the actual DOM relationship)",
+ "bibliographic": {
+  "1": {
+   "authors": [
+    "Le"
+   ],
+   "class": "UNCLEAR",
+   "class-why": "no title/work is present in the entry itself",
+   "completeness": "PARTIAL",
+   "date": "2010",
+   "page": "30",
+   "publisher": null,
+   "title": null,
+   "translator": null,
+   "url": null,
+   "why": "the li is an author-year FOOTNOTE ('Le 2010, p. 30.'); the full bibliography entry it points to is NOT in this li"
+  },
+  "2": {
+   "authors": [
+    "Olivelle, Patrick"
+   ],
+   "class": "SECONDARY-SCHOLARSHIP",
+   "class-why": "a chapter in an edited scholarly volume about imperial religion",
+   "completeness": "COMPLETE",
+   "date": "2024",
+   "editors": [
+    "R\u00fcpke, J\u00f6rg",
+    "Biran, Michal",
+    "Pines, Yuri"
+   ],
+   "page": "27",
+   "place": "Berlim",
+   "publisher": "Walter De Gruyter",
+   "title": "Imperial ideology and religious pluralism in the Asokan inscriptional corpus",
+   "url": "https://archive.org/details/relig-org-polit-empre-empires-gods-ru-pke-biran-pires-livro/page/26/mode/2up",
+   "work": "Empires and Gods. The Role of Religions in Imperial History"
+  },
+  "3": {
+   "archived": "2 July 2023",
+   "authors": [
+    "Singh, Upinder"
+   ],
+   "class": "SECONDARY-SCHOLARSHIP",
+   "class-why": "a general history monograph",
+   "completeness": "COMPLETE",
+   "date": "2008",
+   "isbn": "9788131711200",
+   "page": "351",
+   "publisher": "Pearson Education India",
+   "retrieved": "28 September 2018",
+   "title": "A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century"
+  }
+ },
+ "budget": {
+  "alternate-bodies": 0,
+  "fetches": 0,
+  "link-follows": 0,
+  "network-requests": 0,
+  "searches": 0,
+  "source-reads": 0,
+  "substitutions": 0
+ },
+ "carry-over": {
+  "a46": "UNCHANGED",
+  "a47": "UNCHANGED",
+  "a48": "UNCHANGED",
+  "ea1": "UNCHANGED",
+  "ladder": "DIVERSITY-ONLY (unchanged)",
+  "semantic": "UNKNOWN"
+ },
+ "comparisons": [
+  {
+   "c-excerpt": "The British historian H.G. Wells has written:",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "PARTIAL",
+   "marker": "[1]",
+   "source-class": "UNCLEAR",
+   "vs-C": "H.G. Wells",
+   "w-excerpt": "\u2191 Le 2010 , p. 30.",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "UNRESOLVED - the full work named by this entry is not visible in the recovered li, so no work-level comparison is possible"
+  },
+  {
+   "c-excerpt": "The Australian bhikkhu Ven. S. Dhammika, the compiler of the present work",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "PARTIAL",
+   "marker": "[1]",
+   "source-class": "UNCLEAR",
+   "vs-C": "Dhammika",
+   "w-excerpt": "\u2191 Le 2010 , p. 30.",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "UNRESOLVED - the full work named by this entry is not visible in the recovered li, so no work-level comparison is possible"
+  },
+  {
+   "c-excerpt": "based on earlier translations",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "PARTIAL",
+   "marker": "[1]",
+   "source-class": "UNCLEAR",
+   "vs-C": "earlier translations",
+   "w-excerpt": "\u2191 Le 2010 , p. 30.",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "UNRESOLVED - the full work named by this entry is not visible in the recovered li, so no work-level comparison is possible"
+  },
+  {
+   "c-excerpt": "Buddhist literature preserved the legend of this ruler",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "PARTIAL",
+   "marker": "[1]",
+   "source-class": "UNCLEAR",
+   "vs-C": "Buddhist literature",
+   "w-excerpt": "\u2191 Le 2010 , p. 30.",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "UNRESOLVED - the full work named by this entry is not visible in the recovered li, so no work-level comparison is possible"
+  },
+  {
+   "c-excerpt": "The British historian H.G. Wells has written:",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[2]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "H.G. Wells",
+   "w-excerpt": "\u2191 Olivelle, Patrick (2024). \"Imperial ideology and religious pluralism in the Asokan inscriptional corpus.\" Empires and Gods. The Role of Religions in Imperial History . (Eds. R\u00fcpke, J\u00f6rg &amp; Biran, Michal &amp; Pines,",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  },
+  {
+   "c-excerpt": "The Australian bhikkhu Ven. S. Dhammika, the compiler of the present work",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[2]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "Dhammika",
+   "w-excerpt": "\u2191 Olivelle, Patrick (2024). \"Imperial ideology and religious pluralism in the Asokan inscriptional corpus.\" Empires and Gods. The Role of Religions in Imperial History . (Eds. R\u00fcpke, J\u00f6rg &amp; Biran, Michal &amp; Pines,",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  },
+  {
+   "c-excerpt": "based on earlier translations",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[2]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "earlier translations",
+   "w-excerpt": "\u2191 Olivelle, Patrick (2024). \"Imperial ideology and religious pluralism in the Asokan inscriptional corpus.\" Empires and Gods. The Role of Religions in Imperial History . (Eds. R\u00fcpke, J\u00f6rg &amp; Biran, Michal &amp; Pines,",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  },
+  {
+   "c-excerpt": "Buddhist literature preserved the legend of this ruler",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[2]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "Buddhist literature",
+   "w-excerpt": "\u2191 Olivelle, Patrick (2024). \"Imperial ideology and religious pluralism in the Asokan inscriptional corpus.\" Empires and Gods. The Role of Religions in Imperial History . (Eds. R\u00fcpke, J\u00f6rg &amp; Biran, Michal &amp; Pines,",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  },
+  {
+   "c-excerpt": "The British historian H.G. Wells has written:",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[3]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "H.G. Wells",
+   "w-excerpt": "\u2191 Singh, Upinder (2008). A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century . Pearson Education India. p. 351. ISBN 9788131711200 . Archived from the original on 2 July 2023 . Retrieved",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  },
+  {
+   "c-excerpt": "The Australian bhikkhu Ven. S. Dhammika, the compiler of the present work",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[3]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "Dhammika",
+   "w-excerpt": "\u2191 Singh, Upinder (2008). A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century . Pearson Education India. p. 351. ISBN 9788131711200 . Archived from the original on 2 July 2023 . Retrieved",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  },
+  {
+   "c-excerpt": "based on earlier translations",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[3]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "earlier translations",
+   "w-excerpt": "\u2191 Singh, Upinder (2008). A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century . Pearson Education India. p. 351. ISBN 9788131711200 . Archived from the original on 2 July 2023 . Retrieved",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  },
+  {
+   "c-excerpt": "Buddhist literature preserved the legend of this ruler",
+   "class": "NO-VISIBLE-CONNECTION",
+   "entry-completeness": "COMPLETE",
+   "marker": "[3]",
+   "source-class": "SECONDARY-SCHOLARSHIP",
+   "vs-C": "Buddhist literature",
+   "w-excerpt": "\u2191 Singh, Upinder (2008). A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century . Pearson Education India. p. 351. ISBN 9788131711200 . Archived from the original on 2 July 2023 . Retrieved",
+   "why": "the entry names no Wells/Dhammika/translation/Buddhist-literature",
+   "work-level": "COMPARABLE - the entry's own text is complete enough to compare"
+  }
+ ],
+ "connection-summary": {
+  "explicit-related-authority": 0,
+  "explicit-shared-reference": 0,
+  "no-visible-connection": 12,
+  "note": "[1] rides NO-VISIBLE-CONNECTION on its VISIBLE text only; because that entry is PARTIAL, the work-level comparison for [1] is UNRESOLVED and is carried in the remaining unknowns",
+  "possible-shared-derivation": 0,
+  "unresolved": 0
+ },
+ "independence": {
+  "assessment": "UNKNOWN",
+  "four-propositions": "publisher / editorial / source / observational remain UNDIFFERENTIATED and UNKNOWN",
+  "promoted": false
+ },
+ "input": {
+  "a48-recorded-sha256": "d45350ce045e5af55b0141f85099acac0ceea839b024e8c905bb986398546f8b",
+  "bytes": 925008,
+  "digest-match": true,
+  "path": "research-hold/a48-w-body.html",
+  "sha256": "d45350ce045e5af55b0141f85099acac0ceea839b024e8c905bb986398546f8b",
+  "verified-against": "a48-reference-read.json request.body-sha256"
+ },
+ "label": "replay",
+ "label-law": "ZERO-network replay over A48's preserved body; NOT a fresh observation and NOT new source evidence",
+ "limitations": [
+  "[1]'s li is an author-year footnote whose own text links to '#CITEREFLe2010'; that full bibliography entry was NOT followed (declared limit) and remains UNKNOWN",
+  "the comparison is against C's FOUR preserved signals only - not against C's full page",
+  "recovering bibliography does not establish independence; different intermediaries may share underlying scholarship",
+  "the preserved body is A48's single live snapshot; page drift is outside this replay"
+ ],
+ "mappings": {
+  "1": {
+   "a47-offset": [
+    453,
+    458
+   ],
+   "a47-signal": "W-M1",
+   "entry-text": "\u2191 Le 2010 , p. 30.",
+   "entry-text-sha256": "572bcbf3e2ed7096d12efb034661fa91d838c47124f41ba68c1e6dbb13f151c3",
+   "marker": "[ 1 ]",
+   "sup": {
+    "anchor-html": "<a href=\"#cite_note-FOOTNOTELe201030-1\" id=\"mwgg\"><span class=\"mw-reflink-text\" id=\"mwgw\"><span class=\"cite-bracket\" id=\"mwhA\">[</span>1<span class=\"cite-bracket\" id=\"mwhQ\">]</span></span></a>",
+    "anchors-in-sup": 1,
+    "display": "[1]",
+    "document-position": 146180,
+    "href": "#cite_note-FOOTNOTELe201030-1",
+    "id": "cite_ref-FOOTNOTELe201030_1-0"
+   },
+   "target": {
+    "element": "li",
+    "fragment-id": "cite_note-FOOTNOTELe201030-1",
+    "li-end": 496675,
+    "li-start": 496137,
+    "pending-in-document-pointer": {
+     "followed": false,
+     "href": "#CITEREFLe2010",
+     "status": "UNRESOLVED - carried as a remaining unknown for a future contract",
+     "why": "the footnote links to its full bibliography entry; following it is OUTSIDE the frozen step-5 (take the enclosing li) and was NOT done"
+    },
+    "raw-html": "<li about=\"#cite_note-FOOTNOTELe201030-1\" id=\"cite_note-FOOTNOTELe201030-1\" data-mw-footnote-number=\"1\"><span class=\"mw-cite-backlink\" id=\"mwCGE\"><a href=\"#cite_ref-FOOTNOTELe201030_1-0\" rel=\"mw:referencedBy\" id=\"mwCGI\"><span class=\"mw-linkback-text\" id=\"mwCGM\">\u2191</span></a></span> <span id=\"mw-reference-text-cite_note-FOOTNOTELe201030-1\" class=\"mw-reference-text reference-text\"><a rel=\"mw:WikiLink\" href=\"#CITEREFLe2010\" class=\"mw-selflink-fragment\" id=\"mwCGQ\">Le 2010</a>, p.<span typeof=\"mw:Entity\" id=\"mwCGU\">\u00a0</span>30.</span></li>",
+    "raw-sha256": "40ccc0c616e56113b3205de51d5f82208f4834eb188aaf813f9eef6db4acb04b"
+   }
+  },
+  "2": {
+   "a47-offset": [
+    926,
+    931
+   ],
+   "a47-signal": "W-M2",
+   "entry-text": "\u2191 Olivelle, Patrick (2024). \"Imperial ideology and religious pluralism in the Asokan inscriptional corpus.\" Empires and Gods. The Role of Religions in Imperial History . (Eds. R\u00fcpke, J\u00f6rg &amp; Biran, Michal &amp; Pines, Yuri, Berlim: Walter De Gruyter), p 27, https://archive.org/details/relig-org-polit-empre-empires-gods-ru-pke-biran-pires-livro/page/26/mode/2up",
+   "entry-text-sha256": "7bba822bf798bdaf18eb7ef10b9106df2634c019c179c99ffccb6ec6291552c2",
+   "marker": "[ 2 ]",
+   "sup": {
+    "anchor-html": "<a href=\"#cite_note-2\" id=\"mwiQ\"><span class=\"mw-reflink-text\" id=\"mwig\"><span class=\"cite-bracket\" id=\"mwiw\">[</span>2<span class=\"cite-bracket\" id=\"mwjA\">]</span></span></a>",
+    "anchors-in-sup": 1,
+    "display": "[2]",
+    "document-position": 147556,
+    "href": "#cite_note-2",
+    "id": "cite_ref-2"
+   },
+   "target": {
+    "element": "li",
+    "fragment-id": "cite_note-2",
+    "li-end": 497672,
+    "li-start": 496676,
+    "raw-html": "<li about=\"#cite_note-2\" id=\"cite_note-2\" data-mw-footnote-number=\"2\"><span class=\"mw-cite-backlink\" id=\"mwCGY\"><a href=\"#cite_ref-2\" rel=\"mw:referencedBy\" id=\"mwCGc\"><span class=\"mw-linkback-text\" id=\"mwCGg\">\u2191</span></a></span> <span id=\"mw-reference-text-cite_note-2\" class=\"mw-reference-text reference-text\"><a rel=\"mw:WikiLink\" href=\"https://en.wikipedia.org/wiki/Patrick_Olivelle\" title=\"Patrick Olivelle\" id=\"mwCGk\">Olivelle, Patrick</a> (2024). \"Imperial ideology and religious pluralism in the Asokan inscriptional corpus.\" <i id=\"mwCGo\">Empires and Gods. The Role of Religions in Imperial History</i>. (Eds. R\u00fcpke, J\u00f6rg &amp; Biran, Michal &amp; Pines, Yuri, Berlim: Walter De Gruyter), p 27, <a rel=\"mw:ExtLink nofollow\" href=\"https://archive.org/details/relig-org-polit-empre-empires-gods-ru-pke-biran-pires-livro/page/26/mode/2up\" class=\"external free\" id=\"mwCGs\">https://archive.org/details/relig-org-polit-empre-empires-gods-ru-pke-biran-pires-livro/page/26/mode/2up</a></span></li>",
+    "raw-sha256": "eef8d1211158e2811a63b75d1524b306153bc3ddae6b2ffbcd6cb289a7cff864"
+   }
+  },
+  "3": {
+   "a47-offset": [
+    1073,
+    1078
+   ],
+   "a47-signal": "W-M3",
+   "entry-text": "\u2191 Singh, Upinder (2008). A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century . Pearson Education India. p. 351. ISBN 9788131711200 . Archived from the original on 2 July 2023 . Retrieved 28 September 2018 .",
+   "entry-text-sha256": "6645240b1e3516e3e5d15cc8ea5467aa27cee1657bd6fa04455d922e0ae30637",
+   "marker": "[ 3 ]",
+   "sup": {
+    "anchor-html": "<a href=\"#cite_note-3\" id=\"mwlQ\"><span class=\"mw-reflink-text\" id=\"mwlg\"><span class=\"cite-bracket\" id=\"mwlw\">[</span>3<span class=\"cite-bracket\" id=\"mwmA\">]</span></span></a>",
+    "anchors-in-sup": 1,
+    "display": "[3]",
+    "document-position": 149033,
+    "href": "#cite_note-3",
+    "id": "cite_ref-3"
+   },
+   "target": {
+    "element": "li",
+    "fragment-id": "cite_note-3",
+    "li-end": 502705,
+    "li-start": 497673,
+    "raw-html": "<li about=\"#cite_note-3\" id=\"cite_note-3\" data-mw-footnote-number=\"3\"><span class=\"mw-cite-backlink\" id=\"mwCGw\"><a href=\"#cite_ref-3\" rel=\"mw:referencedBy\" id=\"mwCG0\"><span class=\"mw-linkback-text\" id=\"mwCG4\">\u2191</span></a></span> <span id=\"mw-reference-text-cite_note-3\" class=\"mw-reference-text reference-text\"><style data-mw-deduplicate=\"TemplateStyles:r1333433106\" typeof=\"mw:Extension/templatestyles mw:Transclusion\" about=\"#mwt18\" id=\"mwCG8\" data-mw='{\"name\":\"templatestyles\",\"attrs\":{\"src\":\"Module:Citation/CS1/styles.css\"},\"body\":{\"extsrc\":\"\"},\"parts\":[{\"template\":{\"target\":{\"wt\":\"cite book \",\"href\":\"./Template:Cite_book\"},\"params\":{\"last\":{\"wt\":\"Singh\"},\"first\":{\"wt\":\"Upinder\"},\"title\":{\"wt\":\"A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century\"},\"year\":{\"wt\":\"2008\"},\"publisher\":{\"wt\":\"Pearson Education India\"},\"isbn\":{\"wt\":\"9788131711200\"},\"page\":{\"wt\":\"351\"},\"url\":{\"wt\":\"https://books.google.com/books?id=H3lUIIYxWkEC&amp;pg=PA351\"},\"language\":{\"wt\":\"en\"},\"access-date\":{\"wt\":\"28 September 2018\"},\"archive-date\":{\"wt\":\"2 July 2023\"},\"archive-url\":{\"wt\":\"https://web.archive.org/web/20230702125338/https://books.google.com/books?id=H3lUIIYxWkEC&amp;pg=PA351\"},\"url-status\":{\"wt\":\"live\"}},\"i\":0}}]}'>.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:\"\\\"\"\"\\\"\"\"'\"\"'\"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url(\"//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg\")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url(\"//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg\")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url(\"//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg\")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url(\"//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg\")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#bf3c2c)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#bf3c2c)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite id=\"CITEREFSingh2008\" class=\"citation book cs1\" about=\"#mwt18\">Singh, Upinder (2008). <a rel=\"mw:ExtLink nofollow\" href=\"https://books.google.com/books?id=H3lUIIYxWkEC&amp;pg=PA351\" class=\"external text\" id=\"mwCHA\"><i id=\"mwCHE\">A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century</i></a>. Pearson Education India. p.<span typeof=\"mw:Entity\" id=\"mwCHI\">\u00a0</span>351. <a rel=\"mw:WikiLink\" href=\"https://en.wikipedia.org/wiki/ISBN_(identifier)\" title=\"ISBN (identifier)\" class=\"mw-redirect\" id=\"mwCHM\">ISBN</a><span typeof=\"mw:Entity\" id=\"mwCHQ\">\u00a0</span><a rel=\"mw:WikiLink\" href=\"https://en.wikipedia.org/wiki/Special:BookSources/9788131711200\" title=\"Special:BookSources/9788131711200\" id=\"mwCHU\"><bdi id=\"mwCHY\">9788131711200</bdi></a>. <a rel=\"mw:ExtLink nofollow\" href=\"https://web.archive.org/web/20230702125338/https://books.google.com/books?id=H3lUIIYxWkEC&amp;pg=PA351\" class=\"external text\" id=\"mwCHc\">Archived</a> from the original on 2 July 2023<span class=\"reference-accessdate\" id=\"mwCHg\">. Retrieved <span class=\"nowrap\" id=\"mwCHk\">28 September</span> 2018</span>.</cite><span title=\"ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=A+History+of+Ancient+and+Early+Medieval+India%3A+From+the+Stone+Age+to+the+12th+Century&amp;rft.pages=351&amp;rft.pub=Pearson+Education+India&amp;rft.date=2008&amp;rft.isbn=9788131711200&amp;rft.aulast=Singh&amp;rft.aufirst=Upinder&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3DH3lUIIYxWkEC%26pg%3DPA351&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AEdicts+of+Ashoka\" class=\"Z3988\" about=\"#mwt18\" id=\"mwCHo\"></span></span></li>",
+    "raw-sha256": "37e0046a03453711ad4c6ec46a97740fef85dd2ad8ab2ac244a357fb6d053a98"
+   }
+  }
+ },
+ "policy": {
+  "acceptance": {
+   "FAILED": "none resolves or the digest mismatches (then STOP, no substitute body)",
+   "PARTIAL": "some resolve; the rest UNRESOLVED with the reason",
+   "SUCCESS": "all three markers resolve through the actual DOM relationship"
+  },
+  "budget": {
+   "alternate-bodies": 0,
+   "fetches": 0,
+   "link-follows": 0,
+   "network-requests": 0,
+   "searches": 0,
+   "source-reads": 0,
+   "substitutions": 0
+  },
+  "carry-over": {
+   "a46": "UNCHANGED",
+   "a47": "UNCHANGED",
+   "a48": "UNCHANGED (its FAILED acceptance stands)",
+   "ea1": "UNCHANGED",
+   "semantic": "UNKNOWN"
+  },
+  "ceiling": {
+   "four-propositions": [
+    "publisher",
+    "editorial",
+    "source",
+    "observational"
+   ],
+   "independence": "UNKNOWN stays UNKNOWN; recovering bibliography does NOT establish source or observational independence",
+   "ladder": "DIVERSITY-ONLY unless previously declared requirements are independently satisfied"
+  },
+  "comparison": {
+   "c-signals": [
+    "H.G. Wells",
+    "Ven. S. Dhammika / 'the present rendering'",
+    "'earlier translations' (unnamed)",
+    "'Buddhist literature' (legend carrier)"
+   ],
+   "classes": [
+    "EXPLICIT-SHARED-REFERENCE",
+    "EXPLICIT-RELATED-AUTHORITY",
+    "POSSIBLE-SHARED-DERIVATION",
+    "NO-VISIBLE-CONNECTION",
+    "UNRESOLVED"
+   ],
+   "laws": [
+    "a shared author/work is an ATTRIBUTION connection - NOT proof that all claims derive from it",
+    "different references are NOT independent observation",
+    "a domain difference is NEVER independence"
+   ]
+  },
+  "input": {
+   "bytes": 925008,
+   "path": "research-hold/a48-w-body.html",
+   "sha256": "d45350ce045e5af55b0141f85099acac0ceea839b024e8c905bb986398546f8b",
+   "source": "A48's ONE live request (label live) - preserved byte-for-byte"
+  },
+  "label-law": "ZERO-network REPLAY over A48's preserved body; NOT a fresh observation and NOT new source evidence",
+  "law": "A49-1 preserved-body citation replay - FROZEN BEFORE PARSING",
+  "markers": [
+   {
+    "a47-offset": [
+     453,
+     458
+    ],
+    "a47-source": "A47 W signal W-M1",
+    "marker": "[ 1 ]",
+    "number": 1
+   },
+   {
+    "a47-offset": [
+     926,
+     931
+    ],
+    "a47-source": "A47 W signal W-M2",
+    "marker": "[ 2 ]",
+    "number": 2
+   },
+   {
+    "a47-offset": [
+     1073,
+     1078
+    ],
+    "a47-source": "A47 W signal W-M3",
+    "marker": "[ 3 ]",
+    "number": 3
+   }
+  ],
+  "preservation": {
+   "digest-check": "the body must hash to the FULL recorded digest BEFORE parsing; mismatch = STOP",
+   "modifies": [],
+   "why": "A42-A48 artifacts are immutable; A48's result is NOT changed retrospectively"
+  },
+  "prohibitions": [
+   "no fetch",
+   "no search",
+   "no request",
+   "no link-following",
+   "no alternate body",
+   "no live fallback",
+   "no new source read",
+   "no retrospective change to A48",
+   "no promotion of independence or corroboration"
+  ],
+  "record": [
+   "marker text",
+   "A47 offset",
+   "minimal verbatim anchor HTML",
+   "anchor id attribute (verbatim)",
+   "literal href",
+   "target fragment id",
+   "target element type",
+   "raw <li> HTML",
+   "normalized entry text",
+   "byte offset of the target in the preserved body",
+   "explicit bibliographic fields ONLY where literally present",
+   "completeness: COMPLETE / PARTIAL / TRUNCATED against the entry's own text"
+  ],
+  "source-classes": {
+   "rules": [
+    "PRIMARY-EDITION: the entry explicitly presents an edition/translation of the inscriptions themselves",
+    "SECONDARY-SCHOLARSHIP: a book/article about the history, with author and publication context",
+    "TERTIARY-REFERENCE: an encyclopedia/reference-work summary",
+    "UNCLEAR: a reference is present but its class cannot be decided from its own text",
+    "UNRESOLVED: no entry recovered"
+   ]
+  },
+  "structure": {
+   "cross-check": "document order and the A47 marker order are recorded as a cross-check but are NEVER used to break a tie",
+   "no-numbering-assumption": "the mapper follows hrefs; it does not build '#cite_note-<k>' from k",
+   "step-1": "parse EVERY forward citation superscript: <sup ... class=...reference...> containing an anchor",
+   "step-2": "read each anchor's DISPLAYED text and parse its number from the bracketed digits; NEVER construct or assume an id such as cite_ref-1 or cite_note-1",
+   "step-3": "candidates for marker k = sups whose displayed number == k; exactly ONE -> proceed; ZERO or MORE THAN ONE -> UNRESOLVED, ambiguity preserved (never pick the most useful-looking entry)",
+   "step-4": "read the anchor's literal href; resolve ONLY a same-document fragment ('#id'); a non-fragment/external href -> UNRESOLVED",
+   "step-5": "locate the element carrying that exact id; absent -> UNRESOLVED; present -> take its enclosing <li> entry (the element itself when it IS an li, else the nearest enclosing li)",
+   "step-6": "record the RAW <li> HTML and a NORMALIZED display text SEPARATELY; tag stripping must not silently discard bibliographic detail"
+  }
+ },
+ "policy-digest": "6c278f264fc3c903f4b802d73a5d16f5f2406886d4d0fc3337265302ce7c766c",
+ "provenance": {
+  "A47-unchanged": "A47's recorded class stands for ITS evidence (markers unresolved); A49 updates the chain reconstruction, it does not rewrite A47",
+  "A48-unchanged": "A48's FAILED acceptance stands - its window rule was wrong, and this replay proves the corrected mapping works",
+  "no-independence": "DISTINCT is NOT independence: different cited works do not prove independent observation, and a shared author would not have proven derivation of every claim either",
+  "updated-class": "DISTINCT-STATED-ATTRIBUTIONS",
+  "why": "W now names accountable terminals (Olivelle 2024; Singh 2008; plus the partial Le 2010 note) and C names its own (Dhammika; Wells; unnamed earlier translations; 'Buddhist literature'); the named sets are DISJOINT and each chain is reconstructable to at least one named terminal - so the frozen A47 vocabulary's DISTINCT class is met"
+ },
+ "sprint": "A49",
+ "stamp": "2026-11-06T10:50:22",
+ "structure": {
+  "candidates-per-marker": {
+   "1": 1,
+   "2": 1,
+   "3": 1
+  },
+  "forward-citation-sups-found": 221,
+  "numeric-id-assumption": "NOT used - marker [1]'s href is '#cite_note-FOOTNOTELe201030-1', which no '#cite_note-<k>' construction would have found"
+ },
+ "zero-network": {
+  "alternate-bodies": 0,
+  "fetches": 0,
+  "ledger-after": 0,
+  "ledger-before": 0,
+  "link-follows": 0,
+  "network-requests": 0,
+  "searches": 0,
+  "source-reads": 0,
+  "substitutions": 0
+ }
+}
