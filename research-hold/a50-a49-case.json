@@ -1,0 +1,103 @@
+{
+ "artifact": "A49 independence regression fixture",
+ "case": {
+  "chains": {
+   "C": {
+    "terminals": [
+     "c:wells",
+     "c:dhammika",
+     "c:earlier-translations",
+     "c:buddhist-literature"
+    ]
+   },
+   "W": {
+    "terminals": [
+     "w:le",
+     "w:olivelle",
+     "w:singh"
+    ]
+   }
+  },
+  "claims": [],
+  "facts": [
+   "W's named terminals are Olivelle 2024, Singh 2008 and the PARTIAL Le 2010 note.",
+   "Le 2010's work-level comparison is UNRESOLVED; #CITEREFLe2010 was recorded but NOT followed.",
+   "No primary edition or translation of the edicts appears among W's three recovered entries.",
+   "C's named terminals are Dhammika and Wells; 'earlier translations' and 'Buddhist literature' remain unnamed.",
+   "No visible connection to C's signals was found in W's entries.",
+   "Underlying overlap, editorial, institutional and observational independence are UNKNOWN.",
+   "No shared material claim was evaluated, so corroboration is UNKNOWN."
+  ],
+  "id": "a49-w-vs-c",
+  "relations": [],
+  "source": {
+   "artifact": "research-hold/a49-citation-replay.json",
+   "label": "replay",
+   "policy-digest": "6c278f264fc3c903f4b802d73a5d16f5f2406886d4d0fc3337265302ce7c766c"
+  },
+  "terminals": {
+   "c:buddhist-literature": {
+    "kind": "unknown",
+    "label": "Buddhist literature (legend carrier)",
+    "status": "UNRESOLVED"
+   },
+   "c:dhammika": {
+    "kind": "translation",
+    "label": "Ven. S. Dhammika / the present rendering",
+    "status": "COMPLETE"
+   },
+   "c:earlier-translations": {
+    "kind": "unknown",
+    "label": "earlier translations (unnamed)",
+    "status": "UNRESOLVED"
+   },
+   "c:wells": {
+    "kind": "work",
+    "label": "H.G. Wells",
+    "status": "COMPLETE"
+   },
+   "w:le": {
+    "kind": "work",
+    "label": "Le 2010 (partial)",
+    "status": "PARTIAL",
+    "work": "UNKNOWN (the entry points to #CITEREFLe2010; not followed)"
+   },
+   "w:olivelle": {
+    "kind": "work",
+    "label": "Olivelle 2024",
+    "publisher": "Walter De Gruyter",
+    "status": "COMPLETE"
+   },
+   "w:singh": {
+    "kind": "work",
+    "label": "Singh 2008",
+    "publisher": "Pearson Education India",
+    "status": "COMPLETE"
+   }
+  }
+ },
+ "expected": {
+  "attribution": {
+   "label": "DISTINCT-STATED-ATTRIBUTIONS",
+   "status": "SUPPORTED"
+  },
+  "corroboration": "UNKNOWN",
+  "dependencies": [],
+  "editorial": "UNKNOWN",
+  "independent-corroboration": false,
+  "independent-evidence": false,
+  "institutional": "UNKNOWN",
+  "observational": "UNKNOWN",
+  "underlying": "UNKNOWN"
+ },
+ "label": "fixture",
+ "label-law": "derived ONLY from held A49 bytes; zero network; no retrieval",
+ "source": {
+  "a49-label": "replay",
+  "a49-policy-digest": "6c278f264fc3c903f4b802d73a5d16f5f2406886d4d0fc3337265302ce7c766c",
+  "path": "research-hold/a49-citation-replay.json",
+  "sha256": "8807764a2ba31a8048b11bb1a76d8a87509f148fe28df25d4ce89b0224badc35"
+ },
+ "sprint": "A50",
+ "why": "A49 recorded disjoint named terminals but NO dependency either way, and evaluated no shared material claim. Distinct attributions therefore stand at attribution level only; every stronger conclusion stays UNKNOWN."
+}
